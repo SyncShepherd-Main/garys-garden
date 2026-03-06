@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Holistic Model of Recovery &amp; Restoration</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: #f5f3ed; color: #3a3a3a; min-height: 100vh; }
+
+  header { background: #2c2c2c; padding: 32px 40px; border-bottom: 3px solid #c77d00; }
+  header .inner { max-width: 940px; margin: 0 auto; }
+  header .label { font-size: 11px; color: #c77d00; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 8px; }
+  header h1 { font-size: 34px; font-weight: 400; color: #f5f3ed; line-height: 1.15; margin-bottom: 8px; }
+  header .subtitle { font-size: 15px; color: #999; line-height: 1.6; }
+
+  .layout { max-width: 940px; margin: 0 auto; display: flex; gap: 40px; padding: 32px 24px; }
+  nav { width: 190px; flex-shrink: 0; position: sticky; top: 20px; align-self: flex-start; }
+  nav .rail { border-left: 1px solid #d0cec6; padding-left: 16px; }
+  .nav-btn { display: flex; align-items: center; gap: 10px; background: none; border: none; cursor: pointer; padding: 5px 0; width: 100%; text-align: left; }
+  .nav-dot { width: 9px; height: 9px; border-radius: 50%; background: #d0cec6; transition: all 0.3s ease; flex-shrink: 0; }
+  .nav-dot.active { background: #c77d00; box-shadow: 0 0 8px rgba(199,125,0,0.4); }
+  .nav-label { font-size: 12.5px; color: #888; font-weight: 400; letter-spacing: 0.3px; transition: all 0.3s ease; line-height: 1.3; }
+  .nav-label.active { color: #2c2c2c; font-weight: 600; }
+
+  .nav-group-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #b0a890; margin-top: 12px; margin-bottom: 4px; padding-left: 20px; }
+  .nav-group-label:first-child { margin-top: 0; }
+
+  main { flex: 1; min-width: 0; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  h2 { font-size: 30px; font-weight: 400; color: #2c2c2c; margin-bottom: 4px; line-height: 1.2; }
+  .section-sub { font-size: 15px; color: #888; font-style: italic; margin-bottom: 28px; }
+  p { font-size: 15.5px; line-height: 1.85; margin-bottom: 16px; }
+  em { color: #555; }
+
+  .card { background: #f9f6f0; border: 1px solid #e8e3d8; border-radius: 8px; padding: 24px; margin: 24px 0; }
+  .card-title { font-size: 18px; color: #c77d00; font-weight: 500; margin-bottom: 12px; }
+  .blockquote { border-left: 3px solid #c77d00; padding-left: 20px; margin: 28px 0; }
+  .blockquote p { color: #555; font-style: italic; }
+  .blockquote .attr { font-size: 13px; color: #999; }
+
+  .equation { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; font-size: 16px; }
+  .equation span { background: #fff; padding: 7px 14px; border-radius: 6px; border: 1px solid #ddd; }
+  .equation .arrow { background: none; border: none; color: #c77d00; font-size: 18px; }
+
+  .areas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-top: 14px; }
+  .area-box { background: #fff; border-radius: 8px; padding: 14px; text-align: center; border: 1px solid #e0dcd4; font-size: 18px; color: #c77d00; font-weight: 600; }
+
+  .faster-item { margin-bottom: 6px; border-radius: 8px; overflow: hidden; border: 1px solid #e8e3d8; }
+  .faster-header { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: #faf9f6; border: none; cursor: pointer; text-align: left; font-family: 'EB Garamond', Georgia, serif; }
+  .faster-letter { font-size: 22px; font-weight: 700; width: 28px; flex-shrink: 0; }
+  .faster-name { font-size: 16px; color: #2c2c2c; font-weight: 500; flex: 1; }
+  .faster-body { padding: 4px 16px 16px 56px; display: none; }
+  .faster-body.open { display: block; }
+  .faster-signs { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 5px; margin-top: 12px; }
+  .faster-sign { font-size: 13.5px; color: #555; padding: 5px 9px; background: rgba(255,255,255,0.6); border-radius: 4px; }
+  .faster-toggle { font-size: 14px; color: #999; transition: transform 0.3s ease; }
+
+  .bind-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+  .bind-card { border-radius: 10px; padding: 22px; }
+  .bind-card h3 { font-size: 17px; margin-bottom: 10px; }
+  .bind-card p { font-size: 14px; }
+  .bind-easier { background: #fde2e2; border: 1px solid #e8b4b4; }
+  .bind-easier h3 { color: #c0392b; }
+  .bind-harder { background: #d8f3dc; border: 1px solid #a7d7b5; }
+  .bind-harder h3 { color: #2d6a4f; }
+
+  .step-row { display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start; }
+  .step-label { font-size: 14px; font-weight: 700; color: #c77d00; flex-shrink: 0; margin-top: 2px; min-width: 110px; }
+  .step-detail { font-size: 14px; margin: 0; }
+
+  .vim-card { border-radius: 10px; padding: 22px; margin-bottom: 14px; border-left: 4px solid; }
+  .vim-header { display: flex; align-items: baseline; gap: 10px; }
+  .vim-letter { font-size: 32px; font-weight: 700; line-height: 1; }
+  .vim-title { font-size: 20px; font-weight: 500; margin: 0; }
+  .vim-genesis { background: rgba(255,255,255,0.53); border-radius: 6px; padding: 12px 14px; margin-top: 12px; }
+  .vim-genesis-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+  .vim-genesis p { font-size: 14px; margin-top: 6px; margin-bottom: 0; }
+
+  .mode-row { display: flex; gap: 14px; margin-bottom: 16px; padding: 16px; background: #faf9f6; border-radius: 8px; border: 1px solid #e8e3d8; }
+  .mode-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .mode-title { font-size: 15px; font-weight: 600; color: #2c2c2c; margin-bottom: 6px; }
+  .mode-row p { font-size: 14px; margin: 0; }
+
+  .rhythm-row { display: flex; gap: 14px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e8e3d8; }
+  .rhythm-row:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+  .rhythm-time { font-size: 14px; font-weight: 700; color: #c77d00; width: 70px; flex-shrink: 0; }
+  .rhythm-row p { font-size: 14px; margin: 0; }
+
+  .dark-card { background: #2c2c2c; border-radius: 10px; padding: 26px; margin: 28px 0; }
+  .dark-card h3 { font-size: 19px; color: #c77d00; margin-bottom: 14px; }
+  .dark-card p { font-size: 15px; color: #ccc; line-height: 1.8; margin: 0; }
+
+  .fact { margin-bottom: 5px; font-size: 14px; line-height: 1.8; }
+  .fact strong { color: #c77d00; }
+
+  .nav-footer { display: flex; justify-content: space-between; margin-top: 36px; padding-top: 20px; border-top: 1px solid #e0dcd4; }
+  .nav-footer button { font-family: 'EB Garamond', Georgia, serif; font-size: 14px; color: #c77d00; background: none; border: none; cursor: pointer; padding: 8px 0; }
+
+  /* Layer badge */
+  .layer-badge { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; padding: 3px 10px; border-radius: 3px; margin-bottom: 16px; font-weight: 600; }
+
+  /* Feeling cards */
+  .feeling-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+  .feeling-card { border-radius: 8px; padding: 18px; border: 1px solid #e0dcd4; }
+  .feeling-card h4 { font-size: 16px; margin-bottom: 4px; font-weight: 600; }
+  .feeling-card .need { font-size: 13px; color: #777; margin-bottom: 4px; }
+  .feeling-card .gift { font-size: 13.5px; font-weight: 500; }
+
+  /* Core need pills */
+  .need-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
+  .need-card { background: #fff; border-radius: 8px; padding: 16px; border: 1px solid #e0dcd4; text-align: center; }
+  .need-card .need-name { font-size: 18px; font-weight: 600; color: #c77d00; margin-bottom: 4px; }
+  .need-card .need-q { font-size: 14px; color: #777; font-style: italic; }
+
+  /* 3D awareness */
+  .awareness-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 20px 0; }
+  .awareness-card { border-radius: 8px; padding: 18px; text-align: center; }
+  .awareness-card h4 { font-size: 16px; margin-bottom: 8px; }
+  .awareness-card p { font-size: 13.5px; margin: 0; }
+
+  /* Diagnostic workflow */
+  .workflow-step { display: flex; gap: 16px; margin-bottom: 18px; align-items: flex-start; }
+  .workflow-num { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #fff; flex-shrink: 0; margin-top: 2px; }
+  .workflow-content h4 { font-size: 15px; font-weight: 600; color: #2c2c2c; margin-bottom: 4px; }
+  .workflow-content p { font-size: 14px; margin: 0; }
+  .workflow-content .wf-source { font-size: 12px; color: #aaa; font-style: italic; margin-top: 2px; }
+
+  @media (max-width: 720px) {
+    .layout { flex-direction: column; gap: 20px; }
+    nav { width: 100%; position: static; }
+    nav .rail { display: flex; flex-wrap: wrap; gap: 4px 14px; border-left: none; padding-left: 0; }
+    .nav-group-label { display: none; }
+    .bind-grid, .feeling-grid { grid-template-columns: 1fr; }
+    .awareness-grid { grid-template-columns: 1fr; }
+    header { padding: 24px 20px; }
+    header h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="label">A Holistic Framework</div>
+    <h1>Eight Layers of Recovery &amp; Restoration</h1>
+    <div class="subtitle">Integrating Friedman, Dye, Wilder, Dodd, Sande, Koch, Cloud &amp; Willard into a unified model for lasting change</div>
+    <div style="margin-top:12px;"><a href="7-tier-framework.html" style="font-size:13px; color:#c77d00; text-decoration:none; border-bottom:1px solid rgba(199,125,0,0.3);">→ Foundation: The 7-Tier Relational &amp; Ideological Framework</a></div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav>
+    <div class="rail" id="nav-rail"></div>
+  </nav>
+  <main id="main-content"></main>
+</div>
+
+<script>
+const SECTIONS = [
+  { id: "overview", label: "The Whole Model", group: "Foundation" },
+  { id: "anthropology", label: "Heart & Brain", group: "Foundation" },
+  { id: "atmosphere", label: "1. Systemic Atmosphere", group: "Eight Layers" },
+  { id: "faster", label: "2. FASTER Scale", group: "Eight Layers" },
+  { id: "doublebind", label: "3. The Double Bind", group: "Eight Layers" },
+  { id: "maturity", label: "4. Maturity & Joy", group: "Eight Layers" },
+  { id: "voice", label: "5. Voice of the Heart", group: "Eight Layers" },
+  { id: "relational", label: "6. Relational Wisdom", group: "Eight Layers" },
+  { id: "coreneeds", label: "7. Core Needs", group: "Eight Layers" },
+  { id: "wisdom", label: "8. Practical Wisdom", group: "Eight Layers" },
+  { id: "diagnostic", label: "Diagnostic Workflow", group: "Application" },
+  { id: "vim", label: "VIM Architecture", group: "Application" },
+  { id: "living", label: "Living It Daily", group: "Application" },
+];
+
+let activeSection = "overview";
+
+function setActive(id) {
+  activeSection = id;
+  renderNav();
+  renderContent();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderNav() {
+  const rail = document.getElementById("nav-rail");
+  let html = '';
+  let lastGroup = '';
+  SECTIONS.forEach(s => {
+    if (s.group !== lastGroup) {
+      html += '<div class="nav-group-label">' + s.group + '</div>';
+      lastGroup = s.group;
+    }
+    html += '<button class="nav-btn" onclick="setActive(\'' + s.id + '\')">' +
+      '<span class="nav-dot ' + (activeSection === s.id ? 'active' : '') + '"></span>' +
+      '<span class="nav-label ' + (activeSection === s.id ? 'active' : '') + '">' + s.label + '</span>' +
+      '</button>';
+  });
+  rail.innerHTML = html;
+}
+
+function navFooter() {
+  const idx = SECTIONS.findIndex(s => s.id === activeSection);
+  const prev = idx > 0 ? SECTIONS[idx - 1] : null;
+  const next = idx < SECTIONS.length - 1 ? SECTIONS[idx + 1] : null;
+  return '<div class="nav-footer">' +
+    (prev ? '<button onclick="setActive(\'' + prev.id + '\')">&larr; ' + prev.label + '</button>' : '<div></div>') +
+    (next ? '<button onclick="setActive(\'' + next.id + '\')">' + next.label + ' &rarr;</button>' : '<div></div>') +
+    '</div>';
+}
+
+/* ───────── SECTION RENDERERS ───────── */
+
+function sectionOverview() {
+  return `
+    <h2>An Integrated Model of Recovery</h2>
+    <p class="section-sub">Seven layers of insight, one transformational architecture</p>
+
+    <p>This model brings together seven streams of Christian thought — each addressing a different dimension of what it means for a person to break free from self-destructive patterns and grow into the life God designed them for. No single framework covers everything. But together, they form a remarkably complete picture.</p>
+
+    <p>At its foundation lies a shared conviction: <em>to change behavior, you must change the heart</em>. And "the heart" is both a spiritual reality (the wellspring of life, Proverbs 4:23) and a neurological one (the limbic system, the right orbital prefrontal cortex). The streams converge on this: lasting transformation is not achieved by willpower, information, or technique alone. It requires a healed heart, safe relationships, and the interactive presence of God.</p>
+
+    <div class="card">
+      <div class="card-title">The Eight Layers</div>
+      <div style="margin-top:8px;">
+        <div class="fact"><strong>1. Systemic Atmosphere</strong> (Edwin Friedman) — The emotional environment surrounding the person</div>
+        <div class="fact"><strong>2. Relapse Awareness</strong> (Michael Dye) — The FASTER Scale: seeing the descent before it reaches bottom</div>
+        <div class="fact"><strong>3. The Double Bind</strong> (Genesis Process) — The fork in the road: self-reliance or surrender</div>
+        <div class="fact"><strong>4. Maturity &amp; Brain Skills</strong> (Jim Wilder) — Joy-fuel, the Quiet skill, and the Immanuel Journey</div>
+        <div class="fact"><strong>5. Emotional Language</strong> (Chip Dodd) — Feelings as gifts from God that point to needs</div>
+        <div class="fact"><strong>6. Relational Wisdom</strong> (Ken Sande) — God-aware, self-aware, other-aware</div>
+        <div class="fact"><strong>7. Core Needs</strong> (Kathy Koch) — Security, identity, belonging, purpose, competence</div>
+        <div class="fact"><strong>8. Practical Wisdom &amp; Boundaries</strong> (Henry Cloud) — The lived habits of wise people: dig it up, pull the tooth, play the movie, boundaries, and the gut as data</div>
+      </div>
+    </div>
+
+    <p>These layers are held together by <strong>Dallas Willard's VIM architecture</strong> — Vision, Intention, Means — the pattern by which all deep personal transformation actually occurs. And they are applied through a <strong>Diagnostic Workflow</strong> that moves from the systemic level down to the personal and spiritual, providing a practical hierarchy for processing any crisis or pattern of struggle.</p>
+
+    <div class="card">
+      <div class="card-title">The Core Equation</div>
+      <div class="equation">
+        <span>False Beliefs</span>
+        <span class="arrow">→</span>
+        <span>Distorted Emotions</span>
+        <span class="arrow">→</span>
+        <span>Destructive Behavior</span>
+      </div>
+      <p style="text-align:center; margin-top:14px; font-size:14px; color:#777; margin-bottom:0;">
+        The limbic system (heart) is shaped by trauma and encodes survival patterns. Recovery reverses this by replacing lies with truth — in the context of safe relationships and the presence of God.
+      </p>
+    </div>
+
+    <p>What makes this model holistic is that it addresses the person at every level: the <em>system</em> they're embedded in (Friedman), the <em>behavioral descent</em> they're caught in (Dye), the <em>decision point</em> they face (Double Bind), the <em>neurological capacity</em> they need (Wilder), the <em>emotional language</em> they've lost (Dodd), the <em>relational awareness</em> they must develop (Sande), and the <em>core needs</em> that are either being met in Christ or sought through counterfeits (Koch).</p>
+
+    <div class="blockquote">
+      <p>"If you want to change behavior, you have to change the heart."</p>
+      <div class="attr">— Michael Dye</div>
+    </div>
+  `;
+}
+
+function sectionAnthropology() {
+  return `
+    <h2>Biblical Anthropology &amp; the Brain</h2>
+    <p class="section-sub">The shared foundation: what is the heart, and why does it matter?</p>
+
+    <p>Every layer of this model rests on a specific understanding of what a human being is. Scripture speaks of the heart as the wellspring of life (Proverbs 4:23), the source from which all behavior flows. Jesus taught that defilement comes from within — from the heart proceed evil thoughts, fears, and destructive patterns (Mark 7:20–23). Paul wrestled with the same mystery: "I do the very thing I hate" (Romans 7:15).</p>
+
+    <p>Michael Dye's insight was recognizing that what Scripture calls "the heart" maps closely onto what neuroscience calls the <strong>limbic system</strong> — the brain's emotional processing and memory center. It records experiences tied to pleasure, reward, fear, and pain. It builds automatic response patterns beneath conscious awareness: avoid what caused pain, repeat what reduced it.</p>
+
+    <div class="card">
+      <div class="card-title">The Limbic System Controls Three Survival Drives</div>
+      <div class="areas-grid">
+        <div class="area-box">Food</div>
+        <div class="area-box">Sex</div>
+        <div class="area-box">Safety</div>
+      </div>
+      <p style="font-size:14px; color:#777; margin-top:10px; margin-bottom:0; text-align:center;">All compulsive and addictive behaviors orbit these three areas.</p>
+    </div>
+
+    <p>Jim Wilder extends this picture. He identifies the <strong>right orbital prefrontal cortex</strong> as the relational center of the brain — the part that is powered by joy, that knows "someone is glad to be with me." This is the "heart" in its positive capacity: not just the wounded place that drives addiction, but the relational engine that powers maturity, resilience, and the capacity to return to peace from distress.</p>
+
+    <p>When a child experiences trauma — abuse, neglect, abandonment — the limbic system encodes <strong>false beliefs</strong> as survival truths: <em>"I'm not safe," "I'm alone," "I'm worthless," "I must perform to be loved."</em> These become the invisible operating system generating anxiety, anger, and compulsive coping. The protective personality that forms pushes people away and seeks relief through self-destructive behaviors.</p>
+
+    <h3 style="font-size:17px; color:#c77d00; margin-top:24px; margin-bottom:10px; font-weight:500;">Limbic Lag: Why Change Takes Time</h3>
+    <p>Even after discovering false beliefs and learning truth cognitively, there is a gap between what the neocortex knows and what the limbic system believes. Dye calls this "limbic lag." Each time you walk through fear without reverting to the old behavior, the survival brain recalibrates: <em>"We went through that and survived."</em> The fear diminishes. New pathways form. This is sanctification understood neurologically — the slow, faithful replacement of lies with truth, in real relationships, in real time.</p>
+
+    <h3 style="font-size:17px; color:#c77d00; margin-top:24px; margin-bottom:10px; font-weight:500;">The Convergence</h3>
+    <p>Dye shows us what is <em>broken</em> in the heart (false beliefs, survival cravings). Wilder shows us what is <em>needed</em> (joy-fuel, the quiet skill, relational connection). Dodd shows us what the heart is <em>saying</em> (feelings as gifts pointing to needs). Koch shows us what the heart is <em>seeking</em> (security, identity, belonging, purpose, competence). Sande shows us how the heart must <em>engage</em> (God-awareness, self-awareness, other-awareness). And Friedman shows us the <em>system</em> in which the heart is either safe or under siege.</p>
+  `;
+}
+
+function sectionAtmosphere() {
+  return `
+    <span class="layer-badge" style="background:#e8f4f0; color:#2d6a4f;">Layer 1</span>
+    <h2>Systemic Atmosphere</h2>
+    <p class="section-sub">Edwin Friedman — the emotional environment that enables or sabotages recovery</p>
+
+    <p>Before you can understand the individual, you must understand the <em>system</em> they are embedded in. Edwin Friedman, drawing on family systems theory, showed that anxiety is contagious — it spreads through relational networks like an emotional virus. A family, a church, a recovery group can either be a greenhouse for healing or an incubator for chronic anxiety.</p>
+
+    <p>This is why Friedman's work forms the outermost layer of this model. If the system is sick, individual recovery efforts will be constantly undermined. The person who takes the "harder choice" of the Double Bind needs to return to a relational environment that can hold them — not one that reactively pulls them back into old patterns.</p>
+
+    <div class="card">
+      <div class="card-title">Three Key Concepts</div>
+      <div style="margin-top:8px;">
+        <div style="margin-bottom:16px;">
+          <strong style="color:#2d6a4f; font-size:15px;">Non-Anxious Presence</strong>
+          <p style="font-size:14px; margin-top:4px; margin-bottom:0;">The leader's (or helper's) ability to remain regulated and self-differentiated prevents "anxiety contagion" from spreading through the system. This is not emotional detachment — it is being present without being reactive. It is the relational equivalent of a thermostat rather than a thermometer: setting the emotional temperature rather than merely reflecting it.</p>
+        </div>
+        <div style="margin-bottom:16px;">
+          <strong style="color:#2d6a4f; font-size:15px;">Self-Differentiation</strong>
+          <p style="font-size:14px; margin-top:4px; margin-bottom:0;">Being "connected yet separate" — staying close to the person in crisis without losing your own identity or being swept into their panic. This is the relational skill that makes it possible to help without enabling, to be empathetic without being enmeshed. In Wilder's language, it is having enough "joy capacity" to hold your own identity while remaining relationally present.</p>
+        </div>
+        <div>
+          <strong style="color:#2d6a4f; font-size:15px;">Avoiding the "Failure of Nerve"</strong>
+          <p style="font-size:14px; margin-top:4px; margin-bottom:0;">Resisting the urge to "peace-monger" (quick fixes to lower system tension) in favor of "peace-making" (long-term health). This maps directly to the Double Bind: peace-mongering is the "easier choice" at the systemic level. Genuine peace-making — holding the tension, speaking truth, allowing the discomfort of growth — is the harder choice that leads to real change.</p>
+        </div>
+      </div>
+    </div>
+
+    <p>Notice how this connects to every other layer. Friedman's non-anxious presence is the <em>systemic</em> equivalent of Wilder's "Quiet" skill at the individual level. Self-differentiation is the relational posture that makes Sande's "3D awareness" possible. And the failure of nerve is what happens when the system takes the "easier choice" of the Double Bind — avoiding the pain of truth for the temporary relief of false peace.</p>
+
+    <div class="blockquote">
+      <p>The leader who can maintain a non-anxious presence in the midst of an anxious system is the most important variable in whether the system moves toward health or toward chronic dysfunction.</p>
+      <div class="attr">— The principle from Friedman's work</div>
+    </div>
+  `;
+}
+
+const FASTER_DATA = [
+  { letter: "R", name: "Restoration", color: "#2d6a4f", bg: "#d8f3dc", icon: "✦",
+    desc: "Accepting life on God's terms — with trust, vulnerability, and gratitude. This is abundant life (John 10:10). You are experiencing God, connected with others, and sticking to your priorities. In Wilder's language, your joy tank is full and your 'Quiet' skill is active. In Dodd's framework, you are feeling your feelings and letting them point you to God.",
+    signs: ["No current secrets","Working to resolve problems","Identifying fears and feelings honestly","Keeping commitments — meetings, prayer, family, church","Being open and honest, making eye contact","Reaching out to others","Growing in relationships with God and others","True accountability"] },
+  { letter: "F", name: "Forgetting Priorities", color: "#b5651d", bg: "#fef3e2", icon: "↓",
+    desc: "You start believing present circumstances over God's truth. A subtle shift in what's important — how you spend your time, what you think about. Denial and flight begin. Your core needs (Koch) begin to feel unmet, and you start seeking counterfeits.",
+    signs: ["Secrets forming","Less time/energy for God, church, meetings","Avoiding accountability people","Superficial conversations, sarcasm","Isolating, changing goals","Breaking promises, procrastination","Lying, over-confidence, boredom","Preoccupation with material things or entertainment"] },
+  { letter: "A", name: "Anxiety", color: "#c77d00", bg: "#fff4cc", icon: "↓",
+    desc: "A growing noise of undefined fear. You begin getting energy from your emotions rather than from the Spirit. Adrenaline and norepinephrine begin to rise. In Dodd's framework, fear is present but being suppressed rather than felt — so it cannot offer its gift of wisdom.",
+    signs: ["Worry, fear, using profanity","Replaying old negative thoughts","Perfectionism, judging others' motives","Unrealistic goals and to-do lists","Fantasy, co-dependent rescuing","Sleep problems, trouble concentrating","Gossip, flirting","Seeking drama, mind-reading"] },
+  { letter: "S", name: "Speeding Up", color: "#d4600a", bg: "#ffe5d0", icon: "↓",
+    desc: "Trying to outrun the anxiety — usually the first visible sign of depression. The body is now running on stress hormones. You cannot slow down because slowing down would mean feeling the pain underneath. Wilder would say: you've lost the 'Quiet' skill — you cannot return to peace.",
+    signs: ["Super busy, always in a hurry","Workaholic, can't relax","Feeling driven, can't turn off thoughts","Skipping meals or binge eating","Overspending, over-exercising","Can't identify own feelings or needs","Repetitive negative thoughts, irritability","Dramatic mood swings, too much caffeine"] },
+  { letter: "T", name: "Ticked Off", color: "#c0392b", bg: "#fde2e2", icon: "↓",
+    desc: "Getting an adrenaline high from anger and aggression. The limbic system is now in full survival mode — fight response activated. In Dodd's framework, anger is present but weaponized rather than felt — so it cannot offer its gift of passion for justice. Sande's three dimensions collapse: you lose God-awareness, self-awareness, and other-awareness.",
+    signs: ["Crisis in money, work, or relationships","Black-and-white thinking","Feeling alone, 'nobody understands'","Road rage, overreacting","Blaming, arguing, defensive","Can't take criticism, needing to be right","Pushing others away, increasing isolation","Headaches, digestive problems, obsessive thoughts"] },
+  { letter: "E", name: "Exhausted", color: "#7b2d8b", bg: "#f0e0f5", icon: "↓",
+    desc: "Loss of physical and emotional energy. Coming off the adrenaline high. The onset of real depression. Neurochemicals are depleted. All five core needs (Koch) feel utterly unmet. Joy capacity is at zero. You feel you cannot cope.",
+    signs: ["Depressed, panicked, confused","Hopelessness, helplessness","Sleeping too much or too little","Overwhelmed, crying for 'no reason'","Can't think, forgetful, numb","Wanting to run away","Constant cravings for old coping behaviors","Seeking old unhealthy people and places"] },
+  { letter: "R*", name: "Relapse", color: "#1a1a2e", bg: "#e0e0e8", icon: "✕",
+    desc: "Returning to the place you swore you'd never go again. At minimum, this is your go-to coping mechanism when emotionally exhausted — whatever numbs the pain. The result is reinforcement of shame, guilt, and condemnation — which deepens the false beliefs and restarts the cycle.",
+    signs: ["Giving up and giving in","Out of control, lost in addiction","Lying to yourself and others","Feeling you can't manage without your coping behavior","Reinforcement of shame, guilt, condemnation","Feelings of abandonment and being alone"] },
+];
+
+function toggleFaster(idx) {
+  const body = document.getElementById('faster-body-' + idx);
+  const toggle = document.getElementById('faster-toggle-' + idx);
+  const header = document.getElementById('faster-header-' + idx);
+  const item = FASTER_DATA[idx];
+  if (body.classList.contains('open')) {
+    body.classList.remove('open');
+    toggle.style.transform = 'rotate(0deg)';
+    header.style.background = '#faf9f6';
+  } else {
+    FASTER_DATA.forEach(function(_, i) {
+      var b = document.getElementById('faster-body-' + i);
+      var t = document.getElementById('faster-toggle-' + i);
+      var h = document.getElementById('faster-header-' + i);
+      if (b.classList.contains('open')) { b.classList.remove('open'); t.style.transform = 'rotate(0deg)'; h.style.background = '#faf9f6'; }
+    });
+    body.classList.add('open');
+    toggle.style.transform = 'rotate(180deg)';
+    header.style.background = item.bg;
+  }
+}
+
+function sectionFaster() {
+  var items = FASTER_DATA.map(function(item, i) {
+    return '<div class="faster-item"><button class="faster-header" id="faster-header-' + i + '" onclick="toggleFaster(' + i + ')">' +
+      '<span class="faster-letter" style="color:' + item.color + '">' + (item.letter === 'R*' ? 'R' : item.letter) + '</span>' +
+      '<span class="faster-name">' + item.name + '</span>' +
+      '<span style="font-size:14px;color:' + (item.letter === 'R' ? '#2d6a4f' : item.letter === 'R*' ? '#1a1a2e' : '#c0392b') + '">' + item.icon + '</span>' +
+      '<span class="faster-toggle" id="faster-toggle-' + i + '">▾</span>' +
+      '</button><div class="faster-body" id="faster-body-' + i + '" style="background:' + item.bg + '">' +
+      '<p style="margin-bottom:12px;">' + item.desc + '</p>' +
+      '<div class="faster-signs">' + item.signs.map(function(s) { return '<div class="faster-sign">' + s + '</div>'; }).join('') + '</div></div></div>';
+  }).join('');
+
+  return `
+    <span class="layer-badge" style="background:#fef3e2; color:#b5651d;">Layer 2</span>
+    <h2>The FASTER Scale</h2>
+    <p class="section-sub">Michael Dye — a relapse awareness tool that sees the descent before it reaches bottom</p>
+
+    <p>The FASTER Scale maps the emotional and behavioral descent from Restoration to Relapse, making the invisible visible. Relapse doesn't happen suddenly. It follows a predictable downward progression, and the FASTER Scale can detect it a minimum of two weeks before it happens.</p>
+
+    <div class="card">
+      <div class="card-title">Five Key Facts</div>
+      <div class="fact"><strong>1.</strong> It is a downward-only scale. You cannot climb back up — you can only get off by addressing the Double Bind.</div>
+      <div class="fact"><strong>2.</strong> Each category stacks. If you're in Speeding Up, you're also in Anxiety and Forgetting Priorities.</div>
+      <div class="fact"><strong>3.</strong> It is generic until you personalize it. Everyone experiences each stage differently.</div>
+      <div class="fact"><strong>4.</strong> You cannot skip a category.</div>
+      <div class="fact"><strong>5.</strong> Relapse is your go-to coping mechanism when emotionally exhausted — whatever numbs the pain.</div>
+    </div>
+
+    <p>As you read each level, notice how the other layers of the model illuminate what's happening. The descriptions below integrate insights from Wilder (joy/quiet), Dodd (emotions), Koch (core needs), and Sande (awareness) at each stage of descent.</p>
+
+    <div style="margin-top:20px;">${items}</div>
+  `;
+}
+
+function sectionDoubleBind() {
+  return `
+    <span class="layer-badge" style="background:#e8e3d8; color:#666;">Layer 3</span>
+    <h2>The Double Bind</h2>
+    <p class="section-sub">The fork in the road — the only way off the FASTER Scale</p>
+
+    <p>Because the FASTER Scale only goes down, the critical question is: how do you get off? The answer is the Double Bind. At any point on the descent, you face two options, and both feel costly.</p>
+
+    <div class="bind-grid">
+      <div class="bind-card bind-easier">
+        <h3>The Easier Choice</h3>
+        <p>Continue down the FASTER Scale. Trust your coping mechanisms. Avoid the pain. Stay busy, stay angry, stay numb. The limbic system recognizes this as "survival." In Friedman's language, this is the system's "peace-mongering" — quick relief at the cost of long-term health.</p>
+        <p style="font-size:13px; color:#999; font-style:italic; margin-bottom:0;">This path always leads further down.</p>
+      </div>
+      <div class="bind-card bind-harder">
+        <h3>The Harder Choice</h3>
+        <p>Surrender to God. Face the underlying emotions (Dodd). Identify the fear behind the behavior. Speak truth to the false belief. Call someone — use your support team. In Wilder's language, engage the Immanuel Journey: invite God's interactive presence into the root of the pain.</p>
+        <p style="font-size:13px; color:#2d6a4f; font-style:italic; margin-bottom:0;">This is the only way off the scale.</p>
+      </div>
+    </div>
+
+    <p>The easier choice is always the one that relies on self — my ability to cope, manage, or numb. It is functional atheism, a practical denial of God's care. The harder choice always requires trust — trust that God is real, that vulnerability with others is safe, that the pain won't destroy you. This is why the Double Bind is fundamentally a <em>faith</em> decision.</p>
+
+    <div class="card">
+      <div class="card-title">Anatomy of a Double Bind Decision</div>
+      <div style="margin-top:14px;">
+        <div class="step-row"><span class="step-label">1. Locate yourself</span><p class="step-detail">Where am I on the FASTER Scale right now? What signs do I see?</p></div>
+        <div class="step-row"><span class="step-label">2. Name the feeling</span><p class="step-detail">What emotion am I running from? Use Dodd's language: fear, anger, sadness, loneliness? What is it pointing to?</p></div>
+        <div class="step-row"><span class="step-label">3. Identify the lie</span><p class="step-detail">What false belief is driving this? Which core need (Koch) feels unmet? Where did I learn this lie?</p></div>
+        <div class="step-row"><span class="step-label">4. Speak the truth</span><p class="step-detail">What does God say? Re-engage Sande's 3D awareness: God-aware, self-aware, other-aware.</p></div>
+        <div class="step-row"><span class="step-label">5. Step into faith</span><p class="step-detail">Call someone. Confess. Pray. Enter the Immanuel Journey. Risk vulnerability. Let the limbic system learn: <em>"We survived."</em></p></div>
+      </div>
+    </div>
+
+    <p>Each time you take the harder choice, the limbic system recalibrates. The old automatic pathway weakens. The new one strengthens. Wilder would say: your joy capacity grows. Your "Quiet" skill deepens. This is sanctification happening in real time.</p>
+  `;
+}
+
+function sectionMaturity() {
+  return `
+    <span class="layer-badge" style="background:#e0f0ff; color:#2a5d8f;">Layer 4</span>
+    <h2>Maturity &amp; Brain Skills</h2>
+    <p class="section-sub">Jim Wilder &amp; the Life Model — what powers growth and resilience</p>
+
+    <p>If the Genesis Process (Dye) shows us what is <em>broken</em>, Jim Wilder's Life Model shows us what is <em>needed</em> for the heart to heal and grow. Wilder identifies the right orbital prefrontal cortex as the relational center of the brain — the seat of identity, attachment, and emotional regulation. And this center runs on one primary fuel: <strong>joy</strong>.</p>
+
+    <div class="card">
+      <div class="card-title">Three Key Concepts</div>
+      <div style="margin-top:8px;">
+        <div style="margin-bottom:16px;">
+          <strong style="color:#2a5d8f; font-size:15px;">Joy-Fuel</strong>
+          <p style="font-size:14px; margin-top:4px; margin-bottom:0;">Joy, in Wilder's framework, is not happiness or excitement. It is the relational experience of knowing <em>"someone is glad to be with me."</em> This is the fuel the brain's relational center requires to function. Without it, maturity stalls, emotional regulation breaks down, and the person lacks the capacity to handle distress — which is exactly what sends them down the FASTER Scale. Joy-fuel is built in face-to-face, attuned relationships — and ultimately in the experience of God's delight.</p>
+        </div>
+        <div style="margin-bottom:16px;">
+          <strong style="color:#2a5d8f; font-size:15px;">The "Quiet" Skill</strong>
+          <p style="font-size:14px; margin-top:4px; margin-bottom:0;">This is the ability to return to a state of peace from high-distress emotions. It is perhaps the single most critical capacity for staying in Restoration. When you can "quiet" — when your brain knows how to come down from anger, fear, or sadness back to a regulated state — you can face difficult emotions without being overwhelmed by them. When you can't quiet, every emotional spike pushes you further down the FASTER Scale. This skill is <em>learned relationally</em> — first from attuned caregivers, and later from the community of faith and from God himself.</p>
+        </div>
+        <div>
+          <strong style="color:#2a5d8f; font-size:15px;">The Immanuel Journey</strong>
+          <p style="font-size:14px; margin-top:4px; margin-bottom:0;">This is the practice of interactive connection with God's presence as the primary engine for re-wiring the brain. It is not abstract theology — it is a concrete practice of inviting God's presence into specific memories of pain, specific moments of distress, specific false beliefs. It is the "harder choice" of the Double Bind made spiritual: rather than coping alone, you bring the wounded heart directly to the God who heals. This is where Willard's "Means" dimension becomes most alive — the Immanuel Journey is a spiritual discipline that creates space for encounter.</p>
+        </div>
+      </div>
+    </div>
+
+    <p>Wilder's framework explains something the FASTER Scale observes but doesn't fully account for: <em>why</em> some people can take the harder choice of the Double Bind and others can't. The answer is maturity — specifically, the brain's learned capacity for joy and quieting. A person with high joy capacity and a strong quiet skill can face the pain underneath their behavior. A person without these skills literally doesn't have the neurological wiring to do so yet. This is why recovery must include <em>building</em> these capacities, not just identifying what's broken.</p>
+
+    <div class="blockquote">
+      <p>The brain's relational center is powered by joy — the experience of knowing someone is glad to be with you. Without this fuel, maturity stalls and emotional regulation breaks down.</p>
+      <div class="attr">— The core insight from Wilder's Life Model</div>
+    </div>
+  `;
+}
+
+function sectionVoice() {
+  return `
+    <span class="layer-badge" style="background:#fef3e2; color:#b5651d;">Layer 5</span>
+    <h2>Voice of the Heart</h2>
+    <p class="section-sub">Chip Dodd — feelings as gifts from God that point to needs</p>
+
+    <p>One of the most damaging patterns in many Christian contexts is the suppression of emotion — treating feelings as unreliable, dangerous, or sinful. Chip Dodd's work corrects this by showing that feelings are <em>gifts from God</em> designed to point us toward legitimate needs. When feelings are expressed honestly, they lead toward <strong>intimacy</strong> — with God and others. When they are suppressed, denied, or weaponized, they lead toward <strong>isolation</strong> — which is exactly the trajectory of the FASTER Scale.</p>
+
+    <p>This layer gives language to what's happening inside the person at each stage of descent. The FASTER Scale tells you <em>where</em> you are. The Voice of the Heart tells you <em>what your emotions are trying to say</em>.</p>
+
+    <div class="feeling-grid">
+      <div class="feeling-card" style="background:#f0f4ff;">
+        <h4 style="color:#2a5d8f;">Fear</h4>
+        <div class="need">Points to a need for → <strong>Protection</strong></div>
+        <div class="gift" style="color:#2a5d8f;">Gift when felt honestly: <strong>Wisdom</strong></div>
+      </div>
+      <div class="feeling-card" style="background:#fff0f0;">
+        <h4 style="color:#c0392b;">Anger</h4>
+        <div class="need">Points to a hunger for → <strong>Justice</strong></div>
+        <div class="gift" style="color:#c0392b;">Gift when felt honestly: <strong>Passion</strong></div>
+      </div>
+      <div class="feeling-card" style="background:#f0f5ff;">
+        <h4 style="color:#555;">Sadness</h4>
+        <div class="need">Points to a need to → <strong>Let go</strong></div>
+        <div class="gift" style="color:#555;">Gift when felt honestly: <strong>Acceptance</strong></div>
+      </div>
+      <div class="feeling-card" style="background:#faf5ff;">
+        <h4 style="color:#7b2d8b;">Loneliness</h4>
+        <div class="need">Points to a need for → <strong>Connection</strong></div>
+        <div class="gift" style="color:#7b2d8b;">Gift when felt honestly: <strong>Intimacy</strong></div>
+      </div>
+    </div>
+
+    <p>Watch how this maps onto the FASTER Scale. In <strong>Anxiety</strong>, fear is present but being suppressed — so it can't offer its gift of wisdom. In <strong>Ticked Off</strong>, anger is present but weaponized — so it can't offer its gift of passion for justice. In <strong>Exhausted</strong>, sadness and loneliness are overwhelming — but they're being numbed rather than felt, so they can't lead to acceptance and intimacy.</p>
+
+    <p>The "harder choice" of the Double Bind always involves <em>feeling the feeling</em> rather than running from it. And when the feeling is felt in the presence of God and safe others, it yields its gift. This is what Wilder's Immanuel Journey facilitates — bringing the real feeling into the real presence of God — and it's what Sande's God-awareness enables: "What is God doing in this feeling right now?"</p>
+
+    <div class="blockquote">
+      <p>Feelings lead to intimacy when expressed, and to isolation when suppressed. Every feeling is a gift trying to point us somewhere good.</p>
+      <div class="attr">— The core insight from Dodd's work</div>
+    </div>
+  `;
+}
+
+function sectionRelational() {
+  return `
+    <span class="layer-badge" style="background:#e8f4e8; color:#2d6a4f;">Layer 6</span>
+    <h2>Relational Wisdom</h2>
+    <p class="section-sub">Ken Sande (RW360) — the three-dimensional awareness required for healthy functioning</p>
+
+    <p>Ken Sande's Relational Wisdom framework provides the practical skill set for staying in Restoration — or for catching the early signs of drift. It describes a "3D" awareness that healthy, relationally wise people practice continuously. When any of the three dimensions collapses, you're already on the FASTER Scale.</p>
+
+    <div class="awareness-grid">
+      <div class="awareness-card" style="background:#fef3e2; border:1px solid #e8d9b8;">
+        <h4 style="color:#c77d00;">God-Aware</h4>
+        <p>What is God doing here? How can I honor Him in this moment? What is true about His character and His promises?</p>
+      </div>
+      <div class="awareness-card" style="background:#e8f4f0; border:1px solid #b8d8cc;">
+        <h4 style="color:#2d6a4f;">Self-Aware</h4>
+        <p>What am I feeling right now? Why am I reacting this way? What false belief or unmet need is driving this?</p>
+      </div>
+      <div class="awareness-card" style="background:#f0f0ff; border:1px solid #c8c8e8;">
+        <h4 style="color:#4a4a8a;">Other-Aware</h4>
+        <p>What is the other person feeling? What do they need? How can I serve them rather than use them?</p>
+      </div>
+    </div>
+
+    <p>Notice how this integrates with everything else. <strong>God-awareness</strong> is the Vision dimension of Willard's VIM — keeping God's reality in view. <strong>Self-awareness</strong> is what the FASTER Scale check-in cultivates, what Dodd's emotional language makes possible, and what Koch's core needs give vocabulary to. <strong>Other-awareness</strong> is what Friedman's self-differentiation enables — being present to others without losing yourself.</p>
+
+    <p>As you descend the FASTER Scale, these dimensions collapse in order. First God-awareness fades (Forgetting Priorities). Then self-awareness distorts (Anxiety, Speeding Up — you can't identify your own feelings). Finally, other-awareness turns adversarial (Ticked Off — others become threats or obstacles). By Exhaustion, all three are gone. Recovery involves rebuilding all three, in the right order: God-awareness first, then self-awareness, then other-awareness.</p>
+
+    <div class="card">
+      <div class="card-title">The Collapse and Rebuilding</div>
+      <p style="font-size:14px; margin-bottom:8px;">As the FASTER Scale descends, 3D awareness collapses:</p>
+      <div class="fact"><strong>Forgetting Priorities:</strong> God-awareness dims — present circumstances replace trust</div>
+      <div class="fact"><strong>Anxiety / Speeding Up:</strong> Self-awareness distorts — can't identify own feelings or needs</div>
+      <div class="fact"><strong>Ticked Off:</strong> Other-awareness turns hostile — blaming, defensive, pushing away</div>
+      <div class="fact"><strong>Exhausted / Relapse:</strong> All three gone — survival mode only</div>
+      <p style="font-size:14px; margin-top:12px; margin-bottom:0;">Recovery rebuilds in reverse: God-awareness → Self-awareness → Other-awareness</p>
+    </div>
+  `;
+}
+
+function sectionCoreNeeds() {
+  return `
+    <span class="layer-badge" style="background:#f5e6ff; color:#7b2d8b;">Layer 7</span>
+    <h2>Core Needs</h2>
+    <p class="section-sub">Kathy Koch — the five needs that must be rooted in Jesus</p>
+
+    <p>Kathy Koch identifies five core needs that every human being carries. These are not optional desires — they are structural requirements for human flourishing. When they are met in Christ and in healthy relationships, they produce resilience, maturity, and joy. When they are unmet or sought through counterfeits, they produce the very anxiety, anger, and compulsive coping that the FASTER Scale describes.</p>
+
+    <div class="need-grid">
+      <div class="need-card">
+        <div class="need-name">Security</div>
+        <div class="need-q">"Am I safe?"</div>
+      </div>
+      <div class="need-card">
+        <div class="need-name">Identity</div>
+        <div class="need-q">"Who am I?"</div>
+      </div>
+      <div class="need-card">
+        <div class="need-name">Belonging</div>
+        <div class="need-q">"Who wants me?"</div>
+      </div>
+      <div class="need-card">
+        <div class="need-name">Purpose</div>
+        <div class="need-q">"Why am I here?"</div>
+      </div>
+      <div class="need-card">
+        <div class="need-name">Competence</div>
+        <div class="need-q">"What can I do?"</div>
+      </div>
+    </div>
+
+    <p>These five needs are the <em>targets</em> of the false beliefs that the Genesis Process uncovers. Every false belief attacks one or more of these needs:</p>
+
+    <div class="card">
+      <div class="card-title">False Beliefs Attack Core Needs</div>
+      <div style="margin-top:8px;">
+        <div class="fact"><strong>Security:</strong> "I'm not safe. The world is dangerous. I have to protect myself." → Leads to control, isolation, anxiety</div>
+        <div class="fact"><strong>Identity:</strong> "I'm worthless. I'm damaged. I'm defined by what I've done." → Leads to shame, performance, hiding</div>
+        <div class="fact"><strong>Belonging:</strong> "I'm alone. Nobody really wants me. If they knew me, they'd leave." → Leads to people-pleasing, withdrawal, codependency</div>
+        <div class="fact"><strong>Purpose:</strong> "Nothing matters. I have nothing to offer. My life is meaningless." → Leads to apathy, depression, escapism</div>
+        <div class="fact"><strong>Competence:</strong> "I can't do anything right. I'll always fail. I'm helpless." → Leads to avoidance, procrastination, giving up</div>
+      </div>
+    </div>
+
+    <p>Restoration, in Koch's framework, means having all five needs <em>rooted in Jesus</em> — not in performance, relationships, substances, or achievements. This is the Vision dimension of VIM made concrete. When you see yourself as secure in God, known and named by Him, belonging to His body, called to His purposes, and equipped by His Spirit — the false beliefs lose their power. Not all at once (limbic lag), but progressively and truly.</p>
+
+    <p>Notice the overlap with Wilder: "belonging" maps to joy-fuel ("someone is glad to be with me"). And with Dodd: each core need, when unmet, generates the very feelings that the Voice of the Heart describes — fear (security), sadness (identity), loneliness (belonging). The models illuminate each other.</p>
+  `;
+}
+
+function sectionWisdom() {
+  return `
+    <span class="layer-badge" style="background:#e8ede8; color:#3a5a3a;">Layer 8</span>
+    <h2>Practical Wisdom &amp; Boundaries</h2>
+    <p class="section-sub">Henry Cloud — the lived habits of people who navigate life wisely</p>
+
+    <p>If Layers 1–7 are diagnostic — helping you see what's happening inside and around a person — Layer 8 is prescriptive. It bridges the gap between inner awareness and outer action. Cloud observed that certain people, regardless of background or personality, consistently navigate life in the same wise way. He called them "déjà vu people" — not because they were the same person, but because they practiced the same <em>pattern</em> of wise living. These patterns can be learned.</p>
+
+    <p>Underneath the nine principles is Cloud's foundational <em>Boundaries</em> work: knowing where I end and you begin, taking ownership of my own yard, understanding that I am responsible <em>to</em> others but <em>for</em> myself.</p>
+
+    <div class="card">
+      <div class="card-title">The Nine Principles of Déjà Vu People</div>
+      <div style="margin-top:8px;">
+        <div class="fact"><strong>1. Dig It Up</strong> — Excavate what's inside: weaknesses, desires, buried talents. Don't ignore your heart. The avoidance of risk is the greatest risk of all.</div>
+        <div class="fact"><strong>2. Pull the Tooth</strong> — Face problems head-on. Don't let negative situations linger. Deal with it, grieve it, move through it.</div>
+        <div class="fact"><strong>3. Play the Movie</strong> — Before acting, play the scenario forward to its end. Think in trajectories, not just moments. Count the cost.</div>
+        <div class="fact"><strong>4. Do Something</strong> — Take proactive responsibility for your own life. No one else will change your feelings, behaviors, or circumstances for you.</div>
+        <div class="fact"><strong>5. Act Like an Ant</strong> — Large goals are achieved through small, consistent steps. Persevere. Wanting it too quickly keeps you from having it.</div>
+        <div class="fact"><strong>6. Hate Well</strong> — Hard on the issue, soft on the person. Hate with objectivity, not generalized bitterness. Listen to your gut — it's data.</div>
+        <div class="fact"><strong>7. Don't Play Fair</strong> — Give back better than you're given. Tit-for-tat destroys relationships. Grace transforms — but requires healthy detachment.</div>
+        <div class="fact"><strong>8. Be Humble</strong> — Stay a learner. Arrogance denies failure, avoids correction, and fears criticism. The sage who thinks he's arrived has already begun to drift.</div>
+        <div class="fact"><strong>9. Upset the Right People</strong> — Don't let others' unhealthy reactions control your decisions. Place choosing what is right above people-pleasing.</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <div class="card-title">The Gut as Data</div>
+      <p style="font-size:14px;">Cloud teaches that the internal cringe, the gut defensiveness, the alarm that fires before the conscious mind catches up — this is <em>information</em>. Successful people listen to it. But listening wisely requires discernment:</p>
+      <div style="margin-top:8px;">
+        <div class="fact"><strong>Is this wisdom speaking?</strong> Is my gut detecting something genuinely unsafe, untrustworthy, or misaligned? (Dodd: fear pointing toward its gift of wisdom)</div>
+        <div class="fact"><strong>Or is this my wound projecting?</strong> Is an old false belief being triggered — reacting to a past pattern rather than present reality? (Dye: a limbic response encoded by trauma)</div>
+        <div class="fact"><strong>The test:</strong> Can I name what specifically is causing the response? Can I separate the person from the issue? Am I reacting from identity-in-Christ or from a threatened false self?</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <div class="card-title">The Boundaries Framework</div>
+      <div style="margin-top:8px;">
+        <div class="fact"><strong>Ownership:</strong> A boundary shows where I end and someone else begins. Knowing what is mine to steward gives freedom.</div>
+        <div class="fact"><strong>Responsible TO, not FOR:</strong> You are responsible to care about others, but responsible for your own thoughts, feelings, behaviors, and choices.</div>
+        <div class="fact"><strong>Sowing and Reaping:</strong> Natural consequences are God's teaching tool. Rescuing people from consequences suspends this law and enables destruction.</div>
+        <div class="fact"><strong>Litmus Test:</strong> A person who respects your boundaries is safe. A person who rages against them is showing you exactly why the boundary was needed.</div>
+      </div>
+    </div>
+
+    <p>This layer connects to the Hebrew wisdom vocabulary that runs through the entire model. Cloud's nine principles are <em>sekel</em> (prudent, skillful navigation of life), <em>ormah</em> (sanctified shrewdness), and <em>mezimmah</em> (purposeful thinking that traces where actions lead) — made practical for the modern reader. The déjà vu people are the <em>ḥākām</em> of Proverbs 1:5 — the already-wise who continue to hear, increase, and seek guidance.</p>
+
+    <div class="blockquote">
+      <p>"The prudent sees danger and hides himself, but the simple go on and suffer for it."</p>
+      <div class="attr">— Proverbs 22:3</div>
+    </div>
+  `;
+}
+
+function sectionDiagnostic() {
+  return `
+    <h2>The Diagnostic Workflow</h2>
+    <p class="section-sub">Processing a situation or crisis through all eight layers</p>
+
+    <p>When you or someone you're walking with hits a crisis, a relapse, or a stuck pattern, this workflow gives you a systematic way to process it. Move from the outermost layer (the system) inward to the deepest layer (the presence of God). Each question builds on the last.</p>
+
+    <div style="margin-top:24px;">
+      <div class="workflow-step">
+        <div class="workflow-num" style="background:#2d6a4f;">1</div>
+        <div class="workflow-content">
+          <h4>Systemic Temperature</h4>
+          <p>Is the family, church, or relational system in "chronic anxiety"? Am I maintaining a non-anxious presence, or have I been swept into the reactivity? Is the system peace-mongering or peace-making?</p>
+          <div class="wf-source">Friedman — Systemic Atmosphere</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-num" style="background:#b5651d;">2</div>
+        <div class="workflow-content">
+          <h4>Surface Symptom Mapping</h4>
+          <p>Where is the individual (or where am I) on the FASTER Scale? What specific behaviors and thought patterns are present? Is this Forgetting Priorities, Anxiety, Speeding Up, Ticked Off, or Exhausted?</p>
+          <div class="wf-source">Dye — FASTER Scale</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-num" style="background:#666;">3</div>
+        <div class="workflow-content">
+          <h4>The Double Bind</h4>
+          <p>What "easier choice" is tempting right now? What specific "harder choice" is required for freedom? Can you name both clearly?</p>
+          <div class="wf-source">Genesis Process — Double Bind</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-num" style="background:#b5651d;">4</div>
+        <div class="workflow-content">
+          <h4>The Voice of the Heart</h4>
+          <p>What core feelings are present? Fear, anger, sadness, loneliness? Are they being felt or suppressed? What "gifts" are they trying to offer? What needs are they pointing to?</p>
+          <div class="wf-source">Dodd — Emotional Language</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-num" style="background:#2a5d8f;">5</div>
+        <div class="workflow-content">
+          <h4>Skill / Maturity Gap</h4>
+          <p>Does the person have the joy-fuel and the "Quiet" skill to handle this distress? Or is this a maturity gap — a place where the brain literally hasn't learned how to regulate yet? If so, what relational experiences are needed to build these capacities?</p>
+          <div class="wf-source">Wilder — Life Model</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-num" style="background:#7b2d8b;">6</div>
+        <div class="workflow-content">
+          <h4>Core Need Rooting</h4>
+          <p>Which of the five core needs are being attacked or sought through counterfeits? Security, identity, belonging, purpose, or competence? Where is this need currently rooted — in Christ, or in a false source?</p>
+          <div class="wf-source">Koch — Core Needs</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-num" style="background:#3a5a3a;">7</div>
+        <div class="workflow-content">
+          <h4>Practical Wisdom &amp; Boundaries</h4>
+          <p>What tooth needs pulling? What boundary is missing or collapsed? Is the gut speaking wisdom or wound? Play the movie — where does the current path lead? Is the person taking ownership of their own yard, or waiting for someone else to change? Are they acting like an ant or paralyzed?</p>
+          <div class="wf-source">Cloud — Practical Wisdom &amp; Boundaries</div>
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-num" style="background:#c77d00;">8</div>
+        <div class="workflow-content">
+          <h4>The Immanuel Path</h4>
+          <p>How can we invite God's interactive presence into the <em>root</em> of this specific pain right now? Not abstract truth, but personal encounter — God meeting the person in the exact place of their wound, their fear, their false belief. This is where healing happens.</p>
+          <div class="wf-source">Wilder — Immanuel Journey / Willard — Means</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:28px;">
+      <div class="card-title">Using This Workflow</div>
+      <p style="font-size:14px;">You don't always need to work through all seven steps. Sometimes a quick FASTER check-in (step 2) and naming the Double Bind (step 3) is enough to catch a drift early. Other times — with deep patterns, long-standing wounds, or severe crises — you need the full progression. The point is to have the complete map available so you're never stuck with only one lens.</p>
+      <p style="font-size:14px; margin-bottom:0;">For counselors, pastors, and group leaders: this workflow also applies to the system you're leading. Ask step 1 about yourself and your environment before trying to help the individual. A non-anxious, self-differentiated presence is the prerequisite for everything that follows.</p>
+    </div>
+  `;
+}
+
+function sectionVIM() {
+  return `
+    <h2>VIM: The Transformational Architecture</h2>
+    <p class="section-sub">Dallas Willard — the pattern by which all deep change actually occurs</p>
+
+    <p>For this seven-layer model to result in actual change — not just insight — it must follow the pattern Dallas Willard identified: Vision, Intention, and Means. Willard's critical insight: <em>everyone already has a VIM</em>. The person trapped in addiction has a vision (distorted), an intention (to cope), and means (the addictive behavior). Recovery is not building a VIM from nothing — it is <strong>replacing</strong> one VIM with another.</p>
+
+    <div style="margin:24px 0;">
+      <div class="vim-card" style="background:#d8f3dc; border-left-color:#2d6a4f;">
+        <div class="vim-header">
+          <span class="vim-letter" style="color:#2d6a4f;">V</span>
+          <h3 class="vim-title" style="color:#2d6a4f;">Vision</h3>
+        </div>
+        <p style="margin-top:10px;">Seeing God as He really is — not distant, angry, or indifferent, but as One who is "glad to be with us" (Wilder). Seeing yourself as secure, named, beloved, purposed, and competent in Christ (Koch). Seeing a life of Restoration as genuinely possible. Without this vision, the survival system has no reason to yield. The false beliefs (Dye) are the broken vision; replacing them with truth is the vision work.</p>
+        <div class="vim-genesis">
+          <div class="vim-genesis-label" style="color:#2d6a4f;">Across the Layers</div>
+          <p>Dye: replacing false beliefs. Koch: core needs rooted in Jesus. Dodd: emotions as gifts, not threats. Wilder: God is glad to be with me. Sande: God-awareness restored.</p>
+        </div>
+      </div>
+
+      <div class="vim-card" style="background:#fef3e2; border-left-color:#c77d00;">
+        <div class="vim-header">
+          <span class="vim-letter" style="color:#c77d00;">I</span>
+          <h3 class="vim-title" style="color:#c77d00;">Intention</h3>
+        </div>
+        <p style="margin-top:10px;">Making the decisive choice to enter a Change Group, to begin the Immanuel Journey, to commit to accountability, to face the pain rather than numb it. This is the Double Bind decision writ large — not a one-time event but a sustained posture of choosing the harder path. Wanting to change is not enough. You must <em>decide</em>.</p>
+        <div class="vim-genesis">
+          <div class="vim-genesis-label" style="color:#c77d00;">Across the Layers</div>
+          <p>Every Double Bind is a moment of Intention. Friedman: choosing peace-making over peace-mongering. The FASTER Scale is the awareness tool that shows you <em>when</em> Intention is needed.</p>
+        </div>
+      </div>
+
+      <div class="vim-card" style="background:#f0e0f5; border-left-color:#7b2d8b;">
+        <div class="vim-header">
+          <span class="vim-letter" style="color:#7b2d8b;">M</span>
+          <h3 class="vim-title" style="color:#7b2d8b;">Means</h3>
+        </div>
+        <p style="margin-top:10px;">The concrete practices that create space for the Holy Spirit to reshape the heart. Willard is emphatic: spiritual disciplines have no merit in themselves — they make space for encounter with God. The disciplines (solitude, silence, study, fasting, worship, confession) disrupt old patterns and create room for new ones. They are training, not trying.</p>
+        <div class="vim-genesis">
+          <div class="vim-genesis-label" style="color:#7b2d8b;">Across the Layers</div>
+          <p>Dye: FASTER check-in, Change Groups, false belief work, life history. Wilder: Immanuel Journey, joy-building exercises, practicing the Quiet skill. Dodd: learning to name and feel emotions. Sande: practicing 3D awareness daily. Koch: anchoring each core need in Scripture and experience.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="blockquote">
+      <p>"Everyone has had a spiritual formation — including those involved with pornography, or gluttony — and it incorporates a VIM. If you want to get out of such involvement, you work on replacing the VIM that put you there with a godly VIM oriented to what is good to desire."</p>
+      <div class="attr">— Dallas Willard</div>
+    </div>
+  `;
+}
+
+function sectionLiving() {
+  return `
+    <h2>Living By This Model</h2>
+    <p class="section-sub">What a life shaped by these eight layers looks like, day by day</p>
+
+    <p>Vision without intention is a daydream. Intention without means is a wish. Living by this model means building rhythms — daily, weekly, and relational — that keep you in Restoration or catch you quickly when you drift.</p>
+
+    <div class="card">
+      <div class="card-title">Daily Rhythm</div>
+      <div class="rhythm-row">
+        <span class="rhythm-time">Morning</span>
+        <p><strong>Vision.</strong> Before the day's demands hit, reconnect with truth: God's character, your identity in Christ, the life you're moving toward. This is the Vision dimension — reactivating the right VIM before the old one takes over. Engage the Immanuel Journey: "Jesus, where are you present with me right now?"</p>
+      </div>
+      <div class="rhythm-row">
+        <span class="rhythm-time">Midday</span>
+        <p><strong>Awareness.</strong> Quick FASTER check-in: where am I? Engage Sande's 3D awareness: Am I God-aware? Self-aware? Other-aware? Use Dodd's language: what am I feeling, and what is it pointing to? Even 60 seconds of honest assessment can catch a descent early.</p>
+      </div>
+      <div class="rhythm-row" style="border-bottom:none; padding-bottom:0; margin-bottom:0;">
+        <span class="rhythm-time">Evening</span>
+        <p><strong>Review.</strong> Where did I face a Double Bind today? Which choice did I make? What false belief surfaced? What core need felt threatened? Celebrate faithfulness. Bring failures honestly to God and a trusted person. This is not guilt — it's growing self-awareness.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <div class="card-title">Weekly Rhythm</div>
+      <p style="font-size:14px;">Meet with your Change Group, accountability partner, or counselor. Share where you've been on the FASTER Scale. Identify Double Binds you faced and which choice you made. Practice emotional language (Dodd) — name what you're feeling and let the group hold it with you. This is the relational Means the limbic system needs to feel safe enough to change. This is where joy-fuel (Wilder) is built: the experience of being known, held, and not rejected.</p>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <div class="card-title">The Larger Arc</div>
+      <p style="font-size:14px;">Over months and years, the eight layers become less like a framework you consciously consult and more like an integrated way of seeing. The vision clarifies. The intention deepens. The means become natural. Limbic lag shortens. Old fears lose power. Joy capacity grows. The "Quiet" skill strengthens. Core needs root deeper in Christ. Cloud's nine principles become reflexive habits rather than conscious exercises. You become — as Willard described — the kind of person from whom the words and deeds of Christ naturally flow.</p>
+    </div>
+
+    <div class="dark-card">
+      <h3>The Destination: Restoration as a Way of Life</h3>
+      <p>Restoration is not the absence of struggle. It is a way of being — accepting life on God's terms, with trust, vulnerability, and gratitude. It is having no current secrets. It is feeling your feelings and letting them lead you to God. It is knowing someone is glad to be with you — and knowing that Someone is God Himself. It is the abundant life Jesus promised: not a life without pain, but a life where pain is no longer the master, where the heart is being healed, where you are free to love and be loved.</p>
+    </div>
+  `;
+}
+
+const RENDERERS = {
+  overview: sectionOverview,
+  anthropology: sectionAnthropology,
+  atmosphere: sectionAtmosphere,
+  faster: sectionFaster,
+  doublebind: sectionDoubleBind,
+  maturity: sectionMaturity,
+  voice: sectionVoice,
+  relational: sectionRelational,
+  coreneeds: sectionCoreNeeds,
+  wisdom: sectionWisdom,
+  diagnostic: sectionDiagnostic,
+  vim: sectionVIM,
+  living: sectionLiving,
+};
+
+function renderContent() {
+  document.getElementById("main-content").innerHTML = RENDERERS[activeSection]() + navFooter();
+}
+
+renderNav();
+renderContent();
+</script>
+</body>
+</html>

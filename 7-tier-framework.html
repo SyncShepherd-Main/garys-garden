@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 7-Tier Relational &amp; Ideological Framework</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: #f5f3ed; color: #3a3a3a; min-height: 100vh; }
+
+  header { background: #1a2a1a; padding: 32px 40px; border-bottom: 3px solid #4a7a3a; }
+  header .inner { max-width: 940px; margin: 0 auto; }
+  header .label { font-size: 11px; color: #4a7a3a; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 8px; }
+  header h1 { font-size: 34px; font-weight: 400; color: #f5f3ed; line-height: 1.15; margin-bottom: 8px; }
+  header .subtitle { font-size: 15px; color: #999; line-height: 1.6; }
+  header .companion { margin-top: 12px; }
+  header .companion a { font-size: 13px; color: #4a7a3a; text-decoration: none; border-bottom: 1px solid #4a7a3a44; }
+  header .companion a:hover { color: #6aa85a; border-color: #6aa85a; }
+
+  .layout { max-width: 940px; margin: 0 auto; display: flex; gap: 40px; padding: 32px 24px; }
+  nav { width: 190px; flex-shrink: 0; position: sticky; top: 20px; align-self: flex-start; }
+  nav .rail { border-left: 1px solid #c0ceb8; padding-left: 16px; }
+  .nav-btn { display: flex; align-items: center; gap: 10px; background: none; border: none; cursor: pointer; padding: 5px 0; width: 100%; text-align: left; }
+  .nav-dot { width: 9px; height: 9px; border-radius: 50%; background: #c0ceb8; transition: all 0.3s ease; flex-shrink: 0; }
+  .nav-dot.active { background: #4a7a3a; box-shadow: 0 0 8px rgba(74,122,58,0.4); }
+  .nav-label { font-size: 12.5px; color: #888; font-weight: 400; letter-spacing: 0.3px; transition: all 0.3s ease; line-height: 1.3; }
+  .nav-label.active { color: #2c2c2c; font-weight: 600; }
+  .nav-group-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #a0b098; margin-top: 12px; margin-bottom: 4px; padding-left: 20px; }
+  .nav-group-label:first-child { margin-top: 0; }
+
+  main { flex: 1; min-width: 0; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  h2 { font-size: 30px; font-weight: 400; color: #2c2c2c; margin-bottom: 4px; line-height: 1.2; }
+  .section-sub { font-size: 15px; color: #888; font-style: italic; margin-bottom: 28px; }
+  p { font-size: 15.5px; line-height: 1.85; margin-bottom: 16px; }
+  em { color: #555; }
+
+  .card { background: #f0f4ee; border: 1px solid #d0dcc8; border-radius: 8px; padding: 24px; margin: 24px 0; }
+  .card-title { font-size: 18px; color: #4a7a3a; font-weight: 500; margin-bottom: 12px; }
+  .blockquote { border-left: 3px solid #4a7a3a; padding-left: 20px; margin: 28px 0; }
+  .blockquote p { color: #555; font-style: italic; }
+  .blockquote .attr { font-size: 13px; color: #999; }
+
+  .tier-badge { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; padding: 3px 10px; border-radius: 3px; margin-bottom: 16px; font-weight: 600; }
+
+  .tap-root { background: #fff; border: 1px solid #d0dcc8; border-radius: 8px; padding: 20px; margin: 20px 0; }
+  .tap-root .verse-ref { font-size: 13px; color: #4a7a3a; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .tap-root .verse { font-size: 15px; font-style: italic; color: #444; line-height: 1.7; margin-bottom: 0; }
+
+  .concept-title { font-size: 15px; font-weight: 600; color: #2c2c2c; margin-bottom: 4px; margin-top: 16px; }
+  .concept-body { font-size: 14.5px; margin-bottom: 0; }
+
+  .dark-card { background: #1a2a1a; border-radius: 10px; padding: 26px; margin: 28px 0; }
+  .dark-card h3 { font-size: 19px; color: #4a7a3a; margin-bottom: 14px; }
+  .dark-card p { font-size: 15px; color: #ccc; line-height: 1.8; margin: 0; }
+
+  .arch-row { display: flex; gap: 12px; margin-bottom: 10px; align-items: flex-start; }
+  .arch-label { font-size: 14px; font-weight: 700; color: #4a7a3a; flex-shrink: 0; min-width: 80px; margin-top: 2px; }
+  .arch-body { font-size: 14.5px; margin: 0; }
+
+  .nav-footer { display: flex; justify-content: space-between; margin-top: 36px; padding-top: 20px; border-top: 1px solid #d0dcc8; }
+  .nav-footer button { font-family: 'EB Garamond', Georgia, serif; font-size: 14px; color: #4a7a3a; background: none; border: none; cursor: pointer; padding: 8px 0; }
+
+  @media (max-width: 720px) {
+    .layout { flex-direction: column; gap: 20px; }
+    nav { width: 100%; position: static; }
+    nav .rail { display: flex; flex-wrap: wrap; gap: 4px 14px; border-left: none; padding-left: 0; }
+    .nav-group-label { display: none; }
+    header { padding: 24px 20px; }
+    header h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="label">Epistemological Foundation</div>
+    <h1>The 7-Tier Relational &amp; Ideological Framework</h1>
+    <div class="subtitle">Where are your roots, and what are they drawing from?</div>
+    <div class="companion">
+      <a href="holistic-recovery-model.html">→ Companion: Eight Layers of Recovery &amp; Restoration</a>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav><div class="rail" id="nav-rail"></div></nav>
+  <main id="main-content"></main>
+</div>
+
+<script>
+const SECTIONS = [
+  { id: "overview", label: "The Architecture", group: "Foundation" },
+  { id: "epistemology", label: "Epistemology", group: "Foundation" },
+  { id: "tier1", label: "1. The Vine", group: "The Seven Tiers" },
+  { id: "tier2", label: "2. Self-Diff. Love", group: "The Seven Tiers" },
+  { id: "tier3", label: "3. Body Life", group: "The Seven Tiers" },
+  { id: "tier4", label: "4. Revealed Truth", group: "The Seven Tiers" },
+  { id: "tier5", label: "5. Abstractions", group: "The Seven Tiers" },
+  { id: "tier6", label: "6. World of Ideas", group: "The Seven Tiers" },
+  { id: "tier7", label: "7. Captivity", group: "The Seven Tiers" },
+  { id: "jeremiah", label: "The Root System", group: "Diagnostic" },
+  { id: "models", label: "Applied Models", group: "Diagnostic" },
+];
+
+let activeSection = "overview";
+
+function setActive(id) { activeSection = id; renderNav(); renderContent(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+function renderNav() {
+  const rail = document.getElementById("nav-rail");
+  let html = ''; let lastGroup = '';
+  SECTIONS.forEach(function(s) {
+    if (s.group !== lastGroup) { html += '<div class="nav-group-label">' + s.group + '</div>'; lastGroup = s.group; }
+    html += '<button class="nav-btn" onclick="setActive(\'' + s.id + '\')"><span class="nav-dot ' + (activeSection === s.id ? 'active' : '') + '"></span><span class="nav-label ' + (activeSection === s.id ? 'active' : '') + '">' + s.label + '</span></button>';
+  });
+  rail.innerHTML = html;
+}
+
+function navFooter() {
+  var idx = SECTIONS.findIndex(function(s){return s.id===activeSection;});
+  var prev = idx > 0 ? SECTIONS[idx-1] : null;
+  var next = idx < SECTIONS.length-1 ? SECTIONS[idx+1] : null;
+  return '<div class="nav-footer">' +
+    (prev ? '<button onclick="setActive(\'' + prev.id + '\')">&larr; ' + prev.label + '</button>' : '<div></div>') +
+    (next ? '<button onclick="setActive(\'' + next.id + '\')">' + next.label + ' &rarr;</button>' : '<div></div>') + '</div>';
+}
+
+function sOverview() {
+  return '<h2>The Architecture as a Whole</h2><p class="section-sub">A framework for evaluating everything — including itself</p>' +
+  '<p>This model moves from the most intimate and life-giving (Tier 1) outward through relational systems (Tiers 2–3), through revealed content (Tier 4), through collective and ideological engagement (Tiers 5–6), and finally to a clear-eyed recognition of darkness and error (Tier 7).</p>' +
+  '<p>It is not primarily an intellectual framework. It is a <em>relational</em> and <em>epistemological</em> map — a way of discerning where your roots go and what they are drawing from. Every tier ultimately asks the same question in a different register: <strong>where are your roots, and what are they drawing from?</strong></p>' +
+  '<div class="card"><div class="card-title">The Seven Tiers</div>' +
+  '<div class="arch-row"><span class="arch-label">Tier 1</span><p class="arch-body"><strong>The Vine</strong> — Individual relationship with God. The root system of everything. Personal, non-transferable, foundational.</p></div>' +
+  '<div class="arch-row"><span class="arch-label">Tier 2</span><p class="arch-body"><strong>Self-Differentiated Love</strong> — Individual relationship with one other person. "I can\'t do Tier 1 for you." Connected yet separate.</p></div>' +
+  '<div class="arch-row"><span class="arch-label">Tier 3</span><p class="arch-body"><strong>Body Life in Messiah</strong> — Scripturally defined relational systems and roles. God\'s definitions rule — not society\'s.</p></div>' +
+  '<div class="arch-row"><span class="arch-label">Tier 4</span><p class="arch-body"><strong>Revealed Truth</strong> — The actual content of Scripture. Distinct from our interpretation of it (Tier 6).</p></div>' +
+  '<div class="arch-row"><span class="arch-label">Tier 5</span><p class="arch-body"><strong>The Illusion of Relationship</strong> — Abstract collective references. Talk about people that substitutes for being with people.</p></div>' +
+  '<div class="arch-row"><span class="arch-label">Tier 6</span><p class="arch-body"><strong>Discernment and Wisdom</strong> — The world of ideas. Powerful, consequential, and requiring the greatest discernment.</p></div>' +
+  '<div class="arch-row"><span class="arch-label">Tier 7</span><p class="arch-body"><strong>Captivity and Darkness</strong> — Where ideas go when they fail. Doctrines of demons, flesh patterns, the wisdom of fools.</p></div></div>' +
+  '<div class="dark-card"><h3>The Great Diagnostic Insight</h3><p>Confusion, corruption, and conflict at any tier can often be traced to a failure at a lower tier — a disconnection from the vine, a collapse of self-differentiation, a rejection of God\'s definitions, a misreading of Scripture, or captivity to a Tier 7 idea masquerading as wisdom.</p></div>' +
+  '<p>The goal of knowing, within this framework, is not intellectual mastery but the fear of the LORD — which is the beginning of wisdom and the proper posture of every creature before the Creator. True Wisdom is not the accumulation of correct ideas. It is a Person, and it is a way of living before that Person.</p>';
+}
+
+function sEpistemology() {
+  return '<h2>Epistemological Statement</h2><p class="section-sub">How we know what we know — and the humility required to know it rightly</p>' +
+  '<p>All true knowledge finds its source, ground, and goal in the Triune God — Father, Son, and Holy Spirit — who alone is self-existent, self-revealing, and the measure of all things. Because God is, and because He has spoken, knowledge is possible. Because He is faithful, knowledge is trustworthy. Because He is holy, knowledge carries moral weight and relational obligation.</p>' +
+  '<p>God has revealed Himself through a unified, coherent canon of Scripture — from Torah through Revelation — which together constitute one unbroken story of creation, covenant, redemption, and consummation. Scripture functions as the final court of appeal over all other sources of knowledge — tradition, reason, and experience each have a legitimate role, but none sit in judgment over Scripture. Where they illuminate the text, they are welcome. Where they contradict it, they must yield.</p>' +
+  '<p>Scripture does not function as a merely propositional deposit but as the living and active word of the living God, who continues to speak through it by His Spirit. Faithful engagement with the text is both an intellectual and a pneumatic act — requiring rigorous study and humble receptivity to the One who inspired it.</p>' +
+  '<div class="card"><div class="card-title">The Critical Distinction: Tier 4 vs. Tier 6</div>' +
+  '<p style="font-size:14px;">Because all human knowers are finite and fallen, our access to truth is always partial and subject to distortion. <strong>Hermeneutical humility</strong> — the willingness to hold our interpretations accountable to the text rather than the text accountable to our interpretations — is not optional. It is a cognitive and moral necessity.</p>' +
+  '<p style="font-size:14px; margin-bottom:0;">This is precisely why the model distinguishes between <strong>Tier 4</strong> (what God has actually revealed) and <strong>Tier 6</strong> (the ideas and frameworks through which we attempt to understand that revelation). Collapsing these two — mistaking our theology for revelation itself — is one of the most common and consequential errors in the life of faith.</p></div>' +
+  '<div class="blockquote"><p>The goal of knowing is not intellectual mastery but the fear of the LORD — which is the beginning of wisdom and the proper posture of every creature before the Creator.</p></div>';
+}
+
+function sTier1() {
+  return '<span class="tier-badge" style="background:#d8f3dc; color:#2d6a4f;">Tier 1</span>' +
+  '<h2>Individual Relationship with God</h2><p class="section-sub">The Vine — the root system of everything</p>' +
+  '<p>This tier represents the greatest commandment: to love God. It is personal, non-transferable, and foundational to every other tier. It begins with a proper fear of the LORD and a sincere faith — living from a "place of hearing," what Paul calls the "obedience of faith." It is inherently relational and flows out as fruit from the Creator and Designer.</p>' +
+  '<div class="tap-root"><div class="verse-ref">Primary — Deuteronomy 6:4–5</div><div class="verse">"Hear, O Israel: The LORD our God, the LORD is one. You shall love the LORD your God with all your heart and with all your soul and with all your might."</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">Proverbs 9:10</div><div class="verse">"The fear of the LORD is the beginning of wisdom, and knowledge of the Holy One is understanding."</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">John 15:5</div><div class="verse">"I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing."</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">Isaiah 30:20–21</div><div class="verse">"Although the Lord has given you bread of privation and water of oppression, He, your Teacher will no longer hide Himself, but your eyes will behold your Teacher. Your ears will hear a word behind you, \'This is the way, walk in it,\' whenever you turn to the right or to the left."</div></div>' +
+  '<div class="concept-title">Personal and Non-Transferable</div><p class="concept-body">This is not inherited faith or borrowed religion. It is one\'s own relationship with God to cultivate and maintain. "I can\'t do Tier 1 for you." A statement true from anyone\'s lips.</p>' +
+  '<div class="concept-title">The Vine and Branch</div><p class="concept-body">The most important structural metaphor of the entire model. Tier 1 is not merely the highest priority — it is the source of life for every other tier. A branch cut from the vine does not simply underperform; it withers and dies.</p>' +
+  '<div class="card"><div class="card-title">Summary</div><p style="font-size:14px; margin-bottom:0;">The Shema establishes the command and the object. Proverbs 9:10 establishes the posture. John 15:5 establishes the consequence of disconnection — which gives the whole model its urgency. Tier 1 is the root system of the entire framework. Everything else draws life from here.</p></div>';
+}
+
+function sTier2() {
+  return '<span class="tier-badge" style="background:#e0f0ff; color:#2a5d8f;">Tier 2</span>' +
+  '<h2>Individual Relationship with One Other Person</h2><p class="section-sub">Self-Differentiated Love — connected yet separate</p>' +
+  '<p>This tier represents the second greatest commandment: to love your neighbor as yourself. It focuses on the relational dynamics between oneself and one other individual, defined by what <em>I</em> bring to the relationship — independent of what the other person does or does not bring.</p>' +
+  '<div class="tap-root"><div class="verse-ref">Primary — Leviticus 19:18b / Mark 12:31</div><div class="verse">"You shall love your neighbor as yourself." — Yeshua\'s affirmation ties Tier 2 directly to Tier 1 as the two-part foundation of all relational life.</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">1 John 4:19</div><div class="verse">"We love because he first loved us." — The maturity of love in Tier 2 is always downstream of Tier 1 connection.</div></div>' +
+  '<div class="concept-title">Asymmetry of Ownership</div><p class="concept-body">My relationship with another person is mine to steward. Their response, their love, and their growth is their Tier 2. I cannot manufacture their love, control their choices, or take responsibility for their failures.</p>' +
+  '<div class="concept-title">Three Dangers</div><p class="concept-body"><strong>Cutoff</strong> — severs connection entirely as a defense mechanism. <strong>Fusion</strong> — the "me" dissolves into the "we"; identity lost. <strong>Undifferentiation</strong> — without knowing who you are, you react rather than respond.</p>' +
+  '<div class="concept-title">Self-Differentiation</div><p class="concept-body">Knowing who you are — and whose you are — enables you to remain connected without losing yourself. A non-anxious, differentiated presence is one of the most powerful gifts you can bring to any relationship.</p>' +
+  '<div class="card"><div class="card-title">Summary</div><p style="font-size:14px; margin-bottom:0;">The flow from Tier 1 to Tier 2 is embedded in the canonical structure of the greatest commandments themselves. Tier 2 keeps the "me" distinct from the "we" while remaining genuinely connected. It is the place of real, embodied love for a real, individual person.</p></div>';
+}
+
+function sTier3() {
+  return '<span class="tier-badge" style="background:#fef3e2; color:#b5651d;">Tier 3</span>' +
+  '<h2>Scripturally Defined Relational Systems and Roles</h2><p class="section-sub">Body Life in Messiah — God\'s definitions rule</p>' +
+  '<p>This tier encompasses all relationships and roles whose nature, purpose, and responsibilities are defined by God\'s revelation in Scripture. It moves beyond the individual dyad of Tier 2 into the larger systems of family, ecclesia, tribe, and Kingdom.</p>' +
+  '<div class="tap-root"><div class="verse-ref">Primary — Ephesians 4:11–13</div><div class="verse">"And he gave the apostles, the prophets, the evangelists, the shepherds and teachers, to equip the saints for the work of ministry, for building up the body of Christ, until we all attain to the unity of the faith…"</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">Deuteronomy 6:6–7</div><div class="verse">"And these words that I command you today shall be on your heart. You shall teach them diligently to your children…" — Roles are covenantal and generational.</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">Proverbs 4:1–4</div><div class="verse">"Hear, O sons, a father\'s instruction… When I was a son with my father, tender, the only one in the sight of my mother, he taught me…" — The living transmission of wisdom through God-defined roles across three generations.</div></div>' +
+  '<div class="concept-title">The Shift from Dyad to System</div><p class="concept-body">Tier 2 is me and one other person. Tier 3 is me within a system larger than any single relationship — where roles carry responsibilities that exist whether or not others are fulfilling theirs.</p>' +
+  '<div class="concept-title">The Authority of God\'s Definitions</div><p class="concept-body">Society, culture, and personal preference offer competing definitions. Tier 3 insists on the primacy of Scripture. Confusion at this tier — accepting society\'s definitions over God\'s — is a primary source of clashes in Tiers 5 through 7.</p>';
+}
+
+function sTier4() {
+  return '<span class="tier-badge" style="background:#fff4cc; color:#8a6d00;">Tier 4</span>' +
+  '<h2>Themes and Concepts Defined by Scripture</h2><p class="section-sub">Revealed Truth — the nourishment of every other tier</p>' +
+  '<p>This tier contains the actual content of divine revelation — the doctrines, themes, narratives, types, and wisdom that God has deposited in Scripture. It is distinct from how we interpret that content (Tier 6). Too often, our understanding is mistaken for the revealed truth itself.</p>' +
+  '<div class="tap-root"><div class="verse-ref">Primary — 2 Timothy 3:16–17</div><div class="verse">"All Scripture is breathed out by God and profitable for doctrine, for reproof, for correction, for training in righteousness, that the man of God may be complete, equipped for every good work."</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">Psalm 119:105</div><div class="verse">"Your word is a lamp to my feet and a light to my path." — You don\'t read the lamp once and walk in the dark. You carry it into every tier.</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">Deuteronomy 29:29</div><div class="verse">"The secret things belong to the LORD our God, but the things that are revealed belong to us and to our children forever." — This defines the limits of Tier 4 as much as its content.</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">Hebrews 4:12</div><div class="verse">"For the word of God is living and active, sharper than any two-edged sword…" — Scripture is not merely propositional. It is alive, penetrating, and actively discerning.</div></div>' +
+  '<div class="concept-title">Tupos — Typology as Pedagogy</div><p class="concept-body">God embeds truth in narrative, image, pattern, and picture: the Passover lamb, the tabernacle, the Davidic king, the Exodus. These are pedagogical — designed to impress deep truth at a level beneath pure cognition.</p>' +
+  '<div class="concept-title">The Critical Distinction</div><p class="concept-body">What Scripture actually says and means is Tier 4. How we process, interpret, and apply it is Tier 6. The danger is collapsing these two — mistaking our hermeneutical tradition for the revealed truth itself. We confuse the map for the territory.</p>';
+}
+
+function sTier5() {
+  return '<span class="tier-badge" style="background:#e8e3d8; color:#666;">Tier 5</span>' +
+  '<h2>Abstract Collective References</h2><p class="section-sub">The Illusion of Relationship — talk about people that substitutes for being with people</p>' +
+  '<p>This tier names a common category of conversation in which we speak <em>about</em> people without actually relating <em>to</em> them. "The church," "the government," "conservatives," "liberals" — simultaneously about real human beings and dangerously abstracted from them.</p>' +
+  '<div class="tap-root"><div class="verse-ref">Primary — John 1:14</div><div class="verse">"And the Word became flesh and dwelt among us…" — The Incarnation is God\'s own decisive move away from abstraction toward embodied, particular, relational presence. The ultimate anti-Tier 5 act.</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">Luke 10:36–37</div><div class="verse">"Which of these three proved to be a neighbor?" — The Good Samaritan demolishes the abstraction and puts a specific wounded man on a specific road in front of a specific traveler.</div></div>' +
+  '<div class="concept-title">The Relational Counterfeit</div><p class="concept-body">Tier 5 language can produce the illusion of doing something — forming opinions, taking positions, expressing passion — while never doing the actual Tier 2 work of loving a real neighbor. It is entirely possible to spend enormous energy at Tier 5 with nothing to show for it in genuine relationship.</p>' +
+  '<div class="concept-title">Not Useless, But Dangerous as a Dwelling Place</div><p class="concept-body">Systemic thinking helps us understand patterns and structures. But Tier 5 must remain tethered to Tiers 2 and 3, where real people and real roles live. If we never move from Tier 5 abstraction to actual Tier 2 relating, something is deeply wrong.</p>';
+}
+
+function sTier6() {
+  return '<span class="tier-badge" style="background:#f0e0f5; color:#7b2d8b;">Tier 6</span>' +
+  '<h2>The World of Ideas</h2><p class="section-sub">Discernment and Wisdom — where the framework lives or dies</p>' +
+  '<p>This tier contains the most abstract category of thinking — ideological, philosophical, and theological systems that shape how we see and interpret everything beneath them. Ideas are powerful and have real consequences. This is the tier that requires the greatest discernment, because wrong ideas at this level corrupt every tier they touch.</p>' +
+  '<div class="tap-root"><div class="verse-ref">Primary — 2 Corinthians 10:5</div><div class="verse">"We destroy arguments and every lofty opinion raised against the knowledge of God, and take every thought captive to obey Christ."</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">Proverbs 4:7</div><div class="verse">"The beginning of wisdom is this: Get wisdom, and whatever you get, get insight." — Wisdom received from God, not self-generated through autonomous reason.</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">Romans 12:2</div><div class="verse">"Do not be conformed to this world, but be transformed by the renewal of your mind…" — The renewed mind is capable of genuine discernment between what is good and what merely appears good.</div></div>' +
+  '<div class="concept-title">Enormous Downstream Consequences</div><p class="concept-body">What you believe about God\'s sovereignty, economics, ecclesiology, or human nature shapes how you interpret Tier 4, define Tier 3 roles, engage Tier 5 collectives, and ultimately love real people in Tier 2. A bad idea at Tier 6 can corrupt everything without the person recognizing the source.</p>' +
+  '<div class="concept-title">Hermeneutics as a Tier 6 Reality</div><p class="concept-body">How we interpret Scripture is itself a Tier 6 idea. Our access to Tier 4 truth is always filtered through Tier 6 assumptions. Our theology is not the same thing as revelation. We are told to not lean on our own understanding — so a non-leanable understanding is what we need.</p>' +
+  '<div class="concept-title">The Distinction: Ideas vs. True Wisdom</div><p class="concept-body">Ideas can be brilliant and still be wrong. True Wisdom is relational at its root — it comes from God, begins with the fear of the LORD (Tier 1), and always moves toward life and flourishing. Wisdom is not simply correct thinking; it is knowing how to live rightly before God and with others.</p>' +
+  '<div class="card"><div class="card-title">This Framework Is a Tier 6 Tool</div><p style="font-size:14px; margin-bottom:0;">Every model built on this foundation — including the Eight Layers of Recovery, and any future synthesis — operates at Tier 6. It is useful for seeing, but never to be confused with Tier 4 revelation itself. It must be held with hermeneutical humility, tested against the canon, and governed by the Spirit.</p></div>';
+}
+
+function sTier7() {
+  return '<span class="tier-badge" style="background:#e0e0e8; color:#1a1a2e;">Tier 7</span>' +
+  '<h2>The Tier of Nonsense</h2><p class="section-sub">Captivity and Darkness — the place we must not make our home</p>' +
+  '<p>Tier 7 is the destination of ideas that fail the test of discernment at Tier 6. It is not merely "wrong ideas" in an academic sense — it is the domain of doctrines of demons, foolish counsel, the wisdom of the flesh, and ultimately a different kingdom with a different ruler.</p>' +
+  '<div class="tap-root"><div class="verse-ref">Primary — Proverbs 1:15–16</div><div class="verse">"My son, do not walk in the way with them; hold back your foot from their paths, for their feet run to evil, and they make haste to shed blood."</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">1 Timothy 4:1</div><div class="verse">"Now the Spirit expressly says that in later times some will depart from the faith by devoting themselves to deceitful spirits and teachings of demons." — The Spirit has not left us without warning.</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">Isaiah 5:20</div><div class="verse">"Woe to those who call evil good and good evil, who put darkness for light and light for darkness…" — The defining moral inversion of Tier 7.</div></div>' +
+  '<div class="tap-root"><div class="verse-ref">Jude 1:4</div><div class="verse">"For certain persons have crept in unnoticed…" — Tier 7 does not always announce itself. It uses the language of grace while serving a different master.</div></div>' +
+  '<div class="concept-title">Not Neutral Territory</div><p class="concept-body">Tier 7 includes doctrines of demons, the advice of fools, flesh-driven mental and emotional habits, and every ideological framework that serves a ruler other than the King.</p>' +
+  '<div class="concept-title">The Inward Garment</div><p class="concept-body">Tier 7 is not always externally visible. Like a wolf clothed as a sheep, those who dwell here may appear to operate in higher tiers while being fundamentally dressed in Tier 7. The fruit of lived life eventually reveals the true nature.</p>' +
+  '<div class="concept-title">The Gospel as the Only Sufficient Power</div><p class="concept-body">Tier 7 ideas are not primarily an intellectual problem to be argued away. They are a spiritual and moral captivity requiring transformation from the inside out. Only the Spirit of God, working through the power of the gospel, can uproot core beliefs at this level and replace them with life-giving truth.</p>';
+}
+
+function sJeremiah() {
+  return '<h2>The Jeremiah 17 Portrait</h2><p class="section-sub">The root system analogy made canonical and inescapable</p>' +
+  '<div class="tap-root"><div class="verse-ref">Jeremiah 17:5–8</div><div class="verse">"Thus says the LORD: \'Cursed is the man who trusts in man and makes flesh his strength, whose heart turns away from the LORD. He is like a shrub in the desert, and shall not see any good come. He shall dwell in the parched places of the wilderness, in an uninhabited salt land. Blessed is the man who trusts in the LORD, whose trust is the LORD. He is like a tree planted by water, that sends out its roots by the stream, and does not fear when heat comes, for its leaves remain green, and is not anxious in the year of drought, for it does not cease to bear fruit.\'"</div></div>' +
+  '<p>This passage functions as perhaps the most complete single-text diagnosis of what Tier 7 does to a human life — and what Tier 1 rootedness produces. The prophet draws a stark contrast between two root systems.</p>' +
+  '<div class="concept-title">The Shrunken Heart</div><p class="concept-body">The curse begins inward. The man who trusts in man and makes flesh his strength experiences a turning of the heart away from the LORD. Tier 7 captivity is not first an intellectual problem — it is a cardiac one. The heart contracts and turns away from its only true source of life.</p>' +
+  '<div class="concept-title">The Wilderness and Salt Land</div><p class="concept-body">The shrub in the desert dwells in parched places, in uninhabited salt land. Salt land does not merely fail to nourish — it actively prevents growth. Tier 7 ideas do not simply fail to produce fruit — they poison the soil in which fruit might otherwise grow.</p>' +
+  '<div class="concept-title">The Tree Planted by Water</div><p class="concept-body">The contrast is not between a struggling tree and a thriving one — it is between a shrub with no access to water and a tree whose roots reach all the way to the stream. The tree does not fear heat, is not anxious in drought, does not cease to bear fruit — because its roots go deep enough to reach what never runs dry. This is Tier 1 connection producing fruit across every tier.</p>' +
+  '<div class="dark-card"><h3>The Diagnostic Question</h3><p>The tree and the shrub are not distinguished by their circumstances but by where their roots go. Every tier of this model, and every model built on this foundation, is ultimately asking: where are your roots, and what are they drawing from?</p></div>';
+}
+
+function sModels() {
+  return '<h2>Applied Models</h2><p class="section-sub">How other frameworks relate to this architecture</p>' +
+  '<p>The 7-Tier Framework is not itself a counseling model, a recovery program, or a therapeutic technique. It is the <em>epistemological and relational foundation</em> on which such models operate. Any framework you synthesize — past, present, or future — plugs into this architecture the same way:</p>' +
+  '<div class="card"><div class="card-title">How Models Relate to the Tiers</div>' +
+  '<div class="arch-row"><span class="arch-label">Tier 6</span><p class="arch-body">Every model — the Eight Layers of Recovery, Cloud\'s nine principles, Willard\'s VIM, any "-ism" or framework — operates at Tier 6. It is a lens for seeing, a tool for understanding. Useful but never to be confused with revelation itself.</p></div>' +
+  '<div class="arch-row"><span class="arch-label">Tier 4</span><p class="arch-body">Every model must be <strong>tested against Scripture</strong>. Where a model illuminates Tier 4 truth, it is welcome. Where it contradicts it, it must yield. The biblical roots supplement exists precisely for this purpose — anchoring every layer in the canon.</p></div>' +
+  '<div class="arch-row"><span class="arch-label">Tier 1</span><p class="arch-body">Every model must be <strong>rooted in the Vine</strong>. A framework disconnected from Tier 1 may produce insight but not transformation. The Immanuel Journey, the FASTER check-in, the spiritual disciplines — these all exist to maintain Tier 1 connection.</p></div>' +
+  '<div class="arch-row"><span class="arch-label">Tier 7</span><p class="arch-body">Every model must be <strong>tested for Tier 7 contamination</strong>. Has the framework absorbed ideas from the flesh, from cultural assumptions, from a different kingdom? The Jeremiah 17 diagnostic applies: is this tree drawing from the stream, or has it been planted in salt land?</p></div></div>' +
+
+  '<div class="card" style="margin-top:20px;"><div class="card-title">Current Applied Model</div>' +
+  '<p style="font-size:14px;"><strong><a href="holistic-recovery-model.html" style="color:#4a7a3a;">Eight Layers of Recovery &amp; Restoration</a></strong> — Integrating Friedman (systemic atmosphere), Dye (FASTER Scale), Wilder (maturity &amp; joy), Dodd (voice of the heart), Sande (relational wisdom), Koch (core needs), Cloud (practical wisdom &amp; boundaries), and Willard (VIM architecture) into a unified model for understanding and facilitating lasting change.</p>' +
+  '<p style="font-size:14px; margin-bottom:0;">This model operates as a Tier 6 tool, nourished by Tier 4 truth (the biblical roots supplement), anchored in Tier 1 connection (the Vine), and tested against the Jeremiah 17 diagnostic.</p></div>' +
+
+  '<div class="card" style="margin-top:20px;"><div class="card-title">Future Models</div>' +
+  '<p style="font-size:14px; margin-bottom:0;">Any future synthesis — whether in leadership, discipleship, parenting, ecclesiology, or any other domain — plugs into this same architecture. The 7-Tier Framework provides the epistemological operating system. The model provides the application. The distinction between them is the distinction between Tier 4 and Tier 6 — and maintaining that distinction is one of the most important disciplines this framework teaches.</p></div>';
+}
+
+var RENDERERS = {
+  overview: sOverview, epistemology: sEpistemology,
+  tier1: sTier1, tier2: sTier2, tier3: sTier3, tier4: sTier4,
+  tier5: sTier5, tier6: sTier6, tier7: sTier7,
+  jeremiah: sJeremiah, models: sModels,
+};
+
+function renderContent() { document.getElementById("main-content").innerHTML = RENDERERS[activeSection]() + navFooter(); }
+renderNav(); renderContent();
+</script>
+</body>
+</html>

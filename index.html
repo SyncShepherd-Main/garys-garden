@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gary Springer's Garden</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: #f5f3ed; color: #3a3a3a; min-height: 100vh; }
+
+  header {
+    background: #1a2a1a;
+    padding: 48px 40px 40px;
+    border-bottom: 3px solid #4a7a3a;
+  }
+  header .inner { max-width: 860px; margin: 0 auto; }
+  header .label {
+    font-size: 11px; color: #4a7a3a; text-transform: uppercase;
+    letter-spacing: 3.5px; margin-bottom: 10px;
+  }
+  header h1 {
+    font-size: 38px; font-weight: 400; color: #f5f3ed;
+    line-height: 1.15; margin-bottom: 12px;
+  }
+  header .subtitle {
+    font-size: 16px; color: #8aaa80; line-height: 1.7;
+    max-width: 560px;
+  }
+
+  .main { max-width: 860px; margin: 0 auto; padding: 52px 24px 80px; }
+
+  .section-label {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 2.5px;
+    color: #8aaa80; margin-bottom: 20px; padding-bottom: 8px;
+    border-bottom: 1px solid #d8d4cc;
+  }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; margin-bottom: 52px; }
+
+  .card {
+    background: #fff;
+    border: 1px solid #d8d4cc;
+    border-radius: 8px;
+    padding: 28px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: #4a7a3a;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .card:hover {
+    border-color: #b0c4a8;
+    box-shadow: 0 4px 20px rgba(74,122,58,0.10);
+    transform: translateY(-2px);
+  }
+  .card:hover::before { transform: scaleX(1); }
+
+  .card-type {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 2px;
+    color: #4a7a3a; font-weight: 600; margin-bottom: 10px;
+  }
+  .card h2 {
+    font-size: 22px; font-weight: 500; color: #1a2a1a;
+    line-height: 1.3; margin-bottom: 10px;
+  }
+  .card .desc {
+    font-size: 14.5px; color: #666; line-height: 1.7;
+    flex: 1; margin-bottom: 20px; font-style: italic;
+  }
+  .card-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid #ece8e0; padding-top: 14px; margin-top: auto;
+  }
+  .card-format {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+    color: #aaa;
+  }
+  .card-arrow {
+    font-size: 18px; color: #4a7a3a; transition: transform 0.2s ease;
+  }
+  .card:hover .card-arrow { transform: translateX(4px); }
+
+  .card.dark {
+    background: #1a2a1a;
+    border-color: #2e4a2e;
+  }
+  .card.dark::before { background: #6aa85a; }
+  .card.dark:hover { border-color: #4a7a3a; box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
+  .card.dark .card-type { color: #6aa85a; }
+  .card.dark h2 { color: #f0ede6; }
+  .card.dark .desc { color: #8aaa80; }
+  .card.dark .card-footer { border-top-color: #2e4a2e; }
+  .card.dark .card-format { color: #556655; }
+  .card.dark .card-arrow { color: #6aa85a; }
+
+  .source-docs .cards { grid-template-columns: 1fr; }
+  .source-docs .card { flex-direction: row; gap: 20px; align-items: center; }
+  .source-docs .card h2 { font-size: 18px; margin-bottom: 4px; }
+  .source-docs .card .desc { margin-bottom: 0; }
+  .source-docs .card-footer { border: none; padding: 0; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .source-docs .card-text { flex: 1; }
+
+  footer {
+    background: #1a2a1a;
+    border-top: 1px solid #2e4a2e;
+    padding: 28px 40px;
+    text-align: center;
+  }
+  footer p {
+    font-size: 13px; color: #556655;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="label">Gary Springer</div>
+    <h1>Gary Springer's Garden</h1>
+    <p class="subtitle">Planting trees. Seeing what grows. A collection of frameworks for relationships, recovery, and the life of faith — grounded in Scripture, informed by neuroscience, and offered freely.</p>
+  </div>
+</header>
+
+<div class="main">
+
+  <div class="section-label">Interactive Viewers</div>
+  <div class="cards">
+
+    <a href="7-tier-framework.html" class="card dark">
+      <div class="card-type">Relational Theology</div>
+      <h2>The 7-Tier Relational &amp; Ideological Framework</h2>
+      <p class="desc">A hierarchical model of relational and ideological ordering — from individual relationship with God at the root, outward through scriptural community, and into the realm of ideas, discernment, and darkness.</p>
+      <div class="card-footer">
+        <span class="card-format">Interactive · 7 tiers</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="holistic-recovery-model.html" class="card dark">
+      <div class="card-type">Recovery &amp; Restoration</div>
+      <h2>A Holistic Model of Recovery &amp; Restoration</h2>
+      <p class="desc">Eight integrated layers — from systemic atmosphere and the FASTER Scale, through brain science and voice of the heart, to core needs and practical boundaries — mapped against biblical anthropology.</p>
+      <div class="card-footer">
+        <span class="card-format">Interactive · 8 layers</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="section-label source-docs">Source Documents</div>
+  <div class="cards source-docs">
+
+    <a href="7-Tier-Framework.md" class="card">
+      <div class="card-text">
+        <div class="card-type">Markdown</div>
+        <h2>7-Tier Framework — Full Text</h2>
+        <p class="desc">Complete source document including the epistemological statement, all seven tiers with biblical tap roots, key concepts, and the full cross-reference structure.</p>
+      </div>
+      <div class="card-footer">
+        <span class="card-format">.md</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="seven-layers.md" class="card">
+      <div class="card-text">
+        <div class="card-type">Markdown</div>
+        <h2>Eight-Layer Model — Complete Reference</h2>
+        <p class="desc">The full written reference for the eight-layer recovery model, including the core equation, each layer's framework and key concepts, the diagnostic workflow, VIM architecture, and cross-reference matrix.</p>
+      </div>
+      <div class="card-footer">
+        <span class="card-format">.md</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="biblical-roots.md" class="card">
+      <div class="card-text">
+        <div class="card-type">Markdown</div>
+        <h2>Biblical Roots of the Seven-Layer Model</h2>
+        <p class="desc">A theological supplement tracing each layer's scriptural foundation — anchored in the broadcast metaphor of Isaiah 30:21 and the Jeremiah 17 contrast between flesh and the fear of the LORD.</p>
+      </div>
+      <div class="card-footer">
+        <span class="card-format">.md</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+
+</div>
+
+<footer>
+  <p>Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
+</footer>
+
+</body>
+</html>
