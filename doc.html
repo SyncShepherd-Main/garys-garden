@@ -259,10 +259,26 @@ if (!meta) {
     .then(function(r) { return r.text(); })
     .then(function(md) {
       document.getElementById('doc-content').innerHTML = parseMarkdown(md);
+      // Scroll to hash fragment after content is rendered
+      if (window.location.hash) {
+        var target = document.getElementById(window.location.hash.slice(1));
+        if (target) target.scrollIntoView();
+      }
     })
     .catch(function() {
       document.getElementById('doc-content').innerHTML = '<p>Failed to load document. <a href="index.html">Return home</a>.</p>';
     });
+
+  // Handle clicks on in-page anchor links
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (a && a.getAttribute('href') && a.getAttribute('href').charAt(0) === '#') {
+      e.preventDefault();
+      var id = a.getAttribute('href').slice(1);
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 }
 </script>
 </body>
