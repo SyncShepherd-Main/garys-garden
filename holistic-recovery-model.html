@@ -14,6 +14,17 @@
   header .label { font-size: 11px; color: #c77d00; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 8px; }
   header h1 { font-size: 34px; font-weight: 400; color: #f5f3ed; line-height: 1.15; margin-bottom: 8px; }
   header .subtitle { font-size: 15px; color: #999; line-height: 1.6; }
+  header nav.site-nav {
+    margin-top: 14px; display: flex; gap: 20px; flex-wrap: wrap;
+  }
+  header nav.site-nav a {
+    font-size: 13px; color: #999; text-decoration: none;
+    letter-spacing: 0.5px; padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  header nav.site-nav a:hover { color: #f5f3ed; border-bottom-color: #c77d00; }
+  header nav.site-nav a.active { color: #f5f3ed; border-bottom-color: #c77d00; }
 
   .layout { max-width: 940px; margin: 0 auto; display: flex; gap: 40px; padding: 32px 24px; }
   nav { width: 190px; flex-shrink: 0; position: sticky; top: 20px; align-self: flex-start; }
@@ -149,6 +160,11 @@
     <h1>Eight Layers of Recovery &amp; Restoration</h1>
     <div class="subtitle">Integrating Friedman, Dye, Wilder, Dodd, Sande, Koch, Cloud &amp; Willard into a unified model for lasting change</div>
     <div style="margin-top:12px;"><a href="7-tier-framework.html" style="font-size:13px; color:#c77d00; text-decoration:none; border-bottom:1px solid rgba(199,125,0,0.3);">→ Foundation: The 7-Tier Relational &amp; Ideological Framework</a></div>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="7-tier-framework.html">7-Tier Framework</a>
+      <a href="holistic-recovery-model.html" class="active">Recovery Model</a>
+    </nav>
   </div>
 </header>
 

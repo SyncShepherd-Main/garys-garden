@@ -17,6 +17,17 @@
   header .companion { margin-top: 12px; }
   header .companion a { font-size: 13px; color: #4a7a3a; text-decoration: none; border-bottom: 1px solid #4a7a3a44; }
   header .companion a:hover { color: #6aa85a; border-color: #6aa85a; }
+  header nav.site-nav {
+    margin-top: 14px; display: flex; gap: 20px; flex-wrap: wrap;
+  }
+  header nav.site-nav a {
+    font-size: 13px; color: #8aaa80; text-decoration: none;
+    letter-spacing: 0.5px; padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  header nav.site-nav a:hover { color: #f5f3ed; border-bottom-color: #4a7a3a; }
+  header nav.site-nav a.active { color: #f5f3ed; border-bottom-color: #4a7a3a; }
 
   .layout { max-width: 940px; margin: 0 auto; display: flex; gap: 40px; padding: 32px 24px; }
   nav { width: 190px; flex-shrink: 0; position: sticky; top: 20px; align-self: flex-start; }
@@ -84,6 +95,11 @@
     <div class="companion">
       <a href="holistic-recovery-model.html">→ Companion: Eight Layers of Recovery &amp; Restoration</a>
     </div>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="7-tier-framework.html" class="active">7-Tier Framework</a>
+      <a href="holistic-recovery-model.html">Recovery Model</a>
+    </nav>
   </div>
 </header>
 

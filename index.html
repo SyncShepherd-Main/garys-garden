@@ -27,6 +27,17 @@
     font-size: 16px; color: #8aaa80; line-height: 1.7;
     max-width: 560px;
   }
+  header nav.site-nav {
+    margin-top: 18px; display: flex; gap: 20px; flex-wrap: wrap;
+  }
+  header nav.site-nav a {
+    font-size: 13px; color: #8aaa80; text-decoration: none;
+    letter-spacing: 0.5px; padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  header nav.site-nav a:hover { color: #f5f3ed; border-bottom-color: #4a7a3a; }
+  header nav.site-nav a.active { color: #f5f3ed; border-bottom-color: #4a7a3a; }
 
   .main { max-width: 860px; margin: 0 auto; padding: 52px 24px 80px; }
 
@@ -131,6 +142,11 @@
     <div class="label">Gary Springer</div>
     <h1>Gary Springer's Garden</h1>
     <p class="subtitle">Planting trees. Seeing what grows. A collection of frameworks for relationships, recovery, and the life of faith — grounded in Scripture, informed by neuroscience, and offered freely.</p>
+    <nav class="site-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="7-tier-framework.html">7-Tier Framework</a>
+      <a href="holistic-recovery-model.html">Recovery Model</a>
+    </nav>
   </div>
 </header>
 
