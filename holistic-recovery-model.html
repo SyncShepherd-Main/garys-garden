@@ -186,6 +186,19 @@
     .navbar li a { padding: 14px 24px; border-bottom: 1px solid #2e4a2e; }
     .navbar li.sep { display: none; }
   }
+
+  .scroll-top {
+    position: fixed; bottom: 32px; right: 32px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: #1a2a1a; border: 1px solid #4a7a3a;
+    color: #8aaa80; font-size: 22px; line-height: 42px; text-align: center;
+    cursor: pointer; opacity: 0; pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    z-index: 100;
+  }
+  .scroll-top.visible { opacity: 1; pointer-events: auto; }
+  .scroll-top:hover { background: #4a7a3a; color: #fff; transform: translateY(-2px); }
 </style>
 </head>
 <body>
@@ -935,5 +948,15 @@ renderContent();
 <footer style="background:#2c2c2c; border-top:1px solid #444; padding:28px 40px; text-align:center;">
   <p style="font-size:14px; color:#b0a890;">Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
 </footer>
+
+<script>
+var scrollBtn = document.getElementById('scroll-top');
+window.addEventListener('scroll', function() {
+  scrollBtn.classList.toggle('visible', window.scrollY > 400);
+});
+scrollBtn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
 </body>
 </html>
