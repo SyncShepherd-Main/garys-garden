@@ -44,13 +44,14 @@
     display: none; background: none; border: none; cursor: pointer;
     padding: 12px; margin-right: 4px;
   }
-  .hamburger span {
+  .hamburger .bars { display: flex; flex-direction: column; }
+  .hamburger .bars span {
     display: block; width: 24px; height: 2px; background: #b0c8a8;
-    margin: 5px 0; transition: all 0.3s ease;
+    margin: 3px 0; transition: all 0.3s ease;
   }
-  .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+  .hamburger.open .bars span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.open .bars span:nth-child(2) { opacity: 0; }
+  .hamburger.open .bars span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
   .layout { max-width: 940px; margin: 0 auto; display: flex; gap: 40px; padding: 32px 24px; }
   .layout nav { width: 190px; flex-shrink: 0; position: sticky; top: 60px; align-self: flex-start; }
@@ -135,8 +136,7 @@
 
 <nav class="navbar">
   <div class="nav-wrap">
-    <button class="hamburger" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"><span class="menu-label">Menu</span>
-      <span></span><span></span><span></span>
+    <button class="hamburger" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"><span class="menu-label">Menu</span><span class="bars"><span></span><span></span><span></span></span>
     </button>
     <ul>
       <li><a href="index.html">Home</a></li>
