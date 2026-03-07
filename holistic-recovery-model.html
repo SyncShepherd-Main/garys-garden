@@ -15,16 +15,17 @@
   header h1 { font-size: 34px; font-weight: 400; color: #f5f3ed; line-height: 1.15; margin-bottom: 8px; }
   header .subtitle { font-size: 15px; color: #999; line-height: 1.6; }
   header nav.site-nav {
-    margin-top: 14px; display: flex; gap: 20px; flex-wrap: wrap;
+    margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;
   }
   header nav.site-nav a {
-    font-size: 13px; color: #999; text-decoration: none;
-    letter-spacing: 0.5px; padding-bottom: 2px;
-    border-bottom: 1px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
+    font-size: 13px; color: #e8c888; text-decoration: none;
+    letter-spacing: 0.5px; padding: 8px 18px;
+    border: 1px solid #c77d00; border-radius: 6px;
+    background: rgba(199,125,0,0.12);
+    transition: all 0.2s ease;
   }
-  header nav.site-nav a:hover { color: #f5f3ed; border-bottom-color: #c77d00; }
-  header nav.site-nav a.active { color: #f5f3ed; border-bottom-color: #c77d00; }
+  header nav.site-nav a:hover { background: #c77d00; color: #fff; }
+  header nav.site-nav a.active { background: #c77d00; color: #fff; font-weight: 600; }
 
   .layout { max-width: 940px; margin: 0 auto; display: flex; gap: 40px; padding: 32px 24px; }
   nav { width: 190px; flex-shrink: 0; position: sticky; top: 20px; align-self: flex-start; }
