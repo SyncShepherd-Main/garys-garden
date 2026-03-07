@@ -103,16 +103,21 @@
 </header>
 
 <nav class="navbar">
+  <div class="nav-wrap">
+    <button class="hamburger" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
   <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
-    <li><a href="holistic-recovery-model.html">Recovery Model</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
+      <li><a href="holistic-recovery-model.html">Recovery Model</a></li>
     <li class="sep"></li>
-    <li><a href="7-tier-full-text.html">7-Tier Full Text</a></li>
-    <li><a href="eight-layer-reference.html">Eight-Layer Reference</a></li>
-    <li><a href="biblical-roots-doc.html" class="active">Biblical Roots</a></li>
-    <li><a href="reading-list.html">Reading List</a></li>
-  </ul>
+      <li><a href="7-tier-full-text.html">7-Tier Full Text</a></li>
+      <li><a href="eight-layer-reference.html">Eight-Layer Reference</a></li>
+      <li><a href="biblical-roots-doc.html" class="active">Biblical Roots</a></li>
+      <li><a href="reading-list.html">Reading List</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div class="content" id="doc-content">
