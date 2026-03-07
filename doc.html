@@ -57,6 +57,19 @@
 
   .loading { text-align: center; padding: 60px 20px; color: #888; font-size: 18px; font-style: italic; }
 
+  .scroll-top {
+    position: fixed; bottom: 32px; right: 32px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: #1a2a1a; border: 1px solid #4a7a3a;
+    color: #8aaa80; font-size: 22px; line-height: 42px; text-align: center;
+    cursor: pointer; opacity: 0; pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    z-index: 100;
+  }
+  .scroll-top.visible { opacity: 1; pointer-events: auto; }
+  .scroll-top:hover { background: #4a7a3a; color: #fff; transform: translateY(-2px); }
+
   footer {
     background: #1a2a1a; border-top: 1px solid #2e4a2e;
     padding: 28px 40px; text-align: center;
@@ -90,6 +103,8 @@
 <div class="content" id="doc-content">
   <div class="loading">Loading document...</div>
 </div>
+
+<div class="scroll-top" id="scroll-top" title="Scroll to top">&#8593;</div>
 
 <footer>
   <p>Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
@@ -261,18 +276,11 @@ if (!meta) {
       var container = document.getElementById('doc-content');
       container.innerHTML = parseMarkdown(md);
 
-      // Debug: log all ids on the page
-      var allIds = container.querySelectorAll('[id]');
-      console.log('Elements with ids:', allIds.length);
-      allIds.forEach(function(el) { console.log('  id:', el.id, 'tag:', el.tagName); });
-
       // Scroll to hash fragment after content is rendered
       function scrollToHash() {
         if (window.location.hash) {
           var id = window.location.hash.slice(1);
-          console.log('Looking for id:', id);
           var target = document.getElementById(id);
-          console.log('Found:', target);
           if (target) {
             target.scrollIntoView();
             return true;
@@ -302,6 +310,15 @@ if (!meta) {
       document.getElementById('doc-content').innerHTML = '<p>Failed to load document. <a href="index.html">Return home</a>.</p>';
     });
 }
+
+// Scroll-to-top button
+var scrollBtn = document.getElementById('scroll-top');
+window.addEventListener('scroll', function() {
+  scrollBtn.classList.toggle('visible', window.scrollY > 400);
+});
+scrollBtn.addEventListener('click', function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 </script>
 </body>
 </html>
