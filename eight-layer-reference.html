@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document — Gary Springer's Garden</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
+<title>Eight-Layer Model — Complete Reference — Gary Springer's Garden</title>
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Inter', -apple-system, sans-serif; background: #f5f3ed; color: #3a3a3a; min-height: 100vh; display: flex; flex-direction: column; }
 
@@ -95,8 +94,8 @@
 <header>
   <div class="inner">
     <div class="label">Source Document</div>
-    <h1 id="page-title">Loading...</h1>
-    <div class="subtitle" id="page-subtitle"></div>
+    <h1>Eight-Layer Model — Complete Reference</h1>
+    <div class="subtitle">The full written reference for the eight-layer recovery model, including the core equation, each layer's framework, the diagnostic workflow, and cross-reference matrix.</div>
   </div>
 </header>
 
@@ -106,10 +105,10 @@
     <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
     <li><a href="holistic-recovery-model.html">Recovery Model</a></li>
     <li class="sep"></li>
-    <li><a href="doc.html?file=7-Tier-Framework.md">7-Tier Full Text</a></li>
-    <li><a href="doc.html?file=seven-layers.md">Eight-Layer Reference</a></li>
-    <li><a href="doc.html?file=biblical-roots.md">Biblical Roots</a></li>
-    <li><a href="doc.html?file=recommended-reading.md">Reading List</a></li>
+    <li><a href="7-tier-full-text.html">7-Tier Full Text</a></li>
+    <li><a href="eight-layer-reference.html" class="active">Eight-Layer Reference</a></li>
+    <li><a href="biblical-roots-doc.html">Biblical Roots</a></li>
+    <li><a href="reading-list.html">Reading List</a></li>
   </ul>
 </nav>
 
@@ -124,30 +123,6 @@
 </footer>
 
 <script>
-var DOCS = {
-  '7-Tier-Framework.md': {
-    title: '7-Tier Framework — Full Text',
-    subtitle: 'Complete source document including the epistemological statement, all seven tiers with biblical tap roots, and the full cross-reference structure.'
-  },
-  'seven-layers.md': {
-    title: 'Eight-Layer Model — Complete Reference',
-    subtitle: 'The full written reference for the eight-layer recovery model, including the core equation, each layer\'s framework, the diagnostic workflow, and cross-reference matrix.'
-  },
-  'biblical-roots.md': {
-    title: 'Biblical Roots of the Seven-Layer Model',
-    subtitle: 'A theological supplement tracing each layer\'s scriptural foundation — anchored in the broadcast metaphor of Isaiah 30:21.'
-  },
-  'recommended-reading.md': {
-    title: 'Recommended Reading',
-    subtitle: 'A complete bibliography for the Eight-Layer Recovery Model and the 7-Tier Framework, with a guided reading pathway.'
-  }
-};
-
-function getDoc() {
-  var params = new URLSearchParams(window.location.search);
-  return params.get('file') || '';
-}
-
 function escapeHtml(text) {
   var d = document.createElement('div');
   d.textContent = text;
@@ -276,59 +251,41 @@ function inline(text) {
   return text;
 }
 
-var file = getDoc();
-var meta = DOCS[file];
 
-if (!meta) {
-  document.getElementById('page-title').textContent = 'Document Not Found';
-  document.getElementById('doc-content').innerHTML = '<p>The requested document could not be found. <a href="index.html">Return home</a>.</p>';
-} else {
-  document.title = meta.title + ' — Gary Springer\'s Garden';
-  document.getElementById('page-title').textContent = meta.title;
-  document.getElementById('page-subtitle').textContent = meta.subtitle;
+fetch('seven-layers.md')
+  .then(function(r) { return r.text(); })
+  .then(function(md) {
+    var container = document.getElementById('doc-content');
+    container.innerHTML = parseMarkdown(md);
 
-  fetch(file)
-    .then(function(r) { return r.text(); })
-    .then(function(md) {
-      var container = document.getElementById('doc-content');
-      container.innerHTML = parseMarkdown(md);
-
-      // Scroll to hash fragment after content is rendered
-      function scrollToHash() {
-        if (window.location.hash) {
-          var id = window.location.hash.slice(1);
-          var target = document.getElementById(id);
-          if (target) {
-            target.scrollIntoView();
-            return true;
-          }
-        }
-        return false;
+    function scrollToHash() {
+      if (window.location.hash) {
+        var id = window.location.hash.slice(1);
+        var target = document.getElementById(id);
+        if (target) { target.scrollIntoView(); return true; }
       }
-      scrollToHash();
+      return false;
+    }
+    scrollToHash();
 
-      // Handle clicks on in-page anchor links
-      container.addEventListener('click', function(e) {
-        var el = e.target;
-        while (el && el.tagName !== 'A') el = el.parentElement;
-        if (el && el.getAttribute('href') && el.getAttribute('href').charAt(0) === '#') {
-          e.preventDefault();
-          var id = el.getAttribute('href').slice(1);
-          var target = document.getElementById(id);
-          if (target) target.scrollIntoView({ behavior: 'smooth' });
-          history.replaceState(null, '', el.getAttribute('href'));
-        }
-      });
-
-      // Also handle hashchange
-      window.addEventListener('hashchange', scrollToHash);
-    })
-    .catch(function() {
-      document.getElementById('doc-content').innerHTML = '<p>Failed to load document. <a href="index.html">Return home</a>.</p>';
+    container.addEventListener('click', function(e) {
+      var el = e.target;
+      while (el && el.tagName !== 'A') el = el.parentElement;
+      if (el && el.getAttribute('href') && el.getAttribute('href').charAt(0) === '#') {
+        e.preventDefault();
+        var id = el.getAttribute('href').slice(1);
+        var target = document.getElementById(id);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+        history.replaceState(null, '', el.getAttribute('href'));
+      }
     });
-}
 
-// Scroll-to-top button
+    window.addEventListener('hashchange', scrollToHash);
+  })
+  .catch(function() {
+    document.getElementById('doc-content').innerHTML = '<p>Failed to load document. <a href="index.html">Return home</a>.</p>';
+  });
+
 var scrollBtn = document.getElementById('scroll-top');
 window.addEventListener('scroll', function() {
   scrollBtn.classList.toggle('visible', window.scrollY > 400);
