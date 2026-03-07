@@ -170,11 +170,21 @@ function parseMarkdown(md) {
       inList = false;
     }
 
-    // Headings
-    if (/^####\s/.test(line)) { html += '<h4>' + inline(line.replace(/^####\s+/, '')) + '</h4>'; continue; }
-    if (/^###\s/.test(line)) { html += '<h3>' + inline(line.replace(/^###\s+/, '')) + '</h3>'; continue; }
-    if (/^##\s/.test(line)) { html += '<h2>' + inline(line.replace(/^##\s+/, '')) + '</h2>'; continue; }
-    if (/^#\s/.test(line)) { html += '<h1>' + inline(line.replace(/^#\s+/, '')) + '</h1>'; continue; }
+    // Headings (extract <a name="..."></a> as id attribute)
+    var hMatch = line.match(/^(#{1,4})\s+(.*)/);
+    if (hMatch) {
+      var hLevel = hMatch[1].length;
+      var hText = hMatch[2];
+      var hId = '';
+      var anchorMatch = hText.match(/<a\s+name="([^"]+)">\s*<\/a>\s*/);
+      if (anchorMatch) {
+        hId = anchorMatch[1];
+        hText = hText.replace(anchorMatch[0], '');
+      }
+      var idAttr = hId ? ' id="' + hId + '"' : '';
+      html += '<h' + hLevel + idAttr + '>' + inline(hText) + '</h' + hLevel + '>';
+      continue;
+    }
 
     // HR
     if (/^---+$/.test(line.trim())) { html += '<hr>'; continue; }
@@ -229,8 +239,8 @@ function inline(text) {
   text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
   // Inline code
   text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
-  // Anchor tags from source
-  text = text.replace(/<a name="[^"]*"><\/a>/g, '');
+  // Anchor tags from source — preserve as span with id for linking
+  text = text.replace(/<a\s+name="([^"]+)">\s*<\/a>/g, '<span id="$1"></span>');
   return text;
 }
 
