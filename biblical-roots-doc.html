@@ -81,14 +81,15 @@
   .loading { text-align: center; padding: 60px 20px; color: #888; font-size: 18px; font-style: italic; }
 
   .scroll-top {
-    position: fixed; bottom: 32px; right: 32px;
-    width: 44px; height: 44px; border-radius: 50%;
-    background: #1a2a1a; border: 1px solid #4a7a3a;
-    color: #8aaa80; font-size: 22px; line-height: 42px; text-align: center;
+    position: fixed; bottom: 24px; right: 24px;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: #1a2a1a; border: 2px solid #4a7a3a;
+    color: #8aaa80; font-size: 24px; line-height: 44px; text-align: center;
     cursor: pointer; opacity: 0; pointer-events: none;
     transition: opacity 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-    z-index: 100;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+    z-index: 9999;
+    -webkit-tap-highlight-color: transparent;
   }
   .scroll-top.visible { opacity: 1; pointer-events: auto; }
   .scroll-top:hover { background: #4a7a3a; color: #fff; transform: translateY(-2px); }
@@ -322,12 +323,15 @@ fetch('biblical-roots.md')
   });
 
 var scrollBtn = document.getElementById('scroll-top');
-window.addEventListener('scroll', function() {
-  scrollBtn.classList.toggle('visible', window.scrollY > 200);
-});
-scrollBtn.addEventListener('click', function() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+if (scrollBtn) {
+  window.addEventListener('scroll', function() {
+    scrollBtn.classList.toggle('visible', window.scrollY > 200);
+  }, { passive: true });
+  scrollBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  if (window.scrollY > 200) scrollBtn.classList.add('visible');
+}
 </script>
 </body>
 </html>
