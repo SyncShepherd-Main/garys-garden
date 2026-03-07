@@ -45,6 +45,10 @@
   .navbar li a:hover { background: #2e4a2e; color: #fff; }
   .navbar li a.active { color: #fff; background: #2e4a2e; font-weight: 600; }
   .navbar li.sep { border-left: 1px solid #3a5a3a; margin: 8px 4px; }
+  .hamburger .menu-label {
+    display: none; font-size: 14px; color: #b0c8a8; font-weight: 500;
+    letter-spacing: 0.5px;
+  }
   .hamburger {
     display: none; background: none; border: none; cursor: pointer;
     padding: 12px; margin-right: 4px;
@@ -60,7 +64,8 @@
     header { padding: 32px 20px 28px; }
     header h1 { font-size: 28px; }
     header .subtitle { font-size: 15px; }
-    .hamburger { display: block; }
+    .hamburger { display: flex; align-items: center; gap: 10px; }
+    .hamburger .menu-label { display: inline; }
     .navbar ul {
       display: none; flex-direction: column;
       position: absolute; top: 100%; left: 0; right: 0;
@@ -185,7 +190,7 @@
 
 <nav class="navbar">
   <div class="nav-wrap">
-    <button class="hamburger" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+    <button class="hamburger" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"><span class="menu-label">Menu</span>
       <span></span><span></span><span></span>
     </button>
     <ul>
