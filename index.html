@@ -12,7 +12,6 @@
   header {
     background: #1a2a1a;
     padding: 48px 40px 40px;
-    border-bottom: 3px solid #4a7a3a;
   }
   header .inner { max-width: 860px; margin: 0 auto; }
   header .label {
@@ -27,18 +26,45 @@
     font-size: 17px; color: #8aaa80; line-height: 1.7;
     max-width: 600px;
   }
-  header nav.site-nav {
-    margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;
+  .navbar {
+    background: #1a2a1a; border-bottom: 1px solid #2e4a2e;
+    position: sticky; top: 0; z-index: 100;
   }
-  header nav.site-nav a {
-    font-size: 14px; color: #d0e8c8; text-decoration: none;
-    letter-spacing: 0.3px; padding: 8px 18px;
-    border: 1px solid #4a7a3a; border-radius: 6px;
-    background: rgba(74,122,58,0.15);
-    transition: all 0.2s ease;
+  .navbar .nav-inner {
+    max-width: 860px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; gap: 0;
   }
-  header nav.site-nav a:hover { background: #4a7a3a; color: #fff; }
-  header nav.site-nav a.active { background: #4a7a3a; color: #fff; font-weight: 600; }
+  .navbar a, .navbar .dropdown-toggle {
+    font-size: 15px; color: #b0c8a8; text-decoration: none;
+    padding: 14px 20px; display: block;
+    transition: background 0.15s, color 0.15s;
+    border: none; background: none; cursor: pointer;
+    font-family: inherit; font-size: 15px;
+  }
+  .navbar a:hover, .navbar .dropdown-toggle:hover { background: #2e4a2e; color: #fff; }
+  .navbar a.active { color: #fff; box-shadow: inset 0 -3px 0 #4a7a3a; font-weight: 600; }
+  .dropdown { position: relative; }
+  .dropdown-toggle::after { content: ' \25BE'; font-size: 12px; }
+  .dropdown-menu {
+    display: none; position: absolute; top: 100%; left: 0;
+    background: #1a2a1a; border: 1px solid #2e4a2e; border-top: none;
+    min-width: 240px; box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    z-index: 200;
+  }
+  .dropdown-menu a { padding: 12px 20px; white-space: nowrap; }
+  .dropdown-menu a:hover { background: #2e4a2e; }
+  .dropdown:hover .dropdown-menu { display: block; }
+  .mobile-toggle { display: none; padding: 14px 20px; color: #b0c8a8; background: none; border: none; font-size: 22px; cursor: pointer; margin-left: auto; }
+  @media (max-width: 700px) {
+    .mobile-toggle { display: block; }
+    .navbar .nav-inner { flex-wrap: wrap; }
+    .nav-links { display: none; width: 100%; flex-direction: column; }
+    .nav-links.open { display: flex; }
+    .dropdown-menu { position: static; box-shadow: none; border: none; }
+    .dropdown-menu a { padding-left: 36px; }
+    .dropdown:hover .dropdown-menu { display: none; }
+    .dropdown.open .dropdown-menu { display: flex; flex-direction: column; }
+  }
 
   .main { max-width: 860px; margin: 0 auto; padding: 52px 24px 80px; }
 
@@ -143,17 +169,28 @@
     <div class="label">Gary Springer</div>
     <h1>Gary Springer's Garden</h1>
     <p class="subtitle">Planting trees. Seeing what grows. A collection of frameworks for relationships, recovery, and the life of faith — grounded in Scripture, informed by neuroscience, and offered freely.</p>
-    <nav class="site-nav">
+  </div>
+</header>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <div class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="7-tier-framework.html">7-Tier Framework</a>
       <a href="holistic-recovery-model.html">Recovery Model</a>
-      <a href="doc.html?file=7-Tier-Framework.md">7-Tier Full Text</a>
-      <a href="doc.html?file=seven-layers.md">Eight-Layer Reference</a>
-      <a href="doc.html?file=biblical-roots.md">Biblical Roots</a>
-      <a href="doc.html?file=recommended-reading.md">Reading List</a>
-    </nav>
+      <div class="dropdown">
+        <button class="dropdown-toggle" onclick="this.parentElement.classList.toggle('open')">Documents</button>
+        <div class="dropdown-menu">
+          <a href="doc.html?file=7-Tier-Framework.md">7-Tier Full Text</a>
+          <a href="doc.html?file=seven-layers.md">Eight-Layer Reference</a>
+          <a href="doc.html?file=biblical-roots.md">Biblical Roots</a>
+          <a href="doc.html?file=recommended-reading.md">Reading List</a>
+        </div>
+      </div>
+    </div>
   </div>
-</header>
+</nav>
 
 <div class="main">
 
