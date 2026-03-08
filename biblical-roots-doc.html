@@ -3,335 +3,1748 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biblical Roots of the Seven-Layer Model — Gary Springer's Garden</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Biblical Roots of the Eight-Layer Recovery Model</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', -apple-system, sans-serif; background: #f5f3ed; color: #3a3a3a; min-height: 100vh; display: flex; flex-direction: column; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: #f5f3ed;
+    color: #3a3a3a;
+    min-height: 100vh;
+  }
 
-  header { background: #1a2a1a; padding: 32px 40px; border-bottom: 3px solid #4a7a3a; }
-  header .inner { max-width: 860px; margin: 0 auto; }
-  header .label { font-size: 12px; color: #4a7a3a; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 8px; }
-  header h1 { font-size: 34px; font-weight: 600; color: #f5f3ed; line-height: 1.15; margin-bottom: 8px; }
-  header .subtitle { font-size: 16px; color: #8aaa80; line-height: 1.6; }
-  .navbar {
-    background: #223522; border-bottom: 1px solid #2e4a2e;
-    position: sticky; top: 0; z-index: 100;
+  header {
+    background: #2c2c2c;
+    padding: 32px 40px;
+    border-bottom: 3px solid #c77d00;
   }
-  .navbar .nav-wrap {
-    max-width: 960px; margin: 0 auto; padding: 0 16px;
-    display: flex; align-items: center; justify-content: space-between;
+  header .inner { max-width: 780px; margin: 0 auto; }
+  header .label {
+    font-size: 11px;
+    color: #c77d00;
+    text-transform: uppercase;
+    letter-spacing: 3.5px;
+    margin-bottom: 8px;
   }
-  .navbar ul {
-    display: flex; list-style: none; gap: 0; margin: 0; padding: 0;
+  header h1 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #f5f3ed;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    font-family: 'EB Garamond', Georgia, serif;
   }
-  .navbar li a {
-    font-size: 15px; color: #b0c8a8; text-decoration: none;
-    padding: 14px 18px; display: block; white-space: nowrap;
-    transition: background 0.15s, color 0.15s;
+  header .subtitle {
+    font-size: 15px;
+    color: #999;
+    font-style: italic;
+    font-family: 'EB Garamond', Georgia, serif;
   }
-  .navbar li a:hover { background: #2e4a2e; color: #fff; }
-  .navbar li a.active { color: #fff; background: #2e4a2e; font-weight: 600; }
-  .navbar li.sep { border-left: 1px solid #3a5a3a; margin: 8px 4px; }
-  .hamburger .menu-label {
-    display: none; font-size: 14px; color: #b0c8a8; font-weight: 500;
-    letter-spacing: 0.5px;
+  header .companion { margin-top: 12px; }
+  header .companion a {
+    font-size: 13px;
+    color: #c77d00;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(199,125,0,0.3);
   }
-  .hamburger {
-    display: none; background: none; border: none; cursor: pointer;
-    padding: 12px; margin-right: 4px;
-  }
-  .hamburger .bars { display: flex; flex-direction: column; }
-  .hamburger .bars span {
-    display: block; width: 24px; height: 2px; background: #b0c8a8;
-    margin: 3px 0; transition: all 0.3s ease;
-  }
-  .hamburger.open .bars span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-  .hamburger.open .bars span:nth-child(2) { opacity: 0; }
-  .hamburger.open .bars span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+  header .companion a:hover { color: #e8a020; }
 
-  .content { max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; flex: 1; width: 100%; }
+  .content {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
 
-  .content h1 { font-size: 32px; font-weight: 700; color: #1a2a1a; margin-bottom: 8px; line-height: 1.2; }
-  .content h2 { font-size: 26px; font-weight: 600; color: #2c3e2c; margin-top: 40px; margin-bottom: 12px; line-height: 1.25; }
-  .content h3 { font-size: 21px; font-weight: 600; color: #3a5a3a; margin-top: 32px; margin-bottom: 10px; }
-  .content h4 { font-size: 18px; font-weight: 600; color: #4a7a3a; margin-top: 24px; margin-bottom: 8px; }
-  .content p { font-size: 17px; line-height: 1.85; margin-bottom: 16px; }
+  .content h1 { display: none; }
+  .content h2 {
+    font-size: 26px;
+    font-weight: 400;
+    color: #2c2c2c;
+    margin: 48px 0 6px;
+    line-height: 1.25;
+    font-family: 'EB Garamond', Georgia, serif;
+    border-bottom: 1px solid #e0dcd4;
+    padding-bottom: 8px;
+  }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 {
+    font-size: 19px;
+    font-weight: 500;
+    color: #c77d00;
+    margin: 32px 0 10px;
+    line-height: 1.3;
+    font-family: 'EB Garamond', Georgia, serif;
+  }
+  .content p {
+    font-size: 16px;
+    line-height: 1.85;
+    margin-bottom: 16px;
+    font-family: 'EB Garamond', Georgia, serif;
+  }
   .content em { color: #555; }
-  .content strong { color: #2c2c2c; }
-  .content a { color: #4a7a3a; text-decoration: underline; text-underline-offset: 2px; }
-  .content a:hover { color: #2c5a2c; }
-  .content ul, .content ol { margin: 12px 0 16px 28px; font-size: 17px; line-height: 1.85; }
-  .content li { margin-bottom: 6px; }
+  .content strong { color: #2c2c2c; font-weight: 600; }
+
   .content blockquote {
-    border-left: 3px solid #4a7a3a; padding: 8px 0 8px 20px; margin: 24px 0;
-    background: rgba(74,122,58,0.04); border-radius: 0 6px 6px 0;
+    border-left: 3px solid #c77d00;
+    padding: 4px 0 4px 20px;
+    margin: 20px 0;
+    background: transparent;
   }
-  .content blockquote p { color: #555; font-style: italic; margin-bottom: 8px; }
-  .content blockquote p:last-child { margin-bottom: 0; }
-  .content hr { border: none; border-top: 1px solid #d8d4cc; margin: 36px 0; }
-  .content code { font-family: monospace; background: #e8e4dc; padding: 2px 6px; border-radius: 3px; font-size: 14px; }
-  .content pre { background: #1a2a1a; color: #d0e8c8; padding: 20px; border-radius: 8px; overflow-x: auto; margin: 20px 0; }
-  .content pre code { background: none; padding: 0; color: inherit; }
-  .content table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 16px; }
-  .content th { background: #1a2a1a; color: #f5f3ed; padding: 10px 14px; text-align: left; font-weight: 500; }
-  .content td { padding: 10px 14px; border-bottom: 1px solid #d8d4cc; }
-  .content tr:nth-child(even) td { background: #f0ede6; }
-
-  .loading { text-align: center; padding: 60px 20px; color: #888; font-size: 18px; font-style: italic; }
-
-  .scroll-top {
-    position: fixed; bottom: 24px; right: 24px;
-    width: 48px; height: 48px; border-radius: 50%;
-    background: #1a2a1a; border: 2px solid #4a7a3a;
-    color: #8aaa80; font-size: 24px; line-height: 44px; text-align: center;
-    cursor: pointer; opacity: 0; pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.3);
-    z-index: 9999;
-    -webkit-tap-highlight-color: transparent;
+  .content blockquote p {
+    font-size: 15.5px;
+    font-style: italic;
+    color: #555;
+    line-height: 1.75;
+    margin-bottom: 4px;
   }
-  .scroll-top.visible { opacity: 1; pointer-events: auto; }
-  .scroll-top:hover { background: #4a7a3a; color: #fff; transform: translateY(-2px); }
-
-  footer {
-    background: #1a2a1a; border-top: 1px solid #2e4a2e;
-    padding: 28px 40px; text-align: center;
+  .content blockquote p:last-child {
+    font-style: normal;
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 0;
   }
-  footer p { font-size: 14px; color: #8aaa80; }
+
+  .content ul, .content ol {
+    margin: 12px 0 16px 24px;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 15.5px;
+    line-height: 1.75;
+  }
+  .content li { margin-bottom: 6px; }
+
+  .content hr {
+    border: none;
+    border-top: 1px solid #e0dcd4;
+    margin: 40px 0;
+  }
+
+  .footer-note {
+    text-align: center;
+    padding: 20px 24px 40px;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 13px;
+    color: #bbb;
+    font-style: italic;
+  }
+  .footer-note a { color: #c77d00; text-decoration: none; }
+
+  /* Site navbar */
+  .site-nav { background: #1a1a1a; padding: 0 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
+  .site-nav .nav-inner { max-width: 940px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .site-nav .nav-home { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8aaa80; text-decoration: none; padding: 12px 0; white-space: nowrap; }
+  .site-nav .nav-home:hover { color: #b0c8a8; }
+  .site-nav ul { list-style: none; display: flex; gap: 0; margin: 0; padding: 0; flex-wrap: wrap; }
+  .site-nav li a { font-family: 'EB Garamond', Georgia, serif; font-size: 13.5px; color: #999; text-decoration: none; padding: 12px 14px; display: block; transition: color 0.2s; white-space: nowrap; }
+  .site-nav li a:hover { color: #f0ede6; }
+  .site-nav li a.active { color: #f0ede6; font-weight: 600; }
+  .site-nav .nav-sep { width: 1px; background: #333; margin: 8px 4px; align-self: stretch; }
+  .site-nav .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 12px 0; }
+  .site-nav .hamburger .bar { display: block; width: 20px; height: 2px; background: #999; margin: 4px 0; transition: all 0.3s; }
+  .site-footer { background: #1a2a1a; border-top: 1px solid #2e4a2e; padding: 28px 40px; text-align: center; }
+  .site-footer p { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; color: #556655; }
+  .site-footer a { color: #8aaa80; text-decoration: none; }
+  @media (max-width: 700px) {
+    .site-nav .hamburger { display: block; }
+    .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; }
+    .site-nav ul.open { display: flex; }
+    .site-nav .nav-inner { flex-wrap: wrap; }
+    .site-nav .nav-sep { display: none; }
+    .site-nav li a { padding: 8px 0; }
+  }
 
   @media (max-width: 600px) {
     header { padding: 24px 20px; }
     header h1 { font-size: 26px; }
-    .hamburger { display: flex; align-items: center; gap: 10px; }
-    .hamburger .menu-label { display: inline; }
-    .navbar ul {
-      display: none; flex-direction: column;
-      position: absolute; top: 100%; left: 0; right: 0;
-      background: #223522; border-bottom: 2px solid #2e4a2e;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    }
-    .navbar ul.open { display: flex; }
-    .navbar .nav-wrap { position: relative; }
-    .navbar li a { padding: 14px 24px; border-bottom: 1px solid #2e4a2e; }
-    .navbar li.sep { display: none; }
-    .content { padding: 32px 16px 60px; }
-    .content h1 { font-size: 26px; }
+    .content { padding: 24px 16px 60px; }
     .content h2 { font-size: 22px; }
+  }
+
+  @media print {
+    header { background: white; border-bottom-color: #ccc; }
+    header h1 { color: #2c2c2c; }
+    header .label { color: #999; }
+    body { background: white; }
   }
 </style>
 </head>
 <body>
 
+<div class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Gary Springer's Garden</a>
+    <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <ul>
+      <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
+      <li><a href="holistic-recovery-model.html">Recovery Model</a></li>
+      <li><a href="biblical-roots-doc.html" class="active">Biblical Roots</a></li>
+      <li><a href="immanuel-moments.html">Immanuel Moments</a></li>
+      <li class="nav-sep"></li>
+      <li><a href="recommended-reading.html">Reading List</a></li>
+    </ul>
+  </div>
+</div>
+
 <header>
   <div class="inner">
-    <div class="label">Source Document</div>
-    <h1>Biblical Roots of the Seven-Layer Model</h1>
-    <div class="subtitle">A theological supplement tracing each layer's scriptural foundation — anchored in the broadcast metaphor of Isaiah 30:21.</div>
+    <div class="label">Biblical Roots Supplement</div>
+    <h1>Biblical Roots of the Eight-Layer Recovery Model</h1>
+    <div class="subtitle">A Supplement to Eight Layers of Recovery &amp; Restoration</div>
+    <div class="companion">
+      <a href="holistic-recovery-model.html">&rarr; Eight Layers of Recovery &amp; Restoration</a>
+      &nbsp;&middot;&nbsp;
+      <a href="7-tier-framework.html">&rarr; The 7-Tier Framework</a>
+    </div>
   </div>
 </header>
 
-<nav class="navbar">
-  <div class="nav-wrap">
-    <button class="hamburger" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"><span class="menu-label">Menu</span><span class="bars"><span></span><span></span><span></span></span>
-    </button>
-  <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
-      <li><a href="holistic-recovery-model.html">Recovery Model</a></li>
-    <li class="sep"></li>
-      <li><a href="7-tier-full-text.html">7-Tier Full Text</a></li>
-      <li><a href="eight-layer-reference.html">Eight-Layer Reference</a></li>
-      <li><a href="biblical-roots-doc.html" class="active">Biblical Roots</a></li>
-      <li><a href="reading-list.html">Reading List</a></li>
-    </ul>
-  </div>
-</nav>
+<div class="content">
+<h2 id="tuning-in-the-governing-metaphor">Tuning In: The Governing
+Metaphor</h2>
+<p>There is a broadcast. It has never stopped. The voice of the LORD has
+been going out since He first spoke light into existence, and it has not
+returned void (Isaiah 55:11). The question of recovery — of restoration
+— is not whether God is speaking, but whether we are tuned in.</p>
+<p>The prophet Isaiah captures the posture:</p>
+<blockquote>
+<p><em>“Your ears will hear a word behind you, ‘This is the way, walk in
+it,’ whenever you turn to the right or to the left.”</em> — Isaiah
+30:21</p>
+</blockquote>
+<p>This is not a voice that shouts over the noise of our coping
+mechanisms. It is a voice that speaks <em>behind</em> us — close,
+personal, directional. But it requires ears that have been trained to
+hear. The entire architecture of this recovery model — every layer,
+every tool, every practice — exists for one purpose: to get the receiver
+tuned to the frequency that has been broadcasting since Genesis 1.</p>
+<p>The alternative is static. Jeremiah names it plainly:</p>
+<blockquote>
+<p><em>“Cursed is the man who trusts in man and makes flesh his
+strength, whose heart turns away from the LORD. He is like a shrub in
+the desert and shall not see any good come.”</em> — Jeremiah 17:5–6</p>
+</blockquote>
+<p>The flesh is not a radio. It is static that <em>sounds</em> like a
+signal. Every false belief encoded in the limbic system, every survival
+pattern, every coping mechanism — these are the flesh broadcasting on a
+frequency that feels like life but leads to the salt land. The work of
+recovery is not inventing a new signal. It is removing the interference
+so the original broadcast — the one that has been playing since “Let
+there be light” — can finally be heard.</p>
+<blockquote>
+<p><em>“The heavens declare the glory of God, and the sky above
+proclaims his handiwork. Day to day pours out speech, and night to night
+reveals knowledge. There is no speech, nor are there words, whose voice
+is not heard.”</em> — Psalm 19:1–3</p>
+</blockquote>
+<p>The broadcast is continuous. The question is always: <em>where are
+your roots, and what frequency are they drawing from?</em></p>
+<hr />
+<h2 id="the-foundation-the-heart-and-its-healer">The Foundation: The
+Heart and Its Healer</h2>
+<p>Before the seven layers, there is the heart — the wellspring, the
+seat of will, thought, and desire, the place where every battle is won
+or lost before it ever reaches the surface.</p>
+<h3 id="what-scripture-says-about-the-heart">What Scripture Says About
+the Heart</h3>
+<blockquote>
+<p><em>“Keep your heart with all vigilance, for from it flow the springs
+of life.”</em> — Proverbs 4:23</p>
+</blockquote>
+<p>This is the governing command of the entire model. The Hebrew
+<em>natsar</em> — “keep,” “guard,” “watch over” — is the language of a
+sentinel, not a passive observer. Every layer of this framework is a way
+of keeping watch over the heart.</p>
+<blockquote>
+<p><em>“The heart is deceitful above all things, and desperately sick;
+who can understand it? I the LORD search the heart and test the
+mind.”</em> — Jeremiah 17:9–10</p>
+</blockquote>
+<p>Here is the diagnostic reality that makes every tool in this model
+necessary. The heart is not merely uninformed — it is
+<em>deceitful</em>. It generates false beliefs about God, about self,
+about others, and it disguises them as survival truths. Only the LORD
+searches it truly. This is why recovery cannot be a self-help project.
+It requires a Searcher who sees what we cannot.</p>
+<blockquote>
+<p><em>“Create in me a clean heart, O God, and renew a right spirit
+within me.”</em> — Psalm 51:10</p>
+</blockquote>
+<p>David’s prayer is the prayer of recovery. The Hebrew <em>bara</em> —
+“create” — is the same word used in Genesis 1:1. It is the word for
+making something from nothing, the word reserved for God’s exclusive
+action. David does not ask to <em>improve</em> his heart or <em>fix</em>
+his heart. He asks God to <em>create</em> — because what is needed is
+not renovation but new creation. This is the theological ground beneath
+the neurological language of “rewiring”: only God creates new
+hearts.</p>
+<blockquote>
+<p><em>“And I will give you a new heart, and a new spirit I will put
+within you. And I will remove the heart of stone from your flesh and
+give you a heart of flesh.”</em> — Ezekiel 36:26</p>
+</blockquote>
+<p>The promise. The limbic system hardened by trauma, the survival brain
+calcified by years of false beliefs — God names this “stone” and
+promises to replace it with living tissue. This is what the Genesis
+Process is working toward. This is what Wilder’s Immanuel Journey
+facilitates. This is the destination of every Double Bind decision made
+in faith.</p>
+<h3 id="jesus-on-the-heart">Jesus on the Heart</h3>
+<blockquote>
+<p><em>“For from within, out of the heart of man, come evil thoughts,
+sexual immorality, theft, murder, adultery, coveting, wickedness,
+deceit, sensuality, envy, slander, pride, foolishness. All these evil
+things come from within, and they defile a person.”</em> — Mark
+7:21–23</p>
+</blockquote>
+<p>Jesus locates the source of every destructive behavior exactly where
+the Genesis Process locates it: in the heart. Not in circumstances, not
+in other people, not in the substance or the screen. In the heart. This
+is why behavioral management alone always fails — it addresses the fruit
+while the root remains untouched.</p>
+<blockquote>
+<p><em>“Where your treasure is, there your heart will be also.”</em> —
+Matthew 6:21</p>
+</blockquote>
+<p>This is the VIM principle stated by Jesus centuries before Willard
+named it. What you <em>vision</em> (treasure), your heart follows
+toward. The false VIM of addiction has a treasure — relief, numbness,
+the illusion of safety. The godly VIM has a different treasure. Recovery
+is a reorientation of treasure — and the heart follows.</p>
+<hr />
+<h2 id="the-gospel-what-makes-any-of-this-possible">The Gospel: What
+Makes Any of This Possible</h2>
+<p>Everything above — the deceitful heart, the desperate sickness, the
+need for a creation-level intervention — establishes the problem.
+Everything below — the eight layers, the diagnostic tools, the practices
+of recovery — shows how healing is applied and lived. But between the
+problem and the application stands an event. Without this event, the
+entire model is a diagnosis without a cure. The heart cannot create
+itself. The false beliefs cannot uproot themselves. The survival brain
+cannot rewire itself. Someone had to do what we could not do.</p>
+<h3 id="the-promise-plan">The Promise Plan</h3>
+<p>From the first moment of rupture — the exile from the garden, the
+hiding, the blame, the separation — God began making a promise. And the
+promise, as Walter Kaiser traces through the entire canon, has always
+been one promise stated in three parts:</p>
+<blockquote>
+<p><em>“I will be your God. You will be my people. I will dwell among
+you.”</em></p>
+</blockquote>
+<p>This is the tripartite covenant formula. It appears in Genesis, is
+formalized with Abraham, is restated at Sinai, is renewed through David,
+is proclaimed by the prophets, and arrives in its fullness in Yeshua.
+Every covenant renewal in Scripture is a restatement. Every prophet is
+pointing forward. The whole canon — from Torah through Revelation — is
+one unbroken story moving toward one event.</p>
+<blockquote>
+<p><em>“I will put my law within them, and I will write it on their
+hearts. And I will be their God, and they shall be my people.”</em> —
+Jeremiah 31:33</p>
+</blockquote>
+<blockquote>
+<p><em>“My dwelling place shall be with them, and I will be their God,
+and they shall be my people.”</em> — Ezekiel 37:27</p>
+</blockquote>
+<blockquote>
+<p><em>“I will walk among you and will be your God, and you shall be my
+people.”</em> — Leviticus 26:12</p>
+</blockquote>
+<p>The same promise, restated across centuries, pointing toward the same
+destination. God will not leave the separation unaddressed. He will not
+abandon His people in the salt land. He will come.</p>
+<h3 id="the-cup-and-the-cross">The Cup and the Cross</h3>
+<blockquote>
+<p><em>“And going a little farther he fell on his face and prayed,
+saying, ‘My Father, if it be possible, let this cup pass from me;
+nevertheless, not as I will, but as you will.’”</em> — Matthew 26:39</p>
+</blockquote>
+<p>The cup the Father gave Him was not merely physical death. It was the
+full weight of separation — the thing that every human being has been
+running from since Eden. Sin separates. Not merely morally, as a legal
+infraction, but <em>relationally</em>, as a severing of the connection
+the human heart was designed to live from. Every false belief in the
+limbic system, every descent on the FASTER Scale, every Tier 7
+captivity, every unmet core need — all of it traces back to this one
+root: separation from God.</p>
+<p>And in His death, Yeshua entered that place. The place of separation.
+The salt land. The place where God is not. The cry of dereliction — “My
+God, my God, why have you forsaken me?” (Matthew 27:46) — is not a loss
+of faith. It is the Son experiencing, for the first and only time, what
+every broken human being has experienced since the garden: the absence
+of the Father’s presence. He went to the place where we were.</p>
+<p>He entered the place of separation <em>to meet us there</em>. Not to
+call down from safety. Not to send instructions from a distance. He came
+down. He drank the cup. He bore the curse of Jeremiah 17:5 — “cursed is
+the man who trusts in man and makes flesh his strength” — in His own
+body. He became the shrub in the desert so that we could become the tree
+planted by water.</p>
+<p>And when He met us in the place of separation — He removed what we
+could not remove. He took the sin that we could not uproot. He bore the
+grief we could not carry. He did through His death what no amount of
+self-awareness, no therapeutic technique, no FASTER check-in, no Change
+Group could ever do: He destroyed the wall of separation itself.</p>
+<blockquote>
+<p><em>“For our sake he made him to be sin who knew no sin, so that in
+him we might become the righteousness of God.”</em> — 2 Corinthians
+5:21</p>
+</blockquote>
+<p>And then He rose. The resurrection is not an epilogue. It is the
+vindication of everything — the proof that the separation is truly
+destroyed, that the new creation has begun, that the promise plan has
+arrived at its climax. The same power that raised Yeshua from the dead
+is the power now at work in the heart of every believer (Ephesians
+1:19–20). This is what makes the new heart of Ezekiel 36:26 possible.
+Not a metaphor. An event. A real death, a real burial, a real
+resurrection — and a real new creation flowing from it.</p>
+<h3 id="the-place-of-no-separation">The Place of No Separation</h3>
+<blockquote>
+<p><em>“There is therefore now no condemnation for those who are in
+Christ Jesus. For the law of the Spirit of life has set you free in
+Christ Jesus from the law of sin and death. For God has done what the
+law, weakened by the flesh, could not do. By sending his own Son in the
+likeness of sinful flesh and for sin, he condemned sin in the
+flesh.”</em> — Romans 8:1–3</p>
+</blockquote>
+<p><em>God has done what the law, weakened by the flesh, could not
+do.</em> This is the sentence that stands behind the entire recovery
+model. The law — the knowledge of what is right — was never the problem.
+The flesh was. The limbic system encoded with false beliefs. The
+survival brain running programs of self-destruction. The heart of stone.
+The law could diagnose but it could not cure. God did what it could not
+do. By sending His own Son.</p>
+<p>And the result is not merely forgiveness — though it is that. It is
+not merely reconciliation — though it is that. It is <em>no
+separation</em>. Paul does not say “less condemnation” or “reduced
+separation.” He says <em>none</em>. The wall is down. The distance is
+gone. We now live in a place where nothing — not death, not life, not
+angels, not rulers, not things present, not things to come, not powers,
+not height, not depth, nor anything else in all creation — can separate
+us from the love of God in Christ Jesus our Lord (Romans 8:38–39).</p>
+<p>This is not a future hope only. This is a present reality. The place
+of no separation is where the believer <em>lives</em> — right now,
+today, in the middle of the FASTER Scale, in the middle of the Double
+Bind, in the middle of the limbic lag. The separation has already been
+destroyed. What remains is learning to live from that reality rather
+than from the old lie that says you’re still cut off.</p>
+<h3 id="the-cry-of-the-adopted-child">The Cry of the Adopted Child</h3>
+<blockquote>
+<p><em>“For you did not receive the spirit of slavery to fall back into
+fear, but you have received the Spirit of adoption as sons, by whom we
+cry, ‘Abba! Father!’ The Spirit himself bears witness with our spirit
+that we are children of God.”</em> — Romans 8:15–16</p>
+</blockquote>
+<p>And then God does something beyond what any model of recovery can
+account for. Beyond forgiveness (the removal of guilt). Beyond
+reconciliation (the removal of distance). He <em>adopts</em>. He gives a
+new identity. A new family. A new name. And the proof that this has
+happened is not a theological proposition or a doctrinal statement. It
+is a cry — from the deepest place in the human being, from the heart,
+from the very limbic system that once drove destruction:
+<em>Abba!</em></p>
+<p>Sinners. Absolutely deserving of the full force of divine judgment
+and wrath. Transformed into little, baby-like, precious treasures of God
+who cry out to the Father. This is what Wilder’s joy-fuel looks like
+when it reaches its source. This is what Koch’s Belonging looks like
+when it is fully rooted. This is what the Immanuel Journey arrives at
+when it goes all the way down. Not a technique. Not a practice. A child
+in the arms of the Father.</p>
+<p>The spirit of slavery — fear, performance, striving, earning,
+managing — is the operating system of the flesh. The spirit of adoption
+— beloved, known, held, named, delighted in — is the operating system of
+the new heart. Recovery is learning to live from the second rather than
+the first.</p>
+<h3 id="the-life-he-lived">The Life He Lived</h3>
+<blockquote>
+<p><em>“For the joy that was set before him, he endured the cross.”</em>
+— Hebrews 12:2</p>
+</blockquote>
+<p>We know about the death. We preach the death. But we have largely
+missed the life.</p>
+<p>The Gospels give us glimpses of perhaps 60 days out of more than
+12,000. Every one of those recorded days is precious — God chose to show
+us those moments because we needed them. But the other 11,940 days were
+not empty. They were the <em>abundant life</em>. They were what it looks
+like when a human being lives in unbroken fellowship with the Father —
+walking, eating, working wood, noticing wildflowers, hearing a baby’s
+first cry, watching the sun set over the Galilee, praying, listening,
+being fully present to every moment because His roots were fully sunk
+into the Stream that never runs dry.</p>
+<p>N.T. Wright presses this in <em>How God Became King</em>: the creeds
+jump from “born of the Virgin Mary” to “suffered under Pontius Pilate”
+as though nothing happened in between. But everything happened in
+between. Thirty-three years of a human being living Tier 1 connection
+without interruption. This is not backstory to the crucifixion. This
+<em>is</em> the revelation of what human life was designed to be. Jesus
+did not endure 33 years waiting for the cross. He <em>lived</em> 33
+years in the joy of His Father’s presence. He saw a flower and praised
+God — in a way we don’t yet. He heard a child’s first cry and was undone
+by gratitude — in a way we don’t yet. He lived the abundant life He came
+to give us — and that life, not just the death, is the Gospel.</p>
+<blockquote>
+<p><em>“I came that they may have life and have it abundantly.”</em> —
+John 10:10</p>
+</blockquote>
+<p>Hebrews says He endured the cross “for the joy set before Him.” We
+read that as if the joy was only on the other side of death. But what if
+the joy was also in the 11,940 days? What if He knew something about
+being alive — about being present, about being connected, about being a
+Son — that we are only beginning to learn? The abundant life is not a
+reward for getting through the hard parts. It is the hard parts
+<em>and</em> the ordinary parts <em>and</em> the quiet parts, all lived
+in the presence of the Father.</p>
+<h3 id="carry-your-cross-lose-your-life-find-it">Carry Your Cross, Lose
+Your Life, Find It</h3>
+<blockquote>
+<p><em>“If anyone would come after me, let him deny himself and take up
+his cross and follow me. For whoever would save his life will lose it,
+but whoever loses his life for my sake will find it.”</em> — Matthew
+16:24–25</p>
+</blockquote>
+<blockquote>
+<p><em>“Truly, truly, I say to you, unless a grain of wheat falls into
+the earth and dies, it remains alone; but if it dies, it bears much
+fruit.”</em> — John 12:24</p>
+</blockquote>
+<blockquote>
+<p><em>“Truly, I say to you, unless you turn and become like children,
+you will never enter the kingdom of heaven.”</em> — Matthew 18:3</p>
+</blockquote>
+<p>We have turned “carry your cross” and “die to self” into morbid,
+punishment-oriented commands — as if the Christian life is fundamentally
+about suffering and deprivation. But Jesus is not describing a funeral.
+He is describing what happens when you let go of the false life — the
+coping mechanisms, the flesh patterns, the survival personality, the
+false VIM — and receive the <em>real</em> life. The grain of wheat that
+falls into the earth and dies does not stay dead. It bears much fruit.
+The life you lose is the life that was killing you. The life you find is
+the one that was waiting underneath — the life He lived for 33
+years.</p>
+<p>“Become like children” — this is not infantilism. This is what
+happens <em>after</em> the adoption of Romans 8. You have been given a
+new identity. You cry “Abba.” And a child in the arms of a good father
+does not perform, does not earn, does not hustle, does not manage. A
+child in the arms of a good father <em>lives</em>. Freely. With delight.
+With wonder. With the kind of trust that the survival brain says is
+impossible but the Spirit says is the whole point. This is Restoration
+at its fullest. This is what the model is pointing toward.</p>
+<h3 id="the-vision-rightly-held">The Vision Rightly Held</h3>
+<blockquote>
+<p><em>“Do not lay up for yourselves treasures on earth, where moth and
+rust destroy and where thieves break in and steal, but lay up for
+yourselves treasures in heaven, where neither moth nor rust destroys and
+where thieves do not break in and steal. For where your treasure is,
+there your heart will be also.”</em> — Matthew 6:19–21</p>
+</blockquote>
+<blockquote>
+<p><em>“But seek first the kingdom of God and his righteousness, and all
+these things will be added to you.”</em> — Matthew 6:33</p>
+</blockquote>
+<p>Jesus does not eliminate the desire for treasure, reward, or
+greatness. He corrects how they are understood. The disciples wanted to
+sit at His right and left. He did not say “stop wanting greatness.” He
+said greatness looks different in His Kingdom — the greatest is the
+servant, the first is the last, the leader is the one who washes feet.
+The treasure is real. The crown is real. The reward is real. But they
+are received by the child who cries “Abba,” not seized by the striver
+who treats God as a means to an end.</p>
+<p>These are the Vision of VIM — the picture in the gallery of the heart
+that pulls you forward through the harder choice of the Double Bind. But
+they must be held with God-appreciation, not flesh-appropriation. The
+right heart holding the right treasures. This is what Jesus corrected in
+His disciples: not the desire itself, but its orientation. Seek
+<em>first</em> the Kingdom. Let the heart follow the right treasure. And
+the Father — who knows what you need — will add the rest.</p>
+<h3 id="this-is-a-kingdom-thing">This Is a Kingdom Thing</h3>
+<p>One clarification that matters deeply for how this model is received:
+this is not a “Christian” thing, or a “Jewish” thing, or a “Protestant”
+thing. Those words have become Tier 6 concepts — cultural and
+ideological labels that carry freight we often don’t even recognize.
+They filter how we read, what we expect, and what we dismiss. They pit
+communities against each other. And worst of all, they can pit God’s
+word against itself.</p>
+<p>When we read “Old Testament” and “New Testament,” our cultural
+artifact glasses come on and suddenly we are managing two dispensations
+— explaining how God dealt with people “back then” and how He’ll
+reinstate things in some future time. We construct elaborate theological
+systems to explain the discontinuities that only exist because we’ve
+imposed them. We don’t hear what Paul says plainly:</p>
+<blockquote>
+<p><em>“All Scripture is breathed out by God and profitable for
+teaching, for reproof, for correction, and for training in
+righteousness, that the man of God may be complete, equipped for every
+good work.”</em> — 2 Timothy 3:16–17</p>
+</blockquote>
+<p><em>All</em> Scripture. Not the New Testament portion. Not the parts
+that survived the dispensational filter. All of it. Breathed out by one
+God, profitable for one purpose, equipping one people. The Torah that
+formed Yeshua is the same Torah that forms us. The Psalms He prayed are
+the Psalms we pray. The prophets who pointed forward are the prophets we
+still need. Our own constructs — our “-isms,” our theological
+traditions, our cultural categories — get in the way of us hearing,
+being, and doing what the word of God is describing in Tier 4.</p>
+<p>What Yeshua came to declare was not a new religion. It was the
+<em>Kingdom of God</em>. He presented it to the Jew first and through
+His apostles to the nations — but it was always one Kingdom, under one
+King, fulfilling one promise. His prayer was not for a denomination. His
+prayer was:</p>
+<blockquote>
+<p><em>“Our Father in heaven, hallowed be your name. Your kingdom come,
+your will be done, on earth as it is in heaven.”</em> — Matthew
+6:9–10</p>
+</blockquote>
+<p>A daily life lived in the obedience of faith — centered in
+<em>chesed</em> and <em>emet</em>, loyal love and faithful truth
+(Proverbs 3:3) — in every moment, in every relationship, in every tier.
+This can only be accomplished as the One who made it possible lives in
+us. Christ in you, the hope of glory. The treasure in the earthen
+vessel. The Father and Son making their home in the clay jar. The Spirit
+crying “Abba” from the deepest place in the human heart.</p>
+<h3 id="why-this-matters-for-the-model">Why This Matters for the
+Model</h3>
+<p>Without the Gospel, the eight layers are a diagnostic without a cure.
+The FASTER Scale can show you where you are. The Double Bind can show
+you the fork. But only the Gospel provides the <em>power</em> to take
+the harder choice, the <em>ground</em> for the new identity, the
+<em>reason</em> the Immanuel Journey works (God has already entered the
+place of separation — He knows the way), and the <em>source</em> of the
+new heart that makes everything else possible.</p>
+<p>And this is not ancient history. The Bible times have not stopped.
+The same promise, the same Spirit, the same power, the same adoption —
+happening now. The same God who met Abraham under the stars, who spoke
+to Moses from the bush, who filled the tabernacle with glory, who raised
+Yeshua from the dead — He is the God who is meeting you in the place of
+your separation, right now, today. The broadcast has never stopped. The
+stream has never run dry. The promise plan is not a history lesson. It
+is a living reality, unfolding in real time, one lost sheep being found
+at a time.</p>
+<blockquote>
+<p><em>“Jesus Christ is the same yesterday and today and forever.”</em>
+— Hebrews 13:8</p>
+</blockquote>
+<hr />
+<h2 id="layer-1-systemic-atmosphere-the-environment-of-healing">Layer 1:
+Systemic Atmosphere — The Environment of Healing</h2>
+<p><em>Edwin Friedman — Non-anxious presence, self-differentiation, the
+failure of nerve</em></p>
+<h3 id="the-god-who-does-not-panic">The God Who Does Not Panic</h3>
+<blockquote>
+<p><em>“God is our refuge and strength, a very present help in trouble.
+Therefore we will not fear though the earth gives way, though the
+mountains be moved into the heart of the sea.”</em> — Psalm 46:1–2</p>
+</blockquote>
+<p>The original non-anxious presence is God Himself. He does not panic.
+He does not react. He does not peace-monger. The psalmist draws a
+portrait of total systemic collapse — the earth giving way, mountains
+cast into the sea — and the posture of the one rooted in God is “we will
+not fear.” This is the model for every leader, every counselor, every
+group facilitator, every spouse: a presence that remains steady because
+it is anchored in Something that does not move.</p>
+<blockquote>
+<p><em>“Be still, and know that I am God.”</em> — Psalm 46:10</p>
+</blockquote>
+<p>The Hebrew <em>raphah</em> — “be still,” “cease striving,” “let go” —
+is a command to release the frantic grip of the flesh. In a chronically
+anxious system, this is revolutionary. It is the opposite of Speeding Up
+on the FASTER Scale. It is the Quiet skill rooted in theology.</p>
+<h3 id="self-differentiation-in-scripture">Self-Differentiation in
+Scripture</h3>
+<blockquote>
+<p><em>“Brothers, if anyone is caught in any transgression, you who are
+spiritual should restore him in a spirit of gentleness. Keep watch on
+yourself, lest you too be tempted. Bear one another’s burdens, and so
+fulfill the law of Christ. For if anyone thinks he is something, when he
+is nothing, he deceives himself. But let each one test his own work, and
+then his reason to boast will be in himself alone and not in his
+neighbor. For each one will have to bear his own load.”</em> — Galatians
+6:1–5</p>
+</blockquote>
+<p>This passage is the anatomy of self-differentiation in five verses.
+It holds together everything Friedman describes clinically — connected
+yet separate, responsible to others yet responsible for yourself — and
+it does so with a precision that no clinical language can match.</p>
+<p><strong>Verse 1: The posture — move toward AND keep watch on
+yourself.</strong> “You who are spiritual should restore him in a spirit
+of gentleness. Keep watch on yourself, lest you too be tempted.” This is
+the dual command of self-differentiation: engage the other person
+(restore him) without losing yourself (keep watch on yourself). It is
+Friedman’s definition stated by Paul two millennia earlier. It is
+Cloud’s boundaries principle: responsible <em>to</em> others (restore),
+responsible <em>for</em> yourself (keep watch). And notice the qualifier
+— “you who are spiritual.” This is not a technique anyone can perform
+through willpower. It requires Tier 1 connection. Without the Spirit,
+you will either cut off (avoid the person entirely) or fuse (get swept
+into their struggle and lose your own footing).</p>
+<p><strong>Verse 2: The burden — what we carry together.</strong> “Bear
+one another’s burdens [<em>baros</em>], and so fulfill the law of
+Christ.” The Greek <em>baros</em> means a heavy, crushing weight —
+something beyond what a person can carry alone. A crisis, a tragedy, a
+weight of sin or grief that would flatten them without help. This is the
+<em>to</em> dimension of responsibility: you are called to step into the
+weight with them. This is Tier 2 love that crosses the road for the
+wounded man. This is Wilder’s relational capacity — joy-fuel expressed
+as burden-sharing. Refusing to bear another’s <em>baros</em> is
+cutoff.</p>
+<p><strong>Verses 3–4: The identity check — test your own work.</strong>
+“For if anyone thinks he is something, when he is nothing, he deceives
+himself. But let each one test his own work, and then his reason to
+boast will be in himself alone and not in his neighbor.” This is the
+self-awareness dimension (Sande) applied directly to the danger of
+fusion. If my sense of self depends on how I compare to my neighbor — if
+I measure my worth by their failure or their approval — I am not
+differentiated. “Test his own work” means: bring your life before God.
+What has He given <em>you</em>? What is <em>your</em> work? Not compared
+to your neighbor, not defined by their opinion, not fused with their
+journey. Yours, before God. This is identity rooted in Christ (Koch),
+not in comparison or performance.</p>
+<p><strong>Verse 5: The load — what each person carries alone.</strong>
+“For each one will have to bear his own load [<em>phortion</em>].” A
+different Greek word entirely from verse 2. Not the crushing weight
+(<em>baros</em>) but the standard-issue pack that every soldier carries
+— your own responsibility, your own choices, your own Tier 1
+relationship, your own yard. This is not a contradiction of verse 2. It
+is the other side of self-differentiation: I step into your crisis with
+you (burden), AND I do not take over your life’s responsibilities or let
+you take over mine (load). I carry with you what would crush you, but I
+do not carry for you what God gave you to carry yourself.</p>
+<p>The genius of the passage is the <em>tension</em> between verse 2 and
+verse 5. Codependency is trying to carry someone else’s
+<em>phortion</em> — their God-given responsibilities, their choices,
+their growth. Cutoff is refusing to help with someone’s <em>baros</em> —
+their crushing weight, their crisis, their grief. Self-differentiation
+is knowing the difference. Cloud’s entire boundaries framework lives in
+the space between these two verses.</p>
+<p><strong>Supporting texts:</strong></p>
+<blockquote>
+<p><em>“Am I now seeking the approval of man, or of God? Or am I trying
+to please man? If I were still trying to please man, I would not be a
+servant of Christ.”</em> — Galatians 1:10</p>
+</blockquote>
+<p>Paul models self-differentiation. He is connected to the churches,
+deeply invested in relationships — but his identity is not fused with
+their approval. He can remain present to their struggles without being
+defined by their reactions.</p>
+<blockquote>
+<p><em>“The fear of man lays a snare, but whoever trusts in the LORD is
+safe.”</em> — Proverbs 29:25</p>
+</blockquote>
+<p>The fear of man is the collapse of self-differentiation. It is fusion
+— letting another person’s opinion or reaction become the governing
+force of your inner life. The antidote is trust in the LORD — which is
+Tier 1 connection producing Tier 2 health.</p>
+<h3 id="peace-making-not-peace-mongering">Peace-Making, Not
+Peace-Mongering</h3>
+<blockquote>
+<p><em>“Blessed are the peacemakers, for they shall be called sons of
+God.”</em> — Matthew 5:9</p>
+</blockquote>
+<p>Jesus does not bless the peace-mongers — those who smooth things over
+to reduce tension. He blesses the peace-<em>makers</em> — those who do
+the harder work of truth-telling, reconciliation, and genuine
+restoration. This is the harder choice of the Double Bind applied to the
+systemic level.</p>
+<blockquote>
+<p><em>“Faithful are the wounds of a friend; profuse are the kisses of
+an enemy.”</em> — Proverbs 27:6</p>
+</blockquote>
+<p>The peace-monger kisses. The peacemaker wounds faithfully. The system
+that avoids hard truth to preserve comfort is taking the easier choice.
+The system that speaks truth in love — even when it raises anxiety in
+the short term — is making peace.</p>
+<hr />
+<h2 id="layer-2-the-faster-scale-seeing-the-descent">Layer 2: The FASTER
+Scale — Seeing the Descent</h2>
+<p><em>Michael Dye — The downward progression from Restoration to
+Relapse</em></p>
+<h3 id="restoration-life-on-gods-terms">Restoration: Life on God’s
+Terms</h3>
+<blockquote>
+<p><em>“He restores my soul. He leads me in paths of righteousness for
+his name’s sake.”</em> — Psalm 23:3</p>
+</blockquote>
+<p>Restoration is God’s work. The Hebrew <em>shub</em> (return, restore)
+carries the idea of bringing back to an original state — the life God
+designed before the false beliefs distorted it.</p>
+<blockquote>
+<p><em>“I came that they may have life and have it abundantly.”</em> —
+John 10:10</p>
+</blockquote>
+<p>This is what Restoration looks like. Abundant life is not the absence
+of struggle — it is life connected to the Vine, drawing from the right
+source, bearing fruit because the roots go deep.</p>
+<h3 id="forgetting-priorities-the-subtle-drift">Forgetting Priorities:
+The Subtle Drift</h3>
+<blockquote>
+<p><em>“Only take care, and keep your soul diligently, lest you forget
+the things that your eyes have seen, and lest they depart from your
+heart all the days of your life.”</em> — Deuteronomy 4:9</p>
+</blockquote>
+<p>Moses warned of exactly this: the slow forgetting. Not dramatic
+apostasy but gradual drift — the priorities that quietly shift, the
+commitments that silently erode.</p>
+<blockquote>
+<p><em>“But I have this against you, that you have abandoned the love
+you had at first.”</em> — Revelation 2:4</p>
+</blockquote>
+<p>Jesus’ word to the church at Ephesus is the FASTER Scale’s first
+stage spoken from heaven. They hadn’t fallen into gross sin. They had
+<em>forgotten priorities</em> — abandoned first love.</p>
+<blockquote>
+<p><em>“My people have committed two evils: they have forsaken me, the
+fountain of living waters, and hewed out cisterns for themselves, broken
+cisterns that can hold no water.”</em> — Jeremiah 2:13</p>
+</blockquote>
+<p>The dual movement of Forgetting Priorities: turning from the source
+(God) and turning toward a substitute (broken cisterns). Every coping
+mechanism is a broken cistern.</p>
+<h3 id="anxiety-the-growing-noise-of-fear">Anxiety: The Growing Noise of
+Fear</h3>
+<blockquote>
+<p><em>“Do not be anxious about anything, but in everything by prayer
+and supplication with thanksgiving let your requests be made known to
+God. And the peace of God, which surpasses all understanding, will guard
+your hearts and your minds in Christ Jesus.”</em> — Philippians
+4:6–7</p>
+</blockquote>
+<p>Paul’s instruction is not dismissive (“just stop worrying”). It is
+directional — take the anxiety <em>to God</em> through prayer. This is
+the Double Bind at the Anxiety stage: the easier choice is to let fear
+spiral internally; the harder choice is to bring it to God and to
+others.</p>
+<blockquote>
+<p><em>“When I am afraid, I put my trust in you.”</em> — Psalm 56:3</p>
+</blockquote>
+<p>David does not say “I am never afraid.” He says <em>when</em> I am
+afraid — acknowledging the reality of the emotion — I redirect my trust.
+This is Dodd’s emotional language in action: the fear is felt, not
+suppressed, and it points toward trust.</p>
+<blockquote>
+<p><em>“Cast all your anxiety on him, because he cares for you.”</em> —
+1 Peter 5:7</p>
+</blockquote>
+<p>The Greek <em>epiriptō</em> — “cast upon,” “throw upon” — is the
+language of deliberate transfer. You take what is on you and put it on
+Him. This is the Quiet skill as a spiritual act.</p>
+<h3 id="speeding-up-running-from-the-pain">Speeding Up: Running from the
+Pain</h3>
+<blockquote>
+<p><em>“Be still before the LORD and wait patiently for him.”</em> —
+Psalm 37:7</p>
+</blockquote>
+<p>The direct antidote to Speeding Up. The Hebrew <em>damam</em> — “be
+still, be silent” — is the opposite of the frenetic busyness that
+characterizes this stage. Speeding Up is the refusal to be still,
+because stillness means feeling what’s underneath.</p>
+<blockquote>
+<p><em>“In returning and rest you shall be saved; in quietness and in
+trust shall be your strength. But you were unwilling.”</em> — Isaiah
+30:15</p>
+</blockquote>
+<p>God prescribes returning, rest, quietness, trust. Israel’s response:
+“We were unwilling.” This is the anatomy of Speeding Up — knowing the
+prescription, refusing to take it, because slowing down feels like death
+to the survival brain.</p>
+<blockquote>
+<p><em>“Come to me, all who labor and are heavy laden, and I will give
+you rest. Take my yoke upon you, and learn from me, for I am gentle and
+lowly in heart, and you will find rest for your souls.”</em> — Matthew
+11:28–29</p>
+</blockquote>
+<p>Jesus’ invitation speaks directly to the person in Speeding Up. The
+“labor and heavy laden” is not just physical — it is the exhausting work
+of trying to outrun your own anxiety. His yoke is not the absence of
+work but the presence of <em>rest</em> within it.</p>
+<h3 id="ticked-off-the-adrenaline-of-anger">Ticked Off: The Adrenaline
+of Anger</h3>
+<blockquote>
+<p><em>“Be angry and do not sin; do not let the sun go down on your
+anger, and give no opportunity to the devil.”</em> — Ephesians
+4:26–27</p>
+</blockquote>
+<p>Paul does not forbid anger. He forbids <em>sinning in</em> anger —
+the weaponizing of a legitimate emotion. In Dodd’s framework, anger felt
+honestly yields passion and justice; anger suppressed or weaponized
+yields the Ticked Off stage. Paul adds the urgency: deal with it
+<em>today</em>, or you give the enemy ground.</p>
+<blockquote>
+<p><em>“A soft answer turns away wrath, but a harsh word stirs up
+anger.”</em> — Proverbs 15:1</p>
+</blockquote>
+<p>The soft answer is the non-anxious presence applied to conflict. It
+requires self-differentiation — the ability to choose a response rather
+than react from the survival brain.</p>
+<blockquote>
+<p><em>“Know this, my beloved brothers: let every person be quick to
+hear, slow to speak, slow to anger; for the anger of man does not
+produce the righteousness of God.”</em> — James 1:19–20</p>
+</blockquote>
+<p>Quick to hear, slow to speak, slow to anger — this is the 3D
+awareness of Sande in action. Hearing (other-awareness), pausing before
+speaking (self-awareness), and releasing the anger to God’s justice
+rather than one’s own (God-awareness).</p>
+<h3 id="exhausted-the-depleted-heart">Exhausted: The Depleted Heart</h3>
+<blockquote>
+<p><em>“My God, my God, why have you forsaken me? Why are you so far
+from saving me, from the words of my groaning?”</em> — Psalm 22:1</p>
+</blockquote>
+<p>David — and later Jesus Himself on the cross — gives voice to
+Exhaustion. The feeling of divine abandonment, the groaning that finds
+no relief. This psalm does not suppress the feeling. It <em>cries it
+out</em> to God. Even in the depths of depletion, the psalmist addresses
+God — the relationship is not broken, even when it feels broken.</p>
+<blockquote>
+<p><em>“He gives power to the faint, and to him who has no might he
+increases strength. Even youths shall faint and be weary, and young men
+shall fall exhausted; but they who wait for the LORD shall renew their
+strength; they shall mount up with wings like eagles; they shall run and
+not be weary; they shall walk and not faint.”</em> — Isaiah 40:29–31</p>
+</blockquote>
+<p>The promise to the Exhausted. Not strength generated from within —
+but strength <em>renewed</em> from the source. The waiting is the harder
+choice. The flesh wants to fix it now, numb it now, cope now. God says:
+<em>wait</em>.</p>
+<blockquote>
+<p><em>“I am poured out like water, and all my bones are out of joint;
+my heart is like wax; it is melted within my breast.”</em> — Psalm
+22:14</p>
+</blockquote>
+<p>The psalmist describes the physical and emotional reality of
+depletion with visceral precision. The heart melted like wax —
+neurochemical exhaustion given poetic form three thousand years before
+brain science named it.</p>
+<h3 id="relapse-the-place-you-swore-youd-never-return">Relapse: The
+Place You Swore You’d Never Return</h3>
+<blockquote>
+<p><em>“Like a dog that returns to its vomit is a fool who repeats his
+folly.”</em> — Proverbs 26:11</p>
+</blockquote>
+<p>Harsh language, but the Proverbs are not sentimental about
+self-destruction. The repetition of folly is not a mystery to the wise —
+it is the predictable outcome of a heart that has not been healed at the
+root.</p>
+<blockquote>
+<p><em>“Wretched man that I am! Who will deliver me from this body of
+death? Thanks be to God through Jesus Christ our Lord!”</em> — Romans
+7:24–25</p>
+</blockquote>
+<p>Paul’s cry is the cry of every person at Relapse — and his answer is
+the gospel in one breath. <em>Who will deliver me?</em> Not willpower,
+not a better plan, not trying harder. <em>God, through Jesus
+Christ.</em> This is the only exit from the cycle.</p>
+<hr />
+<h2 id="layer-3-the-double-bind-the-fork-in-the-road">Layer 3: The
+Double Bind — The Fork in the Road</h2>
+<h3 id="the-two-paths">The Two Paths</h3>
+<blockquote>
+<p><em>“Enter by the narrow gate. For the gate is wide and the way is
+easy that leads to destruction, and those who enter by it are many. For
+the gate is narrow and the way is hard that leads to life, and those who
+find it are few.”</em> — Matthew 7:13–14</p>
+</blockquote>
+<p>Jesus names the Double Bind at the cosmic level. The easier choice —
+wide, well-traveled, intuitive to the flesh. The harder choice — narrow,
+costly, and leading to life. Every Double Bind decision is a miniature
+of this passage.</p>
+<blockquote>
+<p><em>“Trust in the LORD with all your heart, and do not lean on your
+own understanding. In all your ways acknowledge him, and he will make
+straight your paths.”</em> — Proverbs 3:5–6</p>
+</blockquote>
+<p>“Do not lean on your own understanding” is the most direct biblical
+rebuke of the easier choice. The flesh <em>is</em> your own
+understanding — the limbic system’s survival logic, the false beliefs
+encoded as “truth.” Trusting the LORD is the harder choice because it
+requires releasing the thing that feels most like safety.</p>
+<blockquote>
+<p><em>“I have set before you life and death, blessing and cursing.
+Therefore choose life, that you and your offspring may live.”</em> —
+Deuteronomy 30:19</p>
+</blockquote>
+<p>Moses makes explicit what the Double Bind presents at every stage:
+this is a <em>choice</em>. And the right choice — life — must be
+actively chosen. It does not happen by default.</p>
+<h3 id="the-step-of-faith">The Step of Faith</h3>
+<blockquote>
+<p><em>“Immediately the father of the child cried out and said, ‘I
+believe; help my unbelief!’”</em> — Mark 9:24</p>
+</blockquote>
+<p>The most honest prayer in Scripture. This is what the harder choice
+sounds like when it comes out of a real human mouth. Not perfect faith
+but <em>willing</em> faith — faith that knows its own weakness and
+brings that weakness to Jesus rather than hiding it.</p>
+<hr />
+<h2 id="layer-4-maturity-joy-the-fuel-for-change">Layer 4: Maturity
+&amp; Joy — The Fuel for Change</h2>
+<p><em>Jim Wilder — Joy-fuel, the Quiet skill, the Immanuel
+Journey</em></p>
+<h3 id="joy-as-the-fuel">Joy as the Fuel</h3>
+<blockquote>
+<p><em>“The joy of the LORD is your strength.”</em> — Nehemiah 8:10</p>
+</blockquote>
+<p>This is Wilder’s joy-fuel stated in nine words. Not self-generated
+happiness. Not circumstantial pleasure. The joy <em>of the LORD</em> —
+His delight, His gladness, directed toward you — is the strength that
+powers recovery, maturity, and resilience.</p>
+<blockquote>
+<p><em>“You make known to me the path of life; in your presence there is
+fullness of joy; at your right hand are pleasures forevermore.”</em> —
+Psalm 16:11</p>
+</blockquote>
+<p>Joy is located in <em>presence</em>. Not in information about God but
+in the experience of being with Him. This is the Immanuel Journey in a
+single verse — God’s presence producing fullness of joy.</p>
+<blockquote>
+<p><em>“For the LORD your God is in your midst, a mighty one who will
+save; he will rejoice over you with gladness; he will quiet you by his
+love; he will exult over you with loud singing.”</em> — Zephaniah
+3:17</p>
+</blockquote>
+<p>Perhaps the most remarkable verse in this entire supplement. God
+<em>rejoices over you</em> — this is joy-fuel from the source. He
+<em>quiets you by his love</em> — this is the Quiet skill, initiated by
+God Himself. He <em>exults over you with singing</em> — this is the
+experience of knowing that someone is glad to be with you, and that
+Someone is the Creator of the universe.</p>
+<h3 id="the-quiet-skill">The Quiet Skill</h3>
+<blockquote>
+<p><em>“He leads me beside still waters. He restores my soul.”</em> —
+Psalm 23:2–3</p>
+</blockquote>
+<p>The Shepherd does not lead the sheep into more frenzy. He leads them
+to <em>still waters</em> — the place of quieting. The soul cannot be
+restored at the pace of Speeding Up. Restoration requires the stillness
+that the survival brain fears.</p>
+<blockquote>
+<p><em>“I have calmed and quieted my soul, like a weaned child with its
+mother; like a weaned child is my soul within me.”</em> — Psalm
+131:2</p>
+</blockquote>
+<p>David describes the Quiet skill with the image of a weaned child — no
+longer frantic for the breast, no longer driven by desperate need, but
+resting in the mother’s presence simply because she is there. This is
+the mature quiet: not the absence of need but the peace that comes from
+secure attachment.</p>
+<h3 id="the-immanuel-journey-god-with-us">The Immanuel Journey: God With
+Us</h3>
+<p>The Immanuel Journey — Wilder’s practice of inviting God’s
+interactive presence into the specific place of pain — is not a
+technique. It is participation in the deepest relational reality in the
+universe: the communion between the Father and the Son, now opened to
+broken humans through the Son’s prayer and the Spirit’s work.</p>
+<p><strong>The Prayer of Jesus: John 17</strong></p>
+<blockquote>
+<p><em>“I do not ask for these only, but also for those who will believe
+in me through their word, that they may all be one, just as you, Father,
+are in me, and I in you, that they also may be in us.”</em> — John
+17:20–21</p>
+</blockquote>
+<p>Jesus is not praying for God to be <em>near</em> His people. He is
+praying for the same relational reality He has with the Father to be
+extended to those who believe. The “in me… in you… in us” language is
+not metaphor — it is the deepest possible description of what the
+Immanuel Journey reaches for. The goal is not just God showing up in
+your pain. It is <em>participatory union</em> — the same mutual
+indwelling that the Son has experienced with the Father from
+eternity.</p>
+<blockquote>
+<p><em>“The glory that you have given me I have given to them, that they
+may be one even as we are one, I in them and you in me, that they may
+become perfectly one.”</em> — John 17:22–23</p>
+</blockquote>
+<p>The <em>glory</em> is given to produce <em>unity</em> — and the unity
+is modeled on the Trinity itself. This is not a distant theological
+concept. This is what Jesus prayed for on the night before He died. The
+intimacy the Son shares with the Father — experienced every day of His
+incarnate life, and truly from eternity — is the same intimacy He is
+asking the Father to pour into those who believe. Even those who would
+come to faith through the words of the apostles. Even us.</p>
+<blockquote>
+<p><em>“Father, I desire that they also, whom you have given me, may be
+with me where I am, to see my glory.”</em> — John 17:24</p>
+</blockquote>
+<p>“That they may be <em>with me</em>” — Immanuel. But not just
+God-with-us in our suffering. Us-with-God in His glory. The
+directionality runs both ways.</p>
+<blockquote>
+<p><em>“I made known to them your name, and I will continue to make it
+known, that the love with which you have loved me may be in them, and I
+in them.”</em> — John 17:26</p>
+</blockquote>
+<p>The final phrase of Jesus’ prayer: “the love with which you have
+loved me may be <em>in</em> them.” The Father’s love for the Son — the
+most intimate, eternal, unbroken relationship in existence — poured into
+the believer. This is what the Immanuel Journey participates in. Not
+merely “God is present” but “the love between the Father and the Son now
+lives inside you.”</p>
+<p><strong>The Abode: Who Lives in Your House?</strong></p>
+<blockquote>
+<p><em>“If anyone loves me, he will keep my word, and my Father will
+love him, and we will come to him and make our home with him.”</em> —
+John 14:23</p>
+</blockquote>
+<p>The Greek <em>monē</em> — dwelling place, abode, home — is the same
+word Jesus uses in John 14:2 (“In my Father’s house are many rooms”). So
+the Father’s house has rooms for us, and <em>our</em> house has a room
+for the Father and Son. The indwelling is mutual. God does not just
+visit. He moves in. He makes your life His home.</p>
+<p>This makes “who is living in your house?” a diagnostic question that
+cuts across the entire model. Because the honest answer is not always
+“Christ.” Sometimes the house is occupied by the false beliefs encoded
+in the limbic system — old tenants who moved in during childhood trauma
+and never left. Sometimes the survival personality has taken over — a
+squatter who seized the house to protect it and now won’t give up the
+keys. Sometimes the flesh patterns are the previous owner’s furniture,
+still in every room. Sometimes the coping mechanisms — substances,
+screens, anger, control — are guests who were invited for one night and
+stayed for years.</p>
+<p>Recovery, in this light, is not just healing. It is an <em>eviction
+and a homecoming</em>. The Immanuel Journey is inviting the rightful
+Owner back into rooms that have been occupied by imposters. “We will
+come and make our home” — but that requires opening the doors that the
+survival brain has bolted shut. Every Double Bind decision to take the
+harder choice is the turning of another lock.</p>
+<p><strong>The Isaiah Portrait: What Kind of God is With Us</strong></p>
+<blockquote>
+<p><em>“Therefore the Lord himself will give you a sign. Behold, the
+virgin shall conceive and bear a son, and shall call his name
+Immanuel.”</em> — Isaiah 7:14</p>
+</blockquote>
+<p>The original naming — given in the context of a king (Ahaz) who
+refuses to trust God. Immanuel comes precisely when human self-reliance
+has failed. The name is not a reward for faithfulness. It is a gift into
+the void of faithlessness.</p>
+<blockquote>
+<p><em>“For to us a child is born, to us a son is given; and the
+government shall be upon his shoulder, and his name shall be called
+Wonderful Counselor, Mighty God, Everlasting Father, Prince of
+Peace.”</em> — Isaiah 9:6</p>
+</blockquote>
+<p>Four names, each speaking to a dimension of what “God with us”
+actually means in the life of recovery. Wonderful Counselor — He speaks
+into the wound; this is the Immanuel Journey as counsel. Mighty God — He
+has the power to heal what the limbic system cannot heal on its own.
+Everlasting Father — the attachment figure who never abandons; Koch’s
+Security and Belonging met at their deepest root. Prince of Peace — the
+One who produces the <em>shalom</em> that Wilder’s Quiet skill is
+reaching for.</p>
+<blockquote>
+<p><em>“A bruised reed he will not break, and a faintly burning wick he
+will not snuff out.”</em> — Isaiah 42:3</p>
+</blockquote>
+<p>The <em>manner</em> of Immanuel’s presence. Gentle with the wounded.
+Patient with the barely alive. This is the non-anxious presence of God
+Himself. It speaks directly to the person in the Exhausted stage who
+feels too broken to be approached. He does not break what is bruised. He
+does not extinguish what is barely flickering. He tends.</p>
+<blockquote>
+<p><em>“He was despised and rejected by men, a man of sorrows and
+acquainted with grief… Surely he has borne our griefs and carried our
+sorrows.”</em> — Isaiah 53:3–4</p>
+</blockquote>
+<p>The Immanuel who does not merely observe our pain but
+<em>carries</em> it. This is Galatians 6:2’s <em>baros</em> — the
+crushing burden — borne by God Himself. This is why the Immanuel Journey
+works: you are not inviting a distant, clinical God into your wound. You
+are inviting One who has already been wounded, who already knows the
+weight, who has borne your specific grief and carried your specific
+sorrow.</p>
+<blockquote>
+<p><em>“The Spirit of the Lord GOD is upon me, because the LORD has
+anointed me to bring good news to the poor; he has sent me to bind up
+the brokenhearted, to proclaim liberty to the captives, and the opening
+of the prison to those who are bound… to give them a beautiful headdress
+instead of ashes, the oil of gladness instead of mourning.”</em> —
+Isaiah 61:1, 3</p>
+</blockquote>
+<p>Jesus reads this passage in Luke 4 and says “Today this Scripture has
+been fulfilled in your hearing.” This is the mission statement of
+Immanuel — and it reads like a recovery program: good news to the poor
+(the Exhausted), binding up the brokenhearted (the wounded heart),
+liberty to captives (Tier 7 freedom), the oil of gladness instead of
+mourning (Wilder’s joy-fuel replacing grief).</p>
+<p><strong>The earlier texts remain true within this fuller
+picture:</strong></p>
+<blockquote>
+<p><em>“Behold, the virgin shall conceive and bear a son, and they shall
+call his name Immanuel — which means, God with us.”</em> — Matthew
+1:23</p>
+</blockquote>
+<p>The fulfillment. The name given in Isaiah, now embodied in a person
+born in Bethlehem.</p>
+<blockquote>
+<p><em>“Even though I walk through the valley of the shadow of death, I
+will fear no evil, for you are with me; your rod and your staff, they
+comfort me.”</em> — Psalm 23:4</p>
+</blockquote>
+<p>“You are <em>with</em> me” — Immanuel in the valley. The comfort does
+not come from the valley ending. It comes from the Presence within
+it.</p>
+<hr />
+<h2 id="layer-5-voice-of-the-heart-feelings-as-gifts">Layer 5: Voice of
+the Heart — Feelings as Gifts</h2>
+<p><em>Chip Dodd — emotions that point to needs and yield gifts when
+honestly felt</em></p>
+<h3 id="god-made-us-to-feel">God Made Us to Feel</h3>
+<blockquote>
+<p><em>“Jesus wept.”</em> — John 11:35</p>
+</blockquote>
+<p>The shortest verse in Scripture and one of the most theologically
+loaded. God incarnate <em>felt</em> sadness and <em>expressed</em> it.
+He did not suppress it, spiritualize it, or rush past it. He wept. If
+feelings were unreliable or shameful, the Son of God would not have
+displayed them at a friend’s grave.</p>
+<blockquote>
+<p><em>“My soul is very sorrowful, even to death.”</em> — Matthew
+26:38</p>
+</blockquote>
+<p>Jesus in Gethsemane. He names the feeling — profound sorrow — and He
+brings it to His friends (“remain here and watch with me”) and to His
+Father (“if it be possible, let this cup pass from me”). This is the
+Voice of the Heart in action: the feeling named, expressed to God and to
+others, leading not to isolation but to the deepest act of surrender in
+human history.</p>
+<h3 id="fear-wisdom">Fear → Wisdom</h3>
+<blockquote>
+<p><em>“The fear of the LORD is the beginning of wisdom.”</em> —
+Proverbs 9:10</p>
+</blockquote>
+<p>There is a fear that leads to wisdom — the reverent awe of the LORD.
+And there is a fear that leads to bondage — the survival fear encoded in
+the limbic system. Dodd’s insight is that even the painful fears, when
+felt honestly and brought to God, can point toward the gift of wisdom:
+“What is this fear telling me? What do I need? Where is God in
+this?”</p>
+<blockquote>
+<p><em>“For God gave us a spirit not of fear but of power and love and
+self-control.”</em> — 2 Timothy 1:7</p>
+</blockquote>
+<p>The spirit of fear — the chronic, identity-defining anxiety that
+drives the FASTER Scale — is not from God. But the <em>experience</em>
+of fear in a broken world is human and real. The difference is whether
+fear becomes your identity or your informant.</p>
+<h3 id="anger-passion">Anger → Passion</h3>
+<blockquote>
+<p><em>“And he looked around at them with anger, grieved at their
+hardness of heart.”</em> — Mark 3:5</p>
+</blockquote>
+<p>Jesus was angry. His anger was not the weaponized rage of the Ticked
+Off stage — it was grief-infused passion for justice, directed at
+hardness of heart. This is anger yielding its gift: passion for what is
+right, felt in the presence of real injustice, without devolving into
+self-serving aggression.</p>
+<h3 id="sadness-acceptance">Sadness → Acceptance</h3>
+<blockquote>
+<p><em>“Blessed are those who mourn, for they shall be comforted.”</em>
+— Matthew 5:4</p>
+</blockquote>
+<p>Mourning — letting sadness be felt — is the path to comfort.
+Suppressing sadness produces the numbness of Exhaustion. Feeling it
+produces the gift of acceptance and, ultimately, the comfort of God.</p>
+<blockquote>
+<p><em>“You have kept count of my tossings; put my tears in your bottle.
+Are they not in your book?”</em> — Psalm 56:8</p>
+</blockquote>
+<p>God does not dismiss tears. He <em>collects</em> them. Every tear is
+noticed, recorded, held. This is the theological ground for the
+permission to grieve — your sadness is not wasted. It is witnessed by
+the God who keeps count.</p>
+<h3 id="loneliness-intimacy">Loneliness → Intimacy</h3>
+<blockquote>
+<p><em>“It is not good that the man should be alone.”</em> — Genesis
+2:18</p>
+</blockquote>
+<p>God Himself declared loneliness to be “not good” — before the fall,
+before sin, before anything was broken. The need for connection is not a
+weakness or a deficiency. It is a design feature. Loneliness, felt
+honestly, points to the deepest need of the human heart: intimacy with
+God and with others.</p>
+<blockquote>
+<p><em>“I will not leave you as orphans; I will come to you.”</em> —
+John 14:18</p>
+</blockquote>
+<p>Jesus’ promise directly addresses the core false belief underneath
+loneliness: “I am alone.” <em>I will come to you.</em> The Immanuel
+Journey is the experiential realization of this promise.</p>
+<hr />
+<h2 id="layer-6-relational-wisdom-3d-awareness">Layer 6: Relational
+Wisdom — 3D Awareness</h2>
+<p><em>Ken Sande — God-aware, self-aware, other-aware</em></p>
+<h3 id="god-aware">God-Aware</h3>
+<blockquote>
+<p><em>“In all your ways acknowledge him, and he will make straight your
+paths.”</em> — Proverbs 3:6</p>
+</blockquote>
+<p>God-awareness is the first dimension — the one that orients all
+others. “In <em>all</em> your ways” — not just in worship, not just in
+crisis, but in the argument with your spouse, in the moment of craving,
+in the meeting that makes you anxious.</p>
+<blockquote>
+<p><em>“I have set the LORD always before me; because he is at my right
+hand, I shall not be shaken.”</em> — Psalm 16:8</p>
+</blockquote>
+<p>David’s discipline: setting the LORD <em>always</em> before him. This
+is God-awareness as a practiced posture, not a spontaneous feeling. And
+the result is stability — “I shall not be shaken” — which is the Quiet
+skill and the non-anxious presence flowing from Tier 1 connection.</p>
+<h3 id="self-aware">Self-Aware</h3>
+<blockquote>
+<p><em>“Search me, O God, and know my heart! Try me and know my
+thoughts! And see if there be any grievous way in me, and lead me in the
+way everlasting.”</em> — Psalm 139:23–24</p>
+</blockquote>
+<p>Self-awareness, in Scripture, is not introspection for its own sake.
+It is <em>inviting God into the search</em>. The psalmist does not trust
+his own ability to see himself clearly (the heart is deceitful) — he
+asks the One who searches all hearts to reveal what is hidden.</p>
+<blockquote>
+<p><em>“Why do you see the speck that is in your brother’s eye, but do
+not notice the log that is in your own eye?”</em> — Matthew 7:3</p>
+</blockquote>
+<p>Jesus’ diagnostic for the collapse of self-awareness. When
+other-awareness turns critical and self-awareness goes blind, the
+log-and-speck dynamic takes over. This is the Ticked Off stage — blaming
+others while blind to one’s own condition.</p>
+<h3 id="other-aware">Other-Aware</h3>
+<blockquote>
+<p><em>“Let each of you look not only to his own interests, but also to
+the interests of others.”</em> — Philippians 2:4</p>
+</blockquote>
+<p>Other-awareness as a commanded posture — not codependent enmeshment
+but genuine, self-differentiated attention to the other.</p>
+<blockquote>
+<p><em>“Rejoice with those who rejoice, weep with those who weep.”</em>
+— Romans 12:15</p>
+</blockquote>
+<p>The fullest expression of other-awareness: entering the emotional
+reality of another person without losing yourself. This requires both
+the Quiet skill (you can hold their pain without being overwhelmed) and
+self-differentiation (you remain you while being present to them).</p>
+<hr />
+<h2 id="layer-7-core-needs-rooted-in-jesus">Layer 7: Core Needs — Rooted
+in Jesus</h2>
+<p><em>Kathy Koch — Security, Identity, Belonging, Purpose,
+Competence</em></p>
+<h3 id="security-am-i-safe">Security: “Am I Safe?”</h3>
+<blockquote>
+<p><em>“The LORD is my light and my salvation; whom shall I fear? The
+LORD is the stronghold of my life; of whom shall I be afraid?”</em> —
+Psalm 27:1</p>
+</blockquote>
+<p>Security rooted in the LORD. Not in circumstances, not in control,
+not in the absence of threat — but in the character and presence of
+God.</p>
+<blockquote>
+<p><em>“Peace I leave with you; my peace I give to you. Not as the world
+gives do I give to you. Let not your hearts be troubled, neither let
+them be afraid.”</em> — John 14:27</p>
+</blockquote>
+<p>Jesus gives a peace the world cannot give — a peace not dependent on
+external safety but on internal rootedness in Him.</p>
+<h3 id="identity-who-am-i">Identity: “Who Am I?”</h3>
+<blockquote>
+<p><em>“I praise you, for I am fearfully and wonderfully made. Wonderful
+are your works; my soul knows it well.”</em> — Psalm 139:14</p>
+</blockquote>
+<p>Identity begins with being <em>made</em> — designed, purposed,
+crafted by a Creator who calls His work wonderful. The false belief “I
+am worthless” is a direct contradiction of God’s creative
+assessment.</p>
+<blockquote>
+<p><em>“See what kind of love the Father has given to us, that we should
+be called children of God; and so we are.”</em> — 1 John 3:1</p>
+</blockquote>
+<p>Identity rooted in sonship. Not performance, not achievement, not the
+opinions of others — but the kind of love that names us as His
+children.</p>
+<h3 id="belonging-who-wants-me">Belonging: “Who Wants Me?”</h3>
+<blockquote>
+<p><em>“I will not leave you as orphans; I will come to you.”</em> —
+John 14:18</p>
+</blockquote>
+<blockquote>
+<p><em>“Can a woman forget her nursing child, that she should have no
+compassion on the son of her womb? Even these may forget, yet I will not
+forget you. Behold, I have engraved you on the palms of my hands.”</em>
+— Isaiah 49:15–16</p>
+</blockquote>
+<p>Belonging rooted in a God who engraves our name on His hands. Even
+the most primal human bond — mother and nursing child — may fail. God’s
+belonging does not.</p>
+<h3 id="purpose-why-am-i-here">Purpose: “Why Am I Here?”</h3>
+<blockquote>
+<p><em>“For we are his workmanship, created in Christ Jesus for good
+works, which God prepared beforehand, that we should walk in them.”</em>
+— Ephesians 2:10</p>
+</blockquote>
+<p>Purpose is not self-generated. It was <em>prepared beforehand</em>.
+The false belief “I have nothing to offer” is contradicted by a God who
+designed specific works for specific people before they were born.</p>
+<blockquote>
+<p><em>“For I know the plans I have for you, declares the LORD, plans
+for welfare and not for evil, to give you a future and a hope.”</em> —
+Jeremiah 29:11</p>
+</blockquote>
+<h3 id="competence-what-can-i-do">Competence: “What Can I Do?”</h3>
+<blockquote>
+<p><em>“But we have this treasure in jars of clay, to show that the
+surpassing power belongs to God and not to us.”</em> — 2 Corinthians
+4:7</p>
+</blockquote>
+<p>This is the foundational correction to every false belief about
+competence. The lie says “I can’t do anything right — I’m not enough.”
+The truth is not “actually, you’re more capable than you think.” The
+truth is: you are exactly as fragile as you think you are — <em>and that
+is the point</em>. The vessel is clay. It is supposed to be clay. The
+glory is not in the vessel. It is in what the vessel carries. Competence
+rooted in Christ does not mean “I am strong.” It means the surpassing
+power belongs to God, not to us. The jar of clay is not a problem to be
+solved. It is a design that ensures the glory goes to the right
+source.</p>
+<blockquote>
+<p><em>“To them God chose to make known how great among the Gentiles are
+the riches of the glory of this mystery, which is Christ in you, the
+hope of glory.”</em> — Colossians 1:27</p>
+</blockquote>
+<p>The vessel is clay. What fills it is Christ. And the result is not
+mere adequacy — it is <em>glory</em>. Hope of glory. Not “I can manage”
+but “the God of the universe has taken up residence in this cracked
+pot.” This also speaks to Identity (Koch) — who am I? I am a vessel
+inhabited by Christ. That is an identity that cannot be taken away by
+failure, because it was never based on my performance.</p>
+<blockquote>
+<p><em>“If anyone loves me, he will keep my word, and my Father will
+love him, and we will come to him and make our home with him.”</em> —
+John 14:23</p>
+</blockquote>
+<p>The <em>monē</em> — the dwelling place, the home. The Father and Son
+do not merely empower you from a distance. They <em>move in</em>. They
+make your life their home. This transforms the question of competence
+entirely. It is no longer “What can I do?” in isolation. It is “What can
+the One who lives in me do through me?” The competence of the earthen
+vessel is the competence of its Resident.</p>
+<p>And this makes “who is living in your house?” not just a recovery
+diagnostic but an identity question. If Christ dwells in you — if the
+Father and Son have made their home in you — then your competence is the
+competence of the indwelling God. Your weakness is the very condition
+that makes His power visible. The cracked pot is not a failure. It is
+how the light gets out.</p>
+<blockquote>
+<p><em>“I can do all things through him who strengthens me.”</em> —
+Philippians 4:13</p>
+</blockquote>
+<p>Read in light of the earthen vessels and the abode, this verse is no
+longer a motivational slogan. It is a statement about the Resident. The
+“him who strengthens me” is the One who has made His home in the clay
+jar. The competence is His. The vessel is yours. Together, there is
+nothing that cannot be done — because together is how God designed
+it.</p>
+<blockquote>
+<p><em>“But he said to me, ‘My grace is sufficient for you, for my power
+is made perfect in weakness.’ Therefore I will boast all the more gladly
+of my weaknesses, so that the power of Christ may rest upon me.”</em> —
+2 Corinthians 12:9</p>
+</blockquote>
+<p>The deepest paradox of recovery: competence is not the absence of
+weakness but the presence of God’s power <em>in</em> weakness. Paul does
+not merely tolerate his weakness. He <em>boasts</em> in it — because
+weakness is the condition that makes God’s power visible. This
+dismantles the false belief that says “I must be strong enough on my
+own.” You don’t have to be. He is. And He lives in your house.</p>
+<hr />
+<h2
+id="layer-8-practical-wisdom-boundaries-the-habits-of-the-wise">Layer 8:
+Practical Wisdom &amp; Boundaries — The Habits of the Wise</h2>
+<p><em>Henry Cloud — the nine principles of déjà vu people, and the
+stewardship of your own yard</em></p>
+<h3 id="the-hebrew-architecture-of-practical-wisdom">The Hebrew
+Architecture of Practical Wisdom</h3>
+<p>Cloud’s nine principles are not new ideas — they are the Proverbs
+vocabulary of wisdom made actionable. The Hebrew wisdom tradition that
+your 7-Tier Framework unpacks in Proverbs 1:3–5 is the deep structure
+underneath everything Cloud observes in déjà vu people:</p>
+<ul>
+<li><strong>Musar</strong> (discipline, chastening instruction) — the
+root system. Cloud’s “Dig It Up” and “Pull the Tooth” are musar in
+action: facing what’s painful, submitting to correction, doing the
+hidden underground work that precedes visible fruitfulness.</li>
+<li><strong>Sekel</strong> (wise dealing, prudent behavior) — wisdom
+with feet on the ground. Cloud’s “Play the Movie” and “Do Something” are
+sekel: practical intelligence that knows how to act rightly in a given
+situation.</li>
+<li><strong>Ormah</strong> (shrewdness, perceptive discernment) — the
+sanctified ability to see through deception and evaluate what’s really
+being offered. Cloud’s “Hate Well” and “Upset the Right People” require
+ormah: seeing clearly, not naively.</li>
+<li><strong>Da’at</strong> (knowledge rooted in relationship) — knowing
+that goes deeper than information. Cloud’s whole framework depends on
+relational knowledge — of self, of others, of God.</li>
+<li><strong>Mezimmah</strong> (purposeful, deliberate thinking) — the
+discipline of tracing where ideas and actions lead before following
+them. Cloud’s “Play the Movie” is mezimmah stated cinematically.</li>
+</ul>
+<h3 id="dig-it-up">Dig It Up</h3>
+<blockquote>
+<p><em>“The purpose in a man’s heart is like deep water, but a man of
+understanding will draw it out.”</em> — Proverbs 20:5</p>
+</blockquote>
+<p>What’s buried — the dreams, the fears, the desires, the wounds — must
+be drawn up from deep water. This requires the “man of understanding” —
+a counselor, a friend, the Holy Spirit — to help excavate what the
+survival personality has hidden.</p>
+<blockquote>
+<p><em>“His master said to him, ‘Well done, good and faithful servant.
+You have been faithful over a little; I will set you over much. Enter
+into the joy of your master.’ … But he who had received the one talent
+came forward, and said, ‘Master, I knew you to be a hard man… so I was
+afraid, and I went and hid your talent in the ground.’”</em> — Matthew
+25:21, 24–25</p>
+</blockquote>
+<p>The parable of the talents is the Dig It Up principle in Jesus’ own
+teaching. The servant who buried his talent did so out of fear — a false
+belief about the master’s character. He saw God as harsh and demanding
+rather than generous and delighted. The buried talent is the unlived
+life, the unsurfaced calling, the gift that fear has kept
+underground.</p>
+<h3 id="pull-the-tooth">Pull the Tooth</h3>
+<blockquote>
+<p><em>“If your right eye causes you to sin, tear it out and throw it
+away. For it is better that you lose one of your members than that your
+whole body be thrown into hell.”</em> — Matthew 5:29</p>
+</blockquote>
+<p>Jesus’ language is more radical than Cloud’s dental metaphor, but the
+principle is identical: deal with the problem decisively. Don’t let it
+linger. The cost of extraction is real, but the cost of avoidance is
+worse.</p>
+<blockquote>
+<p><em>“Catch the foxes for us, the little foxes that spoil the
+vineyards, for our vineyards are in blossom.”</em> — Song of Solomon
+2:15</p>
+</blockquote>
+<p>The little foxes — the small, unaddressed issues — are what spoil the
+vineyard. Pull the tooth before it abscesses.</p>
+<h3 id="play-the-movie">Play the Movie</h3>
+<blockquote>
+<p><em>“The prudent sees danger and hides himself, but the simple go on
+and suffer for it.”</em> — Proverbs 22:3</p>
+</blockquote>
+<p>This is “Play the Movie” in one verse. The prudent person plays the
+scenario forward, sees where it ends, and takes refuge. The simple
+person reacts to the moment without considering the trajectory. This
+verse appears twice in Proverbs (also 27:12) — the repetition itself a
+sign of its importance.</p>
+<blockquote>
+<p><em>“For which of you, desiring to build a tower, does not first sit
+down and count the cost, whether he has enough to complete it?”</em> —
+Luke 14:28</p>
+</blockquote>
+<p>Jesus teaches the Play the Movie principle in the context of
+discipleship. Count the cost before you begin. Think in
+trajectories.</p>
+<h3 id="do-something">Do Something</h3>
+<blockquote>
+<p><em>“Whatever your hand finds to do, do it with your might.”</em> —
+Ecclesiastes 9:10</p>
+</blockquote>
+<blockquote>
+<p><em>“But be doers of the word, and not hearers only, deceiving
+yourselves.”</em> — James 1:22</p>
+</blockquote>
+<p>The gap between knowing and doing is the gap where destruction lives.
+Cloud’s “Do Something” is James’s insistence that faith without works is
+dead — not because works earn anything, but because a living faith
+produces action.</p>
+<h3 id="act-like-an-ant">Act Like an Ant</h3>
+<blockquote>
+<p><em>“Go to the ant, O sluggard; consider her ways, and be wise.
+Without having any chief, officer, or ruler, she prepares her bread in
+summer and gathers her food in harvest.”</em> — Proverbs 6:6–8</p>
+</blockquote>
+<p>Cloud drew this principle directly from Proverbs. The ant has no
+external authority compelling her — she acts from internal motivation,
+in small consistent steps, preparing for what’s ahead. This is the Means
+dimension of VIM lived at the ground level. Limbic lag resolves one
+faithful ant-step at a time.</p>
+<blockquote>
+<p><em>“Let us not grow weary of doing good, for in due season we will
+reap, if we do not give up.”</em> — Galatians 6:9</p>
+</blockquote>
+<p>The “due season” is the limbic lag expressed as agricultural
+patience. The harvest comes — but not on the schedule the flesh
+demands.</p>
+<h3 id="hate-well">Hate Well</h3>
+<blockquote>
+<p><em>“Hate evil and love good, and establish justice in the
+gate.”</em> — Amos 5:15</p>
+</blockquote>
+<p>God commands hatred — but directed hatred. Hate the evil, love the
+good. Cloud’s distinction between hating well and hating poorly is the
+distinction between Amos’s prophetic hatred (specific, righteous,
+justice-seeking) and the generalized bitterness of the Ticked Off
+stage.</p>
+<blockquote>
+<p><em>“The fear of the LORD is hatred of evil.”</em> — Proverbs
+8:13</p>
+</blockquote>
+<p>Fear of the LORD — the Tier 1 posture — naturally produces a
+well-directed hatred of evil. When your roots are in the right place,
+your hatred is calibrated correctly.</p>
+<h3 id="dont-play-fair">Don’t Play Fair</h3>
+<blockquote>
+<p><em>“You have heard that it was said, ‘An eye for an eye and a tooth
+for a tooth.’ But I say to you, Do not resist the one who is evil. But
+if anyone slaps you on the right cheek, turn to him the other
+also.”</em> — Matthew 5:38–39</p>
+</blockquote>
+<blockquote>
+<p><em>“But I say to you, Love your enemies and pray for those who
+persecute you.”</em> — Matthew 5:44</p>
+</blockquote>
+<p>Jesus’ ethic is fundamentally unfair — in the most redemptive sense.
+Cloud observed that déjà vu people give back better than they receive.
+This is the Jesus principle applied to daily relationships. But it
+requires what Cloud insists on: healthy detachment. You can’t turn the
+other cheek if you have no cheek to call your own.</p>
+<h3 id="be-humble">Be Humble</h3>
+<blockquote>
+<p><em>“Before destruction a man’s heart is haughty, but humility comes
+before honor.”</em> — Proverbs 18:12</p>
+</blockquote>
+<blockquote>
+<p><em>“God opposes the proud but gives grace to the humble.”</em> —
+James 4:6</p>
+</blockquote>
+<p>The wise continue to learn. The fool believes he has arrived.
+Humility is the operating posture of Restoration — and the absence of it
+is one of the first markers of Forgetting Priorities.</p>
+<h3 id="upset-the-right-people">Upset the Right People</h3>
+<blockquote>
+<p><em>“Am I now seeking the approval of man, or of God? Or am I trying
+to please man? If I were still trying to please man, I would not be a
+servant of Christ.”</em> — Galatians 1:10</p>
+</blockquote>
+<blockquote>
+<p><em>“The fear of man lays a snare, but whoever trusts in the LORD is
+safe.”</em> — Proverbs 29:25</p>
+</blockquote>
+<p>Paul and Solomon say the same thing across centuries: you cannot
+serve Christ and the approval of man. Cloud’s principle makes this
+practical: the right people to upset are those whose unhealthy reactions
+would otherwise control your decisions. When your identity is rooted in
+Christ (Koch), you can survive their displeasure.</p>
+<h3 id="boundaries-stewardship-of-your-own-yard">Boundaries: Stewardship
+of Your Own Yard</h3>
+<blockquote>
+<p><em>“Each one should test their own actions. Then they can take pride
+in themselves alone, without comparing themselves to someone else, for
+each one should carry their own load.”</em> — Galatians 6:4–5</p>
+</blockquote>
+<p>Paul establishes the boundary principle: carry your own load. Test
+your own actions. Take responsibility for your own yard. This is not
+selfishness — it is stewardship.</p>
+<blockquote>
+<p><em>“Do you not know that your body is a temple of the Holy Spirit
+within you, whom you have from God? You are not your own, for you were
+bought with a price. So glorify God in your body.”</em> — 1 Corinthians
+6:19–20</p>
+</blockquote>
+<p>You are not your own — you belong to God. And precisely because you
+belong to God, you have a responsibility to steward what He has
+entrusted to you: your body, your heart, your choices, your yard.
+Boundaries are an act of worship — caring for the temple.</p>
+<hr />
+<h2 id="the-transformational-architecture-vim-in-scripture">The
+Transformational Architecture: VIM in Scripture</h2>
+<p><em>Dallas Willard — Vision, Intention, Means</em></p>
+<h3 id="vision">Vision</h3>
+<blockquote>
+<p><em>“Where there is no prophetic vision, the people cast off
+restraint.”</em> — Proverbs 29:18 (ESV)</p>
+</blockquote>
+<p>Without vision — without seeing what God sees, who God is, what life
+could be — the default is the flesh. The FASTER Scale descent
+<em>is</em> what it looks like when vision fails.</p>
+<blockquote>
+<p><em>“And we all, with unveiled face, beholding the glory of the Lord,
+are being transformed into the same image from one degree of glory to
+another.”</em> — 2 Corinthians 3:18</p>
+</blockquote>
+<p>Transformation happens by <em>beholding</em>. Not by trying harder
+but by seeing clearly. Vision produces change. This is Willard’s central
+insight stated by Paul: fix your gaze on the glory of the Lord, and you
+are transformed.</p>
+<p>The vision of recovery is not merely “I will stop the destructive
+behavior.” It is this: the Father and Son will make their home in me
+(John 14:23). Christ in me, the hope of glory (Colossians 1:27). A
+treasure in an earthen vessel (2 Corinthians 4:7). That is a vision
+worth the cost of every harder choice — not a cleaned-up life, but an
+inhabited one. Not an empty house swept and put in order (Matthew
+12:44), but a house with the rightful Owner in residence.</p>
+<h3 id="intention">Intention</h3>
+<blockquote>
+<p><em>“Choose this day whom you will serve.”</em> — Joshua 24:15</p>
+</blockquote>
+<p>Intention is a decision. Not a feeling, not an aspiration, but a
+choice — made concrete, made public, made irreversible. Every Double
+Bind is a miniature version of Joshua’s challenge.</p>
+<blockquote>
+<p><em>“I press on toward the goal for the prize of the upward call of
+God in Christ Jesus.”</em> — Philippians 3:14</p>
+</blockquote>
+<p>Paul’s intention: sustained, directional, costly. Not a one-time
+decision but a daily pressing forward.</p>
+<h3 id="means">Means</h3>
+<blockquote>
+<p><em>“Abide in me, and I in you. As the branch cannot bear fruit by
+itself, unless it abides in the vine, neither can you, unless you abide
+in me.”</em> — John 15:4</p>
+</blockquote>
+<p>The means is abiding — remaining connected to the Vine. Every
+spiritual discipline, every FASTER check-in, every Change Group meeting,
+every Immanuel Journey — these are all practices of abiding. They do not
+produce the life. They keep you connected to the One who does.</p>
+<blockquote>
+<p><em>“But the fruit of the Spirit is love, joy, peace, patience,
+kindness, goodness, faithfulness, gentleness, self-control.”</em> —
+Galatians 5:22–23</p>
+</blockquote>
+<p>The fruit is <em>of the Spirit</em> — not of effort. The means create
+space for the Spirit to produce what the flesh never could. This is why
+Willard insists: disciplines don’t change you. They make space for God
+to change you.</p>
+<hr />
+<h2 id="the-root-system-a-final-word-from-jeremiah">The Root System: A
+Final Word from Jeremiah</h2>
+<blockquote>
+<p><em>“Blessed is the man who trusts in the LORD, whose trust is the
+LORD. He is like a tree planted by water, that sends out its roots by
+the stream, and does not fear when heat comes, for its leaves remain
+green, and is not anxious in the year of drought, for it does not cease
+to bear fruit.”</em> — Jeremiah 17:7–8</p>
+</blockquote>
+<p>This is the portrait of Restoration. Not a life without heat or
+drought — but a life with roots so deep in the right source that the
+heat cannot destroy and the drought cannot deplete.</p>
+<p>Every layer of this model is asking the same question Jeremiah asks:
+<em>Where are your roots, and what are they drawing from?</em></p>
+<p>The broadcast has never stopped. The stream has never run dry. The
+Vine is alive. The question is whether we will tune in, dig down, and
+abide — or whether we will keep building broken cisterns in the salt
+land, trusting the flesh to do what only God can do.</p>
+<blockquote>
+<p><em>“He who has ears to hear, let him hear.”</em> — Matthew 11:15</p>
+</blockquote>
+<hr />
+<p><em>Biblical Roots Supplement — compiled as a companion to the Eight
+Layers of Recovery &amp; Restoration holistic framework. For deeper
+study of the 7-Tier architecture referenced throughout, see the 7-Tier
+Relational &amp; Ideological Framework by Gary Springer.</em></p>
 
-<div class="content" id="doc-content">
-  <div class="loading">Loading document...</div>
 </div>
 
-<div class="scroll-top" id="scroll-top" title="Scroll to top">&#8593;</div>
-
-<footer>
+<div class="site-footer">
   <p>Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
-</footer>
+</div>
 
-<script>
-function escapeHtml(text) {
-  var d = document.createElement('div');
-  d.textContent = text;
-  return d.innerHTML;
-}
-
-function parseMarkdown(md) {
-  // Normalize line endings
-  md = md.replace(/\r\n/g, '\n');
-
-  // Code blocks
-  md = md.replace(/```(\w*)\n([\s\S]*?)```/g, function(m, lang, code) {
-    return '<pre><code>' + escapeHtml(code.trim()) + '</code></pre>';
-  });
-
-  // Tables
-  md = md.replace(/^(\|.+\|)\n(\|[\s\-:|]+\|)\n((?:\|.+\|\n?)*)/gm, function(m, header, sep, body) {
-    var ths = header.split('|').filter(function(c) { return c.trim(); })
-      .map(function(c) { return '<th>' + c.trim() + '</th>'; }).join('');
-    var rows = body.trim().split('\n').map(function(row) {
-      var tds = row.split('|').filter(function(c) { return c.trim(); })
-        .map(function(c) { return '<td>' + c.trim() + '</td>'; }).join('');
-      return '<tr>' + tds + '</tr>';
-    }).join('');
-    return '<table><thead><tr>' + ths + '</tr></thead><tbody>' + rows + '</tbody></table>';
-  });
-
-  var lines = md.split('\n');
-  var html = '';
-  var inList = false;
-  var listType = '';
-  var inBlockquote = false;
-  var bqContent = '';
-
-  for (var i = 0; i < lines.length; i++) {
-    var line = lines[i];
-
-    // Blockquote
-    if (/^>\s?/.test(line)) {
-      if (!inBlockquote) { inBlockquote = true; bqContent = ''; }
-      bqContent += line.replace(/^>\s?/, '') + '\n';
-      continue;
-    } else if (inBlockquote) {
-      html += '<blockquote>' + processBlock(bqContent.trim()) + '</blockquote>';
-      inBlockquote = false;
-      bqContent = '';
-    }
-
-    // Close list if not a list item
-    if (inList && !/^(\s*[-*+]|\s*\d+\.)\s/.test(line) && line.trim() !== '') {
-      html += '</' + listType + '>';
-      inList = false;
-    }
-
-    // Headings (extract <a name="..."></a> as id attribute)
-    var hMatch = line.match(/^(#{1,4})\s+(.*)/);
-    if (hMatch) {
-      var hLevel = hMatch[1].length;
-      var hText = hMatch[2];
-      var hId = '';
-      var anchorMatch = hText.match(/<a\s+name="([^"]+)">\s*<\/a>\s*/);
-      if (anchorMatch) {
-        hId = anchorMatch[1];
-        hText = hText.replace(anchorMatch[0], '');
-      }
-      var idAttr = hId ? ' id="' + hId + '"' : '';
-      html += '<h' + hLevel + idAttr + '>' + inline(hText) + '</h' + hLevel + '>';
-      continue;
-    }
-
-    // HR
-    if (/^---+$/.test(line.trim())) { html += '<hr>'; continue; }
-
-    // Unordered list
-    if (/^\s*[-*+]\s/.test(line)) {
-      if (!inList || listType !== 'ul') {
-        if (inList) html += '</' + listType + '>';
-        html += '<ul>'; inList = true; listType = 'ul';
-      }
-      html += '<li>' + inline(line.replace(/^\s*[-*+]\s+/, '')) + '</li>';
-      continue;
-    }
-
-    // Ordered list
-    if (/^\s*\d+\.\s/.test(line)) {
-      if (!inList || listType !== 'ol') {
-        if (inList) html += '</' + listType + '>';
-        html += '<ol>'; inList = true; listType = 'ol';
-      }
-      html += '<li>' + inline(line.replace(/^\s*\d+\.\s+/, '')) + '</li>';
-      continue;
-    }
-
-    // Blank line
-    if (line.trim() === '') { continue; }
-
-    // Paragraph
-    html += '<p>' + inline(line) + '</p>';
-  }
-
-  if (inBlockquote) html += '<blockquote>' + processBlock(bqContent.trim()) + '</blockquote>';
-  if (inList) html += '</' + listType + '>';
-
-  return html;
-}
-
-function processBlock(text) {
-  return text.split('\n\n').map(function(p) {
-    return '<p>' + inline(p.replace(/\n/g, ' ')) + '</p>';
-  }).join('');
-}
-
-function inline(text) {
-  // Links
-  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-  // Bold+italic
-  text = text.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
-  // Bold
-  text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-  // Italic
-  text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
-  // Inline code
-  text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
-  // Anchor tags from source — preserve as span with id for linking
-  text = text.replace(/<a\s+name="([^"]+)">\s*<\/a>/g, '<span id="$1"></span>');
-  return text;
-}
-
-
-fetch('biblical-roots.md')
-  .then(function(r) { return r.text(); })
-  .then(function(md) {
-    var container = document.getElementById('doc-content');
-    container.innerHTML = parseMarkdown(md);
-
-    function scrollToHash() {
-      if (window.location.hash) {
-        var id = window.location.hash.slice(1);
-        var target = document.getElementById(id);
-        if (target) { target.scrollIntoView(); return true; }
-      }
-      return false;
-    }
-    scrollToHash();
-
-    container.addEventListener('click', function(e) {
-      var el = e.target;
-      while (el && el.tagName !== 'A') el = el.parentElement;
-      if (el && el.getAttribute('href') && el.getAttribute('href').charAt(0) === '#') {
-        e.preventDefault();
-        var id = el.getAttribute('href').slice(1);
-        var target = document.getElementById(id);
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-        history.replaceState(null, '', el.getAttribute('href'));
-      }
-    });
-
-    window.addEventListener('hashchange', scrollToHash);
-  })
-  .catch(function() {
-    document.getElementById('doc-content').innerHTML = '<p>Failed to load document. <a href="index.html">Return home</a>.</p>';
-  });
-
-var scrollBtn = document.getElementById('scroll-top');
-if (scrollBtn) {
-  window.addEventListener('scroll', function() {
-    scrollBtn.classList.toggle('visible', window.scrollY > 200);
-  }, { passive: true });
-  scrollBtn.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-  if (window.scrollY > 200) scrollBtn.classList.add('visible');
-}
-</script>
 </body>
 </html>

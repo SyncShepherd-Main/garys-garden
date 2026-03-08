@@ -1,6 +1,6 @@
-# Biblical Roots of the Seven-Layer Recovery Model
+# Biblical Roots of the Eight-Layer Recovery Model
 
-## A Supplement to *Seven Layers of Recovery & Restoration*
+## A Supplement to *Eight Layers of Recovery & Restoration*
 
 ---
 
@@ -69,6 +69,141 @@ This is the VIM principle stated by Jesus centuries before Willard named it. Wha
 
 ---
 
+## The Gospel: What Makes Any of This Possible
+
+Everything above — the deceitful heart, the desperate sickness, the need for a creation-level intervention — establishes the problem. Everything below — the eight layers, the diagnostic tools, the practices of recovery — shows how healing is applied and lived. But between the problem and the application stands an event. Without this event, the entire model is a diagnosis without a cure. The heart cannot create itself. The false beliefs cannot uproot themselves. The survival brain cannot rewire itself. Someone had to do what we could not do.
+
+### The Promise Plan
+
+From the first moment of rupture — the exile from the garden, the hiding, the blame, the separation — God began making a promise. And the promise, as Walter Kaiser traces through the entire canon, has always been one promise stated in three parts:
+
+> *"I will be your God. You will be my people. I will dwell among you."*
+
+This is the tripartite covenant formula. It appears in Genesis, is formalized with Abraham, is restated at Sinai, is renewed through David, is proclaimed by the prophets, and arrives in its fullness in Yeshua. Every covenant renewal in Scripture is a restatement. Every prophet is pointing forward. The whole canon — from Torah through Revelation — is one unbroken story moving toward one event.
+
+> *"I will put my law within them, and I will write it on their hearts. And I will be their God, and they shall be my people."*
+> — Jeremiah 31:33
+
+> *"My dwelling place shall be with them, and I will be their God, and they shall be my people."*
+> — Ezekiel 37:27
+
+> *"I will walk among you and will be your God, and you shall be my people."*
+> — Leviticus 26:12
+
+The same promise, restated across centuries, pointing toward the same destination. God will not leave the separation unaddressed. He will not abandon His people in the salt land. He will come.
+
+### The Cup and the Cross
+
+> *"And going a little farther he fell on his face and prayed, saying, 'My Father, if it be possible, let this cup pass from me; nevertheless, not as I will, but as you will.'"*
+> — Matthew 26:39
+
+The cup the Father gave Him was not merely physical death. It was the full weight of separation — the thing that every human being has been running from since Eden. Sin separates. Not merely morally, as a legal infraction, but *relationally*, as a severing of the connection the human heart was designed to live from. Every false belief in the limbic system, every descent on the FASTER Scale, every Tier 7 captivity, every unmet core need — all of it traces back to this one root: separation from God.
+
+And in His death, Yeshua entered that place. The place of separation. The salt land. The place where God is not. The cry of dereliction — "My God, my God, why have you forsaken me?" (Matthew 27:46) — is not a loss of faith. It is the Son experiencing, for the first and only time, what every broken human being has experienced since the garden: the absence of the Father's presence. He went to the place where we were.
+
+He entered the place of separation *to meet us there*. Not to call down from safety. Not to send instructions from a distance. He came down. He drank the cup. He bore the curse of Jeremiah 17:5 — "cursed is the man who trusts in man and makes flesh his strength" — in His own body. He became the shrub in the desert so that we could become the tree planted by water.
+
+And when He met us in the place of separation — He removed what we could not remove. He took the sin that we could not uproot. He bore the grief we could not carry. He did through His death what no amount of self-awareness, no therapeutic technique, no FASTER check-in, no Change Group could ever do: He destroyed the wall of separation itself.
+
+> *"For our sake he made him to be sin who knew no sin, so that in him we might become the righteousness of God."*
+> — 2 Corinthians 5:21
+
+And then He rose. The resurrection is not an epilogue. It is the vindication of everything — the proof that the separation is truly destroyed, that the new creation has begun, that the promise plan has arrived at its climax. The same power that raised Yeshua from the dead is the power now at work in the heart of every believer (Ephesians 1:19–20). This is what makes the new heart of Ezekiel 36:26 possible. Not a metaphor. An event. A real death, a real burial, a real resurrection — and a real new creation flowing from it.
+
+### The Place of No Separation
+
+> *"There is therefore now no condemnation for those who are in Christ Jesus. For the law of the Spirit of life has set you free in Christ Jesus from the law of sin and death. For God has done what the law, weakened by the flesh, could not do. By sending his own Son in the likeness of sinful flesh and for sin, he condemned sin in the flesh."*
+> — Romans 8:1–3
+
+*God has done what the law, weakened by the flesh, could not do.* This is the sentence that stands behind the entire recovery model. The law — the knowledge of what is right — was never the problem. The flesh was. The limbic system encoded with false beliefs. The survival brain running programs of self-destruction. The heart of stone. The law could diagnose but it could not cure. God did what it could not do. By sending His own Son.
+
+And the result is not merely forgiveness — though it is that. It is not merely reconciliation — though it is that. It is *no separation*. Paul does not say "less condemnation" or "reduced separation." He says *none*. The wall is down. The distance is gone. We now live in a place where nothing — not death, not life, not angels, not rulers, not things present, not things to come, not powers, not height, not depth, nor anything else in all creation — can separate us from the love of God in Christ Jesus our Lord (Romans 8:38–39).
+
+This is not a future hope only. This is a present reality. The place of no separation is where the believer *lives* — right now, today, in the middle of the FASTER Scale, in the middle of the Double Bind, in the middle of the limbic lag. The separation has already been destroyed. What remains is learning to live from that reality rather than from the old lie that says you're still cut off.
+
+### The Cry of the Adopted Child
+
+> *"For you did not receive the spirit of slavery to fall back into fear, but you have received the Spirit of adoption as sons, by whom we cry, 'Abba! Father!' The Spirit himself bears witness with our spirit that we are children of God."*
+> — Romans 8:15–16
+
+And then God does something beyond what any model of recovery can account for. Beyond forgiveness (the removal of guilt). Beyond reconciliation (the removal of distance). He *adopts*. He gives a new identity. A new family. A new name. And the proof that this has happened is not a theological proposition or a doctrinal statement. It is a cry — from the deepest place in the human being, from the heart, from the very limbic system that once drove destruction: *Abba!*
+
+Sinners. Absolutely deserving of the full force of divine judgment and wrath. Transformed into little, baby-like, precious treasures of God who cry out to the Father. This is what Wilder's joy-fuel looks like when it reaches its source. This is what Koch's Belonging looks like when it is fully rooted. This is what the Immanuel Journey arrives at when it goes all the way down. Not a technique. Not a practice. A child in the arms of the Father.
+
+The spirit of slavery — fear, performance, striving, earning, managing — is the operating system of the flesh. The spirit of adoption — beloved, known, held, named, delighted in — is the operating system of the new heart. Recovery is learning to live from the second rather than the first.
+
+### The Life He Lived
+
+> *"For the joy that was set before him, he endured the cross."*
+> — Hebrews 12:2
+
+We know about the death. We preach the death. But we have largely missed the life.
+
+The Gospels give us glimpses of perhaps 60 days out of more than 12,000. Every one of those recorded days is precious — God chose to show us those moments because we needed them. But the other 11,940 days were not empty. They were the *abundant life*. They were what it looks like when a human being lives in unbroken fellowship with the Father — walking, eating, working wood, noticing wildflowers, hearing a baby's first cry, watching the sun set over the Galilee, praying, listening, being fully present to every moment because His roots were fully sunk into the Stream that never runs dry.
+
+N.T. Wright presses this in *How God Became King*: the creeds jump from "born of the Virgin Mary" to "suffered under Pontius Pilate" as though nothing happened in between. But everything happened in between. Thirty-three years of a human being living Tier 1 connection without interruption. This is not backstory to the crucifixion. This *is* the revelation of what human life was designed to be. Jesus did not endure 33 years waiting for the cross. He *lived* 33 years in the joy of His Father's presence. He saw a flower and praised God — in a way we don't yet. He heard a child's first cry and was undone by gratitude — in a way we don't yet. He lived the abundant life He came to give us — and that life, not just the death, is the Gospel.
+
+> *"I came that they may have life and have it abundantly."*
+> — John 10:10
+
+Hebrews says He endured the cross "for the joy set before Him." We read that as if the joy was only on the other side of death. But what if the joy was also in the 11,940 days? What if He knew something about being alive — about being present, about being connected, about being a Son — that we are only beginning to learn? The abundant life is not a reward for getting through the hard parts. It is the hard parts *and* the ordinary parts *and* the quiet parts, all lived in the presence of the Father.
+
+### Carry Your Cross, Lose Your Life, Find It
+
+> *"If anyone would come after me, let him deny himself and take up his cross and follow me. For whoever would save his life will lose it, but whoever loses his life for my sake will find it."*
+> — Matthew 16:24–25
+
+> *"Truly, truly, I say to you, unless a grain of wheat falls into the earth and dies, it remains alone; but if it dies, it bears much fruit."*
+> — John 12:24
+
+> *"Truly, I say to you, unless you turn and become like children, you will never enter the kingdom of heaven."*
+> — Matthew 18:3
+
+We have turned "carry your cross" and "die to self" into morbid, punishment-oriented commands — as if the Christian life is fundamentally about suffering and deprivation. But Jesus is not describing a funeral. He is describing what happens when you let go of the false life — the coping mechanisms, the flesh patterns, the survival personality, the false VIM — and receive the *real* life. The grain of wheat that falls into the earth and dies does not stay dead. It bears much fruit. The life you lose is the life that was killing you. The life you find is the one that was waiting underneath — the life He lived for 33 years.
+
+"Become like children" — this is not infantilism. This is what happens *after* the adoption of Romans 8. You have been given a new identity. You cry "Abba." And a child in the arms of a good father does not perform, does not earn, does not hustle, does not manage. A child in the arms of a good father *lives*. Freely. With delight. With wonder. With the kind of trust that the survival brain says is impossible but the Spirit says is the whole point. This is Restoration at its fullest. This is what the model is pointing toward.
+
+### The Vision Rightly Held
+
+> *"Do not lay up for yourselves treasures on earth, where moth and rust destroy and where thieves break in and steal, but lay up for yourselves treasures in heaven, where neither moth nor rust destroys and where thieves do not break in and steal. For where your treasure is, there your heart will be also."*
+> — Matthew 6:19–21
+
+> *"But seek first the kingdom of God and his righteousness, and all these things will be added to you."*
+> — Matthew 6:33
+
+Jesus does not eliminate the desire for treasure, reward, or greatness. He corrects how they are understood. The disciples wanted to sit at His right and left. He did not say "stop wanting greatness." He said greatness looks different in His Kingdom — the greatest is the servant, the first is the last, the leader is the one who washes feet. The treasure is real. The crown is real. The reward is real. But they are received by the child who cries "Abba," not seized by the striver who treats God as a means to an end.
+
+These are the Vision of VIM — the picture in the gallery of the heart that pulls you forward through the harder choice of the Double Bind. But they must be held with God-appreciation, not flesh-appropriation. The right heart holding the right treasures. This is what Jesus corrected in His disciples: not the desire itself, but its orientation. Seek *first* the Kingdom. Let the heart follow the right treasure. And the Father — who knows what you need — will add the rest.
+
+### This Is a Kingdom Thing
+
+One clarification that matters deeply for how this model is received: this is not a "Christian" thing, or a "Jewish" thing, or a "Protestant" thing. Those words have become Tier 6 concepts — cultural and ideological labels that carry freight we often don't even recognize. They filter how we read, what we expect, and what we dismiss. They pit communities against each other. And worst of all, they can pit God's word against itself.
+
+When we read "Old Testament" and "New Testament," our cultural artifact glasses come on and suddenly we are managing two dispensations — explaining how God dealt with people "back then" and how He'll reinstate things in some future time. We construct elaborate theological systems to explain the discontinuities that only exist because we've imposed them. We don't hear what Paul says plainly:
+
+> *"All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be complete, equipped for every good work."*
+> — 2 Timothy 3:16–17
+
+*All* Scripture. Not the New Testament portion. Not the parts that survived the dispensational filter. All of it. Breathed out by one God, profitable for one purpose, equipping one people. The Torah that formed Yeshua is the same Torah that forms us. The Psalms He prayed are the Psalms we pray. The prophets who pointed forward are the prophets we still need. Our own constructs — our "-isms," our theological traditions, our cultural categories — get in the way of us hearing, being, and doing what the word of God is describing in Tier 4.
+
+What Yeshua came to declare was not a new religion. It was the *Kingdom of God*. He presented it to the Jew first and through His apostles to the nations — but it was always one Kingdom, under one King, fulfilling one promise. His prayer was not for a denomination. His prayer was:
+
+> *"Our Father in heaven, hallowed be your name. Your kingdom come, your will be done, on earth as it is in heaven."*
+> — Matthew 6:9–10
+
+A daily life lived in the obedience of faith — centered in *chesed* and *emet*, loyal love and faithful truth (Proverbs 3:3) — in every moment, in every relationship, in every tier. This can only be accomplished as the One who made it possible lives in us. Christ in you, the hope of glory. The treasure in the earthen vessel. The Father and Son making their home in the clay jar. The Spirit crying "Abba" from the deepest place in the human heart.
+
+### Why This Matters for the Model
+
+Without the Gospel, the eight layers are a diagnostic without a cure. The FASTER Scale can show you where you are. The Double Bind can show you the fork. But only the Gospel provides the *power* to take the harder choice, the *ground* for the new identity, the *reason* the Immanuel Journey works (God has already entered the place of separation — He knows the way), and the *source* of the new heart that makes everything else possible.
+
+And this is not ancient history. The Bible times have not stopped. The same promise, the same Spirit, the same power, the same adoption — happening now. The same God who met Abraham under the stars, who spoke to Moses from the bush, who filled the tabernacle with glory, who raised Yeshua from the dead — He is the God who is meeting you in the place of your separation, right now, today. The broadcast has never stopped. The stream has never run dry. The promise plan is not a history lesson. It is a living reality, unfolding in real time, one lost sheep being found at a time.
+
+> *"Jesus Christ is the same yesterday and today and forever."*
+> — Hebrews 13:8
+
+---
+
 ## Layer 1: Systemic Atmosphere — The Environment of Healing
 
 *Edwin Friedman — Non-anxious presence, self-differentiation, the failure of nerve*
@@ -86,6 +221,23 @@ The original non-anxious presence is God Himself. He does not panic. He does not
 The Hebrew *raphah* — "be still," "cease striving," "let go" — is a command to release the frantic grip of the flesh. In a chronically anxious system, this is revolutionary. It is the opposite of Speeding Up on the FASTER Scale. It is the Quiet skill rooted in theology.
 
 ### Self-Differentiation in Scripture
+
+> *"Brothers, if anyone is caught in any transgression, you who are spiritual should restore him in a spirit of gentleness. Keep watch on yourself, lest you too be tempted. Bear one another's burdens, and so fulfill the law of Christ. For if anyone thinks he is something, when he is nothing, he deceives himself. But let each one test his own work, and then his reason to boast will be in himself alone and not in his neighbor. For each one will have to bear his own load."*
+> — Galatians 6:1–5
+
+This passage is the anatomy of self-differentiation in five verses. It holds together everything Friedman describes clinically — connected yet separate, responsible to others yet responsible for yourself — and it does so with a precision that no clinical language can match.
+
+**Verse 1: The posture — move toward AND keep watch on yourself.** "You who are spiritual should restore him in a spirit of gentleness. Keep watch on yourself, lest you too be tempted." This is the dual command of self-differentiation: engage the other person (restore him) without losing yourself (keep watch on yourself). It is Friedman's definition stated by Paul two millennia earlier. It is Cloud's boundaries principle: responsible *to* others (restore), responsible *for* yourself (keep watch). And notice the qualifier — "you who are spiritual." This is not a technique anyone can perform through willpower. It requires Tier 1 connection. Without the Spirit, you will either cut off (avoid the person entirely) or fuse (get swept into their struggle and lose your own footing).
+
+**Verse 2: The burden — what we carry together.** "Bear one another's burdens [*baros*], and so fulfill the law of Christ." The Greek *baros* means a heavy, crushing weight — something beyond what a person can carry alone. A crisis, a tragedy, a weight of sin or grief that would flatten them without help. This is the *to* dimension of responsibility: you are called to step into the weight with them. This is Tier 2 love that crosses the road for the wounded man. This is Wilder's relational capacity — joy-fuel expressed as burden-sharing. Refusing to bear another's *baros* is cutoff.
+
+**Verses 3–4: The identity check — test your own work.** "For if anyone thinks he is something, when he is nothing, he deceives himself. But let each one test his own work, and then his reason to boast will be in himself alone and not in his neighbor." This is the self-awareness dimension (Sande) applied directly to the danger of fusion. If my sense of self depends on how I compare to my neighbor — if I measure my worth by their failure or their approval — I am not differentiated. "Test his own work" means: bring your life before God. What has He given *you*? What is *your* work? Not compared to your neighbor, not defined by their opinion, not fused with their journey. Yours, before God. This is identity rooted in Christ (Koch), not in comparison or performance.
+
+**Verse 5: The load — what each person carries alone.** "For each one will have to bear his own load [*phortion*]." A different Greek word entirely from verse 2. Not the crushing weight (*baros*) but the standard-issue pack that every soldier carries — your own responsibility, your own choices, your own Tier 1 relationship, your own yard. This is not a contradiction of verse 2. It is the other side of self-differentiation: I step into your crisis with you (burden), AND I do not take over your life's responsibilities or let you take over mine (load). I carry with you what would crush you, but I do not carry for you what God gave you to carry yourself.
+
+The genius of the passage is the *tension* between verse 2 and verse 5. Codependency is trying to carry someone else's *phortion* — their God-given responsibilities, their choices, their growth. Cutoff is refusing to help with someone's *baros* — their crushing weight, their crisis, their grief. Self-differentiation is knowing the difference. Cloud's entire boundaries framework lives in the space between these two verses.
+
+**Supporting texts:**
 
 > *"Am I now seeking the approval of man, or of God? Or am I trying to please man? If I were still trying to please man, I would not be a servant of Christ."*
 > — Galatians 1:10
@@ -289,15 +441,79 @@ David describes the Quiet skill with the image of a weaned child — no longer f
 
 ### The Immanuel Journey: God With Us
 
+The Immanuel Journey — Wilder's practice of inviting God's interactive presence into the specific place of pain — is not a technique. It is participation in the deepest relational reality in the universe: the communion between the Father and the Son, now opened to broken humans through the Son's prayer and the Spirit's work.
+
+**The Prayer of Jesus: John 17**
+
+> *"I do not ask for these only, but also for those who will believe in me through their word, that they may all be one, just as you, Father, are in me, and I in you, that they also may be in us."*
+> — John 17:20–21
+
+Jesus is not praying for God to be *near* His people. He is praying for the same relational reality He has with the Father to be extended to those who believe. The "in me... in you... in us" language is not metaphor — it is the deepest possible description of what the Immanuel Journey reaches for. The goal is not just God showing up in your pain. It is *participatory union* — the same mutual indwelling that the Son has experienced with the Father from eternity.
+
+> *"The glory that you have given me I have given to them, that they may be one even as we are one, I in them and you in me, that they may become perfectly one."*
+> — John 17:22–23
+
+The *glory* is given to produce *unity* — and the unity is modeled on the Trinity itself. This is not a distant theological concept. This is what Jesus prayed for on the night before He died. The intimacy the Son shares with the Father — experienced every day of His incarnate life, and truly from eternity — is the same intimacy He is asking the Father to pour into those who believe. Even those who would come to faith through the words of the apostles. Even us.
+
+> *"Father, I desire that they also, whom you have given me, may be with me where I am, to see my glory."*
+> — John 17:24
+
+"That they may be *with me*" — Immanuel. But not just God-with-us in our suffering. Us-with-God in His glory. The directionality runs both ways.
+
+> *"I made known to them your name, and I will continue to make it known, that the love with which you have loved me may be in them, and I in them."*
+> — John 17:26
+
+The final phrase of Jesus' prayer: "the love with which you have loved me may be *in* them." The Father's love for the Son — the most intimate, eternal, unbroken relationship in existence — poured into the believer. This is what the Immanuel Journey participates in. Not merely "God is present" but "the love between the Father and the Son now lives inside you."
+
+**The Abode: Who Lives in Your House?**
+
+> *"If anyone loves me, he will keep my word, and my Father will love him, and we will come to him and make our home with him."*
+> — John 14:23
+
+The Greek *monē* — dwelling place, abode, home — is the same word Jesus uses in John 14:2 ("In my Father's house are many rooms"). So the Father's house has rooms for us, and *our* house has a room for the Father and Son. The indwelling is mutual. God does not just visit. He moves in. He makes your life His home.
+
+This makes "who is living in your house?" a diagnostic question that cuts across the entire model. Because the honest answer is not always "Christ." Sometimes the house is occupied by the false beliefs encoded in the limbic system — old tenants who moved in during childhood trauma and never left. Sometimes the survival personality has taken over — a squatter who seized the house to protect it and now won't give up the keys. Sometimes the flesh patterns are the previous owner's furniture, still in every room. Sometimes the coping mechanisms — substances, screens, anger, control — are guests who were invited for one night and stayed for years.
+
+Recovery, in this light, is not just healing. It is an *eviction and a homecoming*. The Immanuel Journey is inviting the rightful Owner back into rooms that have been occupied by imposters. "We will come and make our home" — but that requires opening the doors that the survival brain has bolted shut. Every Double Bind decision to take the harder choice is the turning of another lock.
+
+**The Isaiah Portrait: What Kind of God is With Us**
+
+> *"Therefore the Lord himself will give you a sign. Behold, the virgin shall conceive and bear a son, and shall call his name Immanuel."*
+> — Isaiah 7:14
+
+The original naming — given in the context of a king (Ahaz) who refuses to trust God. Immanuel comes precisely when human self-reliance has failed. The name is not a reward for faithfulness. It is a gift into the void of faithlessness.
+
+> *"For to us a child is born, to us a son is given; and the government shall be upon his shoulder, and his name shall be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace."*
+> — Isaiah 9:6
+
+Four names, each speaking to a dimension of what "God with us" actually means in the life of recovery. Wonderful Counselor — He speaks into the wound; this is the Immanuel Journey as counsel. Mighty God — He has the power to heal what the limbic system cannot heal on its own. Everlasting Father — the attachment figure who never abandons; Koch's Security and Belonging met at their deepest root. Prince of Peace — the One who produces the *shalom* that Wilder's Quiet skill is reaching for.
+
+> *"A bruised reed he will not break, and a faintly burning wick he will not snuff out."*
+> — Isaiah 42:3
+
+The *manner* of Immanuel's presence. Gentle with the wounded. Patient with the barely alive. This is the non-anxious presence of God Himself. It speaks directly to the person in the Exhausted stage who feels too broken to be approached. He does not break what is bruised. He does not extinguish what is barely flickering. He tends.
+
+> *"He was despised and rejected by men, a man of sorrows and acquainted with grief... Surely he has borne our griefs and carried our sorrows."*
+> — Isaiah 53:3–4
+
+The Immanuel who does not merely observe our pain but *carries* it. This is Galatians 6:2's *baros* — the crushing burden — borne by God Himself. This is why the Immanuel Journey works: you are not inviting a distant, clinical God into your wound. You are inviting One who has already been wounded, who already knows the weight, who has borne your specific grief and carried your specific sorrow.
+
+> *"The Spirit of the Lord GOD is upon me, because the LORD has anointed me to bring good news to the poor; he has sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to those who are bound... to give them a beautiful headdress instead of ashes, the oil of gladness instead of mourning."*
+> — Isaiah 61:1, 3
+
+Jesus reads this passage in Luke 4 and says "Today this Scripture has been fulfilled in your hearing." This is the mission statement of Immanuel — and it reads like a recovery program: good news to the poor (the Exhausted), binding up the brokenhearted (the wounded heart), liberty to captives (Tier 7 freedom), the oil of gladness instead of mourning (Wilder's joy-fuel replacing grief).
+
+**The earlier texts remain true within this fuller picture:**
+
 > *"Behold, the virgin shall conceive and bear a son, and they shall call his name Immanuel — which means, God with us."*
 > — Matthew 1:23
 
-The name is the theology. God *with* us. Not God observing from a distance, not God sending instructions, but God present — in the pain, in the wound, in the specific place of your specific false belief. The Immanuel Journey is the recovery practice of what the Incarnation established as reality.
+The fulfillment. The name given in Isaiah, now embodied in a person born in Bethlehem.
 
 > *"Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me; your rod and your staff, they comfort me."*
 > — Psalm 23:4
 
-"You are *with* me" — Immanuel in the valley. The comfort does not come from the valley ending. It comes from the Presence within it. This is the theology of the harder choice: you do not have to face the pain alone.
+"You are *with* me" — Immanuel in the valley. The comfort does not come from the valley ending. It comes from the Presence within it.
 
 ---
 
@@ -454,15 +670,32 @@ Purpose is not self-generated. It was *prepared beforehand*. The false belief "I
 
 ### Competence: "What Can I Do?"
 
+> *"But we have this treasure in jars of clay, to show that the surpassing power belongs to God and not to us."*
+> — 2 Corinthians 4:7
+
+This is the foundational correction to every false belief about competence. The lie says "I can't do anything right — I'm not enough." The truth is not "actually, you're more capable than you think." The truth is: you are exactly as fragile as you think you are — *and that is the point*. The vessel is clay. It is supposed to be clay. The glory is not in the vessel. It is in what the vessel carries. Competence rooted in Christ does not mean "I am strong." It means the surpassing power belongs to God, not to us. The jar of clay is not a problem to be solved. It is a design that ensures the glory goes to the right source.
+
+> *"To them God chose to make known how great among the Gentiles are the riches of the glory of this mystery, which is Christ in you, the hope of glory."*
+> — Colossians 1:27
+
+The vessel is clay. What fills it is Christ. And the result is not mere adequacy — it is *glory*. Hope of glory. Not "I can manage" but "the God of the universe has taken up residence in this cracked pot." This also speaks to Identity (Koch) — who am I? I am a vessel inhabited by Christ. That is an identity that cannot be taken away by failure, because it was never based on my performance.
+
+> *"If anyone loves me, he will keep my word, and my Father will love him, and we will come to him and make our home with him."*
+> — John 14:23
+
+The *monē* — the dwelling place, the home. The Father and Son do not merely empower you from a distance. They *move in*. They make your life their home. This transforms the question of competence entirely. It is no longer "What can I do?" in isolation. It is "What can the One who lives in me do through me?" The competence of the earthen vessel is the competence of its Resident.
+
+And this makes "who is living in your house?" not just a recovery diagnostic but an identity question. If Christ dwells in you — if the Father and Son have made their home in you — then your competence is the competence of the indwelling God. Your weakness is the very condition that makes His power visible. The cracked pot is not a failure. It is how the light gets out.
+
 > *"I can do all things through him who strengthens me."*
 > — Philippians 4:13
 
-Competence rooted not in self-sufficiency but in the strength of Christ working through a yielded life.
+Read in light of the earthen vessels and the abode, this verse is no longer a motivational slogan. It is a statement about the Resident. The "him who strengthens me" is the One who has made His home in the clay jar. The competence is His. The vessel is yours. Together, there is nothing that cannot be done — because together is how God designed it.
 
 > *"But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.' Therefore I will boast all the more gladly of my weaknesses, so that the power of Christ may rest upon me."*
 > — 2 Corinthians 12:9
 
-The deepest paradox of recovery: competence is not the absence of weakness but the presence of God's power *in* weakness. This dismantles the false belief that says "I must be strong enough on my own." You don't have to be. He is.
+The deepest paradox of recovery: competence is not the absence of weakness but the presence of God's power *in* weakness. Paul does not merely tolerate his weakness. He *boasts* in it — because weakness is the condition that makes God's power visible. This dismantles the false belief that says "I must be strong enough on my own." You don't have to be. He is. And He lives in your house.
 
 ---
 
@@ -610,6 +843,8 @@ Without vision — without seeing what God sees, who God is, what life could be 
 
 Transformation happens by *beholding*. Not by trying harder but by seeing clearly. Vision produces change. This is Willard's central insight stated by Paul: fix your gaze on the glory of the Lord, and you are transformed.
 
+The vision of recovery is not merely "I will stop the destructive behavior." It is this: the Father and Son will make their home in me (John 14:23). Christ in me, the hope of glory (Colossians 1:27). A treasure in an earthen vessel (2 Corinthians 4:7). That is a vision worth the cost of every harder choice — not a cleaned-up life, but an inhabited one. Not an empty house swept and put in order (Matthew 12:44), but a house with the rightful Owner in residence.
+
 ### Intention
 
 > *"Choose this day whom you will serve."*
@@ -652,4 +887,4 @@ The broadcast has never stopped. The stream has never run dry. The Vine is alive
 
 ---
 
-*Biblical Roots Supplement — compiled as a companion to the Seven Layers of Recovery & Restoration holistic framework. For deeper study of the 7-Tier architecture referenced throughout, see the 7-Tier Relational & Ideological Framework by Gary Springer.*
+*Biblical Roots Supplement — compiled as a companion to the Eight Layers of Recovery & Restoration holistic framework. For deeper study of the 7-Tier architecture referenced throughout, see the 7-Tier Relational & Ideological Framework by Gary Springer.*

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Immanuel Moments: How This Garden Grew</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: #f5f3ed;
+    color: #3a3a3a;
+    min-height: 100vh;
+  }
+  header {
+    background: #2c2c2c;
+    padding: 32px 40px;
+    border-bottom: 3px solid #c77d00;
+  }
+  header .inner { max-width: 780px; margin: 0 auto; }
+  header .label {
+    font-size: 11px;
+    color: #c77d00;
+    text-transform: uppercase;
+    letter-spacing: 3.5px;
+    margin-bottom: 8px;
+  }
+  header h1 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #f5f3ed;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    font-family: 'EB Garamond', Georgia, serif;
+  }
+  header .subtitle {
+    font-size: 15px;
+    color: #999;
+    font-style: italic;
+    font-family: 'EB Garamond', Georgia, serif;
+  }
+  header .companion { margin-top: 12px; }
+  header .companion a {
+    font-size: 13px;
+    color: #c77d00;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(199,125,0,0.3);
+  }
+  header .companion a:hover { color: #e8a020; }
+  .content {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .content h1 { display: none; }
+  .content h2 {
+    font-size: 26px;
+    font-weight: 400;
+    color: #2c2c2c;
+    margin: 48px 0 6px;
+    line-height: 1.25;
+    font-family: 'EB Garamond', Georgia, serif;
+    border-bottom: 1px solid #e0dcd4;
+    padding-bottom: 8px;
+  }
+  .content h2:first-of-type { margin-top: 0; }
+  .content h3 {
+    font-size: 19px;
+    font-weight: 500;
+    color: #c77d00;
+    margin: 32px 0 10px;
+    line-height: 1.3;
+    font-family: 'EB Garamond', Georgia, serif;
+  }
+  .content p {
+    font-size: 16px;
+    line-height: 1.85;
+    margin-bottom: 16px;
+    font-family: 'EB Garamond', Georgia, serif;
+  }
+  .content em { color: #555; }
+  .content strong { color: #2c2c2c; font-weight: 600; }
+  .content blockquote {
+    border-left: 3px solid #c77d00;
+    padding: 4px 0 4px 20px;
+    margin: 20px 0;
+    background: transparent;
+  }
+  .content blockquote p {
+    font-size: 15.5px;
+    font-style: italic;
+    color: #555;
+    line-height: 1.75;
+    margin-bottom: 4px;
+  }
+  .content blockquote p:last-child {
+    font-style: normal;
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 0;
+  }
+  .content ul, .content ol {
+    margin: 12px 0 16px 24px;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 15.5px;
+    line-height: 1.75;
+  }
+  .content li { margin-bottom: 6px; }
+  .content hr {
+    border: none;
+    border-top: 1px solid #e0dcd4;
+    margin: 40px 0;
+  }
+  .footer-note {
+    text-align: center;
+    padding: 20px 24px 40px;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 13px;
+    color: #bbb;
+    font-style: italic;
+  }
+  .footer-note a { color: #c77d00; text-decoration: none; }
+
+  /* Site navbar */
+  .site-nav { background: #1a1a1a; padding: 0 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
+  .site-nav .nav-inner { max-width: 940px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .site-nav .nav-home { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8aaa80; text-decoration: none; padding: 12px 0; white-space: nowrap; }
+  .site-nav .nav-home:hover { color: #b0c8a8; }
+  .site-nav ul { list-style: none; display: flex; gap: 0; margin: 0; padding: 0; flex-wrap: wrap; }
+  .site-nav li a { font-family: 'EB Garamond', Georgia, serif; font-size: 13.5px; color: #999; text-decoration: none; padding: 12px 14px; display: block; transition: color 0.2s; white-space: nowrap; }
+  .site-nav li a:hover { color: #f0ede6; }
+  .site-nav li a.active { color: #f0ede6; font-weight: 600; }
+  .site-nav .nav-sep { width: 1px; background: #333; margin: 8px 4px; align-self: stretch; }
+  .site-nav .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 12px 0; }
+  .site-nav .hamburger .bar { display: block; width: 20px; height: 2px; background: #999; margin: 4px 0; transition: all 0.3s; }
+  .site-footer { background: #1a2a1a; border-top: 1px solid #2e4a2e; padding: 28px 40px; text-align: center; }
+  .site-footer p { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; color: #556655; }
+  .site-footer a { color: #8aaa80; text-decoration: none; }
+  @media (max-width: 700px) {
+    .site-nav .hamburger { display: block; }
+    .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; }
+    .site-nav ul.open { display: flex; }
+    .site-nav .nav-inner { flex-wrap: wrap; }
+    .site-nav .nav-sep { display: none; }
+    .site-nav li a { padding: 8px 0; }
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 24px 20px; }
+    header h1 { font-size: 26px; }
+    .content { padding: 24px 16px 60px; }
+    .content h2 { font-size: 22px; }
+  }
+  @media print {
+    header { background: white; border-bottom-color: #ccc; }
+    header h1 { color: #2c2c2c; }
+    header .label { color: #999; }
+    body { background: white; }
+  }
+</style>
+</head>
+<body>
+
+<div class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Gary Springer's Garden</a>
+    <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <ul>
+      <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
+      <li><a href="holistic-recovery-model.html">Recovery Model</a></li>
+      <li><a href="biblical-roots-doc.html">Biblical Roots</a></li>
+      <li><a href="immanuel-moments.html" class="active">Immanuel Moments</a></li>
+      <li class="nav-sep"></li>
+      <li><a href="recommended-reading.html">Reading List</a></li>
+    </ul>
+  </div>
+</div>
+
+<header>
+  <div class="inner">
+    <div class="label">A Personal Testimony</div>
+    <h1>Immanuel Moments: How This Garden Grew</h1>
+    <div class="subtitle">Yeshua meets us where we are. He invites us to new places. And as we follow, we go places together that we never imagined.</div>
+    <div class="companion">
+      <a href="biblical-roots-doc.html">&rarr; Biblical Roots</a>
+      &nbsp;&middot;&nbsp;
+      <a href="holistic-recovery-model.html">&rarr; Eight Layers of Recovery</a>
+      &nbsp;&middot;&nbsp;
+      <a href="7-tier-framework.html">&rarr; The 7-Tier Framework</a>
+    </div>
+  </div>
+</header>
+
+<div class="content">
+<p><em>Yeshua meets us where we are. He invites us to new places. And as
+we follow, we go places together that we never imagined.</em></p>
+<p><em>He meets us where we are — where else could He? But then we meet
+Him where He is. And where He is, is glory.</em></p>
+<hr />
+<p>This is not a systematic account of how the model was built. It is a
+collection of moments — Immanuel moments — where God was planting
+something in me that I didn’t have the framework to name until later.
+Each one became a root of what eventually grew into the 7-Tier Framework
+and the Eight Layers of Recovery. I offer them not as a method to follow
+but as a testimony to the God who meets us where we are and doesn’t
+leave us there.</p>
+<hr />
+<h2 id="the-three-things-and-the-place-of-hearing">The Three Things and
+the Place of Hearing</h2>
+<p>For years — many years — I felt like God was telling me, “I’m going
+to tell you three things.” Sometimes just the words “three things.” No
+other words would follow. It was clear that He wanted to tell me, but
+when I asked or waited, all I heard was silence. Not empty silence.
+Pregnant silence. The kind that says <em>not yet, but I’m not
+done.</em></p>
+<p>Then Ariel and D’vorah Berkowitz stayed in our home. During that
+visit, D’vorah shared what she calls “the Garden Story” — her telling of
+<em>In the Beginning</em>. She said, “Let me tell you about the
+beginning,” and as she spoke she kept returning to these words: “a
+place” … “of no separation.” Those words struck me as important. Not an
+<em>idea</em> of this — the <em>place</em>. And in that telling, the
+three things became crystal clear:</p>
+<p><strong>No Condemnation. No Separation. Abba.</strong></p>
+<p>These are the three movements of Romans 8 — the chapter that holds
+together the entire Gospel section of this model. No condemnation for
+those in Christ Jesus (Romans 8:1). No separation — nothing in all
+creation able to separate us from His love (Romans 8:38–39). And the
+Spirit of adoption, by whom we cry <em>Abba, Father</em> (Romans 8:15).
+The garden story — the original intimacy, the rupture, the promise of
+restoration — was always pointing here. God had been speaking these
+three things into my life for years, and D’vorah’s voice was the one He
+used to complete the picture.</p>
+<p>And over all three, like a canopy, came a fourth word: <strong>the
+Place of Hearing</strong>. Not so much a location as a posture. A way of
+living. <em>Live from this place.</em> Hear from this place. The Place
+of Hearing. The obedience of faith as Paul aims to teach — or hearing
+that leads to faithfulness, if you will.</p>
+<p>Now, all of this gathering together of various models grew from my
+heart drawing me to different books and teachings. And what has become
+clearer — not complete, but much clearer — is that God has been walking
+with me to shape how I see things.</p>
+<p>So everything in the model — every layer, every tool, every practice
+— exists to get me back to this place. The Place of Hearing is Tier 1.
+It is Restoration on the FASTER Scale. It is what Isaiah 30:21
+describes: “Your ears will hear a word behind you, ‘This is the way,
+walk in it.’” The broadcast has been playing all along. The Place of
+Hearing is where the receiver is tuned in. I don’t perform to get to
+Tier 1. I live from that tier. Which leads me to the “Orphan Spirit”
+Sunday sermon.</p>
+<hr />
+<h2 id="would-you-father-me-today">“Would You Father Me Today?”</h2>
+<p>Before the sermon itself, the teaching opened with an observation
+that stopped me: look at the stories we raise our children on. Nearly
+every classic Disney film has an orphan as its protagonist. Snow White —
+orphan. Cinderella — orphan. Bambi, Mowgli, Aladdin, Simba, Elsa and
+Anna, Rapunzel — all orphans. The list goes on and on. <em>101
+Dalmatians</em> is one of the only classic Disney films where the family
+stays together — a mother and father fighting side by side against
+Cruella de Vil — and it is said that Disney disliked that film, albeit
+for technical reasons. But one wonders: the one story where a family is
+intact, fighting together, is the one that didn’t sit right.</p>
+<p>This matters deeply for how children form the pictures in their
+hearts about what life really is. When the dominant narrative — the one
+told over and over in the most powerful storytelling medium in history —
+is the story of the orphan, children absorb a picture of a world with no
+father. The struggle is theirs alone. The hero’s journey becomes the
+orphan’s journey: deal with the loss, find your own strength, become the
+superhero who makes up for what was taken from you. The message,
+delivered through a thousand beloved stories, is ultimately this: there
+is no father coming for you — so go out and save yourself. It is a
+deeply compelling narrative. It is also a deeply false one — not because
+suffering isn’t real, but because it removes the Father from the picture
+entirely and tells children that the only way forward is to become
+someone who doesn’t need one. The orphan spirit doesn’t just come from
+personal trauma. It comes from the stories a culture tells itself,
+generation after generation, about what it means to be alive.</p>
+<p>During a visit with a pregnancy center in Holland, Michigan, I was
+told there was a message they wanted to share with me — one that men
+especially needed to hear. It was a teaching by a young man who, during
+a Christian-based wilderness retreat, had learned some important truths
+about what it means to be fathered. His teaching was about the orphan
+spirit. The teaching itself was excellent, but what cut deepest was the
+prayer that came at the end. This young man shared his heart with his
+church family and said:</p>
+<p><em>“We can’t provide for ourselves, protect ourselves, give
+ourselves identity. We can’t win the identity, affirmation, and
+affection that we so desperately crave in ways that are sustainable and
+healthy for eternal life. But in the abundance of his love, God sent his
+son Jesus to die on a cross for our sin, not only to reconcile us to the
+Father, but to fill us with the spirit of sonship, every day.”</em></p>
+<p>And then the challenge: <em>“My best days are the days I wake up and
+pray, ‘God, would you father me today? Would you fill me with identity,
+affirmation, and affection? I repent for the ways that I’ve tried to
+prove, produce, and perform. I repent for the ways that I have taken the
+quest to provide, protect, and give myself an identity into my own hands
+instead of rejoicing in the ways that Jesus has done that for
+me.’”</em></p>
+<p>That prayer names the core problem the recovery model addresses — the
+orphan spirit that tries to meet its own needs through flesh. Our need
+for our Father to give us protection, provision, and a name — our
+identity. And the core solution: the spirit of sonship, received daily,
+not earned — walking with us, providing identity, affirmation, and
+affection. It is Koch’s five core needs (security, identity, belonging,
+purpose, competence) met not through counterfeits but through the
+Father’s daily provision. It is Romans 8:15 turned into a morning
+practice. It is the Vision of VIM made into a prayer.</p>
+<p>And it is the recognition that the stories I grew up with have shaped
+me in ways I don’t fully realize — and that I need to hear my Father’s
+stories, the ones recorded in His book. As the psalmist says: “Your
+testimonies are my delight; they are my counselors” (Psalm 119:24).</p>
+<hr />
+<h2 id="the-praying-hands">The Praying Hands</h2>
+<p>I once saw Kathy Koch’s five core needs mapped onto the five fingers
+of one hand. Security. Identity. Belonging. Purpose. Competence. Simple.
+Memorable. One finger at a time.</p>
+<p>But then God showed me something: the hands need to <em>join</em>.
+Like praying hands — need meeting provision, point by point, finger to
+finger. That is one hand — my left. He is the right hand. My need for
+security meeting His provision of security. My need for identity meeting
+His declaration of identity. My need for belonging meeting His adoption.
+My need for purpose meeting His calling. My need for competence meeting
+His indwelling power.</p>
+<p>And then the painful realization: I had allowed a person to become an
+idol — a false hand inserted between me and God at every point. Every
+need that was supposed to be met by the Father was being routed through
+a human being instead. And when that human being couldn’t sustain the
+weight — because no human can — the whole system collapsed. I
+collapsed.</p>
+<p>God, over time, wanted to heal me. Change my name. Be my trust at all
+five points. Not as a one-time awareness — not just a theological
+insight that I could nod at and file away — but as a living thing. A
+daily practice of letting His hand meet mine. The praying hands are not
+a metaphor I thought up. They are a picture God gave me of what recovery
+looks like: the false hand removed, the real hand received, five needs
+meeting five provisions, held in prayer.</p>
+<hr />
+<h2 id="the-day-my-father-passed">The Day My Father Passed</h2>
+<p>My father was an alcoholic. A “happy drunk,” but an alcoholic all the
+same. The adult child of an alcoholic carries things that take decades
+to surface and a lifetime to untangle.</p>
+<p>On the day he died, I was driving in my car. I felt a prompting —
+something like a question from God about my father. I don’t remember the
+exact words, but I remember the result. I found myself saying something
+like: <em>It is well with my soul. I would not want anything to be
+different. All that happened needed to happen for me to be right where I
+am. My children, my grandchildren — if any one thing changed, all of it
+would be lost. Everything God has given me that I hold in my
+heart.</em></p>
+<p>It was as if I was saying to my father: <em>Your slate is clear. Have
+no regrets or pain because of anything you might not have done or said
+or been. I am living in the blessings of God.</em></p>
+<p>This all happened quickly. I found out a few hours later that my
+father had unexpectedly passed.</p>
+<p>My hope is that God was meeting him — and that my unprompted Tier 1
+conversation with God, at the time of my father’s death, might have been
+God meeting my dad on his own Tier 1. I know that’s technical. In the
+end, I just say this: God prepared me for the news I would hear, and in
+my father’s passing, He met me in ways I would not have expected and
+still don’t have words to fully express.</p>
+<hr />
+<h2 id="the-face-without-joy">The Face Without Joy</h2>
+<p>There came a moment — I couldn’t tell you exactly when — where I
+realized that even when theology is worked out to precision, if the face
+has no joy or delight, something essential is missing. The truth can be
+entirely correct and entirely powerless at the same time — not because
+the truth lacks power, but because the face delivering it has no light
+in it.</p>
+<p>This is Wilder’s insight experienced personally. The relational
+circuit. The face that lights up. The brain’s need for joy-fuel. I
+realized that correct ideas without relational joy produce orthodoxy
+without life. The face of the person teaching the truth matters. The
+face of the person receiving it matters. If the face that represents God
+to you — whether a parent, a pastor, a spouse — has no delight in it,
+the truth it carries will be filtered through that absence of delight.
+And what arrives in the heart is not the truth but a diminished version
+of it, stripped of its relational power.</p>
+<p>For a person who says they are doing well — who might even have
+reason to boast that things are fine — I wish I could find a way to say:
+<em>you need to go look in the mirror and tell that to your face.</em>
+You have a face problem. Your face, when seen, says anything but “I am
+delighted to be with you.” Go fix your face. But then I would need to
+explain what that means — because it turns out it is not my face that
+needs fixing on its own. It is God’s face that needs to be lifted up
+toward me. The Aaronic benediction needs to be fully spoken upon me —
+with a Heavenly Father present, embodying the fullness of that
+blessing:</p>
+<p><em>“The LORD bless you and keep you; the LORD make his face to shine
+upon you and be gracious to you; the LORD lift up his countenance upon
+you and give you peace.”</em> — Numbers 6:24–26</p>
+<p>When His face shines on mine, my face changes. That is what the
+Immanuel Journey does. It reconnects truth to the face of God — the face
+that Zephaniah says rejoices over you with gladness, quiets you by His
+love, and exults over you with singing. The truth needs that face behind
+it. Without it, the truth is a light with no warmth.</p>
+<hr />
+<h2 id="the-dreams">The Dreams</h2>
+<h3 id="the-house-with-rooms">The House with Rooms</h3>
+<p>I had a dream where the house God had prepared for me was filled with
+rooms, and each room represented a person — a family member, a
+relationship. Some rooms were like old English rooms, covered with dusty
+clothes, draped in spider webs, unused and neglected. They needed to be
+prepared — cleaned, opened, restored to their design — so they could
+function according to what they were meant to be.</p>
+<p>The instruction was simple: <em>Be present. Abide in these
+rooms.</em> Not fix them from a distance. Not diagnose them from the
+hallway. Go in. Stay. Do the slow work of presence that makes
+restoration possible. This is the Tier 2 work — individual, relational,
+one room at a time.</p>
+<h3 id="the-family-business">The Family Business</h3>
+<p>In another dream, I was driving a car as part of a family business.
+The steering wheel changed shape as needed — adaptive, not fixed. I
+visited three buildings:</p>
+<p>The first had a maze as its entryway — confusing, disorienting. No
+one lived there. It represented theology — cold, accurate, but
+uninhabited.</p>
+<p>The second was all mist, shadows, and fog — atmospheric but empty. No
+one lived there either. It was “spirituality” — all the emotions,
+empathy, and movement of things, but no Spirit.</p>
+<p>The third was a party — black tie, everyone showing off, performing
+parts. No joy. And no one really lived there.</p>
+<p>Then there was a fourth place — a complex castle, filled with people,
+rooms, refreshment, all interconnected. The rooms were doorless and
+people flowed freely among the chambers. My wife was there. She was
+exhausted. She said, “I need you.” I said the same. And when we met —
+she flourished, came to life. There was a coffee station in one room.
+This was the heart of the family and its business. The place we are
+designed to live. Not the maze of cold theology, not the fog of
+spirituality without the Spirit, not the performance of the party. Not
+soft skills or hard skills, as Sande distinguishes, but relational
+wisdom. The castle. The interconnected, refreshing, life-giving,
+relational place where people actually live.</p>
+<hr />
+<h2 id="the-systems-that-resist-change">The Systems That Resist
+Change</h2>
+<p>Figuring out how to become fully alive — and even what that means —
+is still a journey. Discovering what an adult child of an alcoholic can
+realistically expect to be the state of his heart is ongoing work. It
+doesn’t end with a framework.</p>
+<p>After a full Air Force career and raising two beautifully godly
+daughters, I entered Faith Evangelical Seminary for a Masters in
+Christian Ministry. That’s where the 7-Tier Framework first emerged —
+not as a finished product but as a musing, a way of organizing what I
+was learning against what I was experiencing.</p>
+<p>The study of family systems counseling started to piece things
+together — not just in me, but in the systems I was part of. Friedman’s
+insight became personal: problems happen in relationships, in systems.
+Systems resist change. They seek equilibrium. The very structures
+designed to hold things together can become the structures that prevent
+growth.</p>
+<p>I was zealous — in a good way, or so I thought — and doing what I saw
+as keeping the Sabbath. Then I read Pete Scazzero, whose work on
+emotionally healthy spirituality and discipleship challenged me in
+unexpected ways. He mentioned that he took Friday sundown to Saturday
+sundown as his day of rest — not pastor prep, no anxieties, just rest —
+and then served in a Sunday church. I was separating from “work,” but on
+the Sabbath at our congregation I was the sound board operator, on the
+worship team, teaching the children Proverbs lessons each week during
+our integrated service. I was one of the pastors there. And while each
+Sabbath was set apart, and I did my best to fully trust in Him and not
+let the pressure of that day weigh on me, over time I became
+exhausted.</p>
+<p>The situation was such that there was no honorable way to take a
+sabbatical from the Sabbath. This — and many other pressures — led me to
+a breaking point. I resigned. I walked away from a community I had been
+a part of for over twenty years. Others left too, though that would take
+almost nine months. We are still a rag-tag group who, in some ways, feel
+more connected now than we ever did inside the structure. Sometimes the
+system has to break before the relationships can breathe.</p>
+<p>David Olsen’s <em>Integrative Family Therapy</em> showed me something
+that gave me permission for what I’ve done here: multiple perspectives
+within an established field can be integrated into a unified model
+without losing what each one does well. Olsen took seven schools of
+family therapy — cognitive, developmental, interactional,
+multigenerational, object relations, problem solving, structural — and
+showed that they could work together. That professional integration
+planted the seed for this personal one. The eight layers of this
+recovery model are not a professional clinical integration. They are a
+personal synthesis — my attempt to bring together what God has been
+teaching me through many voices, many books, many Immanuel moments.
+Olsen showed me it could be done.</p>
+<p>Tod Bolsinger’s <em>Canoeing the Mountains</em> took Friedman into
+the life of a pastor navigating uncharted territory — and gave me
+language for what it feels like when the map you were trained to read no
+longer matches the terrain in front of you. Sometimes the canoes have to
+be left behind. Sometimes the mountains require new tools.</p>
+<hr />
+<h2 id="how-it-comes-together">How It Comes Together</h2>
+<p>Yeshua meets us where we are. He doesn’t wait until we’ve figured it
+out. He meets us in the car on the day our father dies. He meets us in a
+dream about dusty rooms. He meets us through a friend who tells the
+garden story and the three things suddenly make sense.</p>
+<p>He invites us to new places. Not always places we’d choose. Sometimes
+a seminary classroom. Sometimes a prayer about the orphan spirit.
+Sometimes a moment where we realize the face without joy is our own
+face.</p>
+<p>And as we follow — one step, one room, one book, one Double Bind at a
+time — we go places together that we never imagined. The model you see
+on this site is one of those places. I didn’t plan it. I didn’t set out
+to build a framework that integrates eight thinkers and a thousand years
+of biblical theology. I set out to understand why I was the way I was —
+how I could see the people around me and find ways to not only make
+sense of where <em>they</em> are but where God could meet <em>us</em> —
+and to find a way to testify to the glory of God: the work He has done,
+is doing, and promises to bring to completion. You might say this
+framework is what grew when I started paying attention.</p>
+<p>I am still paying attention. The garden is still growing.</p>
+<hr />
+<p><em>Gary Springer — grounded in Scripture, informed by neuroscience,
+offered freely.</em> <em>Faith Evangelical Seminary, 2010–2012.
+garys-garden.</em></p>
+
+</div>
+
+<div class="site-footer">
+  <p>Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
+</div>
+
+</body>
+</html>

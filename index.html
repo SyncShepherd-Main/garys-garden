@@ -4,154 +4,62 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gary Springer's Garden</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', -apple-system, sans-serif; background: #f5f3ed; color: #3a3a3a; min-height: 100vh; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: #f5f3ed; color: #3a3a3a; min-height: 100vh; }
 
   header {
     background: #1a2a1a;
     padding: 48px 40px 40px;
+    border-bottom: 3px solid #4a7a3a;
   }
-  header .inner { max-width: 860px; margin: 0 auto; }
-  header .label {
-    font-size: 12px; color: #4a7a3a; text-transform: uppercase;
-    letter-spacing: 3.5px; margin-bottom: 10px;
-  }
-  header h1 {
-    font-size: 38px; font-weight: 600; color: #f5f3ed;
-    line-height: 1.15; margin-bottom: 12px;
-  }
-  header .subtitle {
-    font-size: 17px; color: #8aaa80; line-height: 1.7;
-    max-width: 600px;
-  }
-  .navbar {
-    background: #223522; border-bottom: 1px solid #2e4a2e;
-    position: sticky; top: 0; z-index: 100;
-  }
-  .navbar .nav-wrap {
-    max-width: 960px; margin: 0 auto; padding: 0 16px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .navbar ul {
-    display: flex; list-style: none; gap: 0; margin: 0; padding: 0;
-  }
-  .navbar li a {
-    font-size: 15px; color: #b0c8a8; text-decoration: none;
-    padding: 14px 18px; display: block; white-space: nowrap;
-    transition: background 0.15s, color 0.15s;
-  }
-  .navbar li a:hover { background: #2e4a2e; color: #fff; }
-  .navbar li a.active { color: #fff; background: #2e4a2e; font-weight: 600; }
-  .navbar li.sep { border-left: 1px solid #3a5a3a; margin: 8px 4px; }
-  .hamburger .menu-label {
-    display: none; font-size: 14px; color: #b0c8a8; font-weight: 500;
-    letter-spacing: 0.5px;
-  }
-  .hamburger {
-    display: none; background: none; border: none; cursor: pointer;
-    padding: 12px; margin-right: 4px;
-  }
-  .hamburger .bars { display: flex; flex-direction: column; }
-  .hamburger .bars span {
-    display: block; width: 24px; height: 2px; background: #b0c8a8;
-    margin: 3px 0; transition: all 0.3s ease;
-  }
-  .hamburger.open .bars span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-  .hamburger.open .bars span:nth-child(2) { opacity: 0; }
-  .hamburger.open .bars span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-  @media (max-width: 700px) {
-    header { padding: 32px 20px 28px; }
-    header h1 { font-size: 28px; }
-    header .subtitle { font-size: 15px; }
-    .hamburger { display: flex; align-items: center; gap: 10px; }
-    .hamburger .menu-label { display: inline; }
-    .navbar ul {
-      display: none; flex-direction: column;
-      position: absolute; top: 100%; left: 0; right: 0;
-      background: #223522; border-bottom: 2px solid #2e4a2e;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    }
-    .navbar ul.open { display: flex; }
-    .navbar .nav-wrap { position: relative; }
-    .navbar li a { padding: 14px 24px; border-bottom: 1px solid #2e4a2e; }
-    .navbar li.sep { display: none; }
-    .main { padding: 32px 16px 48px; }
-    .cards { grid-template-columns: 1fr; }
-    .source-docs .card { flex-direction: column; }
-    .source-docs .card-footer { align-items: flex-start; }
-  }
+  header .inner { max-width: 900px; margin: 0 auto; }
+  header .label { font-size: 11px; color: #4a7a3a; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 10px; }
+  header h1 { font-size: 38px; font-weight: 400; color: #f5f3ed; line-height: 1.15; margin-bottom: 12px; }
+  header .subtitle { font-size: 16px; color: #8aaa80; line-height: 1.7; max-width: 560px; }
 
-  .main { max-width: 860px; margin: 0 auto; padding: 52px 24px 80px; }
+  .main { max-width: 900px; margin: 0 auto; padding: 52px 24px 80px; }
 
   .section-label {
-    font-size: 12px; text-transform: uppercase; letter-spacing: 2.5px;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 2.5px;
     color: #8aaa80; margin-bottom: 20px; padding-bottom: 8px;
     border-bottom: 1px solid #d8d4cc;
   }
 
-  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; margin-bottom: 52px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; margin-bottom: 48px; }
+  .cards.single-col { grid-template-columns: 1fr; }
 
   .card {
-    background: #fff;
-    border: 1px solid #d8d4cc;
-    border-radius: 8px;
-    padding: 28px;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
+    background: #fff; border: 1px solid #d8d4cc; border-radius: 8px;
+    padding: 26px; text-decoration: none; color: inherit;
+    display: flex; flex-direction: column;
     transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-    position: relative;
-    overflow: hidden;
+    position: relative; overflow: hidden;
   }
   .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: #4a7a3a;
-    transform: scaleX(0);
-    transform-origin: left;
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: #4a7a3a; transform: scaleX(0); transform-origin: left;
     transition: transform 0.3s ease;
   }
-  .card:hover {
-    border-color: #b0c4a8;
-    box-shadow: 0 4px 20px rgba(74,122,58,0.10);
-    transform: translateY(-2px);
-  }
+  .card:hover { border-color: #b0c4a8; box-shadow: 0 4px 20px rgba(74,122,58,0.10); transform: translateY(-2px); }
   .card:hover::before { transform: scaleX(1); }
 
-  .card-type {
-    font-size: 12px; text-transform: uppercase; letter-spacing: 2px;
-    color: #4a7a3a; font-weight: 600; margin-bottom: 10px;
-  }
-  .card h2 {
-    font-size: 24px; font-weight: 600; color: #1a2a1a;
-    line-height: 1.3; margin-bottom: 10px;
-  }
-  .card .desc {
-    font-size: 16px; color: #666; line-height: 1.7;
-    flex: 1; margin-bottom: 20px; font-style: italic;
-  }
-  .card-footer {
-    display: flex; align-items: center; justify-content: space-between;
-    border-top: 1px solid #ece8e0; padding-top: 14px; margin-top: auto;
-  }
-  .card-format {
-    font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
-    color: #aaa;
-  }
-  .card-arrow {
-    font-size: 18px; color: #4a7a3a; transition: transform 0.2s ease;
-  }
+  .card.amber::before { background: #c77d00; }
+  .card.amber:hover { border-color: #d4a855; box-shadow: 0 4px 20px rgba(199,125,0,0.10); }
+
+  .card-type { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #4a7a3a; font-weight: 600; margin-bottom: 10px; }
+  .card.amber .card-type { color: #c77d00; }
+  .card h2 { font-size: 21px; font-weight: 500; color: #1a2a1a; line-height: 1.3; margin-bottom: 10px; }
+  .card .desc { font-size: 14.5px; color: #666; line-height: 1.7; flex: 1; margin-bottom: 20px; font-style: italic; }
+  .card-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #ece8e0; padding-top: 14px; margin-top: auto; }
+  .card-format { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #aaa; }
+  .card-arrow { font-size: 18px; color: #4a7a3a; transition: transform 0.2s ease; }
+  .card.amber .card-arrow { color: #c77d00; }
   .card:hover .card-arrow { transform: translateX(4px); }
 
-  .card.dark {
-    background: #1a2a1a;
-    border-color: #2e4a2e;
-  }
+  /* Dark cards */
+  .card.dark { background: #1a2a1a; border-color: #2e4a2e; }
   .card.dark::before { background: #6aa85a; }
   .card.dark:hover { border-color: #4a7a3a; box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
   .card.dark .card-type { color: #6aa85a; }
@@ -161,70 +69,93 @@
   .card.dark .card-format { color: #556655; }
   .card.dark .card-arrow { color: #6aa85a; }
 
-  .source-docs .cards { grid-template-columns: 1fr; }
-  .source-docs .card { flex-direction: row; gap: 20px; align-items: center; }
-  .source-docs .card h2 { font-size: 20px; margin-bottom: 4px; }
-  .source-docs .card .desc { margin-bottom: 0; }
-  .source-docs .card-footer { border: none; padding: 0; flex-direction: column; align-items: flex-end; gap: 4px; }
-  .source-docs .card-text { flex: 1; }
+  .card.dark-amber { background: #2c2c2c; border-color: #3a3a3a; }
+  .card.dark-amber::before { background: #c77d00; }
+  .card.dark-amber:hover { border-color: #c77d00; box-shadow: 0 4px 24px rgba(0,0,0,0.3); }
+  .card.dark-amber .card-type { color: #c77d00; }
+  .card.dark-amber h2 { color: #f0ede6; }
+  .card.dark-amber .desc { color: #a09080; }
+  .card.dark-amber .card-footer { border-top-color: #3a3a3a; }
+  .card.dark-amber .card-format { color: #665544; }
+  .card.dark-amber .card-arrow { color: #c77d00; }
 
-  footer {
-    background: #1a2a1a;
-    border-top: 1px solid #2e4a2e;
-    padding: 28px 40px;
-    text-align: center;
-  }
-  footer p {
-    font-size: 14px; color: #8aaa80;
-  }
+  /* Horizontal source-doc cards */
+  .cards.source-docs { grid-template-columns: 1fr; }
+  .cards.source-docs .card { flex-direction: row; gap: 20px; align-items: center; }
+  .cards.source-docs .card::before { width: 3px; height: auto; top: 0; bottom: 0; right: auto; transform: scaleY(0); transform-origin: top; }
+  .cards.source-docs .card:hover::before { transform: scaleY(1); }
+  .cards.source-docs .card h2 { font-size: 17px; margin-bottom: 4px; }
+  .cards.source-docs .card .desc { margin-bottom: 0; }
+  .cards.source-docs .card-footer { border: none; padding: 0; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+  .cards.source-docs .card-text { flex: 1; }
 
-  .scroll-top {
-    position: fixed; bottom: 24px; right: 24px;
-    width: 48px; height: 48px; border-radius: 50%;
-    background: #1a2a1a; border: 2px solid #4a7a3a;
-    color: #8aaa80; font-size: 24px; line-height: 44px; text-align: center;
-    cursor: pointer; opacity: 0; pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.3);
-    z-index: 9999;
-    -webkit-tap-highlight-color: transparent;
+  /* Flowchart card */
+  .flowchart-card { background: #fff; border: 1px solid #d8d4cc; border-radius: 8px; overflow: hidden; text-decoration: none; color: inherit; display: block; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; }
+  .flowchart-card:hover { border-color: #c77d00; box-shadow: 0 4px 20px rgba(199,125,0,0.1); transform: translateY(-2px); }
+  .flowchart-card img { width: 100%; display: block; max-height: 300px; object-fit: cover; object-position: top; }
+  .flowchart-card .fc-body { padding: 20px 22px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #ece8e0; }
+  .flowchart-card .fc-left .fc-type { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #c77d00; font-weight: 600; margin-bottom: 4px; }
+  .flowchart-card .fc-left .fc-title { font-size: 17px; font-weight: 500; color: #1a2a1a; }
+  .flowchart-card .fc-arrow { font-size: 18px; color: #c77d00; transition: transform 0.2s; }
+  .flowchart-card:hover .fc-arrow { transform: translateX(4px); }
+
+  footer { background: #1a2a1a; border-top: 1px solid #2e4a2e; padding: 28px 40px; text-align: center; }
+  footer p { font-size: 13px; color: #556655; }
+
+  /* Navbar */
+  .site-nav { background: #1a1a1a; padding: 0 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
+  .site-nav .nav-inner { max-width: 940px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .site-nav .nav-home { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8aaa80; text-decoration: none; padding: 12px 0; white-space: nowrap; }
+  .site-nav .nav-home:hover { color: #b0c8a8; }
+  .site-nav ul { list-style: none; display: flex; gap: 0; margin: 0; padding: 0; flex-wrap: wrap; }
+  .site-nav li a { font-family: 'EB Garamond', Georgia, serif; font-size: 13.5px; color: #999; text-decoration: none; padding: 12px 14px; display: block; transition: color 0.2s; white-space: nowrap; }
+  .site-nav li a:hover { color: #f0ede6; }
+  .site-nav li a.active { color: #f0ede6; font-weight: 600; }
+  .site-nav .nav-sep { width: 1px; background: #333; margin: 8px 4px; align-self: stretch; }
+  .site-nav .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 12px 0; }
+  .site-nav .hamburger .bar { display: block; width: 20px; height: 2px; background: #999; margin: 4px 0; transition: all 0.3s; }
+  @media (max-width: 700px) {
+    .site-nav .hamburger { display: block; }
+    .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; }
+    .site-nav ul.open { display: flex; }
+    .site-nav .nav-inner { flex-wrap: wrap; }
+    .site-nav .nav-sep { display: none; }
+    .site-nav li a { padding: 8px 0; }
   }
-  .scroll-top.visible { opacity: 1; pointer-events: auto; }
-  .scroll-top:hover { background: #4a7a3a; color: #fff; transform: translateY(-2px); }
 </style>
 </head>
 <body>
+
+<div class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Gary Springer's Garden</a>
+    <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <ul>
+      <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
+      <li><a href="holistic-recovery-model.html">Recovery Model</a></li>
+      <li><a href="biblical-roots-doc.html">Biblical Roots</a></li>
+      <li><a href="immanuel-moments.html">Immanuel Moments</a></li>
+      <li class="nav-sep"></li>
+      <li><a href="recommended-reading.html">Reading List</a></li>
+    </ul>
+  </div>
+</div>
 
 <header>
   <div class="inner">
     <div class="label">Gary Springer</div>
     <h1>Gary Springer's Garden</h1>
-    <p class="subtitle">Planting trees. Seeing what grows. A collection of frameworks for relationships, recovery, and the life of faith — grounded in Scripture, informed by neuroscience, and offered freely.</p>
+    <p class="subtitle">Planting trees. Seeing what grows. A collection of frameworks for relationships, recovery, and the life of faith — grounded in Scripture, offered freely.</p>
   </div>
 </header>
 
-<nav class="navbar">
-  <div class="nav-wrap">
-    <button class="hamburger" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"><span class="menu-label">Menu</span><span class="bars"><span></span><span></span><span></span></span>
-    </button>
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
-      <li><a href="holistic-recovery-model.html">Recovery Model</a></li>
-      <li class="sep"></li>
-      <li><a href="7-tier-full-text.html">7-Tier Full Text</a></li>
-      <li><a href="eight-layer-reference.html">Eight-Layer Reference</a></li>
-      <li><a href="biblical-roots-doc.html">Biblical Roots</a></li>
-      <li><a href="reading-list.html">Reading List</a></li>
-    </ul>
-  </div>
-</nav>
-
 <div class="main">
 
+  <!-- Interactive Viewers -->
   <div class="section-label">Interactive Viewers</div>
   <div class="cards">
-
     <a href="7-tier-framework.html" class="card dark">
       <div class="card-type">Relational Theology</div>
       <h2>The 7-Tier Relational &amp; Ideological Framework</h2>
@@ -245,16 +176,74 @@
       </div>
     </a>
 
+    <a href="biblical-roots-doc.html" class="card dark-amber">
+      <div class="card-type">Biblical Foundation</div>
+      <h2>Biblical Roots of the Eight-Layer Model</h2>
+      <p class="desc">The scriptural architecture beneath the recovery model — including the full Gospel section: the Promise Plan, the Cup and the Cross, the Place of No Separation, and the Cry of the Adopted Child.</p>
+      <div class="card-footer">
+        <span class="card-format">Interactive · Updated</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <a href="immanuel-moments.html" class="card dark-amber">
+      <div class="card-type">Personal Origin</div>
+      <h2>Immanuel Moments: How This Garden Grew</h2>
+      <p class="desc">The personal story behind the frameworks. Moments where God planted something that didn't yet have a name — the three things, the praying hands, the orphan spirit, the place of hearing.</p>
+      <div class="card-footer">
+        <span class="card-format">Testimony · Gary Springer</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
   </div>
 
-  <div class="section-label source-docs">Source Documents</div>
-  <div class="cards source-docs">
+  <!-- Reference -->
+  <div class="section-label">Reference &amp; Study</div>
+  <div class="cards">
+    <a href="recommended-reading.html" class="card amber">
+      <div class="card-type">Bibliography</div>
+      <h2>Recommended Reading</h2>
+      <p class="desc">A complete bibliography for the Eight-Layer Recovery Model, the 7-Tier Framework, and the Gospel foundation — including a curated reading pathway for those who don't know where to begin.</p>
+      <div class="card-footer">
+        <span class="card-format">Interactive · 30+ books</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
 
-    <a href="7-tier-full-text.html" class="card">
+    <a href="paul-and-the-old-testament.md" class="card amber">
+      <div class="card-type">Essay</div>
+      <h2>Paul, the Old Testament &amp; the Making of a Cultural Artifact</h2>
+      <p class="desc">How Paul's letters reshaped the tradition he loved — and what Andy Crouch's framework of cultural artifacts reveals about why young believers major in Paul over Jesus, and why voices like Kaiser's keep arising.</p>
+      <div class="card-footer">
+        <span class="card-format">Essay · Markdown</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Flowchart -->
+  <div class="section-label">Visual Reference</div>
+  <div style="margin-bottom: 48px;">
+    <a href="7-tier-flowchart.png" class="flowchart-card" target="_blank">
+      <img src="7-tier-flowchart.png" alt="The 7-Tier Relational Framework Flowchart">
+      <div class="fc-body">
+        <div class="fc-left">
+          <div class="fc-type">Flowchart</div>
+          <div class="fc-title">The 7-Tier Framework — Visual Overview</div>
+        </div>
+        <div class="fc-arrow">→</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Source Documents -->
+  <div class="section-label">Source Documents</div>
+  <div class="cards source-docs">
+    <a href="7-Tier-Framework.md" class="card">
       <div class="card-text">
         <div class="card-type">Markdown</div>
         <h2>7-Tier Framework — Full Text</h2>
-        <p class="desc">Complete source document including the epistemological statement, all seven tiers with biblical tap roots, key concepts, and the full cross-reference structure.</p>
+        <p class="desc">Complete source including the epistemological statement, all seven tiers with biblical tap roots, key concepts, and cross-reference structure.</p>
       </div>
       <div class="card-footer">
         <span class="card-format">.md</span>
@@ -262,11 +251,11 @@
       </div>
     </a>
 
-    <a href="eight-layer-reference.html" class="card">
+    <a href="seven-layers.md" class="card">
       <div class="card-text">
         <div class="card-type">Markdown</div>
         <h2>Eight-Layer Model — Complete Reference</h2>
-        <p class="desc">The full written reference for the eight-layer recovery model, including the core equation, each layer's framework and key concepts, the diagnostic workflow, VIM architecture, and cross-reference matrix.</p>
+        <p class="desc">The full written reference for the recovery model, including the core equation, each layer's framework, the diagnostic workflow, VIM architecture, and cross-reference matrix.</p>
       </div>
       <div class="card-footer">
         <span class="card-format">.md</span>
@@ -274,53 +263,36 @@
       </div>
     </a>
 
-    <a href="biblical-roots-doc.html" class="card">
+    <a href="biblical-roots.md" class="card">
       <div class="card-text">
         <div class="card-type">Markdown</div>
-        <h2>Biblical Roots of the Seven-Layer Model</h2>
-        <p class="desc">A theological supplement tracing each layer's scriptural foundation — anchored in the broadcast metaphor of Isaiah 30:21 and the Jeremiah 17 contrast between flesh and the fear of the LORD.</p>
+        <h2>Biblical Roots — Updated Source</h2>
+        <p class="desc">The full biblical roots document with the newly added Gospel section — the Promise Plan, the Cup and the Cross, the Place of No Separation, and this is a Kingdom thing.</p>
       </div>
       <div class="card-footer">
-        <span class="card-format">.md</span>
+        <span class="card-format">.md · Updated</span>
         <span class="card-arrow">→</span>
       </div>
     </a>
 
-    <a href="reading-list.html" class="card">
+    <a href="immanuel-moments.md" class="card">
       <div class="card-text">
-        <div class="card-type">Bibliography</div>
-        <h2>Recommended Reading</h2>
-        <p class="desc">A complete bibliography for the Eight-Layer Recovery Model and the 7-Tier Framework — primary sources for each layer, supplementary reading, and a guided reading pathway.</p>
+        <div class="card-type">Markdown</div>
+        <h2>Immanuel Moments — Source Text</h2>
+        <p class="desc">The plain-text source for the Immanuel Moments personal testimony page.</p>
       </div>
       <div class="card-footer">
         <span class="card-format">.md</span>
         <span class="card-arrow">→</span>
       </div>
     </a>
-
   </div>
 
 </div>
-
-<div class="scroll-top" id="scroll-top" title="Scroll to top">&#8593;</div>
 
 <footer>
   <p>Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
 </footer>
 
-
-<script>
-var scrollBtn = document.getElementById('scroll-top');
-if (scrollBtn) {
-  window.addEventListener('scroll', function() {
-    scrollBtn.classList.toggle('visible', window.scrollY > 200);
-  }, { passive: true });
-  scrollBtn.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-  // Check on load in case page is already scrolled
-  if (window.scrollY > 200) scrollBtn.classList.add('visible');
-}
-</script>
 </body>
 </html>
