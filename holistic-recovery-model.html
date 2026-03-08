@@ -7,52 +7,52 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'EB Garamond', Georgia, serif; background: #f5f3ed; color: #2e4060; min-height: 100vh; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: #f5f3ed; color: #3a3a3a; min-height: 100vh; }
 
-  header { background: #1a2040; padding: 32px 40px; border-bottom: 3px solid #4a78b4; }
+  header { background: #2c2c2c; padding: 32px 40px; border-bottom: 3px solid #c77d00; }
   header .inner { max-width: 940px; margin: 0 auto; }
-  header .label { font-size: 11px; color: #4a78b4; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 8px; }
+  header .label { font-size: 11px; color: #c77d00; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 8px; }
   header h1 { font-size: 34px; font-weight: 400; color: #f5f3ed; line-height: 1.15; margin-bottom: 8px; }
   header .subtitle { font-size: 15px; color: #999; line-height: 1.6; }
 
   .layout { max-width: 940px; margin: 0 auto; display: flex; gap: 40px; padding: 32px 24px; }
-  nav { width: 190px; flex-shrink: 0; position: sticky; top: 62px; align-self: flex-start; }
+  nav { width: 190px; flex-shrink: 0; position: sticky; top: 20px; align-self: flex-start; }
   nav .rail { border-left: 1px solid #d0cec6; padding-left: 16px; }
   .nav-btn { display: flex; align-items: center; gap: 10px; background: none; border: none; cursor: pointer; padding: 5px 0; width: 100%; text-align: left; }
   .nav-dot { width: 9px; height: 9px; border-radius: 50%; background: #d0cec6; transition: all 0.3s ease; flex-shrink: 0; }
-  .nav-dot.active { background: #4a78b4; box-shadow: 0 0 8px rgba(74,120,180,0.4); }
+  .nav-dot.active { background: #c77d00; box-shadow: 0 0 8px rgba(199,125,0,0.4); }
   .nav-label { font-size: 12.5px; color: #888; font-weight: 400; letter-spacing: 0.3px; transition: all 0.3s ease; line-height: 1.3; }
-  .nav-label.active { color: #1a2040; font-weight: 600; }
+  .nav-label.active { color: #2c2c2c; font-weight: 600; }
 
-  .nav-group-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #a0b0c8; margin-top: 12px; margin-bottom: 4px; padding-left: 20px; }
+  .nav-group-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #b0a890; margin-top: 12px; margin-bottom: 4px; padding-left: 20px; }
   .nav-group-label:first-child { margin-top: 0; }
 
   main { flex: 1; min-width: 0; }
   .section { display: none; }
   .section.active { display: block; }
 
-  h2 { font-size: 30px; font-weight: 400; color: #1a2040; margin-bottom: 4px; line-height: 1.2; }
+  h2 { font-size: 30px; font-weight: 400; color: #2c2c2c; margin-bottom: 4px; line-height: 1.2; }
   .section-sub { font-size: 15px; color: #888; font-style: italic; margin-bottom: 28px; }
-  p { font-size: 18px; line-height: 1.85; margin-bottom: 16px; }
+  p { font-size: 15.5px; line-height: 1.85; margin-bottom: 16px; }
   em { color: #555; }
 
   .card { background: #f9f6f0; border: 1px solid #e8e3d8; border-radius: 8px; padding: 24px; margin: 24px 0; }
-  .card-title { font-size: 18px; color: #4a78b4; font-weight: 500; margin-bottom: 12px; }
-  .blockquote { border-left: 3px solid #4a78b4; padding-left: 20px; margin: 28px 0; }
+  .card-title { font-size: 18px; color: #c77d00; font-weight: 500; margin-bottom: 12px; }
+  .blockquote { border-left: 3px solid #c77d00; padding-left: 20px; margin: 28px 0; }
   .blockquote p { color: #555; font-style: italic; }
   .blockquote .attr { font-size: 13px; color: #999; }
 
   .equation { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; font-size: 16px; }
   .equation span { background: #fff; padding: 7px 14px; border-radius: 6px; border: 1px solid #ddd; }
-  .equation .arrow { background: none; border: none; color: #4a78b4; font-size: 18px; }
+  .equation .arrow { background: none; border: none; color: #c77d00; font-size: 18px; }
 
   .areas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-top: 14px; }
-  .area-box { background: #fff; border-radius: 8px; padding: 14px; text-align: center; border: 1px solid #e0dcd4; font-size: 18px; color: #4a78b4; font-weight: 600; }
+  .area-box { background: #fff; border-radius: 8px; padding: 14px; text-align: center; border: 1px solid #e0dcd4; font-size: 18px; color: #c77d00; font-weight: 600; }
 
   .faster-item { margin-bottom: 6px; border-radius: 8px; overflow: hidden; border: 1px solid #e8e3d8; }
   .faster-header { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: #faf9f6; border: none; cursor: pointer; text-align: left; font-family: 'EB Garamond', Georgia, serif; }
   .faster-letter { font-size: 22px; font-weight: 700; width: 28px; flex-shrink: 0; }
-  .faster-name { font-size: 16px; color: #1a2040; font-weight: 500; flex: 1; }
+  .faster-name { font-size: 16px; color: #2c2c2c; font-weight: 500; flex: 1; }
   .faster-body { padding: 4px 16px 16px 56px; display: none; }
   .faster-body.open { display: block; }
   .faster-signs { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 5px; margin-top: 12px; }
@@ -62,15 +62,15 @@
   .bind-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
   .bind-card { border-radius: 10px; padding: 22px; }
   .bind-card h3 { font-size: 17px; margin-bottom: 10px; }
-  .bind-card p { font-size: 16px; }
+  .bind-card p { font-size: 14px; }
   .bind-easier { background: #fde2e2; border: 1px solid #e8b4b4; }
   .bind-easier h3 { color: #c0392b; }
-  .bind-harder { background: #d8e8f3; border: 1px solid #a7c0d7; }
-  .bind-harder h3 { color: #2d4f6a; }
+  .bind-harder { background: #d8f3dc; border: 1px solid #a7d7b5; }
+  .bind-harder h3 { color: #2d6a4f; }
 
   .step-row { display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start; }
-  .step-label { font-size: 14px; font-weight: 700; color: #4a78b4; flex-shrink: 0; margin-top: 2px; min-width: 110px; }
-  .step-detail { font-size: 16px; margin: 0; }
+  .step-label { font-size: 14px; font-weight: 700; color: #c77d00; flex-shrink: 0; margin-top: 2px; min-width: 110px; }
+  .step-detail { font-size: 14px; margin: 0; }
 
   .vim-card { border-radius: 10px; padding: 22px; margin-bottom: 14px; border-left: 4px solid; }
   .vim-header { display: flex; align-items: baseline; gap: 10px; }
@@ -78,51 +78,27 @@
   .vim-title { font-size: 20px; font-weight: 500; margin: 0; }
   .vim-genesis { background: rgba(255,255,255,0.53); border-radius: 6px; padding: 12px 14px; margin-top: 12px; }
   .vim-genesis-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-  .vim-genesis p { font-size: 16px; margin-top: 6px; margin-bottom: 0; }
+  .vim-genesis p { font-size: 14px; margin-top: 6px; margin-bottom: 0; }
 
   .mode-row { display: flex; gap: 14px; margin-bottom: 16px; padding: 16px; background: #faf9f6; border-radius: 8px; border: 1px solid #e8e3d8; }
   .mode-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
-  .mode-title { font-size: 15px; font-weight: 600; color: #1a2040; margin-bottom: 6px; }
-  .mode-row p { font-size: 16px; margin: 0; }
+  .mode-title { font-size: 15px; font-weight: 600; color: #2c2c2c; margin-bottom: 6px; }
+  .mode-row p { font-size: 14px; margin: 0; }
 
   .rhythm-row { display: flex; gap: 14px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e8e3d8; }
   .rhythm-row:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-  .rhythm-time { font-size: 14px; font-weight: 700; color: #4a78b4; width: 70px; flex-shrink: 0; }
-  .rhythm-row p { font-size: 16px; margin: 0; }
+  .rhythm-time { font-size: 14px; font-weight: 700; color: #c77d00; width: 70px; flex-shrink: 0; }
+  .rhythm-row p { font-size: 14px; margin: 0; }
 
-  .dark-card { background: #1a2040; border-radius: 10px; padding: 26px; margin: 28px 0; }
-  .dark-card h3 { font-size: 19px; color: #4a78b4; margin-bottom: 14px; }
-  .dark-card p { font-size: 17px; color: #ccc; line-height: 1.8; margin: 0; }
+  .dark-card { background: #2c2c2c; border-radius: 10px; padding: 26px; margin: 28px 0; }
+  .dark-card h3 { font-size: 19px; color: #c77d00; margin-bottom: 14px; }
+  .dark-card p { font-size: 15px; color: #ccc; line-height: 1.8; margin: 0; }
 
-  .fact { margin-bottom: 5px; font-size: 16px; line-height: 1.8; }
-  .fact strong { color: #4a78b4; }
+  .fact { margin-bottom: 5px; font-size: 14px; line-height: 1.8; }
+  .fact strong { color: #c77d00; }
 
   .nav-footer { display: flex; justify-content: space-between; margin-top: 36px; padding-top: 20px; border-top: 1px solid #e0dcd4; }
-  .nav-footer button { font-family: 'EB Garamond', Georgia, serif; font-size: 14px; color: #4a78b4; background: none; border: none; cursor: pointer; padding: 8px 0; }
-
-  /* Site navbar */
-  .site-nav { background: #1a1a1a; padding: 0 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
-  .site-nav .nav-inner { max-width: 940px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-  .site-nav .nav-home { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8ab0cc; text-decoration: none; padding: 12px 0; white-space: nowrap; }
-  .site-nav .nav-home:hover { color: #b0c4d8; }
-  .site-nav ul { list-style: none; display: flex; gap: 0; margin: 0; padding: 0; flex-wrap: wrap; }
-  .site-nav li a { font-family: 'EB Garamond', Georgia, serif; font-size: 13.5px; color: #999; text-decoration: none; padding: 12px 14px; display: block; transition: color 0.2s; white-space: nowrap; }
-  .site-nav li a:hover { color: #f0ede6; }
-  .site-nav li a.active { color: #f0ede6; font-weight: 600; }
-  .site-nav .nav-sep { width: 1px; background: #333; margin: 8px 4px; align-self: stretch; }
-  .site-nav .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 12px 0; }
-  .site-nav .hamburger .bar { display: block; width: 20px; height: 2px; background: #999; margin: 4px 0; transition: all 0.3s; }
-  .site-footer { background: #1a2040; border-top: 1px solid #2e4060; padding: 28px 40px; text-align: center; }
-  .site-footer p { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8ab0cc; }
-  .site-footer a { color: #8ab0cc; text-decoration: none; }
-  @media (max-width: 700px) {
-    .site-nav .hamburger { display: block; }
-    .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; }
-    .site-nav ul.open { display: flex; }
-    .site-nav .nav-inner { flex-wrap: wrap; }
-    .site-nav .nav-sep { display: none; }
-    .site-nav li a { padding: 8px 0; }
-  }
+  .nav-footer button { font-family: 'EB Garamond', Georgia, serif; font-size: 14px; color: #c77d00; background: none; border: none; cursor: pointer; padding: 8px 0; }
 
   /* Layer badge */
   .layer-badge { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; padding: 3px 10px; border-radius: 3px; margin-bottom: 16px; font-weight: 600; }
@@ -137,7 +113,7 @@
   /* Core need pills */
   .need-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
   .need-card { background: #fff; border-radius: 8px; padding: 16px; border: 1px solid #e0dcd4; text-align: center; }
-  .need-card .need-name { font-size: 18px; font-weight: 600; color: #4a78b4; margin-bottom: 4px; }
+  .need-card .need-name { font-size: 18px; font-weight: 600; color: #c77d00; margin-bottom: 4px; }
   .need-card .need-q { font-size: 14px; color: #777; font-style: italic; }
 
   /* 3D awareness */
@@ -149,7 +125,7 @@
   /* Diagnostic workflow */
   .workflow-step { display: flex; gap: 16px; margin-bottom: 18px; align-items: flex-start; }
   .workflow-num { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #fff; flex-shrink: 0; margin-top: 2px; }
-  .workflow-content h4 { font-size: 15px; font-weight: 600; color: #1a2040; margin-bottom: 4px; }
+  .workflow-content h4 { font-size: 15px; font-weight: 600; color: #2c2c2c; margin-bottom: 4px; }
   .workflow-content p { font-size: 14px; margin: 0; }
   .workflow-content .wf-source { font-size: 12px; color: #aaa; font-style: italic; margin-top: 2px; }
 
@@ -167,29 +143,12 @@
 </head>
 <body>
 
-<div class="site-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-home">Gary Springer's Garden</a>
-    <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
-    <ul>
-      <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
-      <li><a href="holistic-recovery-model.html" class="active">Recovery Model</a></li>
-      <li><a href="biblical-roots-doc.html">Biblical Roots</a></li>
-      <li><a href="immanuel-moments.html">Immanuel Moments</a></li>
-      <li class="nav-sep"></li>
-      <li><a href="recommended-reading.html">Reading List</a></li>
-    </ul>
-  </div>
-</div>
-
 <header>
   <div class="inner">
     <div class="label">A Holistic Framework</div>
     <h1>Eight Layers of Recovery &amp; Restoration</h1>
     <div class="subtitle">Integrating Friedman, Dye, Wilder, Dodd, Sande, Koch, Cloud &amp; Willard into a unified model for lasting change</div>
-    <div style="margin-top:12px;"><a href="7-tier-framework.html" style="font-size:13px; color:#4a78b4; text-decoration:none; border-bottom:1px solid rgba(74,120,180,0.3);">→ Foundation: The 7-Tier Relational &amp; Ideological Framework</a></div>
+    <div style="margin-top:12px;"><a href="7-tier-framework.html" style="font-size:13px; color:#c77d00; text-decoration:none; border-bottom:1px solid rgba(199,125,0,0.3);">→ Foundation: The 7-Tier Relational &amp; Ideological Framework</a></div>
   </div>
 </header>
 
@@ -326,17 +285,17 @@ function sectionAnthropology() {
 
     <p>When a child experiences trauma — abuse, neglect, abandonment — the limbic system encodes <strong>false beliefs</strong> as survival truths: <em>"I'm not safe," "I'm alone," "I'm worthless," "I must perform to be loved."</em> These become the invisible operating system generating anxiety, anger, and compulsive coping. The protective personality that forms pushes people away and seeks relief through self-destructive behaviors.</p>
 
-    <h3 style="font-size:17px; color:#4a78b4; margin-top:24px; margin-bottom:10px; font-weight:500;">Limbic Lag: Why Change Takes Time</h3>
+    <h3 style="font-size:17px; color:#c77d00; margin-top:24px; margin-bottom:10px; font-weight:500;">Limbic Lag: Why Change Takes Time</h3>
     <p>Even after discovering false beliefs and learning truth cognitively, there is a gap between what the neocortex knows and what the limbic system believes. Dye calls this "limbic lag." Each time you walk through fear without reverting to the old behavior, the survival brain recalibrates: <em>"We went through that and survived."</em> The fear diminishes. New pathways form. This is sanctification understood neurologically — the slow, faithful replacement of lies with truth, in real relationships, in real time.</p>
 
-    <h3 style="font-size:17px; color:#4a78b4; margin-top:24px; margin-bottom:10px; font-weight:500;">The Convergence</h3>
+    <h3 style="font-size:17px; color:#c77d00; margin-top:24px; margin-bottom:10px; font-weight:500;">The Convergence</h3>
     <p>Dye shows us what is <em>broken</em> in the heart (false beliefs, survival cravings). Wilder shows us what is <em>needed</em> (joy-fuel, the quiet skill, relational connection). Dodd shows us what the heart is <em>saying</em> (feelings as gifts pointing to needs). Koch shows us what the heart is <em>seeking</em> (security, identity, belonging, purpose, competence). Sande shows us how the heart must <em>engage</em> (God-awareness, self-awareness, other-awareness). And Friedman shows us the <em>system</em> in which the heart is either safe or under siege.</p>
   `;
 }
 
 function sectionAtmosphere() {
   return `
-    <span class="layer-badge" style="background:#e8f0f4; color:#2d4f6a;">Layer 1</span>
+    <span class="layer-badge" style="background:#e8f4f0; color:#2d6a4f;">Layer 1</span>
     <h2>Systemic Atmosphere</h2>
     <p class="section-sub">Edwin Friedman — the emotional environment that enables or sabotages recovery</p>
 
@@ -348,15 +307,15 @@ function sectionAtmosphere() {
       <div class="card-title">Three Key Concepts</div>
       <div style="margin-top:8px;">
         <div style="margin-bottom:16px;">
-          <strong style="color:#2d4f6a; font-size:15px;">Non-Anxious Presence</strong>
+          <strong style="color:#2d6a4f; font-size:15px;">Non-Anxious Presence</strong>
           <p style="font-size:14px; margin-top:4px; margin-bottom:0;">The leader's (or helper's) ability to remain regulated and self-differentiated prevents "anxiety contagion" from spreading through the system. This is not emotional detachment — it is being present without being reactive. It is the relational equivalent of a thermostat rather than a thermometer: setting the emotional temperature rather than merely reflecting it.</p>
         </div>
         <div style="margin-bottom:16px;">
-          <strong style="color:#2d4f6a; font-size:15px;">Self-Differentiation</strong>
+          <strong style="color:#2d6a4f; font-size:15px;">Self-Differentiation</strong>
           <p style="font-size:14px; margin-top:4px; margin-bottom:0;">Being "connected yet separate" — staying close to the person in crisis without losing your own identity or being swept into their panic. This is the relational skill that makes it possible to help without enabling, to be empathetic without being enmeshed. In Wilder's language, it is having enough "joy capacity" to hold your own identity while remaining relationally present.</p>
         </div>
         <div>
-          <strong style="color:#2d4f6a; font-size:15px;">Avoiding the "Failure of Nerve"</strong>
+          <strong style="color:#2d6a4f; font-size:15px;">Avoiding the "Failure of Nerve"</strong>
           <p style="font-size:14px; margin-top:4px; margin-bottom:0;">Resisting the urge to "peace-monger" (quick fixes to lower system tension) in favor of "peace-making" (long-term health). This maps directly to the Double Bind: peace-mongering is the "easier choice" at the systemic level. Genuine peace-making — holding the tension, speaking truth, allowing the discomfort of growth — is the harder choice that leads to real change.</p>
         </div>
       </div>
@@ -372,13 +331,13 @@ function sectionAtmosphere() {
 }
 
 const FASTER_DATA = [
-  { letter: "R", name: "Restoration", color: "#2d4f6a", bg: "#d8e8f3", icon: "✦",
+  { letter: "R", name: "Restoration", color: "#2d6a4f", bg: "#d8f3dc", icon: "✦",
     desc: "Accepting life on God's terms — with trust, vulnerability, and gratitude. This is abundant life (John 10:10). You are experiencing God, connected with others, and sticking to your priorities. In Wilder's language, your joy tank is full and your 'Quiet' skill is active. In Dodd's framework, you are feeling your feelings and letting them point you to God.",
     signs: ["No current secrets","Working to resolve problems","Identifying fears and feelings honestly","Keeping commitments — meetings, prayer, family, church","Being open and honest, making eye contact","Reaching out to others","Growing in relationships with God and others","True accountability"] },
   { letter: "F", name: "Forgetting Priorities", color: "#b5651d", bg: "#fef3e2", icon: "↓",
     desc: "You start believing present circumstances over God's truth. A subtle shift in what's important — how you spend your time, what you think about. Denial and flight begin. Your core needs (Koch) begin to feel unmet, and you start seeking counterfeits.",
     signs: ["Secrets forming","Less time/energy for God, church, meetings","Avoiding accountability people","Superficial conversations, sarcasm","Isolating, changing goals","Breaking promises, procrastination","Lying, over-confidence, boredom","Preoccupation with material things or entertainment"] },
-  { letter: "A", name: "Anxiety", color: "#4a78b4", bg: "#fff4cc", icon: "↓",
+  { letter: "A", name: "Anxiety", color: "#c77d00", bg: "#fff4cc", icon: "↓",
     desc: "A growing noise of undefined fear. You begin getting energy from your emotions rather than from the Spirit. Adrenaline and norepinephrine begin to rise. In Dodd's framework, fear is present but being suppressed rather than felt — so it cannot offer its gift of wisdom.",
     signs: ["Worry, fear, using profanity","Replaying old negative thoughts","Perfectionism, judging others' motives","Unrealistic goals and to-do lists","Fantasy, co-dependent rescuing","Sleep problems, trouble concentrating","Gossip, flirting","Seeking drama, mind-reading"] },
   { letter: "S", name: "Speeding Up", color: "#d4600a", bg: "#ffe5d0", icon: "↓",
@@ -390,7 +349,7 @@ const FASTER_DATA = [
   { letter: "E", name: "Exhausted", color: "#7b2d8b", bg: "#f0e0f5", icon: "↓",
     desc: "Loss of physical and emotional energy. Coming off the adrenaline high. The onset of real depression. Neurochemicals are depleted. All five core needs (Koch) feel utterly unmet. Joy capacity is at zero. You feel you cannot cope.",
     signs: ["Depressed, panicked, confused","Hopelessness, helplessness","Sleeping too much or too little","Overwhelmed, crying for 'no reason'","Can't think, forgetful, numb","Wanting to run away","Constant cravings for old coping behaviors","Seeking old unhealthy people and places"] },
-  { letter: "R*", name: "Relapse", color: "#1a2040", bg: "#e0e0e8", icon: "✕",
+  { letter: "R*", name: "Relapse", color: "#1a1a2e", bg: "#e0e0e8", icon: "✕",
     desc: "Returning to the place you swore you'd never go again. At minimum, this is your go-to coping mechanism when emotionally exhausted — whatever numbs the pain. The result is reinforcement of shame, guilt, and condemnation — which deepens the false beliefs and restarts the cycle.",
     signs: ["Giving up and giving in","Out of control, lost in addiction","Lying to yourself and others","Feeling you can't manage without your coping behavior","Reinforcement of shame, guilt, condemnation","Feelings of abandonment and being alone"] },
 ];
@@ -422,7 +381,7 @@ function sectionFaster() {
     return '<div class="faster-item"><button class="faster-header" id="faster-header-' + i + '" onclick="toggleFaster(' + i + ')">' +
       '<span class="faster-letter" style="color:' + item.color + '">' + (item.letter === 'R*' ? 'R' : item.letter) + '</span>' +
       '<span class="faster-name">' + item.name + '</span>' +
-      '<span style="font-size:14px;color:' + (item.letter === 'R' ? '#2d4f6a' : item.letter === 'R*' ? '#1a2040' : '#c0392b') + '">' + item.icon + '</span>' +
+      '<span style="font-size:14px;color:' + (item.letter === 'R' ? '#2d6a4f' : item.letter === 'R*' ? '#1a1a2e' : '#c0392b') + '">' + item.icon + '</span>' +
       '<span class="faster-toggle" id="faster-toggle-' + i + '">▾</span>' +
       '</button><div class="faster-body" id="faster-body-' + i + '" style="background:' + item.bg + '">' +
       '<p style="margin-bottom:12px;">' + item.desc + '</p>' +
@@ -468,7 +427,7 @@ function sectionDoubleBind() {
       <div class="bind-card bind-harder">
         <h3>The Harder Choice</h3>
         <p>Surrender to God. Face the underlying emotions (Dodd). Identify the fear behind the behavior. Speak truth to the false belief. Call someone — use your support team. In Wilder's language, engage the Immanuel Journey: invite God's interactive presence into the root of the pain.</p>
-        <p style="font-size:13px; color:#2d4f6a; font-style:italic; margin-bottom:0;">This is the only way off the scale.</p>
+        <p style="font-size:13px; color:#2d6a4f; font-style:italic; margin-bottom:0;">This is the only way off the scale.</p>
       </div>
     </div>
 
@@ -570,7 +529,7 @@ function sectionVoice() {
 
 function sectionRelational() {
   return `
-    <span class="layer-badge" style="background:#e8e8f4; color:#2d4f6a;">Layer 6</span>
+    <span class="layer-badge" style="background:#e8f4e8; color:#2d6a4f;">Layer 6</span>
     <h2>Relational Wisdom</h2>
     <p class="section-sub">Ken Sande (RW360) — the three-dimensional awareness required for healthy functioning</p>
 
@@ -578,11 +537,11 @@ function sectionRelational() {
 
     <div class="awareness-grid">
       <div class="awareness-card" style="background:#fef3e2; border:1px solid #e8d9b8;">
-        <h4 style="color:#4a78b4;">God-Aware</h4>
+        <h4 style="color:#c77d00;">God-Aware</h4>
         <p>What is God doing here? How can I honor Him in this moment? What is true about His character and His promises?</p>
       </div>
-      <div class="awareness-card" style="background:#e8f0f4; border:1px solid #b8c8d8;">
-        <h4 style="color:#2d4f6a;">Self-Aware</h4>
+      <div class="awareness-card" style="background:#e8f4f0; border:1px solid #b8d8cc;">
+        <h4 style="color:#2d6a4f;">Self-Aware</h4>
         <p>What am I feeling right now? Why am I reacting this way? What false belief or unmet need is driving this?</p>
       </div>
       <div class="awareness-card" style="background:#f0f0ff; border:1px solid #c8c8e8;">
@@ -659,7 +618,7 @@ function sectionCoreNeeds() {
 
 function sectionWisdom() {
   return `
-    <span class="layer-badge" style="background:#e8e8ed; color:#3a4a6a;">Layer 8</span>
+    <span class="layer-badge" style="background:#e8ede8; color:#3a5a3a;">Layer 8</span>
     <h2>Practical Wisdom &amp; Boundaries</h2>
     <p class="section-sub">Henry Cloud — the lived habits of people who navigate life wisely</p>
 
@@ -720,7 +679,7 @@ function sectionDiagnostic() {
 
     <div style="margin-top:24px;">
       <div class="workflow-step">
-        <div class="workflow-num" style="background:#2d4f6a;">1</div>
+        <div class="workflow-num" style="background:#2d6a4f;">1</div>
         <div class="workflow-content">
           <h4>Systemic Temperature</h4>
           <p>Is the family, church, or relational system in "chronic anxiety"? Am I maintaining a non-anxious presence, or have I been swept into the reactivity? Is the system peace-mongering or peace-making?</p>
@@ -768,7 +727,7 @@ function sectionDiagnostic() {
         </div>
       </div>
       <div class="workflow-step">
-        <div class="workflow-num" style="background:#3a4a6a;">7</div>
+        <div class="workflow-num" style="background:#3a5a3a;">7</div>
         <div class="workflow-content">
           <h4>Practical Wisdom &amp; Boundaries</h4>
           <p>What tooth needs pulling? What boundary is missing or collapsed? Is the gut speaking wisdom or wound? Play the movie — where does the current path lead? Is the person taking ownership of their own yard, or waiting for someone else to change? Are they acting like an ant or paralyzed?</p>
@@ -776,7 +735,7 @@ function sectionDiagnostic() {
         </div>
       </div>
       <div class="workflow-step">
-        <div class="workflow-num" style="background:#4a78b4;">8</div>
+        <div class="workflow-num" style="background:#c77d00;">8</div>
         <div class="workflow-content">
           <h4>The Immanuel Path</h4>
           <p>How can we invite God's interactive presence into the <em>root</em> of this specific pain right now? Not abstract truth, but personal encounter — God meeting the person in the exact place of their wound, their fear, their false belief. This is where healing happens.</p>
@@ -801,26 +760,26 @@ function sectionVIM() {
     <p>For this seven-layer model to result in actual change — not just insight — it must follow the pattern Dallas Willard identified: Vision, Intention, and Means. Willard's critical insight: <em>everyone already has a VIM</em>. The person trapped in addiction has a vision (distorted), an intention (to cope), and means (the addictive behavior). Recovery is not building a VIM from nothing — it is <strong>replacing</strong> one VIM with another.</p>
 
     <div style="margin:24px 0;">
-      <div class="vim-card" style="background:#d8e8f3; border-left-color:#2d4f6a;">
+      <div class="vim-card" style="background:#d8f3dc; border-left-color:#2d6a4f;">
         <div class="vim-header">
-          <span class="vim-letter" style="color:#2d4f6a;">V</span>
-          <h3 class="vim-title" style="color:#2d4f6a;">Vision</h3>
+          <span class="vim-letter" style="color:#2d6a4f;">V</span>
+          <h3 class="vim-title" style="color:#2d6a4f;">Vision</h3>
         </div>
         <p style="margin-top:10px;">Seeing God as He really is — not distant, angry, or indifferent, but as One who is "glad to be with us" (Wilder). Seeing yourself as secure, named, beloved, purposed, and competent in Christ (Koch). Seeing a life of Restoration as genuinely possible. Without this vision, the survival system has no reason to yield. The false beliefs (Dye) are the broken vision; replacing them with truth is the vision work.</p>
         <div class="vim-genesis">
-          <div class="vim-genesis-label" style="color:#2d4f6a;">Across the Layers</div>
+          <div class="vim-genesis-label" style="color:#2d6a4f;">Across the Layers</div>
           <p>Dye: replacing false beliefs. Koch: core needs rooted in Jesus. Dodd: emotions as gifts, not threats. Wilder: God is glad to be with me. Sande: God-awareness restored.</p>
         </div>
       </div>
 
-      <div class="vim-card" style="background:#fef3e2; border-left-color:#4a78b4;">
+      <div class="vim-card" style="background:#fef3e2; border-left-color:#c77d00;">
         <div class="vim-header">
-          <span class="vim-letter" style="color:#4a78b4;">I</span>
-          <h3 class="vim-title" style="color:#4a78b4;">Intention</h3>
+          <span class="vim-letter" style="color:#c77d00;">I</span>
+          <h3 class="vim-title" style="color:#c77d00;">Intention</h3>
         </div>
         <p style="margin-top:10px;">Making the decisive choice to enter a Change Group, to begin the Immanuel Journey, to commit to accountability, to face the pain rather than numb it. This is the Double Bind decision writ large — not a one-time event but a sustained posture of choosing the harder path. Wanting to change is not enough. You must <em>decide</em>.</p>
         <div class="vim-genesis">
-          <div class="vim-genesis-label" style="color:#4a78b4;">Across the Layers</div>
+          <div class="vim-genesis-label" style="color:#c77d00;">Across the Layers</div>
           <p>Every Double Bind is a moment of Intention. Friedman: choosing peace-making over peace-mongering. The FASTER Scale is the awareness tool that shows you <em>when</em> Intention is needed.</p>
         </div>
       </div>
@@ -908,10 +867,5 @@ function renderContent() {
 renderNav();
 renderContent();
 </script>
-
-<div class="site-footer">
-  <p>Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
-</div>
-
 </body>
 </html>

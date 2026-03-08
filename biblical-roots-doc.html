@@ -10,19 +10,19 @@
   body {
     font-family: 'EB Garamond', Georgia, serif;
     background: #f5f3ed;
-    color: #2e4060;
+    color: #3a3a3a;
     min-height: 100vh;
   }
 
   header {
-    background: #1a2040;
+    background: #2c2c2c;
     padding: 32px 40px;
-    border-bottom: 3px solid #4a78b4;
+    border-bottom: 3px solid #c77d00;
   }
   header .inner { max-width: 780px; margin: 0 auto; }
   header .label {
     font-size: 11px;
-    color: #4a78b4;
+    color: #c77d00;
     text-transform: uppercase;
     letter-spacing: 3.5px;
     margin-bottom: 8px;
@@ -44,11 +44,11 @@
   header .companion { margin-top: 12px; }
   header .companion a {
     font-size: 13px;
-    color: #4a78b4;
+    color: #c77d00;
     text-decoration: none;
-    border-bottom: 1px solid rgba(74,120,180,0.3);
+    border-bottom: 1px solid rgba(199,125,0,0.3);
   }
-  header .companion a:hover { color: #6a98d0; }
+  header .companion a:hover { color: #e8a020; }
 
   .content {
     max-width: 780px;
@@ -60,7 +60,7 @@
   .content h2 {
     font-size: 26px;
     font-weight: 400;
-    color: #1a2040;
+    color: #2c2c2c;
     margin: 48px 0 6px;
     line-height: 1.25;
     font-family: 'EB Garamond', Georgia, serif;
@@ -71,28 +71,28 @@
   .content h3 {
     font-size: 19px;
     font-weight: 500;
-    color: #4a78b4;
+    color: #c77d00;
     margin: 32px 0 10px;
     line-height: 1.3;
     font-family: 'EB Garamond', Georgia, serif;
   }
   .content p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.85;
     margin-bottom: 16px;
     font-family: 'EB Garamond', Georgia, serif;
   }
   .content em { color: #555; }
-  .content strong { color: #1a2040; font-weight: 600; }
+  .content strong { color: #2c2c2c; font-weight: 600; }
 
   .content blockquote {
-    border-left: 3px solid #4a78b4;
+    border-left: 3px solid #c77d00;
     padding: 4px 0 4px 20px;
     margin: 20px 0;
     background: transparent;
   }
   .content blockquote p {
-    font-size: 17px;
+    font-size: 15.5px;
     font-style: italic;
     color: #555;
     line-height: 1.75;
@@ -108,8 +108,8 @@
   .content ul, .content ol {
     margin: 12px 0 16px 24px;
     font-family: 'EB Garamond', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.85;
+    font-size: 15.5px;
+    line-height: 1.75;
   }
   .content li { margin-bottom: 6px; }
 
@@ -127,31 +127,7 @@
     color: #bbb;
     font-style: italic;
   }
-  .footer-note a { color: #4a78b4; text-decoration: none; }
-
-  /* Site navbar */
-  .site-nav { background: #1a1a1a; padding: 0 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
-  .site-nav .nav-inner { max-width: 940px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-  .site-nav .nav-home { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8ab0cc; text-decoration: none; padding: 12px 0; white-space: nowrap; }
-  .site-nav .nav-home:hover { color: #b0c4d8; }
-  .site-nav ul { list-style: none; display: flex; gap: 0; margin: 0; padding: 0; flex-wrap: wrap; }
-  .site-nav li a { font-family: 'EB Garamond', Georgia, serif; font-size: 13.5px; color: #999; text-decoration: none; padding: 12px 14px; display: block; transition: color 0.2s; white-space: nowrap; }
-  .site-nav li a:hover { color: #f0ede6; }
-  .site-nav li a.active { color: #f0ede6; font-weight: 600; }
-  .site-nav .nav-sep { width: 1px; background: #333; margin: 8px 4px; align-self: stretch; }
-  .site-nav .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 12px 0; }
-  .site-nav .hamburger .bar { display: block; width: 20px; height: 2px; background: #999; margin: 4px 0; transition: all 0.3s; }
-  .site-footer { background: #1a2040; border-top: 1px solid #2e4060; padding: 28px 40px; text-align: center; }
-  .site-footer p { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8ab0cc; }
-  .site-footer a { color: #8ab0cc; text-decoration: none; }
-  @media (max-width: 700px) {
-    .site-nav .hamburger { display: block; }
-    .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; }
-    .site-nav ul.open { display: flex; }
-    .site-nav .nav-inner { flex-wrap: wrap; }
-    .site-nav .nav-sep { display: none; }
-    .site-nav li a { padding: 8px 0; }
-  }
+  .footer-note a { color: #c77d00; text-decoration: none; }
 
   @media (max-width: 600px) {
     header { padding: 24px 20px; }
@@ -162,30 +138,13 @@
 
   @media print {
     header { background: white; border-bottom-color: #ccc; }
-    header h1 { color: #1a2040; }
+    header h1 { color: #2c2c2c; }
     header .label { color: #999; }
     body { background: white; }
   }
 </style>
 </head>
 <body>
-
-<div class="site-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-home">Gary Springer's Garden</a>
-    <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
-    <ul>
-      <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
-      <li><a href="holistic-recovery-model.html">Recovery Model</a></li>
-      <li><a href="biblical-roots-doc.html" class="active">Biblical Roots</a></li>
-      <li><a href="immanuel-moments.html">Immanuel Moments</a></li>
-      <li class="nav-sep"></li>
-      <li><a href="recommended-reading.html">Reading List</a></li>
-    </ul>
-  </div>
-</div>
 
 <header>
   <div class="inner">
@@ -1742,8 +1701,8 @@ Relational &amp; Ideological Framework by Gary Springer.</em></p>
 
 </div>
 
-<div class="site-footer">
-  <p>Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
+<div class="footer-note">
+  <a href="index.html">Gary Springer&rsquo;s Garden</a> &mdash; Planted by Gary Springer &mdash; grounded in Scripture, informed by neuroscience, offered freely
 </div>
 
 </body>

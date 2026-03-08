@@ -10,18 +10,18 @@
   body {
     font-family: 'EB Garamond', Georgia, serif;
     background: #f5f3ed;
-    color: #2e4060;
+    color: #3a3a3a;
     min-height: 100vh;
   }
   header {
-    background: #1a2040;
+    background: #2c2c2c;
     padding: 32px 40px;
-    border-bottom: 3px solid #4a78b4;
+    border-bottom: 3px solid #c77d00;
   }
   header .inner { max-width: 780px; margin: 0 auto; }
   header .label {
     font-size: 11px;
-    color: #4a78b4;
+    color: #c77d00;
     text-transform: uppercase;
     letter-spacing: 3.5px;
     margin-bottom: 8px;
@@ -43,11 +43,11 @@
   header .companion { margin-top: 12px; }
   header .companion a {
     font-size: 13px;
-    color: #4a78b4;
+    color: #c77d00;
     text-decoration: none;
-    border-bottom: 1px solid rgba(74,120,180,0.3);
+    border-bottom: 1px solid rgba(199,125,0,0.3);
   }
-  header .companion a:hover { color: #6a98d0; }
+  header .companion a:hover { color: #e8a020; }
   .content {
     max-width: 780px;
     margin: 0 auto;
@@ -57,7 +57,7 @@
   .content h2 {
     font-size: 26px;
     font-weight: 400;
-    color: #1a2040;
+    color: #2c2c2c;
     margin: 48px 0 6px;
     line-height: 1.25;
     font-family: 'EB Garamond', Georgia, serif;
@@ -68,27 +68,27 @@
   .content h3 {
     font-size: 19px;
     font-weight: 500;
-    color: #4a78b4;
+    color: #c77d00;
     margin: 32px 0 10px;
     line-height: 1.3;
     font-family: 'EB Garamond', Georgia, serif;
   }
   .content p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.85;
     margin-bottom: 16px;
     font-family: 'EB Garamond', Georgia, serif;
   }
   .content em { color: #555; }
-  .content strong { color: #1a2040; font-weight: 600; }
+  .content strong { color: #2c2c2c; font-weight: 600; }
   .content blockquote {
-    border-left: 3px solid #4a78b4;
+    border-left: 3px solid #c77d00;
     padding: 4px 0 4px 20px;
     margin: 20px 0;
     background: transparent;
   }
   .content blockquote p {
-    font-size: 17px;
+    font-size: 15.5px;
     font-style: italic;
     color: #555;
     line-height: 1.75;
@@ -103,8 +103,8 @@
   .content ul, .content ol {
     margin: 12px 0 16px 24px;
     font-family: 'EB Garamond', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.85;
+    font-size: 15.5px;
+    line-height: 1.75;
   }
   .content li { margin-bottom: 6px; }
   .content hr {
@@ -120,32 +120,7 @@
     color: #bbb;
     font-style: italic;
   }
-  .footer-note a { color: #4a78b4; text-decoration: none; }
-
-  /* Site navbar */
-  .site-nav { background: #1a1a1a; padding: 0 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
-  .site-nav .nav-inner { max-width: 940px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-  .site-nav .nav-home { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8ab0cc; text-decoration: none; padding: 12px 0; white-space: nowrap; }
-  .site-nav .nav-home:hover { color: #b0c4d8; }
-  .site-nav ul { list-style: none; display: flex; gap: 0; margin: 0; padding: 0; flex-wrap: wrap; }
-  .site-nav li a { font-family: 'EB Garamond', Georgia, serif; font-size: 13.5px; color: #999; text-decoration: none; padding: 12px 14px; display: block; transition: color 0.2s; white-space: nowrap; }
-  .site-nav li a:hover { color: #f0ede6; }
-  .site-nav li a.active { color: #f0ede6; font-weight: 600; }
-  .site-nav .nav-sep { width: 1px; background: #333; margin: 8px 4px; align-self: stretch; }
-  .site-nav .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 12px 0; }
-  .site-nav .hamburger .bar { display: block; width: 20px; height: 2px; background: #999; margin: 4px 0; transition: all 0.3s; }
-  .site-footer { background: #1a2040; border-top: 1px solid #2e4060; padding: 28px 40px; text-align: center; }
-  .site-footer p { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8ab0cc; }
-  .site-footer a { color: #8ab0cc; text-decoration: none; }
-  @media (max-width: 700px) {
-    .site-nav .hamburger { display: block; }
-    .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; }
-    .site-nav ul.open { display: flex; }
-    .site-nav .nav-inner { flex-wrap: wrap; }
-    .site-nav .nav-sep { display: none; }
-    .site-nav li a { padding: 8px 0; }
-  }
-
+  .footer-note a { color: #c77d00; text-decoration: none; }
   @media (max-width: 600px) {
     header { padding: 24px 20px; }
     header h1 { font-size: 26px; }
@@ -154,30 +129,13 @@
   }
   @media print {
     header { background: white; border-bottom-color: #ccc; }
-    header h1 { color: #1a2040; }
+    header h1 { color: #2c2c2c; }
     header .label { color: #999; }
     body { background: white; }
   }
 </style>
 </head>
 <body>
-
-<div class="site-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-home">Gary Springer's Garden</a>
-    <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
-    <ul>
-      <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
-      <li><a href="holistic-recovery-model.html">Recovery Model</a></li>
-      <li><a href="biblical-roots-doc.html">Biblical Roots</a></li>
-      <li><a href="immanuel-moments.html" class="active">Immanuel Moments</a></li>
-      <li class="nav-sep"></li>
-      <li><a href="recommended-reading.html">Reading List</a></li>
-    </ul>
-  </div>
-</div>
 
 <header>
   <div class="inner">
@@ -251,75 +209,47 @@ Hearing is where the receiver is tuned in. I don’t perform to get to
 Tier 1. I live from that tier. Which leads me to the “Orphan Spirit”
 Sunday sermon.</p>
 <hr />
-<h2 id=”would-you-father-me-today”>”Would You Father Me Today?”</h2>
+<h2 id="would-you-father-me-today">“Would You Father Me Today?”</h2>
 <p>Before the sermon itself, the teaching opened with an observation
 that stopped me: look at the stories we raise our children on. Nearly
-every protagonist in the films and media we’ve consumed over the last
-several decades is an orphan. It’s not just Disney — though the list
-there is staggering: Snow White, Cinderella, Bambi, Mowgli, Aladdin,
-Simba, Elsa and Anna, Rapunzel. It extends to Harry Potter, Katniss
-Everdeen, every superhero — Batman, Superman, Spider-Man, Iron Man — and
-every Star Wars protagonist. Even a show like <em>The Queen’s
-Gambit</em> — three minutes in, a car crash, and the protagonist is an
-orphan who must now produce and perform her way to significance.</p>
-<p><em>101 Dalmatians</em> is one of the only classic Disney films where
-the family stays together — two parent dogs who fight on behalf of their
-children, and who adopt all the orphans at the end. Walt Disney called
-it a failure of style when it came out in 1961. And Walt Disney’s own
-father was physically abusive to him — the orphan narrative was likely
-the one he partnered with his whole life.</p>
+every classic Disney film has an orphan as its protagonist. Snow White —
+orphan. Cinderella — orphan. Bambi, Mowgli, Aladdin, Simba, Elsa and
+Anna, Rapunzel — all orphans. The list goes on and on. <em>101
+Dalmatians</em> is one of the only classic Disney films where the family
+stays together — a mother and father fighting side by side against
+Cruella de Vil — and it is said that Disney disliked that film, albeit
+for technical reasons. But one wonders: the one story where a family is
+intact, fighting together, is the one that didn’t sit right.</p>
 <p>This matters deeply for how children form the pictures in their
 hearts about what life really is. When the dominant narrative — the one
-told over and over across every screen — is the story of the orphan,
-children absorb a picture of a world with no father. The arc of the
-orphan narrative, as the teaching laid it out, goes like this: <em>You
-have been spiritually or physically abandoned. You are on your own. You
-must prove, produce, and perform. You must fight hard based on the
-giftings and specialness inside of you. If you fight hard enough — if
-you protect yourself, provide for yourself — you can give yourself an
-identity, win affirmation, and ultimately make yourself an object of
-love.</em> That is what every orphan protagonist does. And it is
-antithetical to the Gospel.</p>
-<p>The teaching went deeper still: if Jesus is heaven’s righteous Son,
-then Satan — an angelic being with no inheritance (Hebrews 1), kicked
-out for pride — is heaven’s orphan. And what if there are just two
-forces replicating their image across culture? Heaven’s Son, who works
-<em>from</em> the Father’s identity, affirmation, and affection. And
-heaven’s orphan, who must prove, produce, and perform to win what was
-never given. The media, not given to the lordship of Jesus, can only
-reflect the narrative of the orphan. We are caught in the crossfire of
-those two narratives, sometimes in the same day.</p>
+told over and over in the most powerful storytelling medium in history —
+is the story of the orphan, children absorb a picture of a world with no
+father. The struggle is theirs alone. The hero’s journey becomes the
+orphan’s journey: deal with the loss, find your own strength, become the
+superhero who makes up for what was taken from you. The message,
+delivered through a thousand beloved stories, is ultimately this: there
+is no father coming for you — so go out and save yourself. It is a
+deeply compelling narrative. It is also a deeply false one — not because
+suffering isn’t real, but because it removes the Father from the picture
+entirely and tells children that the only way forward is to become
+someone who doesn’t need one. The orphan spirit doesn’t just come from
+personal trauma. It comes from the stories a culture tells itself,
+generation after generation, about what it means to be alive.</p>
 <p>During a visit with a pregnancy center in Holland, Michigan, I was
 told there was a message they wanted to share with me — one that men
-especially needed to hear. The teaching was given by a young man named
-Michael at Moran Park church, who at twenty-two had spent forty days in
-the Wind River Range Mountains of Wyoming with Solid Rock Outdoor
-Ministries. Twenty days into that trip, God revealed Himself — not as
-Savior, not as Lord (though He was both), but for the first time as a
-loving Father who accepted him and wanted something to do with him. The
-verse that changed his life was Matthew 3:17 — the baptism of Jesus,
-where the Father’s voice says: <em>”You are my beloved Son, with whom I
-am well pleased.”</em> And the key insight: Jesus had not yet done any
-ministry. He had not healed the sick, driven out demons, or died on the
-cross. Yet the Father said, “I am well pleased.” Jesus worked
-<em>from</em> a place of identity, affirmation, and affection — not
-<em>for</em> it.</p>
-<p>Michael’s teaching named the three things the Father provides —
-<strong>protection, provision, and identity</strong> — and the three
-things we do when we take that quest into our own hands: <strong>prove,
-produce, and perform</strong>. He named the three things every human
-being desperately needs — <strong>identity, affirmation, and
-affection</strong> — and showed that Jesus modeled receiving these from
-the Father before doing the work, not as a reward for it.</p>
-<p>The teaching itself was excellent, but what cut deepest was the
-prayer that came at the end:</p>
-<p><em>”We can’t provide for ourselves, protect ourselves, give
+especially needed to hear. It was a teaching by a young man who, during
+a Christian-based wilderness retreat, had learned some important truths
+about what it means to be fathered. His teaching was about the orphan
+spirit. The teaching itself was excellent, but what cut deepest was the
+prayer that came at the end. This young man shared his heart with his
+church family and said:</p>
+<p><em>“We can’t provide for ourselves, protect ourselves, give
 ourselves identity. We can’t win the identity, affirmation, and
 affection that we so desperately crave in ways that are sustainable and
 healthy for eternal life. But in the abundance of his love, God sent his
 son Jesus to die on a cross for our sin, not only to reconcile us to the
 Father, but to fill us with the spirit of sonship, every day.”</em></p>
-<p>And then the challenge: <em>”My best days are the days I wake up and
+<p>And then the challenge: <em>“My best days are the days I wake up and
 pray, ‘God, would you father me today? Would you fill me with identity,
 affirmation, and affection? I repent for the ways that I’ve tried to
 prove, produce, and perform. I repent for the ways that I have taken the
@@ -542,8 +472,8 @@ garys-garden.</em></p>
 
 </div>
 
-<div class="site-footer">
-  <p>Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
+<div class="footer-note">
+  <a href="index.html">Gary Springer&rsquo;s Garden</a> &mdash; Planted by Gary Springer &mdash; grounded in Scripture, informed by neuroscience, offered freely
 </div>
 
 </body>

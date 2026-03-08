@@ -7,86 +7,62 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'EB Garamond', Georgia, serif; background: #f5f3ed; color: #2e4060; min-height: 100vh; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: #f5f3ed; color: #3a3a3a; min-height: 100vh; }
 
-  header { background: #1a2040; padding: 32px 40px; border-bottom: 3px solid #4a78b4; }
+  header { background: #2c2c2c; padding: 32px 40px; border-bottom: 3px solid #c77d00; }
   header .inner { max-width: 860px; margin: 0 auto; }
-  header .label { font-size: 11px; color: #4a78b4; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 8px; }
+  header .label { font-size: 11px; color: #c77d00; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 8px; }
   header h1 { font-size: 34px; font-weight: 400; color: #f5f3ed; line-height: 1.15; margin-bottom: 8px; }
   header .subtitle { font-size: 15px; color: #999; line-height: 1.6; font-style: italic; }
   header .companion { margin-top: 12px; }
-  header .companion a { font-size: 13px; color: #4a78b4; text-decoration: none; border-bottom: 1px solid rgba(74,120,180,0.3); }
-  header .companion a:hover { color: #6a98d0; }
+  header .companion a { font-size: 13px; color: #c77d00; text-decoration: none; border-bottom: 1px solid rgba(199,125,0,0.3); }
+  header .companion a:hover { color: #e8a020; }
 
   .layout { max-width: 860px; margin: 0 auto; display: flex; gap: 40px; padding: 36px 24px 80px; }
 
-  nav { width: 200px; flex-shrink: 0; position: sticky; top: 62px; align-self: flex-start; }
+  nav { width: 200px; flex-shrink: 0; position: sticky; top: 24px; align-self: flex-start; }
   nav .rail { border-left: 1px solid #d8d4cc; padding-left: 16px; }
   .nav-section { margin-bottom: 4px; }
   .nav-btn { display: flex; align-items: center; gap: 8px; background: none; border: none; cursor: pointer; padding: 4px 0; width: 100%; text-align: left; }
   .nav-dot { width: 7px; height: 7px; border-radius: 50%; background: #d0ccc4; transition: all 0.25s ease; flex-shrink: 0; }
-  .nav-dot.active { background: #4a78b4; box-shadow: 0 0 6px rgba(74,120,180,0.4); }
+  .nav-dot.active { background: #c77d00; box-shadow: 0 0 6px rgba(199,125,0,0.4); }
   .nav-label { font-size: 12px; color: #888; transition: all 0.25s ease; line-height: 1.3; }
-  .nav-label.active { color: #1a2040; font-weight: 600; }
+  .nav-label.active { color: #2c2c2c; font-weight: 600; }
   .nav-group { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #bbb; margin: 12px 0 4px 20px; }
   .nav-group:first-child { margin-top: 0; }
 
   main { flex: 1; min-width: 0; }
 
   .section { margin-bottom: 52px; }
-  .section-title { font-size: 26px; font-weight: 400; color: #1a2040; margin-bottom: 4px; }
+  .section-title { font-size: 26px; font-weight: 400; color: #2c2c2c; margin-bottom: 4px; }
   .section-sub { font-size: 14px; color: #888; font-style: italic; margin-bottom: 28px; border-bottom: 1px solid #e0dcd4; padding-bottom: 16px; }
 
   .layer-group { margin-bottom: 32px; }
-  .layer-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #4a78b4; font-weight: 600; margin-bottom: 16px; padding-left: 12px; border-left: 2px solid #4a78b4; }
+  .layer-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #c77d00; font-weight: 600; margin-bottom: 16px; padding-left: 12px; border-left: 2px solid #c77d00; }
 
   .book { background: #fff; border: 1px solid #e0dcd4; border-radius: 6px; padding: 20px 22px; margin-bottom: 12px; transition: border-color 0.2s ease; }
-  .book:hover { border-color: #4a78b4; }
-  .book-title { font-size: 17px; color: #1a2040; line-height: 1.5; margin-bottom: 6px; }
+  .book:hover { border-color: #c77d00; }
+  .book-title { font-size: 15.5px; color: #2c2c2c; line-height: 1.5; margin-bottom: 6px; }
   .book-title strong { font-weight: 600; }
   .book-title em { font-style: italic; }
   .book-note { font-size: 14px; color: #666; line-height: 1.7; font-style: italic; }
-  .book-note a { color: #4a78b4; text-decoration: none; border-bottom: 1px solid rgba(74,120,180,0.3); }
-  .book-note a:hover { color: #6a98d0; }
+  .book-note a { color: #c77d00; text-decoration: none; border-bottom: 1px solid rgba(199,125,0,0.3); }
+  .book-note a:hover { color: #e8a020; }
 
-  .pathway { background: #1a2040; border-radius: 10px; padding: 30px 32px; margin-top: 16px; }
-  .pathway-title { font-size: 20px; color: #4a78b4; margin-bottom: 20px; font-weight: 400; }
+  .pathway { background: #2c2c2c; border-radius: 10px; padding: 30px 32px; margin-top: 16px; }
+  .pathway-title { font-size: 20px; color: #c77d00; margin-bottom: 20px; font-weight: 400; }
   .pathway-step { display: flex; gap: 16px; margin-bottom: 14px; align-items: flex-start; }
-  .step-num { width: 24px; height: 24px; border-radius: 50%; background: rgba(74,120,180,0.2); border: 1px solid #4a78b4; color: #4a78b4; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-  .step-text { font-size: 16px; color: #ccc; line-height: 1.65; }
+  .step-num { width: 24px; height: 24px; border-radius: 50%; background: rgba(199,125,0,0.2); border: 1px solid #c77d00; color: #c77d00; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-text { font-size: 14.5px; color: #ccc; line-height: 1.65; }
   .step-text strong { color: #f0ede6; font-weight: 500; }
-  .step-text em { color: #4a78b4; font-style: italic; }
+  .step-text em { color: #c77d00; font-style: italic; }
 
   .colophon { font-size: 13px; color: #aaa; font-style: italic; text-align: center; padding-top: 20px; border-top: 1px solid #e0dcd4; margin-top: 40px; }
 
-  footer { background: #1a2040; border-top: 1px solid #2e4060; padding: 24px 40px; text-align: center; }
-  footer p { font-size: 15px; color: #8ab0cc; }
-  footer a { color: #4a78b4; text-decoration: none; }
-  footer a:hover { color: #6a98d0; }
-
-  /* Site navbar */
-  .site-nav { background: #1a1a1a; padding: 0 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
-  .site-nav .nav-inner { max-width: 940px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-  .site-nav .nav-home { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8ab0cc; text-decoration: none; padding: 12px 0; white-space: nowrap; }
-  .site-nav .nav-home:hover { color: #b0c4d8; }
-  .site-nav ul { list-style: none; display: flex; gap: 0; margin: 0; padding: 0; flex-wrap: wrap; }
-  .site-nav li a { font-family: 'EB Garamond', Georgia, serif; font-size: 13.5px; color: #999; text-decoration: none; padding: 12px 14px; display: block; transition: color 0.2s; white-space: nowrap; }
-  .site-nav li a:hover { color: #f0ede6; }
-  .site-nav li a.active { color: #f0ede6; font-weight: 600; }
-  .site-nav .nav-sep { width: 1px; background: #333; margin: 8px 4px; align-self: stretch; }
-  .site-nav .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 12px 0; }
-  .site-nav .hamburger .bar { display: block; width: 20px; height: 2px; background: #999; margin: 4px 0; transition: all 0.3s; }
-  .site-footer { background: #1a2040; border-top: 1px solid #2e4060; padding: 28px 40px; text-align: center; }
-  .site-footer p { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8ab0cc; }
-  .site-footer a { color: #8ab0cc; text-decoration: none; }
-  @media (max-width: 700px) {
-    .site-nav .hamburger { display: block; }
-    .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; }
-    .site-nav ul.open { display: flex; }
-    .site-nav .nav-inner { flex-wrap: wrap; }
-    .site-nav .nav-sep { display: none; }
-    .site-nav li a { padding: 8px 0; }
-  }
+  footer { background: #2c2c2c; border-top: 1px solid #3a3a3a; padding: 24px 40px; text-align: center; }
+  footer p { font-size: 13px; color: #556; color: #665544; }
+  footer a { color: #c77d00; text-decoration: none; }
+  footer a:hover { color: #e8a020; }
 
   @media (max-width: 680px) {
     .layout { flex-direction: column; }
@@ -96,23 +72,6 @@
 </style>
 </head>
 <body>
-
-<div class="site-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-home">Gary Springer's Garden</a>
-    <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
-    <ul>
-      <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
-      <li><a href="holistic-recovery-model.html">Recovery Model</a></li>
-      <li><a href="biblical-roots-doc.html">Biblical Roots</a></li>
-      <li><a href="immanuel-moments.html">Immanuel Moments</a></li>
-      <li class="nav-sep"></li>
-      <li><a href="recommended-reading.html" class="active">Reading List</a></li>
-    </ul>
-  </div>
-</div>
 
 <header>
   <div class="inner">
@@ -327,10 +286,6 @@
           <p class="book-note">The landmark work on how trauma reshapes the brain and body. Not written from a Christian perspective, but the neuroscience is foundational for understanding why the Genesis Process and Life Model work the way they do.</p>
         </div>
         <div class="book">
-          <p class="book-title"><strong>Earley, Justin Whitmel.</strong> <em>The Body Teaches the Soul: Ten Essential Habits to Form a Healthy and Holy Life.</em> Grand Rapids: Zondervan, 2025.</p>
-          <p class="book-note">If <em>The Body Keeps the Score</em> shows how trauma is stored in the body, Earley shows how the body participates in spiritual formation — for good or for ill. Ten habits (breathing, thinking, eating, sleeping, sickness and pain, exercise, sex, technology, worship, death and resurrection) explored as body-soul realities. Earley draws on van der Kolk, Willard, and Wright — authors already in this model — and places them within a framework that takes the body as seriously as Scripture does: "your body is a temple of the Holy Spirit" (1 Corinthians 6:19).</p>
-        </div>
-        <div class="book">
           <p class="book-title"><strong>Allender, Dan B.</strong> <em>The Wounded Heart: Hope for Adult Victims of Childhood Sexual Abuse.</em> Revised ed. Colorado Springs: NavPress, 2008.</p>
           <p class="book-note">A deeply Christian treatment of trauma, shame, and the path to healing. Allender's work on the heart complements both Dye and Dodd.</p>
         </div>
@@ -402,9 +357,9 @@
   </main>
 </div>
 
-<div class="site-footer">
-  <p>Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
-</div>
+<footer>
+  <p>Planted by Gary Springer — <a href="index.html">Back to the Garden</a></p>
+</footer>
 
 <script>
   const sections = ['layers','gospel','transform','epistemo','secondary','pathway'];
