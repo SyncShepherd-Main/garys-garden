@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recommended Reading — Gary Springer's Garden</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: #f5f3ed; color: #3a3a3a; min-height: 100vh; }
+
+  header { background: #2c2c2c; padding: 32px 40px; border-bottom: 3px solid #c77d00; }
+  header .inner { max-width: 860px; margin: 0 auto; }
+  header .label { font-size: 11px; color: #c77d00; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 8px; }
+  header h1 { font-size: 34px; font-weight: 400; color: #f5f3ed; line-height: 1.15; margin-bottom: 8px; }
+  header .subtitle { font-size: 15px; color: #999; line-height: 1.6; font-style: italic; }
+  header .companion { margin-top: 12px; }
+  header .companion a { font-size: 13px; color: #c77d00; text-decoration: none; border-bottom: 1px solid rgba(199,125,0,0.3); }
+  header .companion a:hover { color: #e8a020; }
+
+  .layout { max-width: 860px; margin: 0 auto; display: flex; gap: 40px; padding: 36px 24px 80px; }
+
+  nav { width: 200px; flex-shrink: 0; position: sticky; top: 62px; align-self: flex-start; }
+  nav .rail { border-left: 1px solid #d8d4cc; padding-left: 16px; }
+  .nav-section { margin-bottom: 4px; }
+  .nav-btn { display: flex; align-items: center; gap: 8px; background: none; border: none; cursor: pointer; padding: 4px 0; width: 100%; text-align: left; }
+  .nav-dot { width: 7px; height: 7px; border-radius: 50%; background: #d0ccc4; transition: all 0.25s ease; flex-shrink: 0; }
+  .nav-dot.active { background: #c77d00; box-shadow: 0 0 6px rgba(199,125,0,0.4); }
+  .nav-label { font-size: 12px; color: #888; transition: all 0.25s ease; line-height: 1.3; }
+  .nav-label.active { color: #2c2c2c; font-weight: 600; }
+  .nav-group { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: #bbb; margin: 12px 0 4px 20px; }
+  .nav-group:first-child { margin-top: 0; }
+
+  main { flex: 1; min-width: 0; }
+
+  .section { margin-bottom: 52px; }
+  .section-title { font-size: 26px; font-weight: 400; color: #2c2c2c; margin-bottom: 4px; }
+  .section-sub { font-size: 14px; color: #888; font-style: italic; margin-bottom: 28px; border-bottom: 1px solid #e0dcd4; padding-bottom: 16px; }
+
+  .layer-group { margin-bottom: 32px; }
+  .layer-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #c77d00; font-weight: 600; margin-bottom: 16px; padding-left: 12px; border-left: 2px solid #c77d00; }
+
+  .book { background: #fff; border: 1px solid #e0dcd4; border-radius: 6px; padding: 20px 22px; margin-bottom: 12px; transition: border-color 0.2s ease; }
+  .book:hover { border-color: #c77d00; }
+  .book-title { font-size: 15.5px; color: #2c2c2c; line-height: 1.5; margin-bottom: 6px; }
+  .book-title strong { font-weight: 600; }
+  .book-title em { font-style: italic; }
+  .book-note { font-size: 14px; color: #666; line-height: 1.7; font-style: italic; }
+  .book-note a { color: #c77d00; text-decoration: none; border-bottom: 1px solid rgba(199,125,0,0.3); }
+  .book-note a:hover { color: #e8a020; }
+
+  .pathway { background: #2c2c2c; border-radius: 10px; padding: 30px 32px; margin-top: 16px; }
+  .pathway-title { font-size: 20px; color: #c77d00; margin-bottom: 20px; font-weight: 400; }
+  .pathway-step { display: flex; gap: 16px; margin-bottom: 14px; align-items: flex-start; }
+  .step-num { width: 24px; height: 24px; border-radius: 50%; background: rgba(199,125,0,0.2); border: 1px solid #c77d00; color: #c77d00; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-text { font-size: 14.5px; color: #ccc; line-height: 1.65; }
+  .step-text strong { color: #f0ede6; font-weight: 500; }
+  .step-text em { color: #c77d00; font-style: italic; }
+
+  .colophon { font-size: 13px; color: #aaa; font-style: italic; text-align: center; padding-top: 20px; border-top: 1px solid #e0dcd4; margin-top: 40px; }
+
+  footer { background: #2c2c2c; border-top: 1px solid #3a3a3a; padding: 24px 40px; text-align: center; }
+  footer p { font-size: 13px; color: #556; color: #665544; }
+  footer a { color: #c77d00; text-decoration: none; }
+  footer a:hover { color: #e8a020; }
+
+  /* Site navbar */
+  .site-nav { background: #1a1a1a; padding: 0 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
+  .site-nav .nav-inner { max-width: 940px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .site-nav .nav-home { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8aaa80; text-decoration: none; padding: 12px 0; white-space: nowrap; }
+  .site-nav .nav-home:hover { color: #b0c8a8; }
+  .site-nav ul { list-style: none; display: flex; gap: 0; margin: 0; padding: 0; flex-wrap: wrap; }
+  .site-nav li a { font-family: 'EB Garamond', Georgia, serif; font-size: 13.5px; color: #999; text-decoration: none; padding: 12px 14px; display: block; transition: color 0.2s; white-space: nowrap; }
+  .site-nav li a:hover { color: #f0ede6; }
+  .site-nav li a.active { color: #f0ede6; font-weight: 600; }
+  .site-nav .nav-sep { width: 1px; background: #333; margin: 8px 4px; align-self: stretch; }
+  .site-nav .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 12px 0; }
+  .site-nav .hamburger .bar { display: block; width: 20px; height: 2px; background: #999; margin: 4px 0; transition: all 0.3s; }
+  .site-footer { background: #1a2a1a; border-top: 1px solid #2e4a2e; padding: 28px 40px; text-align: center; }
+  .site-footer p { font-family: 'EB Garamond', Georgia, serif; font-size: 13px; color: #556655; }
+  .site-footer a { color: #8aaa80; text-decoration: none; }
+  @media (max-width: 700px) {
+    .site-nav .hamburger { display: block; }
+    .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; }
+    .site-nav ul.open { display: flex; }
+    .site-nav .nav-inner { flex-wrap: wrap; }
+    .site-nav .nav-sep { display: none; }
+    .site-nav li a { padding: 8px 0; }
+  }
+
+  @media (max-width: 680px) {
+    .layout { flex-direction: column; }
+    nav { width: 100%; position: static; }
+    header { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Gary Springer's Garden</a>
+    <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <ul>
+      <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
+      <li><a href="holistic-recovery-model.html">Recovery Model</a></li>
+      <li><a href="biblical-roots-doc.html">Biblical Roots</a></li>
+      <li><a href="immanuel-moments.html">Immanuel Moments</a></li>
+      <li class="nav-sep"></li>
+      <li><a href="recommended-reading.html" class="active">Reading List</a></li>
+    </ul>
+  </div>
+</div>
+
+<header>
+  <div class="inner">
+    <div class="label">Gary Springer's Garden</div>
+    <h1>Recommended Reading</h1>
+    <p class="subtitle">A complete bibliography for the Eight-Layer Recovery Model, the Gospel Foundation &amp; the 7-Tier Framework</p>
+    <div class="companion"><a href="index.html">← Back to the Garden</a></div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav>
+    <div class="rail">
+      <div class="nav-group">Primary Sources</div>
+      <div class="nav-section"><button class="nav-btn" onclick="scrollTo('layers')"><div class="nav-dot active" id="dot-layers"></div><span class="nav-label active" id="lbl-layers">The Eight Layers</span></button></div>
+      <div class="nav-section"><button class="nav-btn" onclick="scrollTo('gospel')"><div class="nav-dot" id="dot-gospel"></div><span class="nav-label" id="lbl-gospel">Gospel &amp; Kingdom</span></button></div>
+      <div class="nav-section"><button class="nav-btn" onclick="scrollTo('transform')"><div class="nav-dot" id="dot-transform"></div><span class="nav-label" id="lbl-transform">Transformational Architecture</span></button></div>
+      <div class="nav-section"><button class="nav-btn" onclick="scrollTo('epistemo')"><div class="nav-dot" id="dot-epistemo"></div><span class="nav-label" id="lbl-epistemo">7-Tier Foundation</span></button></div>
+      <div class="nav-group">Supplementary</div>
+      <div class="nav-section"><button class="nav-btn" onclick="scrollTo('secondary')"><div class="nav-dot" id="dot-secondary"></div><span class="nav-label" id="lbl-secondary">Secondary Reading</span></button></div>
+      <div class="nav-group">Pathway</div>
+      <div class="nav-section"><button class="nav-btn" onclick="scrollTo('pathway')"><div class="nav-dot" id="dot-pathway"></div><span class="nav-label" id="lbl-pathway">Reading Pathway</span></button></div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Eight Layers -->
+    <div class="section" id="layers">
+      <h2 class="section-title">Primary Sources — The Eight Layers</h2>
+      <p class="section-sub">These are the foundational works behind each layer of the model. If you read nothing else, read these.</p>
+
+      <div class="layer-group">
+        <div class="layer-label">Layer 1 — Systemic Atmosphere</div>
+        <div class="book">
+          <p class="book-title"><strong>Friedman, Edwin H.</strong> <em>A Failure of Nerve: Leadership in the Age of the Quick Fix.</em> Revised 10th Anniversary Edition. New York: Church Publishing, 2017.</p>
+          <p class="book-note">The essential Friedman. Non-anxious presence, self-differentiation, the failure of nerve, peace-mongering vs. peace-making. Originally published posthumously in 2007; the 2017 revision is the definitive edition.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Friedman, Edwin H.</strong> <em>Generation to Generation: Family Process in Church and Synagogue.</em> The Guilford Family Therapy Series. New York: Guilford Press, 1985.</p>
+          <p class="book-note">Friedman's groundbreaking first work. Applies Bowen family systems theory to congregational and pastoral dynamics. The book that first exposed the emotional connections between home and work in religious systems.</p>
+        </div>
+      </div>
+
+      <div class="layer-group">
+        <div class="layer-label">Layer 2 — Relapse Awareness (FASTER Scale)</div>
+        <div class="book">
+          <p class="book-title"><strong>Dye, Michael.</strong> <em>The Genesis Process: A Relapse Prevention Workbook for Addictive/Compulsive Behaviors.</em> 3rd ed. Auburn, CA: Genesis Addiction Process &amp; Programs, 2007.</p>
+          <p class="book-note">The one-on-one relapse prevention workbook. Contains the FASTER Scale, the Double Bind, false belief work, life history, and the complete relapse prevention curriculum. The core clinical tool.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Dye, Michael.</strong> <em>The Genesis Process for Change Groups: Book 1 and 2 Individual Workbook.</em> Auburn, CA: Genesis Addiction Process &amp; Programs, 2006.</p>
+          <p class="book-note">The small group curriculum. Groups of five work through 20 processes to establish safe relationships, understand what's broken, and heal the old wounds that drive self-destructive behavior.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Bennett, Ben, Brett Butcher, and Ted Roberts.</strong> <em>Living Free.</em> Gresham, OR: Pure Desire Ministries International, 2016.</p>
+          <p class="book-note">A companion resource that adapts the Genesis Process's FASTER Scale and related tools for use in the Pure Desire recovery context.</p>
+        </div>
+      </div>
+
+      <div class="layer-group">
+        <div class="layer-label">Layer 4 — Maturity &amp; Brain Skills</div>
+        <div class="book">
+          <p class="book-title"><strong>Friesen, James G., E. James Wilder, Anne M. Bierling, Rick Koepcke, and Maribeth Poole.</strong> <em>Living from the Heart Jesus Gave You.</em> 15th Anniversary Edition. Pasadena, CA: Shepherd's House / Life Model Works, 2013.</p>
+          <p class="book-note">The foundational Life Model book. Joy-fuel, the Quiet skill, Type A and Type B trauma, maturity stages from infant to elder, and the Immanuel lifestyle. The book that sold over 100,000 copies and launched the Life Model movement.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Warner, Marcus, and E. James Wilder.</strong> <em>Rare Leadership: 4 Uncommon Habits for Increasing Trust, Joy, and Engagement in the People You Lead.</em> Chicago: Moody Publishers, 2016.</p>
+          <p class="book-note">Wilder's leadership application of the Life Model. The four habits of rare leaders, including remaining relational under stress (the Quiet skill applied to leadership).</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Warner, Marcus, and E. James Wilder.</strong> <em>The Joy Switch: How Your Brain's Secret Circuit Affects Your Relationships — And How You Can Activate It.</em> Chicago: Northfield Publishing, 2024.</p>
+          <p class="book-note">The neuroscience of joy and relational connection, made accessible. How the brain's relational circuit switches on and off, and what to do when it shuts down.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Wilder, E. James, Edward M. Khouri, Chris M. Coursey, and Sheila D. Sutton.</strong> <em>Joy Starts Here: The Transformation Zone.</em> East Peoria, IL: Shepherd's House, 2013.</p>
+          <p class="book-note">How to build joy in individuals, families, and communities. The practical "how" of Wilder's joy-fuel concept.</p>
+        </div>
+      </div>
+
+      <div class="layer-group">
+        <div class="layer-label">Layer 5 — Emotional Language</div>
+        <div class="book">
+          <p class="book-title"><strong>Dodd, Chip.</strong> <em>The Voice of the Heart: A Call to Full Living.</em> Revised ed. Nashville: Sage Hill, 2015.</p>
+          <p class="book-note">The eight core feelings as gifts from God pointing to needs. Fear → wisdom, anger → passion, sadness → acceptance, loneliness → intimacy. The Spiritual Root System. The book that gives language to the emotional life.</p>
+        </div>
+      </div>
+
+      <div class="layer-group">
+        <div class="layer-label">Layer 6 — Relational Wisdom</div>
+        <div class="book">
+          <p class="book-title"><strong>Sande, Ken.</strong> <em>Relational Wisdom 360 (RW360).</em> Online training and resources at <a href="https://rw360.org/relational-wisdom" target="_blank">rw360.org/relational-wisdom</a>.</p>
+          <p class="book-note">The primary source for what this model references from Sande: the six core skills of relational wisdom organized in three pairs — God-aware/engaged, self-aware/engaged, other-aware/engaged — and the collapse pattern when each skill fails. The SOG Plan, the RW circle, the biblical foundation for 3D awareness, and the David/Bathsheba diagnostic.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Sande, Ken.</strong> <em>The Peacemaker: A Biblical Guide to Resolving Personal Conflict.</em> 3rd ed. Grand Rapids: Baker Books, 2004.</p>
+          <p class="book-note">Sande's foundational conflict resolution work. The biblical framework for peacemaking, including the four G's (Glorify God, Get the log out of your own eye, Gently restore, Go and be reconciled). The background from which RW360's broader relational wisdom model grew.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Sande, Ken, and Kevin Johnson.</strong> <em>Resolving Everyday Conflict.</em> Grand Rapids: Baker Books, 2011.</p>
+          <p class="book-note">A more accessible, condensed version of The Peacemaker's principles for daily relational life.</p>
+        </div>
+      </div>
+
+      <div class="layer-group">
+        <div class="layer-label">Layer 7 — Core Needs</div>
+        <div class="book">
+          <p class="book-title"><strong>Koch, Kathy.</strong> <em>Five to Thrive: How to Determine If Your Core Needs Are Being Met (and What to Do When They're Not).</em> Chicago: Moody Publishers, 2020.</p>
+          <p class="book-note">The five core needs — security, identity, belonging, purpose, competence — and how to root them in Christ. The most directly relevant Koch book for this model.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Koch, Kathy.</strong> <em>Screens and Teens: Connecting with Our Kids in a Wireless World.</em> Chicago: Moody Publishers, 2015.</p>
+          <p class="book-note">How technology affects the five core needs, particularly in adolescents. Relevant for understanding how counterfeits to core needs function in the modern context.</p>
+        </div>
+      </div>
+
+      <div class="layer-group">
+        <div class="layer-label">Layer 8 — Practical Wisdom &amp; Boundaries</div>
+        <div class="book">
+          <p class="book-title"><strong>Cloud, Henry.</strong> <em>9 Things You Simply Must Do to Succeed in Love and Life.</em> Nashville: Thomas Nelson, 2004.</p>
+          <p class="book-note">The nine principles of déjà vu people: dig it up, pull the tooth, play the movie, do something, act like an ant, hate well, don't play fair, be humble, upset the right people. The action-level wisdom layer of the model.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Cloud, Henry, and John Townsend.</strong> <em>Boundaries: When to Say Yes, How to Say No to Take Control of Your Life.</em> Updated and Expanded ed. Grand Rapids: Zondervan, 2017.</p>
+          <p class="book-note">The foundational boundaries work. Where I end and you begin. Responsible to others, responsible for yourself. The law of sowing and reaping. Over 20 million copies sold.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Cloud, Henry, and John Townsend.</strong> <em>Boundaries in Marriage.</em> Grand Rapids: Zondervan, 1999.</p>
+          <p class="book-note">Boundaries applied specifically to the marriage relationship. Freedom, responsibility, and love as the three ingredients of healthy marriage.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gospel & Kingdom -->
+    <div class="section" id="gospel">
+      <h2 class="section-title">The Gospel &amp; the Kingdom</h2>
+      <p class="section-sub">The event that makes everything else possible — and the life that everything else is pointing toward.</p>
+
+      <div class="book">
+        <p class="book-title"><strong>Wright, N. T.</strong> <em>How God Became King: The Forgotten Story of the Gospels.</em> New York: HarperOne, 2012.</p>
+        <p class="book-note">The book that exposes the "missing middle" of the Gospels. The creeds jump from "born of the Virgin Mary" to "suffered under Pontius Pilate" as if nothing happened in between — but everything happened in between. Wright recovers the kingdom story the Gospel writers were actually telling: not just how to get to heaven, but how God became king on earth. Essential for understanding why the <em>life</em> Jesus lived — not just the death — is the Gospel.</p>
+      </div>
+      <div class="book">
+        <p class="book-title"><strong>Wright, N. T.</strong> <em>The Day the Revolution Began: Reconsidering the Meaning of Jesus's Crucifixion.</em> New York: HarperOne, 2016.</p>
+        <p class="book-note">Wright's reframing of the cross: not merely a transaction that satisfies divine wrath, but the climax of the covenant story — God doing through Yeshua what Israel could not do, defeating the powers that held creation captive, and launching the new creation.</p>
+      </div>
+      <div class="book">
+        <p class="book-title"><strong>Wright, N. T.</strong> <em>Simply Jesus: A New Vision of Who He Was, What He Did, and Why He Matters.</em> New York: HarperOne, 2011.</p>
+        <p class="book-note">An accessible introduction to who Jesus was within his first-century Jewish context. The Kingdom of God announced, demonstrated, and inaugurated. A good starting point before <em>How God Became King</em>.</p>
+      </div>
+      <div class="book">
+        <p class="book-title"><strong>Kaiser, Walter C., Jr.</strong> <em>The Promise-Plan of God: A Biblical Theology of the Old and New Testaments.</em> Grand Rapids: Zondervan, 2008.</p>
+        <p class="book-note">The definitive statement of Kaiser's life work: the promise plan as the unifying theme of the entire canon from Genesis to Revelation. Contains the tripartite covenant formula ("I will be your God, you will be my people, I will dwell among you") that runs through every covenant renewal in Scripture and arrives in its fullness in Yeshua.</p>
+      </div>
+      <div class="book">
+        <p class="book-title"><strong>Kaiser, Walter C., Jr.</strong> <em>Toward an Old Testament Theology.</em> Grand Rapids: Zondervan, 1978.</p>
+        <p class="book-note">Kaiser's earlier, more academic treatment of the promise theme as the center of Old Testament theology. Traces the progressive unfolding of God's promise from the patriarchal era through the monarchy and into the prophets.</p>
+      </div>
+      <div class="book">
+        <p class="book-title"><strong>Berkowitz, Ariel and D'vorah.</strong> <em>Torah Rediscovered: Challenging Centuries of Misinterpretation and Neglect.</em> 5th ed. Shoreshim Publishing, 2004.</p>
+        <p class="book-note">A treatment of Torah as the living instruction of God for all His people — not abolished, not relegated to a previous dispensation, but fulfilled and illuminated by Yeshua. Relevant to the Gospel section's insistence that this is a Kingdom thing, not a denominational thing, and that the entire canon is one unbroken story.</p>
+      </div>
+    </div>
+
+    <!-- Transformational Architecture -->
+    <div class="section" id="transform">
+      <h2 class="section-title">The Transformational Architecture</h2>
+      <p class="section-sub">Vision, Intention, Means — how spiritual formation actually happens.</p>
+
+      <div class="book">
+        <p class="book-title"><strong>Willard, Dallas.</strong> <em>Renovation of the Heart: Putting On the Character of Christ.</em> Colorado Springs: NavPress, 2002.</p>
+        <p class="book-note">The VIM framework: Vision, Intention, Means. How spiritual formation actually happens. The six dimensions of the human person (spirit/will, mind, body, social, soul) and how each must be transformed. Chapter 5 contains the VIM model that provides the architectural framework for the entire recovery model.</p>
+      </div>
+      <div class="book">
+        <p class="book-title"><strong>Willard, Dallas.</strong> <em>The Divine Conspiracy: Rediscovering Our Hidden Life in God.</em> San Francisco: HarperSanFrancisco, 1998.</p>
+        <p class="book-note">Willard's masterwork on discipleship. The Sermon on the Mount as a practical guide for living in the Kingdom of God now. The theological vision behind the VIM framework.</p>
+      </div>
+      <div class="book">
+        <p class="book-title"><strong>Willard, Dallas.</strong> <em>The Spirit of the Disciplines: Understanding How God Changes Lives.</em> San Francisco: Harper &amp; Row, 1988.</p>
+        <p class="book-note">Willard's case for the spiritual disciplines as the means of transformation. Why trying harder doesn't work, and why training does. The "indirect" approach to character change.</p>
+      </div>
+      <div class="book">
+        <p class="book-title"><strong>Willard, Dallas.</strong> <em>Spiritual Formation: What It Is, and How It Is Done.</em> Available at dwillard.org.</p>
+        <p class="book-note">A concise essay-length treatment of the VIM model and its application. Useful as a summary if the full books are too much to start with.</p>
+      </div>
+    </div>
+
+    <!-- Epistemological Foundation -->
+    <div class="section" id="epistemo">
+      <h2 class="section-title">The Epistemological Foundation</h2>
+      <p class="section-sub">Scholarly sources behind the 7-Tier Framework.</p>
+
+      <div class="book">
+        <p class="book-title"><strong>Waltke, Bruce K.</strong> <em>The Book of Proverbs, Chapters 1–15.</em> The New International Commentary on the Old Testament (NICOT). Grand Rapids: Eerdmans, 2004.</p>
+        <p class="book-note">The definitive evangelical commentary on Proverbs. The source for the Hebrew vocabulary analysis in the 7-Tier Framework's Tier 6 excursus: musar, sekel, ormah, da'at, mezimmah.</p>
+      </div>
+      <div class="book">
+        <p class="book-title"><strong>Wilson, Marvin R.</strong> <em>Our Father Abraham: Jewish Roots of the Christian Faith.</em> Grand Rapids: Eerdmans, 1989.</p>
+        <p class="book-note">Hebrew epistemology, the typology of fools in the wisdom tradition, and the relational nature of knowledge in the Hebrew worldview. Essential background for understanding da'at (relational knowledge) vs. Greek detached knowing.</p>
+      </div>
+    </div>
+
+    <!-- Secondary Reading -->
+    <div class="section" id="secondary">
+      <h2 class="section-title">Secondary &amp; Supplementary Reading</h2>
+      <p class="section-sub">Companion works that deepen each area.</p>
+
+      <div class="layer-group">
+        <div class="layer-label">On Trauma, Recovery, and the Brain</div>
+        <div class="book">
+          <p class="book-title"><strong>van der Kolk, Bessel.</strong> <em>The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma.</em> New York: Penguin, 2014.</p>
+          <p class="book-note">The landmark work on how trauma reshapes the brain and body. Not written from a Christian perspective, but the neuroscience is foundational for understanding why the Genesis Process and Life Model work the way they do.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Allender, Dan B.</strong> <em>The Wounded Heart: Hope for Adult Victims of Childhood Sexual Abuse.</em> Revised ed. Colorado Springs: NavPress, 2008.</p>
+          <p class="book-note">A deeply Christian treatment of trauma, shame, and the path to healing. Allender's work on the heart complements both Dye and Dodd.</p>
+        </div>
+      </div>
+
+      <div class="layer-group">
+        <div class="layer-label">On Spiritual Formation</div>
+        <div class="book">
+          <p class="book-title"><strong>Foster, Richard J.</strong> <em>Celebration of Discipline: The Path to Spiritual Growth.</em> Revised ed. San Francisco: HarperSanFrancisco, 1998.</p>
+          <p class="book-note">The classic introduction to the spiritual disciplines. Pairs naturally with Willard's more theological treatment — Foster provides the practical "how," Willard provides the "why."</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Scazzero, Peter.</strong> <em>Emotionally Healthy Spirituality: It's Impossible to Be Spiritually Mature, While Remaining Emotionally Immature.</em> Updated ed. Grand Rapids: Zondervan, 2017.</p>
+          <p class="book-note">The core insight: you can't be spiritually mature while remaining emotionally immature. Scazzero's integration of emotional health with contemplative practice. His Friday-sundown-to-Saturday-sundown Sabbath practice directly influenced the Sabbath exhaustion story in the Immanuel Moments page. Over one million copies sold.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Scazzero, Peter.</strong> <em>Emotionally Healthy Discipleship: Moving from Shallow Christianity to Deep Transformation.</em> Grand Rapids: Zondervan, 2021.</p>
+          <p class="book-note">Takes the insights of <em>Emotionally Healthy Spirituality</em> and applies them to church culture and discipleship formation. Addresses the systemic gaps that undermine effective growth and change — the same gaps Friedman identifies from a different angle. Winner of the 2022 ECPA Christian Book Award for Ministry Resources.</p>
+        </div>
+      </div>
+
+      <div class="layer-group">
+        <div class="layer-label">On Family Systems and Leadership</div>
+        <div class="book">
+          <p class="book-title"><strong>Steinke, Peter L.</strong> <em>How Your Church Family Works: Understanding Congregations as Emotional Systems.</em> Herndon, VA: Alban Institute, 2006.</p>
+          <p class="book-note">A more accessible application of Friedman's family systems theory to congregational life. A good entry point if Friedman feels dense.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Bolsinger, Tod.</strong> <em>Canoeing the Mountains: Christian Leadership in Uncharted Territory.</em> Downers Grove, IL: IVP Books, 2015.</p>
+          <p class="book-note">Friedman's insights applied to pastoral leadership in a post-Christendom context. Uses the Lewis and Clark expedition as a metaphor for adaptive leadership — what happens when the map you were trained to read no longer matches the territory in front of you.</p>
+        </div>
+        <div class="book">
+          <p class="book-title"><strong>Olsen, David C.</strong> <em>Integrative Family Therapy.</em> Creative Pastoral Care and Counseling Series. Minneapolis: Fortress Press, 1993.</p>
+          <p class="book-note">Takes seven major schools of family therapy and integrates them into a unified clinical model — distinct from but parallel to the personal synthesis of this recovery model. Demonstrated that integration across schools of thought is both possible and fruitful.</p>
+        </div>
+      </div>
+
+      <div class="layer-group">
+        <div class="layer-label">On Identity and the False Self</div>
+        <div class="book">
+          <p class="book-title"><strong>Nouwen, Henri J. M.</strong> <em>Life of the Beloved: Spiritual Living in a Secular World.</em> New York: Crossroad, 1992.</p>
+          <p class="book-note">Identity rooted in belovedness. Speaks directly to Koch's Identity core need and to the false beliefs about worthlessness that the Genesis Process uncovers.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reading Pathway -->
+    <div class="section" id="pathway">
+      <h2 class="section-title">Reading Pathway</h2>
+      <p class="section-sub">An order that matches the logic of the model — start here if you don't know where to begin.</p>
+
+      <div class="pathway">
+        <div class="pathway-title">Where to Begin</div>
+        <div class="pathway-step"><div class="step-num">1</div><div class="step-text"><strong>Start with the Gospel:</strong> Wright, <em>How God Became King</em> — recover the story the Gospels are actually telling, the missing middle, the life Jesus lived</div></div>
+        <div class="pathway-step"><div class="step-num">2</div><div class="step-text"><strong>Understand the promise plan:</strong> Kaiser, <em>The Promise-Plan of God</em> — see the one thread running from Genesis to Revelation: I will be your God, you will be my people, I will dwell among you</div></div>
+        <div class="pathway-step"><div class="step-num">3</div><div class="step-text"><strong>Start with the heart:</strong> Dodd, <em>The Voice of the Heart</em> — learn to feel</div></div>
+        <div class="pathway-step"><div class="step-num">4</div><div class="step-text"><strong>Understand what's broken:</strong> Dye, <em>The Genesis Process</em> — learn to see the descent</div></div>
+        <div class="pathway-step"><div class="step-num">5</div><div class="step-text"><strong>Understand what's needed:</strong> Friesen &amp; Wilder, <em>Living from the Heart Jesus Gave You</em> — learn what powers growth</div></div>
+        <div class="pathway-step"><div class="step-num">6</div><div class="step-text"><strong>Understand the architecture of change:</strong> Willard, <em>Renovation of the Heart</em> — learn how transformation actually works</div></div>
+        <div class="pathway-step"><div class="step-num">7</div><div class="step-text"><strong>Learn to live differently:</strong> Cloud, <em>9 Things You Simply Must Do</em> — learn the habits of wise living</div></div>
+        <div class="pathway-step"><div class="step-num">8</div><div class="step-text"><strong>Set boundaries:</strong> Cloud &amp; Townsend, <em>Boundaries</em> — learn where you end and others begin</div></div>
+        <div class="pathway-step"><div class="step-num">9</div><div class="step-text"><strong>Understand the system:</strong> Friedman, <em>A Failure of Nerve</em> — learn to be a non-anxious presence</div></div>
+        <div class="pathway-step"><div class="step-num">10</div><div class="step-text"><strong>Go deeper into the canon:</strong> Waltke, <em>Proverbs 1–15</em> — let the Hebrew wisdom tradition reshape how you think about all of it</div></div>
+      </div>
+
+      <p class="colophon">Bibliography compiled from all references across the Eight-Layer Recovery Model, the 7-Tier Relational &amp; Ideological Framework, the Gospel &amp; Kingdom foundation, the FASTER Scale (Flesh Series), and the Biblical Roots Supplement.</p>
+    </div>
+
+  </main>
+</div>
+
+<div class="site-footer">
+  <p>Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
+</div>
+
+<script>
+  const sections = ['layers','gospel','transform','epistemo','secondary','pathway'];
+
+  function scrollTo(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function updateNav() {
+    let current = sections[0];
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= 120) current = id;
+    });
+    sections.forEach(id => {
+      const dot = document.getElementById('dot-' + id);
+      const lbl = document.getElementById('lbl-' + id);
+      if (dot) dot.classList.toggle('active', id === current);
+      if (lbl) lbl.classList.toggle('active', id === current);
+    });
+  }
+
+  window.addEventListener('scroll', updateNav);
+  updateNav();
+</script>
+</body>
+</html>
