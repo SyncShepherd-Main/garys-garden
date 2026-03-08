@@ -49,6 +49,7 @@ These pages render the raw markdown source files with full formatting, navigatio
 
 - **Hosting:** GitHub Pages via GitHub Actions (auto-deploys on push to `main`)
 - **Stack:** Pure static HTML/CSS/JS — no build tools, no frameworks, no dependencies
+- **Color scheme:** Blue — deep navy backgrounds, steel blue accents, sky blue light text
 - **Font:** EB Garamond (Google Fonts), fallback: Georgia, serif
 - **Body text:** 18px, line-height 1.85
 - **Markdown rendering:** Custom client-side `parseMarkdown()` in each source document page (fetches `.md` files and renders to HTML)
