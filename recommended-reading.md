@@ -1,6 +1,6 @@
 # Recommended Reading
 
-## A Complete Bibliography for the Eight-Layer Recovery Model & the 7-Tier Framework
+## A Complete Bibliography for the Eight-Layer Recovery Model, the Gospel Foundation & the 7-Tier Framework
 
 ---
 
@@ -48,8 +48,11 @@ These are the foundational works behind each layer of the model. If you read not
 
 ### Layer 6: Relational Wisdom
 
+**Sande, Ken.** *Relational Wisdom 360 (RW360).* Online training and resources at [rw360.org/relational-wisdom](https://rw360.org/relational-wisdom/).
+— The primary source for what this model references from Sande: the six core skills of relational wisdom organized in three pairs — God-aware/engaged (remember/faithful), self-aware/engaged (humble/disciplined), other-aware/engaged (compassionate/serve) — and the collapse pattern when each skill fails (forget/fickle, proud/indulgent, insensitive/manipulative). The SOG Plan, the RW circle, the biblical foundation for 3D awareness, and the David/Bathsheba diagnostic. This is where Sande's mature thinking on relational wisdom is taught most fully, going well beyond conflict resolution into the daily practice of relational health.
+
 **Sande, Ken.** *The Peacemaker: A Biblical Guide to Resolving Personal Conflict.* 3rd ed. Grand Rapids: Baker Books, 2004.
-— Sande's foundational conflict resolution work. The biblical framework for peacemaking, including the four G's (Glorify God, Get the log out of your own eye, Gently restore, Go and be reconciled). The background for RW360's 3D awareness model.
+— Sande's foundational conflict resolution work. The biblical framework for peacemaking, including the four G's (Glorify God, Get the log out of your own eye, Gently restore, Go and be reconciled). The background from which RW360's broader relational wisdom model grew.
 
 **Sande, Ken, and Kevin Johnson.** *Resolving Everyday Conflict.* Grand Rapids: Baker Books, 2011.
 — A more accessible, condensed version of The Peacemaker's principles for daily relational life.
@@ -72,6 +75,30 @@ These are the foundational works behind each layer of the model. If you read not
 
 **Cloud, Henry, and John Townsend.** *Boundaries in Marriage.* Grand Rapids: Zondervan, 1999.
 — Boundaries applied specifically to the marriage relationship. Freedom, responsibility, and love as the three ingredients of healthy marriage.
+
+---
+
+## The Gospel & the Kingdom
+
+*The event that makes everything else possible — and the life that everything else is pointing toward.*
+
+**Wright, N. T.** *How God Became King: The Forgotten Story of the Gospels.* New York: HarperOne, 2012.
+— The book that exposes the "missing middle" of the Gospels. The creeds jump from "born of the Virgin Mary" to "suffered under Pontius Pilate" as if nothing happened in between — but everything happened in between. Wright recovers the kingdom story that the Gospel writers were actually telling: not just how to get to heaven, but how God became king on earth. Essential for understanding why the *life* Jesus lived — not just the death — is the Gospel.
+
+**Wright, N. T.** *The Day the Revolution Began: Reconsidering the Meaning of Jesus's Crucifixion.* New York: HarperOne, 2016.
+— Wright's reframing of the cross: not merely a transaction that satisfies divine wrath, but the climax of the covenant story — God doing through Yeshua what Israel could not do, defeating the powers that held creation captive, and launching the new creation. Deepens the Gospel section's treatment of the cup, the cross, and the place of no separation.
+
+**Wright, N. T.** *Simply Jesus: A New Vision of Who He Was, What He Did, and Why He Matters.* New York: HarperOne, 2011.
+— An accessible introduction to who Jesus was within his first-century Jewish context. The Kingdom of God announced, demonstrated, and inaugurated. A good starting point before *How God Became King*.
+
+**Kaiser, Walter C., Jr.** *The Promise-Plan of God: A Biblical Theology of the Old and New Testaments.* Grand Rapids: Zondervan, 2008.
+— The definitive statement of Kaiser's life work: the promise plan as the unifying theme of the entire canon from Genesis to Revelation. Contains the tripartite covenant formula ("I will be your God, you will be my people, I will dwell among you") that runs through every covenant renewal in Scripture and arrives in its fullness in Yeshua. Essential for understanding why the Gospel section of the Biblical Roots document is not an addendum but the foundation.
+
+**Kaiser, Walter C., Jr.** *Toward an Old Testament Theology.* Grand Rapids: Zondervan, 1978.
+— Kaiser's earlier, more academic treatment of the promise theme as the center of Old Testament theology. Traces the progressive unfolding of God's promise from the patriarchal era through the monarchy and into the prophets. For those who want the scholarly foundation behind *The Promise-Plan of God*.
+
+**Berkowitz, Ariel and D'vorah.** *Torah Rediscovered: Challenging Centuries of Misinterpretation and Neglect.* 5th ed. Shoreshim Publishing, 2004.
+— A treatment of Torah as the living instruction of God for all His people — not abolished, not relegated to a previous dispensation, but fulfilled and illuminated by Yeshua. Relevant to the Gospel section's insistence that this is a Kingdom thing, not a denominational thing, and that the entire canon is one unbroken story.
 
 ---
 
@@ -110,6 +137,9 @@ These are the foundational works behind each layer of the model. If you read not
 **van der Kolk, Bessel.** *The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma.* New York: Penguin, 2014.
 — The landmark work on how trauma reshapes the brain and body. Not written from a Christian perspective, but the neuroscience is foundational for understanding why the Genesis Process and Life Model work the way they do.
 
+**Earley, Justin Whitmel.** *The Body Teaches the Soul: Ten Essential Habits to Form a Healthy and Holy Life.* Grand Rapids: Zondervan, 2025.
+— If *The Body Keeps the Score* shows how trauma is stored in the body, Earley shows how the body participates in spiritual formation — for good or for ill. His core insight: healthy and unhealthy habits aren't physical *or* spiritual; they are physical *and* spiritual. Ten habits (breathing, thinking, eating, sleeping, sickness and pain, exercise, sex, technology, worship, death and resurrection) explored as body-soul realities. Earley draws on van der Kolk, Willard, and Wright — authors already in this model — and places them within a framework that takes the body as seriously as Scripture does: "your body is a temple of the Holy Spirit" (1 Corinthians 6:19). The body doesn't just reflect what the soul is going through. It teaches the soul. It keeps the score. It sends the signals. The adrenals don't lie.
+
 **Allender, Dan B.** *The Wounded Heart: Hope for Adult Victims of Childhood Sexual Abuse.* Revised ed. Colorado Springs: NavPress, 2008.
 — A deeply Christian treatment of trauma, shame, and the path to healing. Allender's work on the heart complements both Dye and Dodd.
 
@@ -118,10 +148,22 @@ These are the foundational works behind each layer of the model. If you read not
 **Foster, Richard J.** *Celebration of Discipline: The Path to Spiritual Growth.* Revised ed. San Francisco: HarperSanFrancisco, 1998.
 — The classic introduction to the spiritual disciplines. Pairs naturally with Willard's more theological treatment — Foster provides the practical "how," Willard provides the "why."
 
+**Scazzero, Peter.** *Emotionally Healthy Spirituality: It's Impossible to Be Spiritually Mature, While Remaining Emotionally Immature.* Updated ed. Grand Rapids: Zondervan, 2017. (Originally published 2006.)
+— The core insight: you can't be spiritually mature while remaining emotionally immature. Scazzero's integration of emotional health with contemplative practice. His Friday-sundown-to-Saturday-sundown Sabbath practice directly influenced the Sabbath exhaustion story in the Immanuel Moments page. Over one million copies sold.
+
+**Scazzero, Peter.** *Emotionally Healthy Discipleship: Moving from Shallow Christianity to Deep Transformation.* Grand Rapids: Zondervan, 2021.
+— Takes the insights of *Emotionally Healthy Spirituality* and applies them to church culture and discipleship formation. Addresses the systemic gaps that undermine effective growth and change — the same gaps Friedman identifies from a different angle. Winner of the 2022 ECPA Christian Book Award for Ministry Resources.
+
 ### On Family Systems and Leadership
 
 **Steinke, Peter L.** *How Your Church Family Works: Understanding Congregations as Emotional Systems.* Herndon, VA: Alban Institute, 2006.
 — A more accessible application of Friedman's family systems theory to congregational life. A good entry point if Friedman feels dense.
+
+**Bolsinger, Tod.** *Canoeing the Mountains: Christian Leadership in Uncharted Territory.* Downers Grove, IL: IVP Books, 2015.
+— Friedman's insights applied to pastoral leadership in a post-Christendom context. Uses the Lewis and Clark expedition as a metaphor for adaptive leadership — what happens when the map you were trained to read no longer matches the territory in front of you. Draws heavily on Friedman and Ronald Heifetz.
+
+**Olsen, David C.** *Integrative Family Therapy.* Creative Pastoral Care and Counseling Series. Minneapolis: Fortress Press, 1993.
+— Takes seven major schools of family therapy (cognitive, developmental, interactional-communication, multigenerational, object relations, problem solving, structural) and integrates them into a unified clinical model. A professional integration of multiple perspectives within an established field — distinct from but parallel to the personal synthesis of this recovery model. Demonstrated that integration across schools of thought is both possible and fruitful.
 
 ### On Identity and the False Self
 
@@ -134,15 +176,17 @@ These are the foundational works behind each layer of the model. If you read not
 
 If you want to work through these in an order that matches the logic of the model:
 
-1. **Start with the heart:** Dodd, *The Voice of the Heart* — learn to feel
-2. **Understand what's broken:** Dye, *The Genesis Process* (Relapse Prevention Workbook) — learn to see the descent
-3. **Understand what's needed:** Friesen & Wilder, *Living from the Heart Jesus Gave You* — learn what powers growth
-4. **Understand the architecture of change:** Willard, *Renovation of the Heart* — learn how transformation actually works
-5. **Learn to live differently:** Cloud, *9 Things You Simply Must Do* — learn the habits of wise living
-6. **Set boundaries:** Cloud & Townsend, *Boundaries* — learn where you end and others begin
-7. **Understand the system:** Friedman, *A Failure of Nerve* — learn to be a non-anxious presence
-8. **Go deeper into the canon:** Waltke, *Proverbs 1–15* — let the Hebrew wisdom tradition reshape how you think about all of it
+1. **Start with the Gospel:** Wright, *How God Became King* — recover the story the Gospels are actually telling, the missing middle, the life Jesus lived
+2. **Understand the promise plan:** Kaiser, *The Promise-Plan of God* — see the one thread running from Genesis to Revelation: I will be your God, you will be my people, I will dwell among you
+3. **Start with the heart:** Dodd, *The Voice of the Heart* — learn to feel
+4. **Understand what's broken:** Dye, *The Genesis Process* (Relapse Prevention Workbook) — learn to see the descent
+5. **Understand what's needed:** Friesen & Wilder, *Living from the Heart Jesus Gave You* — learn what powers growth
+6. **Understand the architecture of change:** Willard, *Renovation of the Heart* — learn how transformation actually works
+7. **Learn to live differently:** Cloud, *9 Things You Simply Must Do* — learn the habits of wise living
+8. **Set boundaries:** Cloud & Townsend, *Boundaries* — learn where you end and others begin
+9. **Understand the system:** Friedman, *A Failure of Nerve* — learn to be a non-anxious presence
+10. **Go deeper into the canon:** Waltke, *Proverbs 1–15* — let the Hebrew wisdom tradition reshape how you think about all of it
 
 ---
 
-*Bibliography compiled from all references across the Eight-Layer Recovery Model, the 7-Tier Relational & Ideological Framework, the FASTER Scale (Flesh Series), and the Biblical Roots Supplement.*
+*Bibliography compiled from all references across the Eight-Layer Recovery Model, the 7-Tier Relational & Ideological Framework, the Gospel & Kingdom foundation, the FASTER Scale (Flesh Series), and the Biblical Roots Supplement.*

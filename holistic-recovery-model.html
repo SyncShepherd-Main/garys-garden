@@ -103,8 +103,8 @@
   /* Site navbar */
   .site-nav { background: #1a1a1a; padding: 0 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
   .site-nav .nav-inner { max-width: 940px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-  .site-nav .nav-home { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8aaa80; text-decoration: none; padding: 12px 0; white-space: nowrap; }
-  .site-nav .nav-home:hover { color: #b0c8a8; }
+  .site-nav .nav-home { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8ab0cc; text-decoration: none; padding: 12px 0; white-space: nowrap; }
+  .site-nav .nav-home:hover { color: #b0c4d8; }
   .site-nav ul { list-style: none; display: flex; gap: 0; margin: 0; padding: 0; flex-wrap: wrap; }
   .site-nav li a { font-family: 'EB Garamond', Georgia, serif; font-size: 13.5px; color: #999; text-decoration: none; padding: 12px 14px; display: block; transition: color 0.2s; white-space: nowrap; }
   .site-nav li a:hover { color: #f0ede6; }
@@ -112,9 +112,9 @@
   .site-nav .nav-sep { width: 1px; background: #333; margin: 8px 4px; align-self: stretch; }
   .site-nav .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 12px 0; }
   .site-nav .hamburger .bar { display: block; width: 20px; height: 2px; background: #999; margin: 4px 0; transition: all 0.3s; }
-  .site-footer { background: #1a2a1a; border-top: 1px solid #2e4a2e; padding: 28px 40px; text-align: center; }
-  .site-footer p { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8aaa80; }
-  .site-footer a { color: #8aaa80; text-decoration: none; }
+  .site-footer { background: #1a2040; border-top: 1px solid #2e4060; padding: 28px 40px; text-align: center; }
+  .site-footer p { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8ab0cc; }
+  .site-footer a { color: #8ab0cc; text-decoration: none; }
   @media (max-width: 700px) {
     .site-nav .hamburger { display: block; }
     .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; }
@@ -390,7 +390,7 @@ const FASTER_DATA = [
   { letter: "E", name: "Exhausted", color: "#7b2d8b", bg: "#f0e0f5", icon: "↓",
     desc: "Loss of physical and emotional energy. Coming off the adrenaline high. The onset of real depression. Neurochemicals are depleted. All five core needs (Koch) feel utterly unmet. Joy capacity is at zero. You feel you cannot cope.",
     signs: ["Depressed, panicked, confused","Hopelessness, helplessness","Sleeping too much or too little","Overwhelmed, crying for 'no reason'","Can't think, forgetful, numb","Wanting to run away","Constant cravings for old coping behaviors","Seeking old unhealthy people and places"] },
-  { letter: "R*", name: "Relapse", color: "#1a1a2e", bg: "#e0e0e8", icon: "✕",
+  { letter: "R*", name: "Relapse", color: "#1a2040", bg: "#e0e0e8", icon: "✕",
     desc: "Returning to the place you swore you'd never go again. At minimum, this is your go-to coping mechanism when emotionally exhausted — whatever numbs the pain. The result is reinforcement of shame, guilt, and condemnation — which deepens the false beliefs and restarts the cycle.",
     signs: ["Giving up and giving in","Out of control, lost in addiction","Lying to yourself and others","Feeling you can't manage without your coping behavior","Reinforcement of shame, guilt, condemnation","Feelings of abandonment and being alone"] },
 ];
@@ -422,7 +422,7 @@ function sectionFaster() {
     return '<div class="faster-item"><button class="faster-header" id="faster-header-' + i + '" onclick="toggleFaster(' + i + ')">' +
       '<span class="faster-letter" style="color:' + item.color + '">' + (item.letter === 'R*' ? 'R' : item.letter) + '</span>' +
       '<span class="faster-name">' + item.name + '</span>' +
-      '<span style="font-size:14px;color:' + (item.letter === 'R' ? '#2d6a4f' : item.letter === 'R*' ? '#1a1a2e' : '#c0392b') + '">' + item.icon + '</span>' +
+      '<span style="font-size:14px;color:' + (item.letter === 'R' ? '#2d6a4f' : item.letter === 'R*' ? '#1a2040' : '#c0392b') + '">' + item.icon + '</span>' +
       '<span class="faster-toggle" id="faster-toggle-' + i + '">▾</span>' +
       '</button><div class="faster-body" id="faster-body-' + i + '" style="background:' + item.bg + '">' +
       '<p style="margin-bottom:12px;">' + item.desc + '</p>' +
