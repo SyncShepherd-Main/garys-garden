@@ -19,6 +19,14 @@ A collection of frameworks for relationships, recovery, and the life of faith �
 | [Biblical Roots](https://syncshepherd-main.github.io/garys-garden/biblical-roots-doc.html) | The scriptural architecture beneath the recovery model — including the full Gospel section: the Promise Plan, the Cup and the Cross, the Place of No Separation, and the Cry of the Adopted Child. |
 | [Immanuel Moments](https://syncshepherd-main.github.io/garys-garden/immanuel-moments.html) | The personal story behind the frameworks. Moments where God planted something that didn't yet have a name — the three things, the praying hands, the orphan spirit, the place of hearing. |
 
+### Saplings
+
+Working drafts — little trees that might grow to be a big forest.
+
+| Page | Description |
+|------|-------------|
+| [ACEs: The Wound Beneath the Wound](https://syncshepherd-main.github.io/garys-garden/aces-layer-proposal.html) | Adverse Childhood Experiences as the missing ground floor of the recovery model — launching from *Paper Tigers* and the CDC-Kaiser ACE Study. Proposed new layer. |
+
 ### Reference & Study
 
 | Page | Description |
@@ -78,6 +86,8 @@ garys-garden/
   immanuel-moments.md           Source: Immanuel Moments testimony
   paul-and-the-old-testament.md Source: Paul & the Old Testament essay
   recommended-reading.md        Source: bibliography and reading list
+  aces-layer-proposal.html      ACEs layer proposal (Saplings section)
+  aces-layer-proposal.md        Source: ACEs layer proposal essay
   .github/workflows/static.yml  GitHub Pages deployment workflow
 ```
 
