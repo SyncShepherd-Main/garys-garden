@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>7-Tier Framework — Full Text</title>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
@@ -231,7 +232,7 @@ function inlineFormat(text) {
   text = text.replace(/\*\*\*([^*]+)\*\*\*/g, '<strong><em>$1</em></strong>');
   text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   text = text.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(m,label,url){if(/^(javascript|data|vbscript):/i.test(url))return label;return '<a href="'+url+'">'+label+'</a>';});
   return text;
 }
 
@@ -240,8 +241,9 @@ fetch('7-Tier-Framework.md')
   .then(function(md) {
     document.getElementById('content').innerHTML = parseMarkdown(md);
     if (location.hash) {
-      var el = document.getElementById(location.hash.slice(1));
-      if (el) el.scrollIntoView();
+      var h = location.hash.slice(1);
+      if (/^[a-zA-Z0-9_-]+$/.test(h)) { var el = document.getElementById(h);
+      if (el) el.scrollIntoView(); }
     }
   })
   .catch(function() {
