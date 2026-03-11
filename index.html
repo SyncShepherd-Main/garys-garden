@@ -30,6 +30,12 @@
 
   .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; margin-bottom: 48px; }
   .cards.single-col { grid-template-columns: 1fr; }
+  .cards.compact { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .cards.compact .card { padding: 18px 20px; }
+  .cards.compact .card h2 { font-size: 18px; margin-bottom: 0; }
+  .cards.compact .card .desc { display: none; }
+  .cards.compact .card-footer { padding-top: 10px; margin-top: 10px; }
+  @media (max-width: 700px) { .cards.compact { grid-template-columns: 1fr; } }
 
   .card {
     background: #fff; border: 1px solid #d8d4cc; border-radius: 8px;
@@ -201,85 +207,46 @@
   <!-- Saplings -->
   <div class="section-label">Saplings</div>
   <p style="font-size: 15.5px; color: #888; font-style: italic; line-height: 1.75; margin: -8px 0 28px; max-width: 620px;">Part of the garden for little trees that might grow to be a big forest. Take one of these out of the nursery and see where it can grow — or maybe splice it into a tree of your own and see what blossoms.</p>
-  <div class="cards">
+  <div class="cards compact">
     <a href="aces-layer-proposal.html" class="card amber">
-      <div class="card-type">Proposed Layer · Working Draft</div>
+      <div class="card-type">Proposed Layer</div>
       <h2>ACEs: The Wound Beneath the Wound</h2>
-      <p class="desc">Adverse Childhood Experiences as the missing ground floor of the recovery model — launching from <em>Paper Tigers</em> and the CDC-Kaiser ACE Study. Answers the question the model hasn't yet asked directly: <em>what happened to you?</em></p>
-      <div class="card-footer">
-        <span class="card-format">Essay · Sapling</span>
-        <span class="card-arrow">→</span>
-      </div>
+      <div class="card-footer"><span class="card-format">Sapling</span><span class="card-arrow">→</span></div>
     </a>
-
     <a href="at-three-miles-per-hour.html" class="card amber">
-      <div class="card-type">Sapling · Working Draft</div>
+      <div class="card-type">Sapling</div>
       <h2>At Three Miles Per Hour</h2>
-      <p class="desc">On the speed of knowing, the power of face, and what a garden cannot be rushed — launched from <em>Godspeed: The Pace of Being Known</em> and Kosuke Koyama's three-mile-an-hour God.</p>
-      <div class="card-footer">
-        <span class="card-format">Essay · Sapling</span>
-        <span class="card-arrow">→</span>
-      </div>
+      <div class="card-footer"><span class="card-format">Essay</span><span class="card-arrow">→</span></div>
     </a>
-
     <a href="the-songs-i-chose-for-them.html" class="card amber">
-      <div class="card-type">Sapling · Working Draft</div>
+      <div class="card-type">Sapling</div>
       <h2>The Songs I Chose for Them</h2>
-      <p class="desc">On music, blessing, and what a grandfather carries across generations — fourteen songs chosen for daughters and grandchildren as transmissions of identity, not wishes.</p>
-      <div class="card-footer">
-        <span class="card-format">Essay · Sapling</span>
-        <span class="card-arrow">→</span>
-      </div>
+      <div class="card-footer"><span class="card-format">Essay</span><span class="card-arrow">→</span></div>
     </a>
-
     <a href="roots-exposed-who-is-your-man.html" class="card amber">
-      <div class="card-type">Sapling · Working Draft</div>
+      <div class="card-type">Sapling</div>
       <h2>Roots Exposed: Who Is Your Man?</h2>
-      <p class="desc">On Jeff Kemp, the huddle, and what a coffee plant on a Starbucks wall taught me about being planted — the difference between being alive and being rooted.</p>
-      <div class="card-footer">
-        <span class="card-format">Essay · Sapling</span>
-        <span class="card-arrow">→</span>
-      </div>
+      <div class="card-footer"><span class="card-format">Essay</span><span class="card-arrow">→</span></div>
     </a>
-
     <a href="the-gardener-does-not-uproot.html" class="card amber">
-      <div class="card-type">Sapling · Working Draft</div>
+      <div class="card-type">Sapling</div>
       <h2>The Gardener Does Not Uproot</h2>
-      <p class="desc">On Henry Cloud, the barren fig tree, and what shame cannot see — the vinedresser who asks for one more year to work the ground instead of cutting the tree down.</p>
-      <div class="card-footer">
-        <span class="card-format">Essay · Sapling</span>
-        <span class="card-arrow">→</span>
-      </div>
+      <div class="card-footer"><span class="card-format">Essay</span><span class="card-arrow">→</span></div>
     </a>
-
     <a href="the-best-wine-saved-for-last.html" class="card amber">
-      <div class="card-type">Sapling · Working Draft</div>
+      <div class="card-type">Sapling</div>
       <h2>The Best Wine Saved for Last</h2>
-      <p class="desc">On two signs, two scenes, and what restoration actually looks like — the Gospel of John's first and second signs read alongside <em>The Sound of Music</em>.</p>
-      <div class="card-footer">
-        <span class="card-format">Essay · Sapling</span>
-        <span class="card-arrow">→</span>
-      </div>
+      <div class="card-footer"><span class="card-format">Essay</span><span class="card-arrow">→</span></div>
     </a>
-
     <a href="relaxing-in-the-run.html" class="card amber">
       <div class="card-type">Personal Statement</div>
       <h2>Relaxing in the Run</h2>
-      <p class="desc">A personal statement on pace, formation, and the work entrusted to me — on the thousand miles, the orphan's speed, and the covenant to protect what matters.</p>
-      <div class="card-footer">
-        <span class="card-format">Essay · Personal</span>
-        <span class="card-arrow">→</span>
-      </div>
+      <div class="card-footer"><span class="card-format">Essay</span><span class="card-arrow">→</span></div>
     </a>
-
     <a href="clarity-ai-making-something-possible.html" class="card amber">
       <div class="card-type">Record</div>
       <h2>Clarity — AI Making Something Possible</h2>
-      <p class="desc">A record of what happened in a conversation on March 10, 2026 — what AI made possible and what it did not do, and the moment that stays with me.</p>
-      <div class="card-footer">
-        <span class="card-format">Record · Testimony</span>
-        <span class="card-arrow">→</span>
-      </div>
+      <div class="card-footer"><span class="card-format">Testimony</span><span class="card-arrow">→</span></div>
     </a>
   </div>
 
