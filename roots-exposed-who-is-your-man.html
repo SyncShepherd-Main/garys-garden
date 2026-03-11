@@ -82,7 +82,20 @@
     .site-nav .nav-inner { flex-wrap: wrap; }
     .site-nav .nav-sep { display: none; }
     .site-nav li a { padding: 8px 0; }
+  .nav-dropdown .dropdown-menu { position: static; border: none; box-shadow: none; padding-left: 16px; background: transparent; }
+  .nav-dropdown.open .dropdown-menu { display: block; }
   }
+
+  /* Saplings dropdown */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown .dropdown-toggle { cursor: pointer; }
+  .nav-dropdown .dropdown-menu { display: none; position: absolute; top: 100%; right: 0; background: #1a1a1a; border: 1px solid #333; border-radius: 4px; padding: 6px 0; min-width: 220px; z-index: 200; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+  .nav-dropdown.open .dropdown-menu { display: block; }
+  .nav-dropdown .dropdown-menu li a { padding: 7px 18px; font-size: 13px; white-space: nowrap; }
+  .nav-dropdown .dropdown-menu li a:hover { background: #2a2a2a; }
+  .scroll-top { position: fixed; bottom: 28px; right: 28px; width: 40px; height: 40px; border-radius: 50%; background: #1a2040; border: 1px solid #4a78b4; color: #8ab0cc; font-size: 20px; cursor: pointer; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; z-index: 150; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+  .scroll-top.visible { opacity: 1; visibility: visible; }
+  .scroll-top:hover { background: #4a78b4; color: #f0ede6; }
 </style>
 </head>
 <body>
@@ -100,6 +113,19 @@
       <li><a href="immanuel-moments.html">Immanuel Moments</a></li>
       <li class="nav-sep"></li>
       <li><a href="recommended-reading.html">Reading List</a></li>
+      <li class="nav-dropdown">
+        <a href="#" class="dropdown-toggle active" onclick="this.parentElement.classList.toggle('open'); event.preventDefault();">Saplings &#9662;</a>
+        <ul class="dropdown-menu">
+          <li><a href="aces-layer-proposal.html">ACEs Layer Proposal</a></li>
+          <li><a href="at-three-miles-per-hour.html">At Three Miles Per Hour</a></li>
+          <li><a href="clarity-ai-making-something-possible.html">Clarity AI</a></li>
+          <li><a href="relaxing-in-the-run.html">Relaxing in the Run</a></li>
+          <li><a href="roots-exposed-who-is-your-man.html" class="active">Roots Exposed</a></li>
+          <li><a href="the-best-wine-saved-for-last.html">The Best Wine</a></li>
+          <li><a href="the-gardener-does-not-uproot.html">The Gardener Does Not Uproot</a></li>
+          <li><a href="the-songs-i-chose-for-them.html">The Songs I Chose</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 </div>
@@ -122,12 +148,12 @@
 <div class="layout">
   <nav>
     <div class="rail">
-      <button class="nav-btn" onclick="scrollTo('plant')"><div class="nav-dot active" id="dot-plant"></div><span class="nav-label active" id="lbl-plant">The Plant on the Wall</span></button>
-      <button class="nav-btn" onclick="scrollTo('get-local')"><div class="nav-dot" id="dot-get-local"></div><span class="nav-label" id="lbl-get-local">Get Local</span></button>
-      <button class="nav-btn" onclick="scrollTo('kemp')"><div class="nav-dot" id="dot-kemp"></div><span class="nav-label" id="lbl-kemp">What Kemp Sees</span></button>
-      <button class="nav-btn" onclick="scrollTo('trotman')"><div class="nav-dot" id="dot-trotman"></div><span class="nav-label" id="lbl-trotman">The Trotman Question</span></button>
-      <button class="nav-btn" onclick="scrollTo('planted')"><div class="nav-dot" id="dot-planted"></div><span class="nav-label" id="lbl-planted">What Planted Looks Like</span></button>
-      <button class="nav-btn" onclick="scrollTo('invitation')"><div class="nav-dot" id="dot-invitation"></div><span class="nav-label" id="lbl-invitation">The Invitation</span></button>
+      <button class="nav-btn" onclick="scrollToSection('plant')"><div class="nav-dot active" id="dot-plant"></div><span class="nav-label active" id="lbl-plant">The Plant on the Wall</span></button>
+      <button class="nav-btn" onclick="scrollToSection('get-local')"><div class="nav-dot" id="dot-get-local"></div><span class="nav-label" id="lbl-get-local">Get Local</span></button>
+      <button class="nav-btn" onclick="scrollToSection('kemp')"><div class="nav-dot" id="dot-kemp"></div><span class="nav-label" id="lbl-kemp">What Kemp Sees</span></button>
+      <button class="nav-btn" onclick="scrollToSection('trotman')"><div class="nav-dot" id="dot-trotman"></div><span class="nav-label" id="lbl-trotman">The Trotman Question</span></button>
+      <button class="nav-btn" onclick="scrollToSection('planted')"><div class="nav-dot" id="dot-planted"></div><span class="nav-label" id="lbl-planted">What Planted Looks Like</span></button>
+      <button class="nav-btn" onclick="scrollToSection('invitation')"><div class="nav-dot" id="dot-invitation"></div><span class="nav-label" id="lbl-invitation">The Invitation</span></button>
     </div>
   </nav>
 
@@ -231,7 +257,7 @@
 <script>
   const sections = ['plant','get-local','kemp','trotman','planted','invitation'];
 
-  function scrollTo(id) {
+  function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
@@ -252,5 +278,19 @@
   window.addEventListener('scroll', updateNav);
   updateNav();
 </script>
+<script>
+document.addEventListener('click', function(e) {
+  document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+    if (!d.contains(e.target)) d.classList.remove('open');
+  });
+});
+
+  var stb = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) stb.classList.add('visible');
+    else stb.classList.remove('visible');
+  });
+</script>
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8593;</button>
 </body>
 </html>

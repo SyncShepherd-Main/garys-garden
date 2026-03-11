@@ -51,8 +51,18 @@
   .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; background: #1a2040; color: #4a78b4; border: 1px solid #4a78b4; border-radius: 50%; font-size: 20px; cursor: pointer; opacity: 0; transition: opacity 0.3s; z-index: 9999; display: flex; align-items: center; justify-content: center; }
   .scroll-top.visible { opacity: 1; }
 
-  @media (max-width: 700px) { .site-nav .hamburger { display: block; } .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; } .site-nav ul.open { display: flex; } .site-nav .nav-inner { flex-wrap: wrap; } .site-nav .nav-sep { display: none; } .site-nav li a { padding: 8px 0; } }
+  @media (max-width: 700px) { .site-nav .hamburger { display: block; } .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; } .site-nav ul.open { display: flex; } .site-nav .nav-inner { flex-wrap: wrap; } .site-nav .nav-sep { display: none; } .site-nav li a { padding: 8px 0; }
+  .nav-dropdown .dropdown-menu { position: static; border: none; box-shadow: none; padding-left: 16px; background: transparent; }
+  .nav-dropdown.open .dropdown-menu { display: block; } }
   @media (max-width: 600px) { header { padding: 24px 20px; } header h1 { font-size: 24px; } .content { padding: 24px 16px 60px; } .content h2 { font-size: 22px; } }
+
+  /* Saplings dropdown */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown .dropdown-toggle { cursor: pointer; }
+  .nav-dropdown .dropdown-menu { display: none; position: absolute; top: 100%; right: 0; background: #1a1a1a; border: 1px solid #333; border-radius: 4px; padding: 6px 0; min-width: 220px; z-index: 200; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+  .nav-dropdown.open .dropdown-menu { display: block; }
+  .nav-dropdown .dropdown-menu li a { padding: 7px 18px; font-size: 13px; white-space: nowrap; }
+  .nav-dropdown .dropdown-menu li a:hover { background: #2a2a2a; }
 </style>
 </head>
 <body>
@@ -70,6 +80,19 @@
       <li><a href="immanuel-moments.html">Immanuel Moments</a></li>
       <li class="nav-sep"></li>
       <li><a href="recommended-reading.html">Reading List</a></li>
+      <li class="nav-dropdown">
+        <a href="#" class="dropdown-toggle" onclick="this.parentElement.classList.toggle('open'); event.preventDefault();">Saplings &#9662;</a>
+        <ul class="dropdown-menu">
+          <li><a href="aces-layer-proposal.html">ACEs Layer Proposal</a></li>
+          <li><a href="at-three-miles-per-hour.html">At Three Miles Per Hour</a></li>
+          <li><a href="clarity-ai-making-something-possible.html">Clarity AI</a></li>
+          <li><a href="relaxing-in-the-run.html">Relaxing in the Run</a></li>
+          <li><a href="roots-exposed-who-is-your-man.html">Roots Exposed</a></li>
+          <li><a href="the-best-wine-saved-for-last.html">The Best Wine</a></li>
+          <li><a href="the-gardener-does-not-uproot.html">The Gardener Does Not Uproot</a></li>
+          <li><a href="the-songs-i-chose-for-them.html">The Songs I Chose</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 </div>
@@ -118,6 +141,13 @@ function inlineFormat(t) { t = t.replace(/`([^`]+)`/g,'<code>$1</code>'); t = t.
 fetch('paul-and-the-old-testament.md').then(function(r){return r.text();}).then(function(md){ document.getElementById('content').innerHTML = parseMarkdown(md); if(location.hash){var h=location.hash.slice(1);if(/^[a-zA-Z0-9_-]+$/.test(h)){var el=document.getElementById(h); if(el) el.scrollIntoView();}} }).catch(function(){ document.getElementById('content').innerHTML='<p>Error loading document.</p>'; });
 var btn=document.getElementById('scroll-top'); window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>200);},{passive:true}); btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]'); if(a){e.preventDefault(); var el=document.getElementById(a.getAttribute('href').slice(1)); if(el) el.scrollIntoView({behavior:'smooth'});}});
+</script>
+<script>
+document.addEventListener('click', function(e) {
+  document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+    if (!d.contains(e.target)) d.classList.remove('open');
+  });
+});
 </script>
 </body>
 </html>
