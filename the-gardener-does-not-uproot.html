@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>The Gardener Does Not Uproot — Gary Springer's Garden</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: #f5f3ed; color: #3a3a3a; min-height: 100vh; }
+
+  header { background: #2c2c2c; padding: 32px 40px; border-bottom: 3px solid #c77d00; }
+  header .inner { max-width: 800px; margin: 0 auto; }
+  header .label { font-size: 11px; color: #c77d00; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 8px; }
+  header h1 { font-size: 32px; font-weight: 400; color: #f5f3ed; line-height: 1.2; margin-bottom: 8px; }
+  header .subtitle { font-size: 15px; color: #999; font-style: italic; line-height: 1.6; }
+  header .companion { margin-top: 14px; font-size: 13px; color: #777; }
+  header .companion a { color: #c77d00; text-decoration: none; border-bottom: 1px solid rgba(199,125,0,0.3); }
+  header .companion a:hover { color: #e8a020; }
+
+  .layout { max-width: 800px; margin: 0 auto; display: flex; gap: 44px; padding: 40px 24px 80px; }
+
+  nav { width: 175px; flex-shrink: 0; position: sticky; top: 24px; align-self: flex-start; }
+  nav .rail { border-left: 1px solid #d8d4cc; padding-left: 16px; }
+  .nav-btn { display: flex; align-items: flex-start; gap: 8px; background: none; border: none; cursor: pointer; padding: 5px 0; width: 100%; text-align: left; }
+  .nav-dot { width: 7px; height: 7px; border-radius: 50%; background: #d0ccc4; transition: all 0.25s; flex-shrink: 0; margin-top: 4px; }
+  .nav-dot.active { background: #c77d00; box-shadow: 0 0 6px rgba(199,125,0,0.4); }
+  .nav-label { font-size: 12px; color: #888; transition: all 0.25s; line-height: 1.4; }
+  .nav-label.active { color: #2c2c2c; font-weight: 600; }
+
+  main { flex: 1; min-width: 0; }
+
+  h2 { font-size: 26px; font-weight: 400; color: #2c2c2c; margin: 48px 0 6px; border-bottom: 1px solid #e0dcd4; padding-bottom: 8px; line-height: 1.25; }
+  h2:first-child { margin-top: 0; }
+  h3 { font-size: 17px; font-weight: 600; color: #c77d00; margin: 28px 0 8px; line-height: 1.3; }
+  p { font-size: 16px; line-height: 1.85; margin-bottom: 16px; }
+  em { color: #555; }
+  strong { color: #2c2c2c; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dcd4; margin: 44px 0; }
+
+  blockquote { border-left: 3px solid #c77d00; padding: 4px 0 4px 20px; margin: 24px 0; }
+  blockquote p { font-size: 15.5px; font-style: italic; color: #555; line-height: 1.75; }
+
+  .callout { background: #2c2c2c; border-radius: 10px; padding: 26px 30px; margin: 28px 0; }
+  .callout p { color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 0; }
+  .callout strong { color: #f0ede6; }
+  .callout .callout-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #c77d00; margin-bottom: 10px; font-weight: 600; }
+
+  .further-study { background: #f0ece4; border: 1px solid #d8d4cc; border-radius: 8px; padding: 20px 24px; margin-bottom: 14px; }
+  .further-study .ref-authors { font-size: 15px; font-weight: 600; color: #2c2c2c; margin-bottom: 4px; }
+  .further-study .ref-title { font-size: 15px; font-style: italic; color: #3a3a3a; margin-bottom: 6px; }
+  .further-study .ref-note { font-size: 14px; color: #666; line-height: 1.65; font-style: italic; margin-bottom: 0; }
+
+  .sapling-note { background: #2c2c2c; border-radius: 8px; padding: 20px 24px; margin-bottom: 32px; }
+  .sapling-note p { font-size: 15px; color: #a09080; line-height: 1.7; font-style: italic; margin-bottom: 0; }
+  .sapling-note strong { color: #c77d00; font-style: normal; }
+
+  footer { background: #2c2c2c; border-top: 1px solid #3a3a3a; padding: 24px 40px; text-align: center; }
+  footer p { font-size: 13px; color: #665544; }
+  footer a { color: #c77d00; text-decoration: none; }
+  footer a:hover { color: #e8a020; }
+
+  @media (max-width: 680px) {
+    .layout { flex-direction: column; }
+    nav { width: 100%; position: static; }
+    header { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="label">A Sapling — Gary Springer's Garden</div>
+    <h1>The Gardener Does Not Uproot</h1>
+    <p class="subtitle">On Henry Cloud, the barren fig tree, and what shame cannot see</p>
+    <div class="companion">
+      <a href="index.html">&larr; Back to the Garden</a>
+      &nbsp;&middot;&nbsp;
+      <a href="roots-exposed-who-is-your-man.html">Roots Exposed</a>
+      &nbsp;&middot;&nbsp;
+      <a href="the-best-wine-saved-for-last.html">The Best Wine Saved for Last</a>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav>
+    <div class="rail">
+      <button class="nav-btn" onclick="scrollTo('book')"><div class="nav-dot active" id="dot-book"></div><span class="nav-label active" id="lbl-book">A Book Arrives</span></button>
+      <button class="nav-btn" onclick="scrollTo('dog')"><div class="nav-dot" id="dot-dog"></div><span class="nav-label" id="lbl-dog">The Dog</span></button>
+      <button class="nav-btn" onclick="scrollTo('shame')"><div class="nav-dot" id="dot-shame"></div><span class="nav-label" id="lbl-shame">A Word About Shame</span></button>
+      <button class="nav-btn" onclick="scrollTo('cloud')"><div class="nav-dot" id="dot-cloud"></div><span class="nav-label" id="lbl-cloud">What Cloud Sees</span></button>
+      <button class="nav-btn" onclick="scrollTo('imprint')"><div class="nav-dot" id="dot-imprint"></div><span class="nav-label" id="lbl-imprint">The Imprint</span></button>
+      <button class="nav-btn" onclick="scrollTo('older-soil')"><div class="nav-dot" id="dot-older-soil"></div><span class="nav-label" id="lbl-older-soil">Older Soil</span></button>
+      <button class="nav-btn" onclick="scrollTo('gardener')"><div class="nav-dot" id="dot-gardener"></div><span class="nav-label" id="lbl-gardener">What the Gardener Knows</span></button>
+      <button class="nav-btn" onclick="scrollTo('invitation')"><div class="nav-dot" id="dot-invitation"></div><span class="nav-label" id="lbl-invitation">The Invitation</span></button>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="sapling-note">
+      <p>This is a <strong>working draft</strong> — a root that may grow into a full branch of the garden. Offered as a standalone exploration of Cloud's parable, Dodd's insight on shame, and what happens when the Gardener tends a tree the owner wants to cut down. Gary will integrate it more fully in time.</p>
+    </div>
+
+    <blockquote>
+      <p>"A man had a fig tree planted in his vineyard, and he came seeking fruit on it and found none. And he said to the vinedresser, 'Look, for three years now I have come seeking fruit on this fig tree, and I find none. Cut it down. Why should it use up the ground?' And he answered him, 'Sir, let it alone this year also, until I dig around it and put on manure. Then if it should bear fruit next year, well and good; but if not, you can cut it down.'" — Luke 13:6–9</p>
+    </blockquote>
+
+    <div id="book">
+      <h2>A Book Arrives at the Right Moment</h2>
+      <p>There are books you read and books that read you. Henry Cloud's <em>How People Grow</em> was, for me, the second kind.</p>
+      <p>I came to it in a particular season — one of those stretches where the internal weather is consistently difficult and you are not always sure why. I was still in a role I would eventually leave. The pressure I felt was not only institutional, it was something older. I was measuring myself against someone near me in the work, someone who commanded a room in a way that seemed to arrive effortlessly — a gravitational pull that drew people in and held them. I did not have that. I watched it. And the watching had a cost.</p>
+      <p>But the cost did not originate there. It was older than that office, older than that role, older than the comparison I was running in that season. To understand where Cloud's parable landed in me, I have to go back further.</p>
+    </div>
+
+    <hr>
+
+    <div id="dog">
+      <h2>The Dog</h2>
+      <p>I grew up in the long shadow of an older brother who could command a room. That is the right phrase — <em>command</em>. Not charm, not ease exactly, but a kind of authority over the space that others simply inhabited. I stayed quiet for a long time. It was not until someone uncorked me in my high school years that I found my own voice and discovered my mouth could run. But by then the early arithmetic had already been written.</p>
+      <p>There is a story that belongs here. I do not tell it to assign blame — my brother is gone now, and before he passed he came to me and made amends for the ways he had treated me in those years. He named things. I had forgotten most of it, or thought I had. But as he described what he had done, I felt the roots going deeper than I had known. The forgiveness was real. His slate is clean before God and clean in my heart. He was loved then and is loved still.</p>
+      <p>But I include one thing he named, because it is the kind of wound that does not look like a wound from the outside.</p>
+      <p>When I was young my dog was hit by a car. My brother nursed it back to health. In doing so, over those weeks of tending, he turned the dog against me — deliberately, patiently, by degrees. I remember the day I came into the room where the dog was recovering. My brother looked at my dog and said, quietly: <em>get him.</em></p>
+      <p>My dog growled at me. Bared its teeth. Snarled at the boy it belonged to.</p>
+      <p>From that day forward my brother had two dogs. I had none.</p>
+      <p>I remember the pain and sorrow when my dog was first hit by that car. That sorrow was real and right — it marked something that mattered. But the second loss, the chosen one, the one that came through hands that had healed — that sorrow became part of me in a different way. It got into the soil. It became part of the early writing: <em>things you love can be taken. Even by the ones who stand close. Even from inside the room where healing happens.</em></p>
+      <p>A scripture I carry as a caution alongside this story — <em>where words are multiplied, transgression is inevitable.</em> I name the dog story not to dwell but because it is the kind of root that, if left unexamined, goes on drawing from the wrong water. My brother named it. I received it. The Gardener had been working the ground long before I knew to ask.</p>
+    </div>
+
+    <hr>
+
+    <div id="shame">
+      <h2>A Word About Shame — and Why It Matters Who Is Talking</h2>
+      <p>I need to say something about the word <em>shame</em> before I go further, because I came to it sideways.</p>
+      <p>I spent twenty-four years in the Air Force. Sixteen of those were in recruiting. Sales gets into you at the DNA level when you live it that long — not as manipulation, but as pattern recognition. You learn to hear the architecture of persuasion. You learn when someone is building toward a close. And once that antenna is calibrated, it does not go quiet.</p>
+      <p>So when a well-known researcher built a platform around shame — announced herself as its definer, catalogued her years of study as credential, and then opened lectures with a leading question designed to surface the one thing a person was <em>most</em> ashamed of — I heard it differently than most people in the room probably did. That question is a power move. It immobilizes. It puts every bit of leverage in the mouth of the person asking. I have used versions of that question. I know what it is for. And knowing that, I could not unhear it. Whatever she had to say after that, I could not receive it. The sales antenna had already fired.</p>
+      <p>This is worth naming because it means I arrived at the subject of shame through a different door. The voice that finally made sense of it was not a researcher. It was Chip Dodd.</p>
+      <p>What Dodd gave me was something the lecture circuit version never could: shame as a <em>gift</em>. Not a pathology to be processed, not a wound to be catalogued, but a feeling given by God — like all the core feelings — with a direction built into it. Shame, in Dodd's framing, is a feeling that moves. It can move toward isolation. It can move toward intimacy. And the destination God intends for it is not the therapy couch or the TED stage. It is intimacy — with Him.</p>
+      <p>Shame pointing toward intimacy with God. That landed differently. That was not a close. That was an opening.</p>
+    </div>
+
+    <hr>
+
+    <div id="cloud">
+      <h2>What Cloud Sees in the Parable</h2>
+      <p>Henry Cloud uses the parable from Luke 13 as a window into what growth actually requires. His argument is simple and irreducible: people grow when they receive grace, truth, and time together. Not grace alone — that becomes permissiveness. Not truth alone — that becomes condemnation. And not either of those without time — that becomes demand masquerading as development.</p>
+      <p>The owner of the vineyard in Jesus' parable is not wrong that the tree is barren. Three years is a long time to come looking and find nothing. His frustration is honest. And his conclusion — <em>cut it down</em> — is the conclusion of a man who has data but not perspective. He sees the absence of fruit. He does not see the root system. He cannot see what the tree needs, because he is standing above the ground, measuring what is visible.</p>
+      <p>The vinedresser sees something different. He does not dispute the diagnosis. He does not perform optimism. He says: <em>let me get down in the dirt around this tree first. Let me loosen what has hardened. Let me add what is lacking. Then we will see.</em> He is not promising fruit. He is promising presence and process. He is saying: before you remove the tree, let me tend the tree.</p>
+      <p>Cloud's insight is that this is not just pastoral generosity — it is developmental realism. You cannot demand fruit from a root system that has not yet been cultivated. The absence of fruit is not always evidence of a bad tree. It is sometimes evidence of soil that has not been worked, of conditions that have not yet allowed the roots to go where they need to go.</p>
+    </div>
+
+    <hr>
+
+    <div id="imprint">
+      <h2>The Imprint That Changes the Arithmetic</h2>
+      <p>When I read that, something landed.</p>
+      <p>There is a word for this kind of landing — <em>tupos</em> in the Greek, the impression left by a seal pressed into wax. Paul uses it in Romans and Philippians: a pattern, a form, a shape that transfers from one surface to another. A <em>tupos</em> moment is when an idea does not merely inform you but forms you — when the teaching leaves an impression that reorganizes how you see.</p>
+      <p>This was one of those moments.</p>
+      <p>What I had been doing — what the old equation had been requiring of me — was standing above the ground measuring visible fruit. Comparing outputs. Command of the room outputs. Gravitational pull outputs. And finding myself consistently short. That arithmetic is always comparative, always measuring the surface, always arriving at the same conclusion: <em>not enough. Cut it down.</em></p>
+      <p>What Cloud's formula gave me was a different posture. Not a denial of the gap — I was not commanding rooms the way the person I was measuring myself against did, any more than the fig tree was producing figs. But the absence of fruit in the present moment is not the final word about the tree. The question is not only <em>what is the tree producing now?</em> The question is also <em>what has been done with the root system? Has anyone dug around it? Has anyone worked the soil?</em></p>
+      <p>For me, that question opened a door I had not known was there.</p>
+    </div>
+
+    <hr>
+
+    <div id="older-soil">
+      <h2>Older Soil, Earlier Roots</h2>
+      <p>Looking back now, I can trace the root system further than I could then. The original writing — the long quiet years, the dog, the early lesson that what you love can be taken from inside the room where healing happens — had laid down grooves that pressure could find again decades later. The man I was measuring myself against in that season carried something I had first encountered at home: command. And the old arithmetic woke up and began to run its calculations without announcing itself.</p>
+      <p>That is what Friedman would recognize as anxiety in the system — not in the clinical sense but in the relational one. Anxiety travels. It does not stay where it originates. It moves through relationships and systems and generations and finds the old wound in the new room and sets up residence there. The failure of differentiation is exactly this: being pulled back into the reactive field, letting the old equation run the present moment. The question is not whether the heat will come. It is whether the roots go somewhere the heat cannot reach.</p>
+      <p>The orphan spirit runs on this kind of arithmetic. Prove, produce, perform. Calculate your way to belonging. Stay ahead of the diagnosis. If you can just out-command the room, the verdict never comes. But you cannot perform your way out of an equation written before you had words for it. You can only let the ground be worked.</p>
+      <p>Cloud's nine things people need in order to grow are not primarily behavioral. They are relational and structural. They are about building the conditions in which roots can actually develop: grace that makes safety possible, truth that makes growth directional, time that makes transformation realistic rather than demanded, and community that surrounds the tree rather than standing above it rendering judgment.</p>
+      <p>And one of those nine things stopped me cold when I read it — because it named the difference between my brother's assignment and mine. Cloud writes:</p>
+      <blockquote>
+        <p>"At seminars I often ask attendees whose fault it would be if I left the seminar, walked outside, and got hit by a drunk driver. Everyone understands that it is the drunk driver's fault. But, whose responsibility is it to go to rehab and get my broken legs back into shape? Who has to take ownership of that disability? That disability is not my fault; I did not cause it. And the courts would agree about the legal question of fault. But it is my existential responsibility to deal with my life and to work at improving it, no matter how adversely it has been affected. No one can do that for me, although they can help."</p>
+      </blockquote>
+      <p>My brother made amends. That was his work, and he did it faithfully. What grew in the soil from those early years — that is mine to bring to the Gardener. Those are different assignments. Confusing them keeps both trees barren.</p>
+      <p>L8 in the model I work from carries Cloud's name for exactly this reason. What I mean by that layer is not technique but perception — the capacity to see a person's situation clearly enough to respond with what is actually needed rather than what is convenient. The vinedresser in the parable is practicing L8. He is not standing above the tree. He is down in the dirt, working the ground, tending what is not yet visible.</p>
+    </div>
+
+    <hr>
+
+    <div id="gardener">
+      <h2>What the Gardener Knows That the Owner Does Not</h2>
+      <p>There is a theological weight to this parable that Jesus almost certainly intended. The vinedresser is not a minor character. In the larger fabric of John's Gospel, Jesus will say plainly: <em>I am the true vine, and my Father is the vinedresser.</em> The one who tends, who digs, who makes space for growth — that is the Father. The intercession that buys the tree more time is not generic goodwill. It is specific, active, costly investment in the life of a particular tree.</p>
+      <p>This is what the old arithmetic cannot see. The old arithmetic stands above the ground and measures. The Father gets down in the soil.</p>
+      <p>The diagnostic question I keep returning to — drawn from Jeremiah 17 — is this: <em>where are the roots going, and what are they drawing from?</em> The shrub in the desert, parched and unseen. Or the tree by the water, whose roots spread toward the stream and does not fear when the heat comes. The answer is not a matter of effort. It is a matter of where the roots are embedded. You cannot will your way into the water. But you can let yourself be dug around. You can allow the ground to be loosened. You can stop demanding that the tree produce fruit before the root system has been cultivated.</p>
+      <p>And Dodd's insight completes this: the shame that rises in the gap — in the distance between who you are and who you sense you were made to be — is not an indictment. It is a signal. It is a feeling with a direction. And the direction, followed honestly, does not end in isolation or exposure or the lecture hall's leading question. It ends in intimacy with the God who is already down in the dirt, already working the ground, already saying: <em>not yet. Give it time. Let me tend this.</em></p>
+    </div>
+
+    <hr>
+
+    <div id="invitation">
+      <h2>The Invitation</h2>
+      <p>If you are in a season of comparison — if the old arithmetic has woken up and is running its calculations again — I want to offer you this parable as a question rather than a verdict.</p>
+      <p>Not: <em>are you producing enough?</em></p>
+      <p>But: <em>has anyone dug around you? Has the soil been worked? Have you received grace, truth, and time together in the same place, from people who are not standing above you evaluating outputs but down in the dirt, tending what is not yet visible?</em></p>
+      <p>The Gardener does not uproot. That is not impatience dressed as mercy. That is wisdom that sees a root system still forming, soil that has not yet been reached, a tree that has not yet found the water.</p>
+      <p>And shame — real shame, the kind Dodd describes — is not your enemy in this. Let it move in the direction it was made to move. Not toward isolation. Not toward the one with all the power in the room. Toward the One who is already in the dirt.</p>
+      <p>My brother came to me and named what he had done. That was grace moving through a human being toward the root system of another. The dog was long gone. The years were long spent. But the Gardener had been working the ground the whole time, waiting for the moment when the naming could happen and the soil could finally receive it.</p>
+      <p>Come to the Place of Hearing. Let the roots go where they were made to go. The tree by the water does not fear the heat — not because the heat does not come, but because the roots have gone somewhere the heat cannot reach.</p>
+      <p>And then — from somewhere down in the dirt, from the One who is already there, working ground you did not know needed working — a question rises. It is not a power question. It will not immobilize you. It will not put leverage in the mouth of the person asking. It is the kind that gets on you and does not wipe off. The kind that is both a beginning and a continuing. Sap, not sappy.</p>
+      <p><em>Have you received the Messiah?</em></p>
+      <p>John saw it this way: to those who received him, who believed in his name, he gave the right to become children of God — born not of blood, nor of human will, but of God. <em>(John 1:12–13)</em> That receiving is not a transaction completed at an altar and filed away. Paul takes it further: <em>as you have received Christ Jesus the Lord, so walk in him — rooted and built up in him, established in the faith, just as you were taught, overflowing with gratitude.</em> <em>(Colossians 2:6–7)</em></p>
+      <p>Rooted. Built up. Established. Overflowing.</p>
+      <p>The Gardener digs around the tree not to examine what is already there but to make room for what is still coming. The receiving is the beginning of the walk. The walk is the continuing of the receiving. And the question — <em>have you received him?</em> — is not asked once and answered. It is the question the Gardener keeps asking, deeper down, further in, in soil you have not yet let anyone touch.</p>
+      <p>The garden is still growing.</p>
+
+      <hr>
+
+      <p><em>Gary Springer</em><br>
+      <em>March 2026</em><br>
+      <em>grounded in Scripture, informed by neuroscience, offered freely</em></p>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <p>A sapling in <a href="index.html">Gary Springer's Garden</a> — grounded in Scripture, informed by neuroscience, offered freely.</p>
+</footer>
+
+<script>
+  const sections = ['book','dog','shame','cloud','imprint','older-soil','gardener','invitation'];
+
+  function scrollTo(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function updateNav() {
+    let current = sections[0];
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= 120) current = id;
+    });
+    sections.forEach(id => {
+      const dot = document.getElementById('dot-' + id);
+      const lbl = document.getElementById('lbl-' + id);
+      if (dot) dot.classList.toggle('active', id === current);
+      if (lbl) lbl.classList.toggle('active', id === current);
+    });
+  }
+
+  window.addEventListener('scroll', updateNav);
+  updateNav();
+</script>
+</body>
+</html>

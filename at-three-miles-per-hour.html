@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>At Three Miles Per Hour — Gary Springer's Garden</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: #f5f3ed; color: #3a3a3a; min-height: 100vh; }
+
+  header { background: #2c2c2c; padding: 32px 40px; border-bottom: 3px solid #c77d00; }
+  header .inner { max-width: 800px; margin: 0 auto; }
+  header .label { font-size: 11px; color: #c77d00; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 8px; }
+  header h1 { font-size: 32px; font-weight: 400; color: #f5f3ed; line-height: 1.2; margin-bottom: 8px; }
+  header .subtitle { font-size: 15px; color: #999; font-style: italic; line-height: 1.6; }
+  header .companion { margin-top: 14px; font-size: 13px; color: #777; }
+  header .companion a { color: #c77d00; text-decoration: none; border-bottom: 1px solid rgba(199,125,0,0.3); }
+  header .companion a:hover { color: #e8a020; }
+
+  .layout { max-width: 800px; margin: 0 auto; display: flex; gap: 44px; padding: 40px 24px 80px; }
+
+  nav { width: 175px; flex-shrink: 0; position: sticky; top: 24px; align-self: flex-start; }
+  nav .rail { border-left: 1px solid #d8d4cc; padding-left: 16px; }
+  .nav-btn { display: flex; align-items: flex-start; gap: 8px; background: none; border: none; cursor: pointer; padding: 5px 0; width: 100%; text-align: left; }
+  .nav-dot { width: 7px; height: 7px; border-radius: 50%; background: #d0ccc4; transition: all 0.25s; flex-shrink: 0; margin-top: 4px; }
+  .nav-dot.active { background: #c77d00; box-shadow: 0 0 6px rgba(199,125,0,0.4); }
+  .nav-label { font-size: 12px; color: #888; transition: all 0.25s; line-height: 1.4; }
+  .nav-label.active { color: #2c2c2c; font-weight: 600; }
+
+  main { flex: 1; min-width: 0; }
+
+  h2 { font-size: 26px; font-weight: 400; color: #2c2c2c; margin: 48px 0 6px; border-bottom: 1px solid #e0dcd4; padding-bottom: 8px; line-height: 1.25; }
+  h2:first-child { margin-top: 0; }
+  h3 { font-size: 17px; font-weight: 600; color: #c77d00; margin: 28px 0 8px; line-height: 1.3; }
+  p { font-size: 16px; line-height: 1.85; margin-bottom: 16px; }
+  em { color: #555; }
+  strong { color: #2c2c2c; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dcd4; margin: 44px 0; }
+
+  blockquote { border-left: 3px solid #c77d00; padding: 4px 0 4px 20px; margin: 24px 0; }
+  blockquote p { font-size: 15.5px; font-style: italic; color: #555; line-height: 1.75; }
+
+  .callout { background: #2c2c2c; border-radius: 10px; padding: 26px 30px; margin: 28px 0; }
+  .callout p { color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 0; }
+  .callout strong { color: #f0ede6; }
+  .callout .callout-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #c77d00; margin-bottom: 10px; font-weight: 600; }
+
+  .further-study { background: #f0ece4; border: 1px solid #d8d4cc; border-radius: 8px; padding: 20px 24px; margin-bottom: 14px; }
+  .further-study .ref-authors { font-size: 15px; font-weight: 600; color: #2c2c2c; margin-bottom: 4px; }
+  .further-study .ref-title { font-size: 15px; font-style: italic; color: #3a3a3a; margin-bottom: 6px; }
+  .further-study .ref-note { font-size: 14px; color: #666; line-height: 1.65; font-style: italic; margin-bottom: 0; }
+
+  .sapling-note { background: #2c2c2c; border-radius: 8px; padding: 20px 24px; margin-bottom: 32px; }
+  .sapling-note p { font-size: 15px; color: #a09080; line-height: 1.7; font-style: italic; margin-bottom: 0; }
+  .sapling-note strong { color: #c77d00; font-style: normal; }
+
+  footer { background: #2c2c2c; border-top: 1px solid #3a3a3a; padding: 24px 40px; text-align: center; }
+  footer p { font-size: 13px; color: #665544; }
+  footer a { color: #c77d00; text-decoration: none; }
+  footer a:hover { color: #e8a020; }
+
+  @media (max-width: 680px) {
+    .layout { flex-direction: column; }
+    nav { width: 100%; position: static; }
+    header { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="label">A Sapling — Gary Springer's Garden</div>
+    <h1>At Three Miles Per Hour</h1>
+    <p class="subtitle">On the Speed of Knowing, the Power of Face, and What a Garden Cannot Be Rushed</p>
+    <div class="companion">
+      <a href="index.html">&larr; Back to the Garden</a>
+      &nbsp;&middot;&nbsp;
+      <a href="relaxing-in-the-run.html">Relaxing in the Run</a>
+      &nbsp;&middot;&nbsp;
+      <a href="recommended-reading.html">Recommended Reading</a>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav>
+    <div class="rail">
+      <button class="nav-btn" onclick="scrollTo('question')"><div class="nav-dot active" id="dot-question"></div><span class="nav-label active" id="lbl-question">The Question</span></button>
+      <button class="nav-btn" onclick="scrollTo('film')"><div class="nav-dot" id="dot-film"></div><span class="nav-label" id="lbl-film">The Film</span></button>
+      <button class="nav-btn" onclick="scrollTo('transcript')"><div class="nav-dot" id="dot-transcript"></div><span class="nav-label" id="lbl-transcript">What the Transcript Cannot Carry</span></button>
+      <button class="nav-btn" onclick="scrollTo('sower')"><div class="nav-dot" id="dot-sower"></div><span class="nav-label" id="lbl-sower">The Sower &amp; Thorns</span></button>
+      <button class="nav-btn" onclick="scrollTo('relaxing')"><div class="nav-dot" id="dot-relaxing"></div><span class="nav-label" id="lbl-relaxing">Relaxing in the Run</span></button>
+      <button class="nav-btn" onclick="scrollTo('jeremiah')"><div class="nav-dot" id="dot-jeremiah"></div><span class="nav-label" id="lbl-jeremiah">The Jeremiah 17 Diagnostic</span></button>
+      <button class="nav-btn" onclick="scrollTo('orphan')"><div class="nav-dot" id="dot-orphan"></div><span class="nav-label" id="lbl-orphan">Orphan's Speed &amp; Son's Pace</span></button>
+      <button class="nav-btn" onclick="scrollTo('faces')"><div class="nav-dot" id="dot-faces"></div><span class="nav-label" id="lbl-faces">Seventeen Faces</span></button>
+      <button class="nav-btn" onclick="scrollTo('covenant')"><div class="nav-dot" id="dot-covenant"></div><span class="nav-label" id="lbl-covenant">A Covenant</span></button>
+      <button class="nav-btn" onclick="scrollTo('further')"><div class="nav-dot" id="dot-further"></div><span class="nav-label" id="lbl-further">Further Exploration</span></button>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="sapling-note">
+      <p>This is a <strong>working draft</strong> — a sapling launched from <em>Godspeed: The Pace of Being Known</em> and offered as a companion to the Immanuel Moments page and the Eight-Layer Recovery Model. Not a new layer, but a new angle of light on the same root system.</p>
+    </div>
+
+    <blockquote><p>"God goes slowly in his educational process of man. Love has its speed. It is an inner speed. It is a spiritual speed. It goes at three miles an hour — the speed we walk — and therefore it is the speed the love of God walks." — Kosuke Koyama, <em>Three Mile an Hour God</em></p></blockquote>
+
+    <hr>
+
+    <div id="question">
+      <h2>The Question Behind This Essay</h2>
+      <p>Generative artificial intelligence can produce in one afternoon more information, more options, more output than a Scottish parish encounters in a month. That is not a criticism. It is a description. And it raises a question that no policy document can fully answer:</p>
+      <p><strong>What happens to a person — or an organization — when the tools they use move faster than love?</strong></p>
+      <p>This essay is my attempt to think that through. It is not a framework. It is not a warning. It is a testimony to a moment of clarity — an Immanuel moment that arrived at the intersection of a documentary film, a parable, a thousand miles run one at a time, and seventeen faces I was coming home to after ninety days away.</p>
+    </div>
+
+    <hr>
+
+    <div id="film">
+      <h2>The Film That Started It</h2>
+      <p>Several years ago I encountered a short documentary called <em>Godspeed: The Pace of Being Known</em>. It was filmed in three days, in three Scottish villages, by three friends. It follows Matt Canlis, an American pastor whose desire to change the world grinds to a halt in a Scottish parish. Eugene Peterson had told him to find a fishbowl — a place small enough that he couldn't escape being known. "Go somewhere where God might do something, but you won't get any credit for it." Matt listened. He moved his family to Methlick, Scotland. On his first day he asked the bishop where his office was. The bishop pointed down the lane at the houses. <em>That is your office. Go walk.</em></p>
+      <p>What the film communicates cannot be carried in a transcript. You could read every word spoken in it and miss the thing that actually moves you. What moves you is the faces.</p>
+      <p>There is a parish elder in the film who knows every name in his village — not as data, not as a contact list, but as a heritage. A name that spans generations. A family whose grandfather he also knew, whose address has not changed in fifty years, whose story is woven into the story of the community in ways that no database can hold. When Matt finally breaks — when the performance-driven pastoral identity he carried from Vancouver finally releases its grip — it does not happen through argument. It happens through accumulated presence. Through the weight of faces that know him and are glad he is there.</p>
+      <p>That is the power of face. Not the face as a feature in a photograph. The face as the place where a person is <em>known</em> and <em>welcomed</em> — where the Father's voice at the Jordan echoes: <em>You are my beloved. With whom I am well pleased.</em></p>
+      <p>Jesus said the same thing without words when he turned toward the woman at the well, the man born blind, Zaccheus in the sycamore tree. He did not process them. He was <em>present</em> with them. And his presence changed them.</p>
+    </div>
+
+    <hr>
+
+    <div id="transcript">
+      <h2>What the Transcript Cannot Carry</h2>
+      <p>This is the precise concern I want to name about generative AI — not that it is wrong, but that it is a transcript processor operating at machine speed in a world that is changed by face, presence, and pace.</p>
+      <p>AI can extract every proposition from the Godspeed film. It can organize every theme, summarize every argument, produce a study guide, a sermon outline, a training module, a policy framework. It can do all of this in minutes. And every proposition it extracts will be accurate.</p>
+      <p>But it cannot carry the elder's face. It cannot carry the weight of a name that spans generations. It cannot carry the moment where something in Matt breaks and the community catches him. It cannot carry what Koyama means when he writes that God walks at three miles an hour — <em>because love has a speed, and it is not the speed of electricity.</em></p>
+      <p>The danger is not that AI will replace these things directly. The danger is subtler: that the speed of AI production will slowly reshape what we believe effectiveness looks like. Volume begins to feel like faithfulness. Throughput begins to feel like fruitfulness. The tools become the pace, and the pace becomes the culture, and the culture slowly crowds out the very things it was designed to serve.</p>
+      <p>Jesus named this pattern in a parable.</p>
+    </div>
+
+    <hr>
+
+    <div id="sower">
+      <h2>The Sower and the Speed of Thorns</h2>
+      <p>A sower went out to scatter seed. The same seed fell in four kinds of soil. The difference was never the seed. It was what had formed beneath the surface — the depth of the ground, the presence or absence of roots, the competition for what the seed needed to grow.</p>
+      <p>Some seed fell among thorns. The thorns did not attack it. They grew alongside it. They grew <em>faster</em>. And the word was choked — not destroyed, not rejected, but <em>crowded out</em> — by the worries of this age and the deceitfulness of wealth and the desire for other things coming in.</p>
+      <p>Jesus did not say the thorns were evil. He said they were fast. Their speed was the problem.</p>
+      <p>Generative AI is the fastest thorn-grower in human history. That is not a moral indictment. It is a description of what fast tools do to slow soil. The question is not whether to use them. The question is whether the ground is deep enough to hold what they cannot crowd out.</p>
+      <p>And Jesus adds a second teaching that sharpens the concern: <em>where your treasure is, there your heart will be also.</em> He did not say decide where your heart is. He said your heart <em>follows</em> your treasure. Which means the question is not what we say we value — it is what we are actually building toward, investing in, measuring, and celebrating. Because the heart goes where the treasure goes. Quietly. Over time. While the mission statement stays the same.</p>
+    </div>
+
+    <hr>
+
+    <div id="relaxing">
+      <h2>Relaxing in the Run</h2>
+      <p>I am sixty-one years old. Three years ago I had a heart attack. Before that, over the course of one year, I ran more than a thousand miles — one mile at a time.</p>
+      <p>I did not run fast. I was never built for speed. I was built for distance. And somewhere in those miles I learned something I had been trying to learn my whole life: <em>you have to relax in the run to go farther than you ever imagined.</em> Gripping tighter produces fewer miles, not more. The body already knows how to run. The discipline is learning to stop fighting it.</p>
+      <p>I am the youngest of four children. My sister — the oldest — is gone. The brother closest to me in age is gone. My mother is ninety-one. My father was an Air Force officer who came home from Vietnam carrying wounds that were never given a name. His father served before him. I served. I am now the Old Sarge in what remains of my family.</p>
+      <p>The youngest child in a remarkable family absorbs something in the bone before he has language for it: <em>I have to be superhuman just to take up the room I'm taking.</em> That is not a thought you choose. It is what the system teaches you. And when the system includes a father who drank to quiet what the war had done to him — a good man, a man I loved and love — you learn early that worth is something you earn through performance, not something you receive by name.</p>
+      <p>The FASTER Scale calls the compensating response <em>Speeding Up</em>. It looks like productivity. It is actually anxiety in disguise. And the antidote is not slowing down as a technique. The antidote is rootedness. The tree by the water does not slow down through discipline. It draws from something that does not run dry, and that rootedness produces a pace that cannot be manufactured.</p>
+      <p><em>Relax in the run.</em> Not because the run doesn't matter. Because the run is longer than you think, and you cannot grip your way to the finish.</p>
+    </div>
+
+    <hr>
+
+    <div id="jeremiah">
+      <h2>The Jeremiah 17 Diagnostic</h2>
+      <p>The tree planted by water and the shrub in the desert are not distinguished by their circumstances. They are not distinguished by their effort, their intelligence, or their good intentions. They are distinguished by where their roots go.</p>
+      <p>The shrub trusts in man and makes flesh its strength. The result is not just underperformance — it is salt land. Soil that actively prevents growth. The shrub does not merely fail to fruit. It <em>cannot</em> fruit, because the roots are drawing from the wrong source.</p>
+      <p>The tree sends its roots to the stream. It does not fear when heat comes. It does not cease to bear fruit in drought. Not because it is stronger than the shrub — but because the stream does not run dry.</p>
+      <p>This is the diagnostic I bring to every decision about what to adopt, what to build, what to measure, what to celebrate: <em>where are the roots going, and what are they drawing from?</em></p>
+      <p>The question for any organization considering AI adoption is not only "is this tool useful?" The deeper question is Jeremiah 17: Is this tree being planted by the stream, or are we slowly, imperceptibly, planting it in salt land — using the language of mission while being formed by the pace of the orphan?</p>
+    </div>
+
+    <hr>
+
+    <div id="orphan">
+      <h2>The Orphan's Speed and the Son's Pace</h2>
+      <p>If Jesus is heaven's righteous Son — working <em>from</em> identity, affirmation, and affection before any ministry begins — then the orphan spirit is the operating system that works <em>for</em> those things. It proves, produces, and performs because no father has yet spoken the name. It moves fast because fast looks like earning. It generates output because output looks like worth.</p>
+      <p>Generative AI, operating without a Tier 1 root, can only move at orphan speed. It has no Place of Hearing. It cannot pray <em>would you Father me today?</em> It cannot abide. It produces because producing is all it knows how to do.</p>
+      <p>The danger for those of us who use it is that we begin to match our pace to its pace. That the tools form us rather than serve us. That we come to believe the orphan's productivity metrics are the same thing as the Father's fruitfulness.</p>
+      <p>The parable of the sower ends with seed that falls on good soil — and <em>bears fruit</em>, some thirty, some sixty, some a hundredfold. The fruit is not produced by the sower's effort. It is produced by the depth of the soil and the health of the root. The sower scatters. The soil determines. The fruit reveals what was underneath all along.</p>
+    </div>
+
+    <hr>
+
+    <div id="faces">
+      <h2>Seventeen Faces</h2>
+      <p>I am writing this after ninety days away from home. In a few hours I will walk back into a house where twelve grandchildren and two daughters are waiting. Seventeen faces who will light up when I come through the door — not because of what I have produced, but because I am <em>there</em>. Because I am <em>present</em>. Because they know my face and I know theirs.</p>
+      <p>That is the power of face that the Godspeed film names and that Godspeed's eight sessions work to form in us. It is the thing the transcript cannot carry. It is the reason the elder's knowledge of names is not data but heritage. It is why God's first question to Adam is not <em>what have you done?</em> but <em>where are you?</em></p>
+      <p>Not performance. <em>Presence.</em></p>
+      <p>This moment of clarity — this essay — grew from being away long enough to feel the weight of what I was coming home to. Seventeen faces. None of them reducible to throughput. All of them growing at three miles per hour, no faster, and needing someone to show up at that pace and stay.</p>
+      <p>The seeds God grew fruitfully through me need to be cast into that field. Not processed. Not optimized. Cast. Received. Taken root in the soil of the particular, named, irreplaceable people in front of me.</p>
+      <p>That is the garden. That is what it is for.</p>
+    </div>
+
+    <hr>
+
+    <div id="covenant">
+      <h2>A Covenant for Those Who Lead with These Tools</h2>
+      <p>For those of us who are responsible for bringing AI tools into organizations whose mission is carried out at the pace of a face turned toward another face — pregnancy centers, counseling practices, churches, families — here is the covenant I am making with myself:</p>
+      <p><strong>I will not let the speed of these tools become the pace of my soul.</strong></p>
+      <p>I will bring the Jeremiah 17 diagnostic to every proposal: where are the roots going, and what are they drawing from?</p>
+      <p>I will protect the faces — the specific, named, irreplaceable human faces of the people these organizations serve — from being reduced to throughput.</p>
+      <p>I will remember that the elder in the parish did not know names as data. He knew them as heritage. And I will ask, before celebrating any efficiency gain: <em>has anything been crowded out that cannot be recovered?</em></p>
+      <p>I will relax in the run — not because the run doesn't matter, but because love has its speed, and I cannot outrun it without losing the thing I set out to carry.</p>
+      <p>And on the days when the orphan spirit rises and the prove-produce-perform engine spins up, I will pray the prayer Michael taught me at Moran Park Church in Holland, Michigan:</p>
+      <blockquote><p>God, would you Father me today? Would you fill me with identity, affirmation, and affection? I repent for the ways I've tried to prove, produce, and perform. The cross was sufficient. There is nothing left for me to prove.</p></blockquote>
+      <p>That prayer is the root system. Everything else is fruit.</p>
+    </div>
+
+    <hr>
+
+    <div id="further">
+      <h2>For Further Exploration</h2>
+
+      <div class="further-study">
+        <p class="ref-authors">Canlis, Matt.</p>
+        <p class="ref-title">Godspeed: The Pace of Being Known. Documentary film, 2017. Available at livegodspeed.org. 35 minutes.</p>
+        <p class="ref-note">Watch it with someone. Do not just read about it.</p>
+      </div>
+
+      <div class="further-study">
+        <p class="ref-authors">Canlis, Matt, and Julie Canlis.</p>
+        <p class="ref-title">Godspeed: An Eight-Week Video & Study Guide. livegodspeed.org, 2018.</p>
+        <p class="ref-note">Eight sessions on Place, Presence, Pace, Identity, Stability, Names, and Mission. The study guide that gives the film its legs for community use.</p>
+      </div>
+
+      <div class="further-study">
+        <p class="ref-authors">Canlis, Julie.</p>
+        <p class="ref-title">Backyard Pilgrim: 40 Days Replanting in the Trinity. Available at livegodspeed.org.</p>
+        <p class="ref-note">A guided pilgrimage following two paths — a biblical path from Genesis to John's Gospel, and a local path walked 15 minutes a day for forty days. Puts the body in motion at the pace the soul needs.</p>
+      </div>
+
+      <div class="further-study">
+        <p class="ref-authors">Canlis, Julie.</p>
+        <p class="ref-title">Theology of the Ordinary. livegodspeed.org.</p>
+        <p class="ref-note">A short book on the goodness and challenge of living ordinary life in the presence of God. The lived theology behind what Godspeed is about.</p>
+      </div>
+
+      <div class="further-study">
+        <p class="ref-authors">Koyama, Kosuke.</p>
+        <p class="ref-title">Three Mile an Hour God. Maryknoll, NY: Orbis Books, 1979.</p>
+        <p class="ref-note">The Japanese theologian whose insight about walking pace and the pace of divine love undergirds everything the Godspeed project names. The essay "The Pace of God" is worth the price of the book alone.</p>
+      </div>
+
+      <hr>
+
+      <p><em>This sapling grew from a conversation at the intersection of Godspeed, the orphan spirit teaching, the parable of the sower, and ninety days away from home. It is offered as a companion to the Immanuel Moments page and the Eight-Layer Recovery Model — not a new layer, but a new angle of light on the same root system.</em></p>
+      <p><em>Gary Springer's Garden — grounded in Scripture, informed by neuroscience, offered freely.</em></p>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <p>A sapling in <a href="index.html">Gary Springer's Garden</a> — grounded in Scripture, informed by neuroscience, offered freely.</p>
+</footer>
+
+<script>
+  const sections = ['question','film','transcript','sower','relaxing','jeremiah','orphan','faces','covenant','further'];
+
+  function scrollTo(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function updateNav() {
+    let current = sections[0];
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= 120) current = id;
+    });
+    sections.forEach(id => {
+      const dot = document.getElementById('dot-' + id);
+      const lbl = document.getElementById('lbl-' + id);
+      if (dot) dot.classList.toggle('active', id === current);
+      if (lbl) lbl.classList.toggle('active', id === current);
+    });
+  }
+
+  window.addEventListener('scroll', updateNav);
+  updateNav();
+</script>
+</body>
+</html>

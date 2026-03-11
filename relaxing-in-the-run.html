@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Relaxing in the Run — Gary Springer's Garden</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: #f5f3ed; color: #3a3a3a; min-height: 100vh; }
+
+  header { background: #2c2c2c; padding: 32px 40px; border-bottom: 3px solid #c77d00; }
+  header .inner { max-width: 800px; margin: 0 auto; }
+  header .label { font-size: 11px; color: #c77d00; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 8px; }
+  header h1 { font-size: 32px; font-weight: 400; color: #f5f3ed; line-height: 1.2; margin-bottom: 8px; }
+  header .subtitle { font-size: 15px; color: #999; font-style: italic; line-height: 1.6; }
+  header .companion { margin-top: 14px; font-size: 13px; color: #777; }
+  header .companion a { color: #c77d00; text-decoration: none; border-bottom: 1px solid rgba(199,125,0,0.3); }
+  header .companion a:hover { color: #e8a020; }
+
+  .layout { max-width: 800px; margin: 0 auto; display: flex; gap: 44px; padding: 40px 24px 80px; }
+
+  nav { width: 175px; flex-shrink: 0; position: sticky; top: 24px; align-self: flex-start; }
+  nav .rail { border-left: 1px solid #d8d4cc; padding-left: 16px; }
+  .nav-btn { display: flex; align-items: flex-start; gap: 8px; background: none; border: none; cursor: pointer; padding: 5px 0; width: 100%; text-align: left; }
+  .nav-dot { width: 7px; height: 7px; border-radius: 50%; background: #d0ccc4; transition: all 0.25s; flex-shrink: 0; margin-top: 4px; }
+  .nav-dot.active { background: #c77d00; box-shadow: 0 0 6px rgba(199,125,0,0.4); }
+  .nav-label { font-size: 12px; color: #888; transition: all 0.25s; line-height: 1.4; }
+  .nav-label.active { color: #2c2c2c; font-weight: 600; }
+
+  main { flex: 1; min-width: 0; }
+
+  h2 { font-size: 26px; font-weight: 400; color: #2c2c2c; margin: 48px 0 6px; border-bottom: 1px solid #e0dcd4; padding-bottom: 8px; line-height: 1.25; }
+  h2:first-child { margin-top: 0; }
+  h3 { font-size: 17px; font-weight: 600; color: #c77d00; margin: 28px 0 8px; line-height: 1.3; }
+  p { font-size: 16px; line-height: 1.85; margin-bottom: 16px; }
+  em { color: #555; }
+  strong { color: #2c2c2c; font-weight: 600; }
+  hr { border: none; border-top: 1px solid #e0dcd4; margin: 44px 0; }
+
+  blockquote { border-left: 3px solid #c77d00; padding: 4px 0 4px 20px; margin: 24px 0; }
+  blockquote p { font-size: 15.5px; font-style: italic; color: #555; line-height: 1.75; }
+
+  .callout { background: #2c2c2c; border-radius: 10px; padding: 26px 30px; margin: 28px 0; }
+  .callout p { color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 0; }
+  .callout strong { color: #f0ede6; }
+  .callout .callout-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #c77d00; margin-bottom: 10px; font-weight: 600; }
+
+  .further-study { background: #f0ece4; border: 1px solid #d8d4cc; border-radius: 8px; padding: 20px 24px; margin-bottom: 14px; }
+  .further-study .ref-authors { font-size: 15px; font-weight: 600; color: #2c2c2c; margin-bottom: 4px; }
+  .further-study .ref-title { font-size: 15px; font-style: italic; color: #3a3a3a; margin-bottom: 6px; }
+  .further-study .ref-note { font-size: 14px; color: #666; line-height: 1.65; font-style: italic; margin-bottom: 0; }
+
+  .sapling-note { background: #2c2c2c; border-radius: 8px; padding: 20px 24px; margin-bottom: 32px; }
+  .sapling-note p { font-size: 15px; color: #a09080; line-height: 1.7; font-style: italic; margin-bottom: 0; }
+  .sapling-note strong { color: #c77d00; font-style: normal; }
+
+  footer { background: #2c2c2c; border-top: 1px solid #3a3a3a; padding: 24px 40px; text-align: center; }
+  footer p { font-size: 13px; color: #665544; }
+  footer a { color: #c77d00; text-decoration: none; }
+  footer a:hover { color: #e8a020; }
+
+  @media (max-width: 680px) {
+    .layout { flex-direction: column; }
+    nav { width: 100%; position: static; }
+    header { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="label">A Personal Statement — Gary Springer's Garden</div>
+    <h1>Relaxing in the Run</h1>
+    <p class="subtitle">A Personal Statement on Pace, Formation, and the Work Entrusted to Me</p>
+    <div class="companion">
+      <a href="index.html">&larr; Back to the Garden</a>
+      &nbsp;&middot;&nbsp;
+      <a href="at-three-miles-per-hour.html">At Three Miles Per Hour</a>
+      &nbsp;&middot;&nbsp;
+      <a href="the-songs-i-chose-for-them.html">The Songs I Chose for Them</a>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav>
+    <div class="rail">
+      <button class="nav-btn" onclick="scrollTo('roots')"><div class="nav-dot active" id="dot-roots"></div><span class="nav-label active" id="lbl-roots">Where the Roots Go</span></button>
+      <button class="nav-btn" onclick="scrollTo('face')"><div class="nav-dot" id="dot-face"></div><span class="nav-label" id="lbl-face">The Power of Face</span></button>
+      <button class="nav-btn" onclick="scrollTo('sower')"><div class="nav-dot" id="dot-sower"></div><span class="nav-label" id="lbl-sower">The Sower &amp; Thorns</span></button>
+      <button class="nav-btn" onclick="scrollTo('carenet')"><div class="nav-dot" id="dot-carenet"></div><span class="nav-label" id="lbl-carenet">What Care Net Does</span></button>
+      <button class="nav-btn" onclick="scrollTo('covenant')"><div class="nav-dot" id="dot-covenant"></div><span class="nav-label" id="lbl-covenant">A Covenant with Myself</span></button>
+    </div>
+  </nav>
+
+  <main>
+
+    <blockquote><p>"God goes slowly in his educational process of man. Love has its speed. It is an inner speed. It is a spiritual speed. It goes at three miles an hour — the speed we walk — and therefore it is the speed the love of God walks." — Kosuke Koyama, <em>Three Mile an Hour God</em></p></blockquote>
+
+    <hr>
+
+    <div id="roots">
+      <h2>I. Where the Roots Go</h2>
+      <p>I am sixty-one years old. I will be sixty-two this year. Three years ago I had a heart attack. Before that, over the course of one year, I ran more than one thousand miles — one mile at a time. I am not telling you that to impress you. I am telling you because somewhere in those miles I learned something I had been trying to learn my entire life: you have to relax in the run to go farther than you ever imagined. Gripping tighter produces fewer miles, not more. The body already knows how to run. The discipline is learning to stop fighting it.</p>
+      <p>I am the youngest of four children. My sister — the oldest — is gone. The brother closest to me in age is gone. My mother is ninety-one. My father was an Air Force officer who came home from Vietnam carrying wounds that were never given a name, much less a treatment. His father — the Old Sarge — served before him. My uncle Jim served. I served and retired from the Air Force. I am now the Old Sarge in what remains of my family.</p>
+      <p>The youngest child in a family of remarkable siblings absorbs something in the bone before he has language for it: <em>I have to be superhuman just to take up the room I'm taking.</em> That is not a thought you choose. It is what the system teaches you. And when the system also includes a father who drank to quiet what the war had done to him — a good man, a strong man, a man I loved and love — you learn early that worth is something you earn by performance, not something you receive by name.</p>
+      <p>I did not understand any of this for a very long time. I had the theology. I had the framework. But the roots were still drawing from the wrong place. And the 7-Tier Framework I eventually built — the Eight Layers of Recovery, the Immanuel moments that seeded them — grew not from my strength but from the slow, patient work of a God who kept turning toward me until I was willing to receive what He was offering.</p>
+      <p>Jeremiah 17 names it with devastating simplicity. The shrub in the desert and the tree by water are not distinguished by their circumstances. They are distinguished by where their roots go. The shrub trusts in man and makes flesh its strength. The tree sends its roots to the stream. The tree does not fear when heat comes. It does not cease to bear fruit in drought. Not because it is stronger than the shrub — but because it is drawing from something that does not run dry.</p>
+      <p>That is the diagnostic question I bring to everything now, including this work with artificial intelligence: where are the roots going? And what are they drawing from?</p>
+    </div>
+
+    <hr>
+
+    <div id="face">
+      <h2>II. The Power of Face</h2>
+      <p>Several years ago I encountered a short documentary film called <em>Godspeed: The Pace of Being Known</em>. I have watched it many times. I have taught from it. Something in it broke something open in me that I did not fully have words for until later.</p>
+      <p>The film follows Matt Canlis, an American pastor who moved his family to a small village in Methlick, Scotland, after Eugene Peterson told him to find a fishbowl — a place small enough that he could not escape being known. On his first day, he asked the bishop where his office was. The bishop pointed down the lane at the houses. <em>That is your office. Go walk.</em></p>
+      <p>What the film communicates cannot be carried in a transcript. You could read every word spoken in it and miss the thing that actually moves a person. What moves you is the faces. The parish elder who knows every name — not as data, not as a contact list — but as a heritage, a lineage, a person whose grandfather he also knew, whose address has been the same for three generations. The community that has gathered around Matt not because of what he produced, but because he showed up, stayed, and learned to walk at the pace of the people he was with.</p>
+      <p>There is a moment in the film where Matt's performance-driven identity finally breaks. It does not break through argument. It breaks through accumulated presence — through the weight of faces that know him and are glad he is there. That is what N.T. Wright means when he says we live in a rootless world. And it is what Kosuke Koyama means when he writes that God goes at three miles an hour — the speed of walking, the speed of love, the speed at which human beings are actually formed.</p>
+      <p>I saw something in that film I had been living without knowing it. The castle in my dream — the doorless chambers where people moved freely, where my wife found me and came to life when we met — that was not efficiency. That was presence. That was the power of face. God's first question to Adam was not "What have you produced?" It was "Where are you?" Not performance. Place. Presence. The face turned toward.</p>
+      <blockquote><p>"You are my beloved Son, with whom I am well pleased." — Matthew 3:17, spoken before Jesus had done any ministry</p></blockquote>
+      <p>The Father's declaration at the Jordan is the hinge of everything. Jesus worked from identity, affirmation, and affection — not for it. He did not earn the Father's pleasure through output. He received it before the work began. That is the operating system the Gospel offers. And it is the operating system the orphan spirit — the one woven into nearly every story our culture tells, the one I absorbed as the youngest child trying to be superhuman enough to belong — cannot comprehend.</p>
+    </div>
+
+    <hr>
+
+    <div id="sower">
+      <h2>III. The Sower, the Soil, and the Speed of Thorns</h2>
+      <p>Jesus told a parable about a sower who scattered seed. The same seed fell in four kinds of soil. The difference was never the seed, and never the sower. The difference was what had formed beneath the surface — the depth of the ground, the presence or absence of roots, the competition for what the seed needed to grow.</p>
+      <p>Some seed fell among thorns. The thorns did not attack the seed. They simply grew faster. Worries of this age. The deceitfulness of wealth. The desire for other things — coming in and choking the word, making it unfruitful. Jesus did not say the thorns were evil. He said they were fast. And their speed was the problem.</p>
+      <p>Generative artificial intelligence is the fastest thorn-grower in human history. In a single afternoon it can produce more information, more options, more output than a Scottish parish would encounter in a month. That is not a criticism. It is a description. And the danger is not that the output is wrong — though it can be. The danger is that the speed itself reshapes what we think effectiveness feels like. Volume begins to feel like faithfulness. Throughput begins to feel like fruitfulness. And the soul drifts — not suddenly, not through any single bad decision, but through the slow, unnoticed crowding out of the things that can only grow at three miles an hour.</p>
+      <p>Jesus also said this: where your treasure is, there your heart will be also. He did not say <em>decide</em> where your heart is. He said your heart <em>follows</em> your treasure. Which means the question is never only what we value — it is what we are actually building toward, measuring, celebrating, and investing in. Because the heart goes where the treasure goes. If the treasure becomes efficiency, the heart follows, quietly, over time, while the mission statement stays the same.</p>
+    </div>
+
+    <hr>
+
+    <div id="carenet">
+      <h2>IV. What Care Net Actually Does</h2>
+      <p>Care Net exists to serve women — and the men and families connected to them — in their most vulnerable moments. The work happens in a room, with a face turned toward another face, at the pace of a conversation that cannot be rushed without being destroyed. A pregnancy center staff member sitting with a woman in crisis is not processing a transaction. She is being present with a person. She is doing the slow work of the castle with the doorless chambers — going in, staying, not diagnosing from the hallway.</p>
+      <p>That work cannot be automated. It cannot be scaled by speed. It can only be done by someone who is themselves rooted — drawing from the stream, not the salt land — and therefore capable of being present with another person's fear without being swept into it. Friedman called it non-anxious presence. Canlis called it learning to walk. I call it relaxing in the run.</p>
+      <p>The mission drift I am most afraid of is not the one that comes from a bad policy decision. It is the one that comes from an organization that gradually comes to believe that faster is better, that more output is more faithfulness, that the tools of efficiency are the same thing as the work of presence. That drift does not announce itself. It arrives the same way the thorns do — growing alongside the good seed, quietly crowding it, until one day we look up and the fruit is gone and we cannot remember when it stopped.</p>
+    </div>
+
+    <hr>
+
+    <div id="covenant">
+      <h2>V. A Covenant with Myself</h2>
+      <p>I am leading the AI adoption work at Care Net because someone has to, and because I believe it can be done in a way that serves the mission without becoming the mission. I am not afraid of these tools. I have spent months learning them, mapping them, building frameworks for how we use them wisely. The four quadrants — No-Regrets, Creative Catalyst, Quality Control, Human-First — exist precisely to protect what cannot be automated while freeing what can be.</p>
+      <p>But I am writing this statement because I know myself. I know the wound the youngest child carries. I know what it feels like to speed up when the anxiety rises — to outrun the discomfort of not-yet-knowing by producing more, building more, moving faster. The FASTER Scale has a stage called Speeding Up. It looks like productivity. It is actually the beginning of the descent.</p>
+      <p>I have learned — slowly, mile by mile, Immanuel moment by Immanuel moment — that the antidote is not slowing down as a technique. It is rootedness. The tree by the water does not slow down through discipline. It draws from something that does not run dry, and that rootedness produces a pace that cannot be manufactured. The Place of Hearing is not a practice I add to my schedule. It is the posture from which everything else flows.</p>
+      <p>So this is my covenant: I will not let the speed of these tools become the pace of my soul. I will bring the Jeremiah 17 diagnostic to every proposal, every adoption, every new capability we consider: where are the roots going, and what are they drawing from? I will protect the faces — the specific, named, irreplaceable human faces of the women and families Care Net serves — from being reduced to throughput. I will remember that the elder in the parish did not know names as data. He knew them as heritage.</p>
+      <p>I will keep asking the question Matt Canlis learned to ask in Methlick: not what can I produce today, but who is here, and am I present with them?</p>
+      <p>I am writing this on the eve of coming home after ninety-plus days away. My wife. Two daughters. Two sons-in-law — good men who have joined this family and its story. Twelve grandchildren — one of them born while I was gone, a face I have not yet seen. Seventeen in all. I will walk through that door and there will be a face that is entirely new to me, and I will be entirely new to her, and something will happen in that meeting that no tool in the world can produce or replicate or speed up. That is what this is all about. These are the faces the elder in the parish knew by name. These are the faces that cannot be processed. These are the field into which the seeds God grew in me need to be cast.</p>
+      <p>And on the days when I feel the orphan spirit rising — when the prove-produce-perform engine spins up and the anxiety of not being enough begins to crowd out the word — I will pray the prayer Michael taught me:</p>
+      <blockquote><p>God, would you Father me today? Would you fill me with identity, affirmation, and affection? I repent for the ways I've tried to prove, produce, and perform. I repent for taking the quest to provide, protect, and give myself an identity into my own hands. The cross was sufficient. There is nothing left for me to prove.</p></blockquote>
+      <p>That prayer is the root system. Everything else is fruit.</p>
+
+      <hr>
+
+      <p><em>The garden is still growing.</em></p>
+      <p><strong>Gary Springer</strong><br>IT Director, Care Net<br>Faith Evangelical Seminary, 2010–2012<br><em>grounded in Scripture, informed by neuroscience, offered freely</em></p>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <p>A sapling in <a href="index.html">Gary Springer's Garden</a> — grounded in Scripture, informed by neuroscience, offered freely.</p>
+</footer>
+
+<script>
+  const sections = ['roots','face','sower','carenet','covenant'];
+
+  function scrollTo(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function updateNav() {
+    let current = sections[0];
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= 120) current = id;
+    });
+    sections.forEach(id => {
+      const dot = document.getElementById('dot-' + id);
+      const lbl = document.getElementById('lbl-' + id);
+      if (dot) dot.classList.toggle('active', id === current);
+      if (lbl) lbl.classList.toggle('active', id === current);
+    });
+  }
+
+  window.addEventListener('scroll', updateNav);
+  updateNav();
+</script>
+</body>
+</html>
