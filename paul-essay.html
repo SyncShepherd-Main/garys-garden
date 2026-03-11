@@ -48,8 +48,9 @@
   .site-footer { background: #1a2040; border-top: 1px solid #2e4060; padding: 28px 40px; text-align: center; }
   .site-footer p { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8ab0cc; }
 
-  .scroll-top { position: fixed; bottom: 24px; right: 24px; width: 40px; height: 40px; background: #1a2040; color: #4a78b4; border: 1px solid #4a78b4; border-radius: 50%; font-size: 20px; cursor: pointer; opacity: 0; transition: opacity 0.3s; z-index: 9999; display: flex; align-items: center; justify-content: center; }
-  .scroll-top.visible { opacity: 1; }
+  .scroll-top { position: fixed; bottom: 32px; right: 32px; width: 56px; height: 56px; border-radius: 50%; background: #1a2040; border: 2px solid #4a78b4; color: #8ab0cc; font-size: 28px; cursor: pointer; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; z-index: 150; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 12px rgba(0,0,0,0.3); }
+  .scroll-top.visible { opacity: 1; visibility: visible; }
+  .scroll-top:hover { background: #4a78b4; color: #f0ede6; }
 
   @media (max-width: 700px) { .site-nav .hamburger { display: block; } .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; } .site-nav ul.open { display: flex; } .site-nav .nav-inner { flex-wrap: wrap; flex-direction: row; align-items: center; justify-content: space-between; } .site-nav .nav-sep { display: none; } .site-nav li a { padding: 10px 0; }
   .nav-dropdown .dropdown-menu { position: static; border: none; box-shadow: none; padding-left: 16px; background: transparent; }
@@ -113,7 +114,7 @@
   <p>Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
 </div>
 
-<div class="scroll-top" id="scroll-top" title="Scroll to top">&#8593;</div>
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8593;</button>
 
 <script>
 function parseMarkdown(md) {
@@ -139,7 +140,11 @@ function parseMarkdown(md) {
 function inlineFormat(t) { t = t.replace(/`([^`]+)`/g,'<code>$1</code>'); t = t.replace(/\*\*\*([^*]+)\*\*\*/g,'<strong><em>$1</em></strong>'); t = t.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>'); t = t.replace(/\*([^*]+)\*/g,'<em>$1</em>'); t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g,function(m,label,url){if(/^(javascript|data|vbscript):/i.test(url))return label;return '<a href="'+url+'">'+label+'</a>';}); return t; }
 
 fetch('paul-and-the-old-testament.md').then(function(r){return r.text();}).then(function(md){ document.getElementById('content').innerHTML = parseMarkdown(md); if(location.hash){var h=location.hash.slice(1);if(/^[a-zA-Z0-9_-]+$/.test(h)){var el=document.getElementById(h); if(el) el.scrollIntoView();}} }).catch(function(){ document.getElementById('content').innerHTML='<p>Error loading document.</p>'; });
-var btn=document.getElementById('scroll-top'); window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>200);},{passive:true}); btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+var stb = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 400) stb.classList.add('visible');
+  else stb.classList.remove('visible');
+});
 document.addEventListener('click',function(e){var a=e.target.closest('a[href^="#"]'); if(a){e.preventDefault(); var el=document.getElementById(a.getAttribute('href').slice(1)); if(el) el.scrollIntoView({behavior:'smooth'});}});
 </script>
 <script>

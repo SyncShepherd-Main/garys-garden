@@ -169,6 +169,9 @@
   .nav-dropdown.open .dropdown-menu { display: block; }
   .nav-dropdown .dropdown-menu li a { padding: 8px 18px; font-size: 16px; white-space: nowrap; }
   .nav-dropdown .dropdown-menu li a:hover { background: #2a2a2a; }
+  .scroll-top { position: fixed; bottom: 32px; right: 32px; width: 56px; height: 56px; border-radius: 50%; background: #1a2040; border: 2px solid #4a78b4; color: #8ab0cc; font-size: 28px; cursor: pointer; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; z-index: 150; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 12px rgba(0,0,0,0.3); }
+  .scroll-top.visible { opacity: 1; visibility: visible; }
+  .scroll-top:hover { background: #4a78b4; color: #f0ede6; }
 </style>
 </head>
 <body>
@@ -548,6 +551,12 @@ document.addEventListener('click', function(e) {
     if (!d.contains(e.target)) d.classList.remove('open');
   });
 });
+var stb = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 400) stb.classList.add('visible');
+  else stb.classList.remove('visible');
+});
 </script>
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8593;</button>
 </body>
 </html>
