@@ -67,11 +67,11 @@
 
   /* Site navbar */
   .site-nav { background: #1a1a1a; padding: 0 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
-  .site-nav .nav-inner { max-width: 940px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-  .site-nav .nav-home { font-family: 'EB Garamond', Georgia, serif; font-size: 28px; color: #8ab0cc; text-decoration: none; padding: 14px 0; white-space: nowrap; }
+  .site-nav .nav-inner { max-width: 940px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+  .site-nav .nav-home { font-family: 'EB Garamond', Georgia, serif; font-size: 20px; color: #8ab0cc; text-decoration: none; padding: 12px 0 4px; white-space: nowrap; }
   .site-nav .nav-home:hover { color: #b0c4d8; }
-  .site-nav ul { list-style: none; display: flex; gap: 0; margin: 0; padding: 0; flex-wrap: wrap; }
-  .site-nav li a { font-family: 'EB Garamond', Georgia, serif; font-size: 25px; color: #999; text-decoration: none; padding: 14px 16px; display: block; transition: color 0.2s; white-space: nowrap; }
+  .site-nav ul { list-style: none; display: flex; gap: 0; margin: 0; padding: 0 0 6px; flex-wrap: wrap; justify-content: center; }
+  .site-nav li a { font-family: 'EB Garamond', Georgia, serif; font-size: 18px; color: #999; text-decoration: none; padding: 6px 14px; display: block; transition: color 0.2s; white-space: nowrap; }
   .site-nav li a:hover { color: #f0ede6; }
   .site-nav li a.active { color: #f0ede6; font-weight: 600; }
   .site-nav .nav-sep { width: 1px; background: #333; margin: 8px 4px; align-self: stretch; }
@@ -84,7 +84,7 @@
     .site-nav .hamburger { display: block; }
     .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; }
     .site-nav ul.open { display: flex; }
-    .site-nav .nav-inner { flex-wrap: wrap; }
+    .site-nav .nav-inner { flex-wrap: wrap; flex-direction: row; align-items: center; justify-content: space-between; }
     .site-nav .nav-sep { display: none; }
     .site-nav li a { padding: 10px 0; }
   .nav-dropdown .dropdown-menu { position: static; border: none; box-shadow: none; padding-left: 16px; background: transparent; }
@@ -100,9 +100,9 @@
   /* Saplings dropdown */
   .nav-dropdown { position: relative; }
   .nav-dropdown .dropdown-toggle { cursor: pointer; }
-  .nav-dropdown .dropdown-menu { display: none; position: absolute; top: 100%; right: 0; background: #1a1a1a; border: 1px solid #333; border-radius: 4px; padding: 6px 0; min-width: 300px; z-index: 200; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+  .nav-dropdown .dropdown-menu { display: none; position: absolute; top: 100%; right: 0; background: #1a1a1a; border: 1px solid #333; border-radius: 4px; padding: 6px 0; min-width: 240px; z-index: 200; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
   .nav-dropdown.open .dropdown-menu { display: block; }
-  .nav-dropdown .dropdown-menu li a { padding: 10px 20px; font-size: 22px; white-space: nowrap; }
+  .nav-dropdown .dropdown-menu li a { padding: 8px 18px; font-size: 16px; white-space: nowrap; }
   .nav-dropdown .dropdown-menu li a:hover { background: #2a2a2a; }
   .scroll-top { position: fixed; bottom: 28px; right: 28px; width: 40px; height: 40px; border-radius: 50%; background: #1a2040; border: 1px solid #4a78b4; color: #8ab0cc; font-size: 20px; cursor: pointer; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; z-index: 150; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
   .scroll-top.visible { opacity: 1; visibility: visible; }
