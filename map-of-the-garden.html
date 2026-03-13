@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Map of the Garden — Gary Springer's Garden</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f3ed;
+    --navy: #1a2040;
+    --blue: #4a78b4;
+    --sky: #8ab0cc;
+    --nav-bg: #1a1a1a;
+    --body-text: #2e4060;
+    --muted: #666;
+    --white: #ffffff;
+    --max-width: 1200px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--body-text); font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 1.85; }
+  nav { background: var(--nav-bg); position: sticky; top: 0; z-index: 100; }
+  .nav-row-1 { display: flex; justify-content: center; align-items: center; padding: 0.6rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; }
+  .nav-brand { color: var(--sky); text-decoration: none; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; }
+  .nav-row-2 { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; padding: 0.3rem 1rem; }
+  .nav-row-2 a, .nav-dropdown > span { color: var(--sky); text-decoration: none; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; padding: 0.4rem 0.9rem; transition: color 0.2s; cursor: pointer; white-space: nowrap; }
+  .nav-row-2 a:hover, .nav-dropdown > span:hover { color: var(--white); }
+  .nav-dropdown { position: relative; display: inline-block; }
+  .nav-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #2a2a2a; min-width: 230px; box-shadow: 0 4px 16px rgba(0,0,0,0.4); z-index: 200; }
+  .nav-dropdown.open .nav-dropdown-menu { display: block; }
+  .nav-dropdown-menu a { display: block; padding: 0.6rem 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 17px; color: var(--sky); text-decoration: none; }
+  .nav-dropdown-menu a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+  .hamburger { display: none; background: none; border: none; color: var(--sky); font-size: 1.4rem; cursor: pointer; position: absolute; right: 1rem; }
+  .page-header { background: var(--navy); color: var(--white); padding: 4rem 2rem 3rem; text-align: center; border-bottom: 3px solid var(--blue); }
+  .page-header .label { font-size: 11px; text-transform: uppercase; letter-spacing: 3.5px; color: var(--sky); margin-bottom: 1rem; }
+  .page-header h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 400; line-height: 1.25; margin-bottom: 0.75rem; }
+  .page-header .subtitle { font-size: 1rem; font-style: italic; color: #999; max-width: 580px; margin: 0 auto; }
+  main { max-width: var(--max-width); margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+  .intro { max-width: 760px; margin: 0 auto 3.5rem; font-size: 1.05rem; color: var(--muted); font-style: italic; text-align: center; line-height: 1.9; border-bottom: 1px solid #ddd8d0; padding-bottom: 2.5rem; }
+  .map-section { margin-bottom: 4rem; }
+  .map-section-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--sky); margin-bottom: 1.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid #ddd8d0; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .map-card { background: var(--white); border: 1px solid #ddd8d0; border-radius: 6px; padding: 1.6rem 1.8rem; transition: box-shadow 0.2s; cursor: pointer; }
+  .map-card:hover { box-shadow: 0 3px 14px rgba(26,32,64,0.1); }
+  .map-card.growing { border-left: 3px solid var(--sky); }
+  .map-card.planted { border-left: 3px solid var(--blue); }
+  .card-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 2.5px; color: var(--sky); margin-bottom: 0.5rem; }
+  .card-tag.planted-tag { color: var(--blue); }
+  .map-card h3 { font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.3; }
+  .map-card .card-summary { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 0.9rem; }
+  .card-connections { font-size: 0.85rem; color: #999; font-style: italic; border-top: 1px solid #ece8e0; padding-top: 0.7rem; margin-top: 0.5rem; }
+  .card-connections a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(74,120,180,0.25); }
+  .card-link { display: inline-block; margin-top: 0.8rem; font-size: 0.9rem; color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(74,120,180,0.3); transition: color 0.2s; }
+  .card-link:hover { color: var(--navy); }
+  .popout-overlay { display: none; position: fixed; inset: 0; background: rgba(26,32,64,0.55); z-index: 500; align-items: center; justify-content: center; padding: 2rem; }
+  .popout-overlay.open { display: flex; }
+  .popout { background: var(--bg); max-width: 620px; width: 100%; max-height: 85vh; overflow-y: auto; border-radius: 8px; padding: 2.2rem 2.4rem; position: relative; box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+  .popout-close { position: absolute; top: 1rem; right: 1.2rem; background: none; border: none; font-size: 1.4rem; color: var(--muted); cursor: pointer; }
+  .popout-close:hover { color: var(--navy); }
+  .popout-label { font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: var(--sky); margin-bottom: 0.5rem; }
+  .popout h2 { font-size: 1.4rem; font-weight: 500; color: var(--navy); margin-bottom: 0.4rem; line-height: 1.3; }
+  .popout .popout-subtitle { font-size: 0.9rem; color: var(--muted); font-style: italic; margin-bottom: 1.2rem; padding-bottom: 1rem; border-bottom: 1px solid #ddd8d0; }
+  .popout p { font-size: 0.98rem; line-height: 1.85; color: var(--body-text); margin-bottom: 1rem; }
+  .popout-connections { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid #ddd8d0; font-size: 0.88rem; color: var(--muted); }
+  .popout-connections strong { color: var(--navy); }
+  .popout-connections a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(74,120,180,0.3); }
+  .popout-visit { display: inline-block; margin-top: 1.4rem; padding: 0.55rem 1.4rem; background: var(--navy); color: var(--white); text-decoration: none; border-radius: 4px; font-size: 0.95rem; transition: background 0.2s; }
+  .popout-visit:hover { background: var(--blue); }
+  #scrollTop { position: fixed; bottom: 2rem; right: 2rem; width: 56px; height: 56px; background: var(--navy); color: var(--white); border: none; border-radius: 50%; font-size: 1.3rem; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.25); transition: background 0.2s; z-index: 300; }
+  #scrollTop:hover { background: var(--blue); }
+  #scrollTop.visible { display: flex; }
+  footer { background: var(--navy); border-top: 1px solid #2e4060; padding: 28px 40px; text-align: center; }
+  footer p { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: var(--sky); }
+  @media (max-width: 700px) {
+    .nav-row-2 { display: none; flex-direction: column; align-items: flex-start; }
+    .nav-row-2.open { display: flex; }
+    .hamburger { display: block; }
+    .card-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-row-1">
+    <a href="index.html" class="nav-brand">Gary Springer's Garden</a>
+    <button class="hamburger" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+  <div class="nav-row-2" id="navLinks">
+    <a href="7-tier-framework.html">7-Tier Framework</a>
+    <a href="holistic-recovery-model.html">Recovery Model</a>
+    <a href="biblical-roots-doc.html">Biblical Roots</a>
+    <a href="immanuel-moments.html">Immanuel Moments</a>
+    <a href="recommended-reading.html">Reading List</a>
+    <a href="map-of-the-garden.html" style="color:var(--white)">Map</a>
+    <div class="nav-dropdown" id="sapDrop">
+      <span onclick="document.getElementById('sapDrop').classList.toggle('open')">Saplings ▾</span>
+      <div class="nav-dropdown-menu">
+        <a href="aces-layer-proposal.html">ACEs Layer Proposal</a>
+        <a href="at-three-miles-per-hour.html">At Three Miles Per Hour ✦</a>
+        <a href="clarity-ai-making-something-possible.html">Clarity AI</a>
+        <a href="relaxing-in-the-run.html">Relaxing in the Run</a>
+        <a href="roots-exposed-who-is-your-man.html">Roots Exposed</a>
+        <a href="the-best-wine-saved-for-last.html">The Best Wine</a>
+        <a href="the-gardener-does-not-uproot.html">The Gardener Does Not Uproot</a>
+        <a href="the-songs-i-chose-for-them.html">The Songs I Chose</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="label">Orientation</div>
+  <h1>Map of the Garden</h1>
+  <p class="subtitle">Come, walk with me. Let me show you what's growing here.</p>
+</div>
+
+<main>
+  <p class="intro">
+    This is not a site map. It is an invitation. Every path in this garden leads somewhere real — to a framework, a reflection, a question still being held. Come in. Linger where something catches you.
+  </p>
+
+  <div class="map-section">
+    <div class="map-section-title">Foundations</div>
+    <div class="card-grid">
+      <div class="map-card planted" onclick="openPopout('tier')">
+        <div class="card-tag planted-tag">Planted</div>
+        <h3>The 7-Tier Relational &amp; Ideological Framework</h3>
+        <p class="card-summary">The root of everything here. Seven tiers that describe where a person is drawing their identity and security from — and what becomes possible when Tier 1 holds.</p>
+        <div class="card-connections">Connects to: <a href="holistic-recovery-model.html">Recovery Model</a>, <a href="biblical-roots-doc.html">Biblical Roots</a></div>
+        <a class="card-link" href="7-tier-framework.html">Enter this path →</a>
+      </div>
+      <div class="map-card planted" onclick="openPopout('recovery')">
+        <div class="card-tag planted-tag">Planted</div>
+        <h3>The Holistic Recovery Model</h3>
+        <p class="card-summary">Eight layers of recovery and restoration — a companion to the Framework that maps what healing actually looks like across every dimension of a person's life.</p>
+        <div class="card-connections">Connects to: <a href="7-tier-framework.html">7-Tier Framework</a>, <a href="aces-layer-proposal.html">ACEs Layer</a></div>
+        <a class="card-link" href="holistic-recovery-model.html">Enter this path →</a>
+      </div>
+      <div class="map-card planted" onclick="openPopout('biblical')">
+        <div class="card-tag planted-tag">Planted</div>
+        <h3>Biblical Roots</h3>
+        <p class="card-summary">The scriptural soil beneath the framework. Where does this all come from? Here is the answer — passage by passage, root by root.</p>
+        <div class="card-connections">Connects to: <a href="7-tier-framework.html">7-Tier Framework</a>, <a href="immanuel-moments.html">Immanuel Moments</a></div>
+        <a class="card-link" href="biblical-roots-doc.html">Enter this path →</a>
+      </div>
+      <div class="map-card planted" onclick="openPopout('immanuel')">
+        <div class="card-tag planted-tag">Planted</div>
+        <h3>Immanuel Moments</h3>
+        <p class="card-summary">God-with-us, not God-at-a-distance. This page explores what it means to experience the presence of Yeshua as a daily relational reality — not a doctrine, but a practice.</p>
+        <div class="card-connections">Connects to: <a href="biblical-roots-doc.html">Biblical Roots</a>, <a href="relaxing-in-the-run.html">Relaxing in the Run</a></div>
+        <a class="card-link" href="immanuel-moments.html">Enter this path →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-section">
+    <div class="map-section-title">Reference &amp; Study</div>
+    <div class="card-grid">
+      <div class="map-card planted" onclick="openPopout('reading')">
+        <div class="card-tag planted-tag">Planted</div>
+        <h3>Recommended Reading</h3>
+        <p class="card-summary">The books that have shaped this garden. Not a bibliography — a recommendation from someone who has walked this way and found certain companions indispensable.</p>
+        <div class="card-connections">Connects to: <a href="7-tier-framework.html">7-Tier Framework</a>, saplings throughout</div>
+        <a class="card-link" href="recommended-reading.html">Enter this path →</a>
+      </div>
+      <div class="map-card planted" onclick="openPopout('paul')">
+        <div class="card-tag planted-tag">Planted</div>
+        <h3>Paul and the Old Testament</h3>
+        <p class="card-summary">Paul did not leave the Hebrew scriptures behind — he read them with new eyes. This essay traces how the Apostle's theology is inseparable from its roots in the Tanakh.</p>
+        <div class="card-connections">Connects to: <a href="biblical-roots-doc.html">Biblical Roots</a>, <a href="7-tier-framework.html">7-Tier Framework</a></div>
+        <a class="card-link" href="paul-essay.html">Enter this path →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-section">
+    <div class="map-section-title">Saplings — Still Growing</div>
+    <div class="card-grid">
+      <div class="map-card growing" onclick="openPopout('aces')">
+        <div class="card-tag">Sapling</div>
+        <h3>ACEs Layer Proposal</h3>
+        <p class="card-summary">What if Adverse Childhood Experiences deserve their own layer in the recovery model? This sapling explores the case for naming what trauma does before anything else can be addressed.</p>
+        <div class="card-connections">Connects to: <a href="holistic-recovery-model.html">Recovery Model</a></div>
+        <a class="card-link" href="aces-layer-proposal.html">Enter this path →</a>
+      </div>
+      <div class="map-card growing" onclick="openPopout('threemiles')">
+        <div class="card-tag">Sapling ✦ Growing</div>
+        <h3>At Three Miles Per Hour</h3>
+        <p class="card-summary">God moves at the pace of walking. This sapling asks: what do we miss when we speed up — and what becomes possible when we slow down to the pace of presence?</p>
+        <div class="card-connections">Connects to: <a href="immanuel-moments.html">Immanuel Moments</a>, <a href="relaxing-in-the-run.html">Relaxing in the Run</a></div>
+        <a class="card-link" href="at-three-miles-per-hour.html">Enter this path →</a>
+      </div>
+      <div class="map-card growing" onclick="openPopout('clarity')">
+        <div class="card-tag">Sapling</div>
+        <h3>Clarity AI — Making Something Possible</h3>
+        <p class="card-summary">Reflection on what it means to use tools like AI with intention — and how even new technology can serve the work of clarity, connection, and growth.</p>
+        <div class="card-connections">Connects to: <a href="7-tier-framework.html">7-Tier Framework</a></div>
+        <a class="card-link" href="clarity-ai-making-something-possible.html">Enter this path →</a>
+      </div>
+      <div class="map-card growing" onclick="openPopout('run')">
+        <div class="card-tag">Sapling</div>
+        <h3>Relaxing in the Run</h3>
+        <p class="card-summary">What if striving is the wrong posture for growth? This sapling explores the paradox of effort and ease — finding that the deepest work often happens when we stop forcing.</p>
+        <div class="card-connections">Connects to: <a href="immanuel-moments.html">Immanuel Moments</a>, <a href="at-three-miles-per-hour.html">At Three Miles Per Hour</a></div>
+        <a class="card-link" href="relaxing-in-the-run.html">Enter this path →</a>
+      </div>
+      <div class="map-card growing" onclick="openPopout('roots')">
+        <div class="card-tag">Sapling</div>
+        <h3>Roots Exposed — Who Is Your Man?</h3>
+        <p class="card-summary">A question that goes to the core of identity: who do you turn to when everything else has been stripped away? This sapling sits with the exposure that vulnerability requires.</p>
+        <div class="card-connections">Connects to: <a href="7-tier-framework.html">7-Tier Framework</a>, <a href="biblical-roots-doc.html">Biblical Roots</a></div>
+        <a class="card-link" href="roots-exposed-who-is-your-man.html">Enter this path →</a>
+      </div>
+      <div class="map-card growing" onclick="openPopout('wine')">
+        <div class="card-tag">Sapling</div>
+        <h3>The Best Wine Saved for Last</h3>
+        <p class="card-summary">Cana is not just a miracle story — it is a theology of timing. The best is not always first. This sapling meditates on what it means to trust the pace of the Gardener.</p>
+        <div class="card-connections">Connects to: <a href="immanuel-moments.html">Immanuel Moments</a>, <a href="the-gardener-does-not-uproot.html">The Gardener Does Not Uproot</a></div>
+        <a class="card-link" href="the-best-wine-saved-for-last.html">Enter this path →</a>
+      </div>
+      <div class="map-card growing" onclick="openPopout('gardener')">
+        <div class="card-tag">Sapling</div>
+        <h3>The Gardener Does Not Uproot</h3>
+        <p class="card-summary">Patience is not passivity. This sapling reflects on how the one who tends this garden works — gently, persistently, without violence to what is trying to grow.</p>
+        <div class="card-connections">Connects to: <a href="the-best-wine-saved-for-last.html">Best Wine</a>, <a href="7-tier-framework.html">7-Tier Framework</a></div>
+        <a class="card-link" href="the-gardener-does-not-uproot.html">Enter this path →</a>
+      </div>
+      <div class="map-card growing" onclick="openPopout('songs')">
+        <div class="card-tag">Sapling</div>
+        <h3>The Songs I Chose for Them</h3>
+        <p class="card-summary">Music as formation, not decoration. This sapling reflects on how the songs we give to people we love become part of their story — and ours.</p>
+        <div class="card-connections">Connects to: <a href="immanuel-moments.html">Immanuel Moments</a></div>
+        <a class="card-link" href="the-songs-i-chose-for-them.html">Enter this path →</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="popout-overlay" id="popoutOverlay" onclick="closePopout(event)">
+  <div class="popout" id="popoutBox">
+    <button class="popout-close" onclick="closePopoutDirect()">&#x2715;</button>
+    <div class="popout-label" id="popoutLabel"></div>
+    <h2 id="popoutTitle"></h2>
+    <div class="popout-subtitle" id="popoutSubtitle"></div>
+    <div id="popoutBody"></div>
+    <div class="popout-connections" id="popoutConnections"></div>
+    <a class="popout-visit" id="popoutVisit" href="#">Visit this page &rarr;</a>
+  </div>
+</div>
+
+<footer>
+  <p>Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">&#x2191;</button>
+
+<script>
+const pages = {
+  tier: {
+    label: "Foundation", title: "The 7-Tier Relational & Ideological Framework", subtitle: "Where are your roots, and what are they drawing from?",
+    body: "<p>Everything in this garden grows from Tier 1. The framework describes seven possible sources of identity and security — from self-constructed to God-secured — and traces how a person's location in those tiers shapes every relationship, every response, every possibility for change.</p><p>This is not a ladder to climb. It is a map of where people actually live. Gary developed this framework over decades of working alongside people in recovery, in ministry, and in the long slow work of becoming who God made them to be.</p><p>Start here, and much of the rest of the garden will make sense.</p>",
+    connections: "<strong>Companions in the garden:</strong> <a href='holistic-recovery-model.html'>The Recovery Model</a> applies this framework to healing. <a href='biblical-roots-doc.html'>Biblical Roots</a> traces its scriptural foundation.", href: "7-tier-framework.html"
+  },
+  recovery: {
+    label: "Foundation", title: "The Holistic Recovery Model", subtitle: "Eight layers of recovery and restoration",
+    body: "<p>Recovery is not one thing. It happens in layers — spiritual, emotional, relational, physical, and more — and what looks like stagnation in one layer is often movement in another. This model gives people and helpers a shared language for what is actually happening across a whole person.</p><p>Informed by neuroscience, attachment theory, Hebrew wisdom, and thirty years of walking alongside people in hard places, this is not theory. It is a map drawn by someone who has been on the trail.</p>",
+    connections: "<strong>Companions in the garden:</strong> <a href='7-tier-framework.html'>The 7-Tier Framework</a> provides the ideological soil. <a href='aces-layer-proposal.html'>The ACEs Layer Proposal</a> explores what may need to be added.", href: "holistic-recovery-model.html"
+  },
+  biblical: {
+    label: "Foundation", title: "Biblical Roots", subtitle: "The scriptural soil beneath the framework",
+    body: "<p>Where does the 7-Tier Framework come from? Not from a textbook — from the Bible. This page traces the specific passages and theological threads that give the framework its roots, beginning in Genesis and running through the letters of Paul.</p><p>Gary has spent a lifetime with these texts. This is not a proof-text exercise — it is an invitation to see what he sees when he reads.</p>",
+    connections: "<strong>Companions in the garden:</strong> <a href='paul-essay.html'>Paul and the Old Testament</a> continues this thread. <a href='immanuel-moments.html'>Immanuel Moments</a> brings it into the present tense.", href: "biblical-roots-doc.html"
+  },
+  immanuel: {
+    label: "Foundation", title: "Immanuel Moments", subtitle: "God with us — not God at a distance",
+    body: "<p>The name Immanuel means God-with-us. Not a theological concept to be believed, but a relational reality to be experienced. These moments — small, ordinary, easily missed — are the soil in which everything else grows.</p><p>This page explores what it looks like to cultivate awareness of presence, to practice the kind of attentiveness that notices when the Gardener is near.</p>",
+    connections: "<strong>Companions in the garden:</strong> <a href='relaxing-in-the-run.html'>Relaxing in the Run</a> and <a href='at-three-miles-per-hour.html'>At Three Miles Per Hour</a> are saplings that live in this same soil.", href: "immanuel-moments.html"
+  },
+  reading: {
+    label: "Reference", title: "Recommended Reading", subtitle: "The books that have shaped this garden",
+    body: "<p>These are not books Gary has merely read. They are books that have worked on him — that showed up at the right moment, or took years to settle, or that he returns to when he needs to find his footing again.</p><p>If you are new to the ideas in this garden, the reading list is a good second stop after the Framework. If you are already at home here, you may find companions you haven't yet met.</p>",
+    connections: "<strong>Companions in the garden:</strong> References to these books appear throughout the saplings and foundations.", href: "recommended-reading.html"
+  },
+  paul: {
+    label: "Reference", title: "Paul and the Old Testament", subtitle: "Reading the Apostle in his Hebrew home",
+    body: "<p>Paul is often read as though he began something new. This essay argues otherwise — that Paul's theology is not a departure from Hebrew scripture but a deep reading of it, saturated in its imagery, logic, and hope.</p><p>For Gary, understanding Paul this way changes how the whole gospel sounds. It becomes richer, older, more rooted — and more Jewish than most Western Christianity has allowed.</p>",
+    connections: "<strong>Companions in the garden:</strong> <a href='biblical-roots-doc.html'>Biblical Roots</a> is the natural companion. <a href='7-tier-framework.html'>The Framework</a> carries many of these same roots.", href: "paul-essay.html"
+  },
+  aces: {
+    label: "Sapling", title: "ACEs Layer Proposal", subtitle: "What trauma deserves its own place in the model",
+    body: "<p>Adverse Childhood Experiences leave a particular kind of mark — one that doesn't always respond to the same interventions as other layers of recovery. This sapling makes the case that ACEs deserve their own named layer in the holistic model, not to make the work heavier, but to make it more honest.</p><p>Still growing. Still being held.</p>",
+    connections: "<strong>Companions in the garden:</strong> <a href='holistic-recovery-model.html'>The Recovery Model</a> is the natural home for this proposal.", href: "aces-layer-proposal.html"
+  },
+  threemiles: {
+    label: "Sapling — Growing", title: "At Three Miles Per Hour", subtitle: "God moves at the pace of walking",
+    body: "<p>The Incarnation happened at walking speed. Jesus healed people he met along the road. The disciples learned by walking with him for three years. Speed, in the kingdom, is not a virtue.</p><p>This sapling asks what it costs us to move faster than three miles per hour — and what becomes possible when we slow down to the pace of presence, of conversation, of a God who walks with us.</p>",
+    connections: "<strong>Companions in the garden:</strong> <a href='immanuel-moments.html'>Immanuel Moments</a> and <a href='relaxing-in-the-run.html'>Relaxing in the Run</a> share the same soil.", href: "at-three-miles-per-hour.html"
+  },
+  clarity: {
+    label: "Sapling", title: "Clarity AI — Making Something Possible", subtitle: "Using new tools with old intention",
+    body: "<p>This sapling reflects on a specific kind of encounter — what it means to use an AI tool not for efficiency's sake, but as an instrument of clarity. What becomes possible when we bring intention to our tools?</p><p>Gary does not use technology as decoration. He uses it in service of the work. This sapling is a window into how he thinks about that.</p>",
+    connections: "<strong>Companions in the garden:</strong> <a href='7-tier-framework.html'>The Framework</a> is always the lens through which tools are evaluated.", href: "clarity-ai-making-something-possible.html"
+  },
+  run: {
+    label: "Sapling", title: "Relaxing in the Run", subtitle: "The paradox of effort and ease",
+    body: "<p>There is a way of running that is tense, forced, grinding — and it produces diminishing returns. There is another way, discovered usually by accident, where the same effort feels entirely different. The body finds a rhythm. The breath evens out. Something relaxes without the pace changing.</p><p>This is a sapling about that second way — in running, and in the spiritual life.</p>",
+    connections: "<strong>Companions in the garden:</strong> <a href='immanuel-moments.html'>Immanuel Moments</a> and <a href='at-three-miles-per-hour.html'>At Three Miles Per Hour</a>.", href: "relaxing-in-the-run.html"
+  },
+  roots: {
+    label: "Sapling", title: "Roots Exposed — Who Is Your Man?", subtitle: "Identity under pressure",
+    body: "<p>When circumstances strip away the usual supports — role, reputation, income, health — what is left? Who do you turn to? This sapling sits with the exposure that real vulnerability requires, and asks the most important question the Framework raises: where are your roots drawing from?</p>",
+    connections: "<strong>Companions in the garden:</strong> <a href='7-tier-framework.html'>The 7-Tier Framework</a> is the direct ancestor of this reflection.", href: "roots-exposed-who-is-your-man.html"
+  },
+  wine: {
+    label: "Sapling", title: "The Best Wine Saved for Last", subtitle: "A theology of timing",
+    body: "<p>At Cana, the good wine came last. Not first, not when anyone expected it. The Gardener has a timing that is not our timing, and this sapling asks what it means to trust that — to stop demanding the best now, and to wait with open hands for what is being prepared.</p>",
+    connections: "<strong>Companions in the garden:</strong> <a href='the-gardener-does-not-uproot.html'>The Gardener Does Not Uproot</a> shares the same patience.", href: "the-best-wine-saved-for-last.html"
+  },
+  gardener: {
+    label: "Sapling", title: "The Gardener Does Not Uproot", subtitle: "Patience is not passivity",
+    body: "<p>A real gardener does not rip out what is struggling. They amend the soil. They wait through seasons. They trust that what looks like dormancy may be deep root work. This sapling reflects on the character of the one who tends this garden — and what it means to be tended by that kind of patience.</p>",
+    connections: "<strong>Companions in the garden:</strong> <a href='the-best-wine-saved-for-last.html'>The Best Wine</a> lives in the same patience.", href: "the-gardener-does-not-uproot.html"
+  },
+  songs: {
+    label: "Sapling", title: "The Songs I Chose for Them", subtitle: "Music as formation, not decoration",
+    body: "<p>There are songs Gary chose deliberately for specific people — songs that said something he could not say directly, or held something he hoped they would carry. This sapling reflects on the power of music to form us, and on the particular grace of giving someone a song at the right moment.</p>",
+    connections: "<strong>Companions in the garden:</strong> <a href='immanuel-moments.html'>Immanuel Moments</a> — presence, received through unexpected means.", href: "the-songs-i-chose-for-them.html"
+  }
+};
+
+function openPopout(key) {
+  const p = pages[key]; if (!p) return;
+  document.getElementById('popoutLabel').textContent = p.label;
+  document.getElementById('popoutTitle').textContent = p.title;
+  document.getElementById('popoutSubtitle').textContent = p.subtitle;
+  document.getElementById('popoutBody').innerHTML = p.body;
+  document.getElementById('popoutConnections').innerHTML = p.connections;
+  document.getElementById('popoutVisit').href = p.href;
+  document.getElementById('popoutOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePopout(e) { if (e.target === document.getElementById('popoutOverlay')) closePopoutDirect(); }
+function closePopoutDirect() { document.getElementById('popoutOverlay').classList.remove('open'); document.body.style.overflow = ''; }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopoutDirect(); });
+window.addEventListener('scroll', () => { document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400); });
+document.getElementById('menuBtn').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('open'); });
+document.addEventListener('click', (e) => { const dd = document.getElementById('sapDrop'); if (!dd.contains(e.target)) dd.classList.remove('open'); });
+</script>
+</body>
+</html>

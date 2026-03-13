@@ -221,7 +221,40 @@ Regardless of what content is being added or edited:
 
 ---
 
-## Adding New Pages
+## Navigation / Index Pages
+
+Some pages serve as navigation hubs rather than content essays. These use a different layout from the two-column content pages:
+
+### Pages in this category
+- `map-of-the-garden.html` — Card grid with popout summaries of every page in the garden
+- `scripture-index.html` — Canonical scripture reference with expandable entries
+- `themes-index.html` — Thematic thread cards with popout detail views
+
+### Layout pattern
+- **No sidebar nav** — these pages use full-width card grids instead
+- Max-width: `1200px` (same as index)
+- Two-row sticky top nav with Saplings dropdown (matches index nav pattern)
+- Card grid: `repeat(auto-fill, minmax(320–340px, 1fr))` with `1.5–1.6rem` gap
+- Popout overlay: fixed overlay with `max-width: 620–640px` modal, close on Escape/click-outside
+- Scroll-to-top button: 56px circle, bottom-right
+- Footer: standard site footer with tagline
+
+### Colors (matches site-wide blue palette)
+- Cards: white `#ffffff` background, `1px solid #ddd8d0` border
+- Card accent borders: `var(--blue)` (#4a78b4) or `var(--sky)` (#8ab0cc)
+- Section labels: 10–12px uppercase, `var(--sky)`, letter-spacing 2.5–3px
+- Page header: `var(--navy)` (#1a2040) background, `3px solid var(--blue)` bottom border
+
+### When adding a new navigation page
+1. Use the two-row nav from `map-of-the-garden.html` as the template
+2. Include the standard footer tagline
+3. Include the scroll-to-top button
+4. Include click-outside-to-close for the Saplings dropdown
+5. Include hamburger menu for mobile (≤700px)
+
+---
+
+## Adding New Content Pages
 
 When adding a new sapling or essay page:
 
