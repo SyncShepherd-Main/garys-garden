@@ -34,6 +34,14 @@ Working drafts — little trees that might grow to be a big forest.
 | [Relaxing in the Run](https://syncshepherd-main.github.io/garys-garden/relaxing-in-the-run.html) | Personal Statement | Gary's personal statement — not a working draft. 5 sections with sidebar navigation. |
 | [Clarity AI: Making Something Possible](https://syncshepherd-main.github.io/garys-garden/clarity-ai-making-something-possible.html) | Record | A record of how AI tools helped bring the garden into being. 8 sections with sidebar navigation. |
 
+### Navigation & Index Pages
+
+| Page | Description |
+|------|-------------|
+| [Map of the Garden](https://syncshepherd-main.github.io/garys-garden/map-of-the-garden.html) | Interactive card grid showing every page in the garden with popout summaries, connection notes, and direct links. An orientation page — the guided tour. |
+| [Scripture Index](https://syncshepherd-main.github.io/garys-garden/scripture-index.html) | Every scripture reference across the site organized in canonical order (Genesis through Revelation), with expandable entries showing where each passage appears and how it's used. Currently `noindex, nofollow`. |
+| [Themes & Threads](https://syncshepherd-main.github.io/garys-garden/themes-index.html) | Nine thematic threads (Identity, Recovery, Pace, Blessing, etc.) presented as cards with popout detail views showing which pages connect to each theme. |
+
 ### Reference & Study
 
 | Page | Description |
@@ -62,8 +70,8 @@ These pages render the raw markdown source files with full formatting, navigatio
 
 ## Site-Wide Features
 
-- **Two-row navigation bar** — Site name centered on row 1, page links on row 2. "Saplings" dropdown menu links to all 8 essay pages. Hamburger menu on mobile.
-- **Scroll-to-top button** — Floating 56px circle (bottom-right) on all 20 pages. Appears after scrolling 400px.
+- **Two-row navigation bar** — Site name centered on row 1, page links on row 2. Links: 7-Tier Framework, Recovery Model, Biblical Roots, Immanuel Moments, Reading List, Map, Scripture, Themes, Saplings dropdown (8 items). Hamburger menu on mobile. Consistent across all 23 pages.
+- **Scroll-to-top button** — Floating 56px circle (bottom-right) on all 23 pages. Appears after scrolling 400px.
 - **Sticky sidebar navigation** — Dot + label pattern with scroll-tracking JS on all sapling and interactive viewer pages. Uses `scrollToSection()` function.
 - **Consistent footer** — "Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely." on every page.
 
@@ -73,7 +81,7 @@ These pages render the raw markdown source files with full formatting, navigatio
 
 - **Hosting:** GitHub Pages via GitHub Actions (auto-deploys on push to `main`)
 - **Stack:** Pure static HTML/CSS/JS — no build tools, no frameworks, no dependencies
-- **Pages:** 20 HTML pages, 9 markdown source files, 2 images
+- **Pages:** 23 HTML pages, 14 markdown source files, 2 images
 - **Max content width:** 1200px (all pages)
 - **Font:** EB Garamond (Google Fonts), fallback: Georgia, serif
 - **Body text:** 18px, line-height 1.85
@@ -122,6 +130,9 @@ garys-garden/
   the-best-wine-saved-for-last.html         Sapling — the miracle at Cana
   relaxing-in-the-run.html                  Personal statement (not a draft)
   clarity-ai-making-something-possible.html Record — how AI helped build the garden
+  map-of-the-garden.html                    Navigation — card grid with popout summaries
+  scripture-index.html                      Navigation — canonical scripture reference (noindex)
+  themes-index.html                         Navigation — thematic thread cards with popouts
   7-tier-full-text.html                     Source viewer (renders 7-Tier-Framework.md)
   eight-layer-reference.html                Source viewer (renders seven-layers.md)
   biblical-roots-source.html                Source viewer (renders biblical-roots.md)
@@ -143,6 +154,8 @@ garys-garden/
   the-best-wine-saved-for-last.md           Source: The Best Wine Saved for Last essay
   relaxing-in-the-run.md                    Source: Relaxing in the Run statement
   clarity-ai-making-something-possible.md   Source: Clarity AI record
+  garden-session-reference.md               Session reference — March 11, 2026
+  site-registry.md                          Complete page registry with status tracking
   DESIGN_SPEC.md                            Design specification (source of truth for styles)
   SITE-DOCUMENTATION.md                     Site documentation
   .github/workflows/static.yml              GitHub Pages deployment workflow
@@ -152,6 +165,7 @@ garys-garden/
 
 | Date | Changes |
 |------|---------|
+| Mar 13, 2026 | Added 3 navigation pages: Map of the Garden, Scripture Index, Themes & Threads. Added garden-session-reference.md and site-registry.md. Added standard footer to all new pages. Added Map/Scripture/Themes nav links to all 23 pages for consistent navigation. Updated DESIGN_SPEC.md with Navigation / Index Pages section. Held back a-word-about-the-garden.html (wrong design system — needs rebuild). |
 | Mar 10, 2026 | Added 7 new sapling pages from Gary's updates. Updated recommended reading with "Pace, Presence & the Parish" section. Converted entire site to blue color scheme. Added site-wide nav bar with Saplings dropdown. Fixed sidebar scroll (renamed `scrollTo` → `scrollToSection`). Widened all pages to 1200px. Bumped body font to 18px. Lightened muted text colors. Added 56px scroll-to-top button to all pages. |
 | Mar 8, 2026 | Added ACEs layer proposal as first sapling. Applied Orphan Spirit privacy rewrite. |
 | Feb 2026 | Converted color scheme from green/amber to blue. Expanded Immanuel Moments. Added Earley to Reading List. |
