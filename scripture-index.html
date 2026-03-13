@@ -1,0 +1,2870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Scripture Index</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: #f5f3ed;
+    color: #2e4060;
+    min-height: 100vh;
+  }
+  header {
+    background: #1a2040;
+    padding: 32px 40px;
+    border-bottom: 3px solid #4a78b4;
+  }
+  header .inner { max-width: 1200px; margin: 0 auto; }
+  header .label { font-size: 11px; color: #4a78b4; text-transform: uppercase; letter-spacing: 3.5px; margin-bottom: 8px; }
+  header h1 { font-size: 32px; font-weight: 400; color: #f5f3ed; line-height: 1.15; margin-bottom: 8px; font-family: 'EB Garamond', Georgia, serif; }
+  header .subtitle { font-size: 15px; color: #999; font-style: italic; font-family: 'EB Garamond', Georgia, serif; }
+
+  .site-nav { background: #1a1a1a; padding: 0 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
+  .site-nav .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+  .site-nav .nav-home { font-family: 'EB Garamond', Georgia, serif; font-size: 20px; color: #8ab0cc; text-decoration: none; padding: 12px 0 4px; white-space: nowrap; }
+  .site-nav .nav-home:hover { color: #b0c4d8; }
+  .site-nav ul { list-style: none; display: flex; gap: 0; margin: 0; padding: 0 0 6px; flex-wrap: wrap; justify-content: center; }
+  .site-nav li a { font-family: 'EB Garamond', Georgia, serif; font-size: 18px; color: #999; text-decoration: none; padding: 6px 14px; display: block; transition: color 0.2s; white-space: nowrap; }
+  .site-nav li a:hover { color: #f0ede6; }
+  .site-nav li a.active { color: #f0ede6; font-weight: 600; }
+  .site-nav .nav-sep { width: 1px; background: #333; margin: 8px 4px; align-self: stretch; }
+  .site-nav .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 14px 0; }
+  .site-nav .hamburger .bar { display: block; width: 26px; height: 3px; background: #999; margin: 5px 0; }
+  .site-footer { background: #1a2040; border-top: 1px solid #2e4060; padding: 28px 40px; text-align: center; }
+  .site-footer p { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: #8ab0cc; }
+  .nav-dropdown { position: relative; }
+  .nav-dropdown .dropdown-toggle { cursor: pointer; }
+  .nav-dropdown .dropdown-menu { display: none; position: absolute; top: 100%; right: 0; background: #1a1a1a; border: 1px solid #333; border-radius: 4px; padding: 6px 0; min-width: 240px; z-index: 200; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+  .nav-dropdown.open .dropdown-menu { display: block; }
+  .nav-dropdown .dropdown-menu li a { padding: 8px 18px; font-size: 16px; white-space: nowrap; }
+  .nav-dropdown .dropdown-menu li a:hover { background: #2a2a2a; }
+  .scroll-top { position: fixed; bottom: 32px; right: 32px; width: 56px; height: 56px; border-radius: 50%; background: #1a2040; border: 2px solid #4a78b4; color: #8ab0cc; font-size: 28px; cursor: pointer; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; z-index: 150; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 12px rgba(0,0,0,0.3); }
+  .scroll-top.visible { opacity: 1; visibility: visible; }
+  .scroll-top:hover { background: #4a78b4; color: #f0ede6; }
+  @media (max-width: 700px) {
+    .site-nav .hamburger { display: block; }
+    .site-nav ul { display: none; flex-direction: column; width: 100%; padding-bottom: 8px; }
+    .site-nav ul.open { display: flex; }
+    .site-nav .nav-inner { flex-wrap: wrap; flex-direction: row; align-items: center; justify-content: space-between; }
+    .site-nav .nav-sep { display: none; }
+    .site-nav li a { padding: 10px 0; }
+    .nav-dropdown .dropdown-menu { position: static; border: none; box-shadow: none; padding-left: 16px; background: transparent; }
+    .nav-dropdown.open .dropdown-menu { display: block; }
+  }
+  @media (max-width: 600px) {
+    header { padding: 24px 20px; }
+    header h1 { font-size: 26px; }
+  }
+
+  /* Scripture index specific */
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .si-intro {
+    font-size: 18px;
+    line-height: 1.85;
+    color: #555;
+    font-style: italic;
+    border-left: 3px solid #4a78b4;
+    padding: 4px 0 4px 20px;
+    margin-bottom: 40px;
+  }
+  .si-book-section { margin-bottom: 40px; }
+  .si-book-title {
+    font-size: 12px;
+    color: #4a78b4;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0dcd4;
+    margin-bottom: 6px;
+  }
+  .si-entry { border-bottom: 1px solid #eae6e0; }
+  .si-entry:last-child { border-bottom: none; }
+  .si-ref {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .si-ref:hover .si-ref-text { color: #4a78b4; }
+  .si-ref-text {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1a2040;
+    transition: color 0.15s;
+  }
+  .si-arrow {
+    font-size: 13px;
+    color: #aaa;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .si-entry.open .si-arrow { transform: rotate(180deg); color: #4a78b4; }
+  .si-popout {
+    display: none;
+    padding: 4px 4px 16px 4px;
+  }
+  .si-entry.open .si-popout { display: block; }
+  .si-summary {
+    font-size: 17px;
+    line-height: 1.75;
+    color: #444;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .si-links {
+    font-size: 15px;
+    color: #888;
+  }
+  .si-links a {
+    color: #4a78b4;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(74,120,180,0.3);
+  }
+  .si-links a:hover { color: #6a98d0; }
+  .si-net-link {
+    font-size: 13px;
+    color: #8ab0cc !important;
+    border-bottom: 1px solid rgba(138,176,204,0.4) !important;
+  }
+  .si-pages-label { color: #aaa; font-size: 14px; margin-right: 4px; }
+  .si-count {
+    font-size: 13px;
+    color: #aaa;
+    font-style: italic;
+    margin-bottom: 32px;
+  }
+</style>
+</head>
+<body>
+
+<div class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-home">Gary Springer's Garden</a>
+    <button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <ul>
+      <li><a href="7-tier-framework.html">7-Tier Framework</a></li>
+      <li><a href="holistic-recovery-model.html">Recovery Model</a></li>
+      <li><a href="biblical-roots-doc.html">Biblical Roots</a></li>
+      <li><a href="immanuel-moments.html">Immanuel Moments</a></li>
+      <li class="nav-sep"></li>
+      <li><a href="map-of-the-garden.html">Map</a></li>
+      <li><a href="scripture-index.html" class="active">Scripture Index</a></li>
+      <li><a href="recommended-reading.html">Reading List</a></li>
+      <li class="nav-dropdown">
+        <a href="#" class="dropdown-toggle" onclick="this.parentElement.classList.toggle('open'); event.preventDefault();">Saplings &#9662;</a>
+        <ul class="dropdown-menu">
+          <li><a href="aces-layer-proposal.html">ACEs Layer Proposal</a></li>
+          <li><a href="at-three-miles-per-hour.html">At Three Miles Per Hour &#10022;</a></li>
+          <li><a href="clarity-ai-making-something-possible.html">Clarity — AI</a></li>
+          <li><a href="relaxing-in-the-run.html">Relaxing in the Run</a></li>
+          <li><a href="roots-exposed-who-is-your-man.html">Roots Exposed</a></li>
+          <li><a href="the-best-wine-saved-for-last.html">The Best Wine</a></li>
+          <li><a href="the-gardener-does-not-uproot.html">The Gardener Does Not Uproot</a></li>
+          <li><a href="the-songs-i-chose-for-them.html">The Songs I Chose</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<header>
+  <div class="inner">
+    <div class="label">A Guide to the Garden</div>
+    <h1>Scripture Index</h1>
+    <div class="subtitle">Every verse that takes root somewhere in the garden — in canonical order, with a word about how it grows here.</div>
+  </div>
+</header>
+
+<div class="content">
+  <p class="si-intro">Click any reference to see where it appears in the garden and how the gardener has drawn on it. Scripture links open the NET Bible in a new tab. This index grows as the garden grows.</p>
+  <p class="si-count">176 references across 36 books.</p>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Genesis</div>
+    
+      <div class="si-entry" id="01-001-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Genesis 1:1</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The first word of creation — God as origin of all. Grounds the gospel foundation of the recovery model.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Genesis+1:1" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="01-002-18">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Genesis 2:18</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">It is not good for man to be alone. The first declaration of human need for relationship — grounds Tier 1 and the belonging need.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Genesis+2:18" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="01-003-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Genesis 3:1</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The serpent's first question: Did God really say? The entry point of ideological corruption into the human story, and the root of every Tier 2–7 substitution.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Genesis+3:1" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="01-015-06">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Genesis 15:6</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Abraham believed God, and it was credited to him as righteousness. Paul's anchor for justification by faith.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Genesis+15:6" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Leviticus</div>
+    
+      <div class="si-entry" id="03-019-18">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Leviticus 19:18</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Love your neighbor as yourself. The second great commandment — the relational foundation of Tier 1.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Leviticus+19:18" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="03-026-12">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Leviticus 26:12</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I will walk among you and be your God. The covenant presence — the original Immanuel promise.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Leviticus+26:12" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Numbers</div>
+    
+      <div class="si-entry" id="04-006-24">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Numbers 6:24</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The Aaronic blessing — the LORD bless you and keep you. Used in the context of blessing theology and the Immanuel moments.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="immanuel-moments.html" target="_blank">Immanuel Moments</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Numbers+6:24" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Deuteronomy</div>
+    
+      <div class="si-entry" id="05-004-09">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Deuteronomy 4:9</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Only take care, and keep your soul diligently, lest you forget. The call to guarded memory as formation practice.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Deuteronomy+4:9" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="05-006-04">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Deuteronomy 6:4–5</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The Shema — Hear, O Israel. Love the Lord your God with all your heart. The foundation of Tier 1.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Deuteronomy+6:4-5" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="05-006-06">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Deuteronomy 6:6–7</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">These words shall be on your heart — teach them diligently to your children. Formation as the work of presence and daily life.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Deuteronomy+6:6-7" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="05-029-29">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Deuteronomy 29:29</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The secret things belong to the LORD — but the revealed things belong to us. The humility that precedes wisdom.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Deuteronomy+29:29" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="05-030-19">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Deuteronomy 30:19</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I have set before you life and death — choose life. The Double Bind at its most elemental form.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Deuteronomy+30:19" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Joshua</div>
+    
+      <div class="si-entry" id="06-024-15">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Joshua 24:15</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">As for me and my house, we will serve the LORD. The household covenant.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Joshua+24:15" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Nehemiah</div>
+    
+      <div class="si-entry" id="16-008-10">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Nehemiah 8:10</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The joy of the LORD is your strength. Joy as structural necessity — not emotion but fuel.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Nehemiah+8:10" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Psalm</div>
+    
+      <div class="si-entry" id="19-016-08">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 16:8</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I have set the LORD always before me; because he is at my right hand, I shall not be shaken.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+16:8" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-016-11">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 16:11</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">In your presence there is fullness of joy; at your right hand are pleasures forevermore.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+16:11" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-019-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 19:1</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The heavens declare the glory of God. Creation as testimony.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+19:1" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-022-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 22:1</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">My God, my God, why have you forsaken me? The psalm Jesus prays from the cross — the full descent into the human cry.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+22:1" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-022-14">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 22:14</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I am poured out like water, and all my bones are out of joint. The physical language of grief.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+22:14" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-023-02">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 23:2–4</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">He makes me lie down in green pastures. He leads me beside still waters. The pastoral rhythm of restoration.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+23:2-4" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-027-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 27:1</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The LORD is my light and my salvation; whom shall I fear?</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+27:1" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-037-07">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 37:7</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Be still before the LORD and wait patiently for him. The posture of Tier 1.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+37:7" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-046-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 46:1</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">God is our refuge and strength, a very present help in trouble.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+46:1" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-046-10">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 46:10</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Be still, and know that I am God. The quieting at the center — the receiver tuned to the Place of Hearing.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+46:10" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-051-10">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 51:10</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Create in me a clean heart, O God, and renew a right spirit within me.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+51:10" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-056-03">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 56:3</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">When I am afraid, I put my trust in you.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+56:3" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-056-08">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 56:8</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">You have kept count of my tossings; put my tears in your bottle. God who holds the grief.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+56:8" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-119-105">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 119:105</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Your word is a lamp to my feet and a light to my path. Scripture as orienting truth.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+119:105" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-119-24">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 119:24</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Your testimonies are my delight; they are my counselors. Scripture as formation.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="immanuel-moments.html" target="_blank">Immanuel Moments</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+119:24" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-131-02">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 131:2</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I have calmed and quieted my soul, like a weaned child with its mother. The quieting that is trust.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+131:2" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-139-14">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 139:14</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I praise you, for I am fearfully and wonderfully made.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+139:14" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="19-139-23">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Psalm 139:23–24</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Search me, O God, and know my heart. The diagnostic prayer — inviting the deepest knowing.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Psalm+139:23-24" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Proverbs</div>
+    
+      <div class="si-entry" id="20-001-03">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 1:3</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">To receive instruction in wise dealing, righteousness, justice, and equity. The purpose of wisdom — the framework's epistemological foundation.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a> &middot; <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+1:3" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-001-05">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 1:5</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Let the wise hear and increase in learning. The posture of the learner.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+1:5" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-001-15">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 1:15–16</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">My son, do not walk in the way with them. The path that leads away from wisdom.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+1:15-16" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-003-03">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 3:3</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Let not steadfast love and faithfulness forsake you. Hesed as the relational core.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+3:3" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-003-05">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 3:5–6</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Trust in the LORD with all your heart, and do not lean on your own understanding. The antidote to the orphan spirit's self-sufficiency.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+3:5-6" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-004-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 4:1–4</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Hear, O sons, a father's instruction. Formation through relationship — father to son.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+4:1-4" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-004-07">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 4:7</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The beginning of wisdom is this: Get wisdom.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+4:7" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-004-23">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 4:23</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Keep your heart with all vigilance, for from it flow the springs of life. The heart as the source — where Scripture and neuroscience converge.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+4:23" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-006-06">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 6:6</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Go to the ant, O sluggard — consider her ways and be wise. The dignity of practical wisdom, Layer 8.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+6:6" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-008-13">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 8:13</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The fear of the LORD is hatred of evil. Wisdom and holiness as inseparable.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+8:13" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-009-10">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 9:10</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The fear of the LORD is the beginning of wisdom. The first axiom of all the layers.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a> &middot; <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+9:10" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-015-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 15:1</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">A soft answer turns away wrath. Relational wisdom in its most concrete form — Layer 6.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+15:1" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-018-12">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 18:12</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Before destruction a man's heart is haughty. The trajectory pride sets in motion.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+18:12" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-018-13">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 18:13</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">If one gives an answer before he hears, it is his folly and shame. The diagnostic prerequisite — listen before you speak.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="aces-layer-proposal.html" target="_blank">ACEs — The Wound Beneath the Wound</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+18:13" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-020-05">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 20:5</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The purpose in a man's heart is like deep water, but a man of understanding will draw it out. The art of listening that makes recovery possible.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="aces-layer-proposal.html" target="_blank">ACEs — The Wound Beneath the Wound</a> &middot; <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+20:5" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-022-03">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 22:3</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The prudent sees danger and hides himself. Wise anticipation — foundational to the FASTER Scale.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+22:3" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-026-11">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 26:11</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Like a dog that returns to its vomit is a fool who repeats his folly. The wisdom tradition's honesty about relapse.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+26:11" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-027-06">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 27:6</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Faithful are the wounds of a friend. The relational cost and gift of Level 5 friendship.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+27:6" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-029-18">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 29:18</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Where there is no prophetic vision the people cast off restraint. Vision as the prerequisite to faithful formation.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+29:18" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="20-029-25">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Proverbs 29:25</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The fear of man lays a snare. The Layer 1 warning — systemic anxiety as a trap.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Proverbs+29:25" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Ecclesiastes</div>
+    
+      <div class="si-entry" id="21-004-09">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Ecclesiastes 4:9</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Two are better than one. The threefold cord that is not quickly broken — the anchor of Roots Exposed.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="roots-exposed-who-is-your-man.html" target="_blank">Roots Exposed — Who Is Your Man?</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Ecclesiastes+4:9" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="21-009-10">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Ecclesiastes 9:10</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Whatever your hand finds to do, do it with your might. The dignity of work — Ecclesiastes' practical realism.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Ecclesiastes+9:10" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Isaiah</div>
+    
+      <div class="si-entry" id="23-007-14">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Isaiah 7:14</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Behold, the virgin shall conceive and bear a son, and shall call his name Immanuel.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Isaiah+7:14" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="23-009-06">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Isaiah 9:6</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">For to us a child is born — Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Isaiah+9:6" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="23-030-15">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Isaiah 30:15</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">In returning and rest you shall be saved; in quietness and in trust shall be your strength.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Isaiah+30:15" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="23-030-20">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Isaiah 30:20–21</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Your ears will hear a word behind you saying, 'This is the way, walk in it.' The Place of Hearing — Tier 1 and Restoration.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a> &middot; <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="immanuel-moments.html" target="_blank">Immanuel Moments</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Isaiah+30:20-21" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="23-040-29">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Isaiah 40:29</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">He gives power to the faint, and to him who has no might he increases strength.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Isaiah+40:29" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="23-042-03">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Isaiah 42:3</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">A bruised reed he will not break, a faintly burning wick he will not quench. The Gardener does not uproot.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Isaiah+42:3" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="23-049-15">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Isaiah 49:15</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Can a woman forget her nursing child? Even these may forget, yet I will not forget you.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Isaiah+49:15" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="23-053-03">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Isaiah 53:3</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">He was despised and rejected — a man of sorrows and acquainted with grief.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Isaiah+53:3" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="23-055-11">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Isaiah 55:11</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">My word shall not return to me empty. The faithfulness of the seed regardless of soil.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Isaiah+55:11" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="23-061-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Isaiah 61:1</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The Spirit of the Lord is upon me to proclaim liberty to the captives. Yeshua's mission statement.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Isaiah+61:1" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Jeremiah</div>
+    
+      <div class="si-entry" id="24-002-13">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Jeremiah 2:13</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">They have forsaken me, the fountain of living waters, and hewed out cisterns for themselves — broken cisterns that hold no water. The core diagnostic.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Jeremiah+2:13" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="24-017-05">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Jeremiah 17:5</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Cursed is the man who trusts in man and makes flesh his strength. The shrub in the desert.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Jeremiah+17:5" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="24-017-05b">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Jeremiah 17:5–8</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The shrub and the tree — where the roots go determines what the drought does to you.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Jeremiah+17:5-8" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="24-017-07">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Jeremiah 17:7</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Blessed is the man who trusts in the LORD — the tree planted by water.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Jeremiah+17:7" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="24-017-09">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Jeremiah 17:9</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The heart is deceitful above all things, and desperately sick. The limbic system in Scripture.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Jeremiah+17:9" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="24-029-11">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Jeremiah 29:11</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">For I know the plans I have for you — plans for welfare and not for evil, to give you a future and a hope.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Jeremiah+29:11" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="24-031-33">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Jeremiah 31:33</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I will put my law within them, and I will write it on their hearts. The new covenant.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Jeremiah+31:33" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Ezekiel</div>
+    
+      <div class="si-entry" id="26-036-26">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Ezekiel 36:26</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I will give you a new heart and put a new spirit in you. Not behavior modification — heart transplant.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Ezekiel+36:26" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="26-037-27">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Ezekiel 37:27</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">My dwelling place shall be with them, and I will be their God, and they shall be my people.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Ezekiel+37:27" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Amos</div>
+    
+      <div class="si-entry" id="30-005-15">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Amos 5:15</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Hate evil, and love good, and establish justice in the gate.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Amos+5:15" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Zephaniah</div>
+    
+      <div class="si-entry" id="36-003-17">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Zephaniah 3:17</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The LORD your God is in your midst — he will rejoice over you with gladness, he will quiet you by his love, he will exult over you with loud singing. The Father's face of joy.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Zephaniah+3:17" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Matthew</div>
+    
+      <div class="si-entry" id="40-001-23">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 1:23</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">They shall call his name Immanuel — God with us.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+1:23" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-003-17">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 3:17</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">You are my beloved Son, with whom I am well pleased — spoken before Jesus had done any ministry. Working from identity, not for it.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="relaxing-in-the-run.html" target="_blank">Relaxing in the Run</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+3:17" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-005-04">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 5:4</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Blessed are those who mourn, for they shall be comforted. Grief as a gift — Dodd's Voice of the Heart in the Beatitudes.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+5:4" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-005-09">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 5:9</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Blessed are the peacemakers. Peace-making (not peace-mongering) as the Friedman calling.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+5:9" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-005-29">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 5:29</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">If your right eye causes you to sin, tear it out. The Double Bind — the cost of the better choice.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+5:29" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-005-38">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 5:38–42</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">You have heard it said, 'An eye for an eye' — but I say to you... The new ethic of the Kingdom.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+5:38-42" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-005-44">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 5:44</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Love your enemies and pray for those who persecute you.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+5:44" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-006-09">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 6:9</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Pray then like this: Our Father in heaven. The Lord's Prayer as the sons' language.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+6:9" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-006-19">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 6:19</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Do not lay up for yourselves treasures on earth.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+6:19" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-006-21">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 6:21</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Where your treasure is, there your heart will be also. The heart follows the treasure.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="relaxing-in-the-run.html" target="_blank">Relaxing in the Run</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+6:21" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-006-33">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 6:33</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Seek first the kingdom of God and his righteousness, and all these things will be added to you.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+6:33" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-007-03">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 7:3</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Why do you see the speck in your brother's eye but not the log in your own? The self-awareness prerequisite to helping.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+7:3" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-007-13">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 7:13</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Enter by the narrow gate. The two paths — every FASTER Scale decision.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+7:13" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-011-15">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 11:15</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">He who has ears to hear, let him hear. The Place of Hearing — the receiver that must be tuned.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+11:15" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-011-28">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 11:28–29</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Come to me, all who labor and are heavy laden, and I will give you rest. The invitation — Tier 1 as the center that receives.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+11:28-29" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-012-44">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 12:44</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The house empty, swept, and put in order. The danger of recovery without replacement.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+12:44" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-016-24">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 16:24</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Let him deny himself and take up his cross and follow me.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+16:24" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-018-03">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 18:3</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Unless you turn and become like children, you will never enter the kingdom. Childlike trust as the posture of Tier 1.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+18:3" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-022-37">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 22:37</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">You shall love the Lord your God with all your heart and with all your soul and with all your mind.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+22:37" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-025-21">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 25:21</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Well done, good and faithful servant.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+25:21" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-026-38">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 26:38</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">My soul is very sorrowful, even to death. Yeshua in Gethsemane — grief carried honestly.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+26:38" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-026-39">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 26:39</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Not as I will, but as you will. The surrender that is not weakness.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+26:39" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="40-027-46">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Matthew 27:46</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">My God, my God, why have you forsaken me? Yeshua entering the full abandonment so we need not stay there.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Matthew+27:46" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Mark</div>
+    
+      <div class="si-entry" id="41-003-05">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Mark 3:5</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">He looked around at them with anger, grieved at their hardness of heart. Yeshua feeling what is true.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Mark+3:5" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="41-007-21">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Mark 7:21–23</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">From within, out of the heart of man, come evil thoughts... The heart as source of behavior.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Mark+7:21-23" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="41-009-24">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Mark 9:24</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I believe; help my unbelief! The honest prayer — faith that names its own insufficiency.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Mark+9:24" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="41-012-31">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Mark 12:31</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">You shall love your neighbor as yourself. The second great commandment — Tier 1's relational half.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Mark+12:31" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Luke</div>
+    
+      <div class="si-entry" id="42-010-07">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Luke 10:7</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The laborer deserves his wages. Paul's citation from the oral Jesus tradition.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Luke+10:7" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="42-010-36">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Luke 10:36–37</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Which of these three was a neighbor? Go, and do likewise. The Good Samaritan shatters Tier 2–7 boundaries.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Luke+10:36-37" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="42-013-06">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Luke 13:6–9</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">A man had a fig tree... Let it alone this year also, until I dig around it. The parable that names the Gardener.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="the-gardener-does-not-uproot.html" target="_blank">The Gardener Does Not Uproot</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Luke+13:6-9" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="42-014-28">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Luke 14:28</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Which of you, desiring to build a tower, does not first sit down and count the cost? Practical wisdom before action.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Luke+14:28" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">John</div>
+    
+      <div class="si-entry" id="43-001-12">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 1:12</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">To all who received him, he gave the right to become children of God.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="roots-exposed-who-is-your-man.html" target="_blank">Roots Exposed — Who Is Your Man?</a> &middot; <a href="the-gardener-does-not-uproot.html" target="_blank">The Gardener Does Not Uproot</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+1:12" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="43-001-14">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 1:14</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The Word became flesh and dwelt among us. God going at three miles an hour.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+1:14" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="43-002-10">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 2:10</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">You have kept the good wine until now. The first sign — joy restored and upgraded.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="the-best-wine-saved-for-last.html" target="_blank">The Best Wine Saved for Last</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+2:10" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="43-004-53">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 4:53</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">He himself believed, and all his household. The second sign — restoration overflowing to the whole house.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="the-best-wine-saved-for-last.html" target="_blank">The Best Wine Saved for Last</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+4:53" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="43-010-10">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 10:10</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I came that they may have life and have it abundantly. The mission behind every layer of the model.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+10:10" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="43-011-35">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 11:35</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Jesus wept. The shortest verse. The deepest permission.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+11:35" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="43-012-24">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 12:24</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Unless a grain of wheat falls into the earth and dies, it remains alone. Death as prerequisite to fruitfulness.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+12:24" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="43-014-02">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 14:2</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">In my Father's house are many rooms. Belonging as structural reality — not earned but prepared.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+14:2" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="43-014-18">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 14:18</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I will not leave you as orphans; I will come to you. The direct answer to the orphan spirit.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+14:18" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="43-014-23">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 14:23</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">We will come to him and make our home with him. The indwelling at the center of Tier 1.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+14:23" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="43-014-27">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 14:27</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Peace I leave with you; my peace I give to you. Not as the world gives.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+14:27" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="43-015-04">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 15:4</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Abide in me, and I in you. Abiding — the architecture of Tier 1.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+15:4" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="43-015-05">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 15:5</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I am the vine; you are the branches. Apart from me you can do nothing.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+15:5" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="43-017-20">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">John 17:20–26</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I do not ask for these only, but also for those who will believe... The high-priestly prayer — unity flowing from rootedness in the Father.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/John+17:20-26" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Acts</div>
+    
+      <div class="si-entry" id="44-017-02">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Acts 17:2</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Paul went in, as was his custom, and on three Sabbath days he reasoned with them from the Scriptures.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Acts+17:2" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Romans</div>
+    
+      <div class="si-entry" id="45-003-10">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Romans 3:10</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">None is righteous, no, not one. The universal diagnosis before the universal solution.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Romans+3:10" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="45-007-15">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Romans 7:15–25</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I do not do what I want, but I do the very thing I hate. The FASTER Scale in Paul.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Romans+7:15-25" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="45-007-24">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Romans 7:24</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Wretched man that I am! Who will deliver me from this body of death? The cry that precedes Romans 8.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Romans+7:24" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="45-008-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Romans 8:1</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">There is therefore now no condemnation for those who are in Christ Jesus. The first movement — No Condemnation.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="immanuel-moments.html" target="_blank">Immanuel Moments</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Romans+8:1" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="45-008-15">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Romans 8:15</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">You have received the Spirit of adoption as sons, by whom we cry, 'Abba! Father!' The spirit of sonship — antidote to the orphan spirit.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="immanuel-moments.html" target="_blank">Immanuel Moments</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Romans+8:15" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="45-008-38">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Romans 8:38–39</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Neither death nor life... will be able to separate us from the love of God. The second movement — No Separation.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="immanuel-moments.html" target="_blank">Immanuel Moments</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Romans+8:38-39" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="45-012-02">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Romans 12:2</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Be transformed by the renewal of your mind. The VIM architecture — Vision, Intention, Means.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Romans+12:2" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="45-012-04">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Romans 12:4–5</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">As in one body we have many members... so we, though many, are one body in Christ.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Romans+12:4-5" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="45-012-15">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Romans 12:15</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Rejoice with those who rejoice, weep with those who weep. The empathic attunement that is presence.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Romans+12:15" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="45-012-17">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Romans 12:17</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Repay no one evil for evil.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Romans+12:17" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="45-013-06">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Romans 13:6–8</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Owe no one anything, except to love each other.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Romans+13:6-8" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="45-015-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Romans 15:1–7</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">We who are strong have an obligation to bear with the failings of the weak. Welcome one another as Christ has welcomed you.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Romans+15:1-7" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">1 Corinthians</div>
+    
+      <div class="si-entry" id="46-002-02">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">1 Corinthians 2:2</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I decided to know nothing among you except Jesus Christ and him crucified.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/1+Corinthians+2:2" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="46-006-19">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">1 Corinthians 6:19</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Your body is a temple of the Holy Spirit. The dignity of the body.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/1+Corinthians+6:19" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="46-007-10">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">1 Corinthians 7:10</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">To the married I give this charge — not I, but the Lord.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/1+Corinthians+7:10" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="46-009-14">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">1 Corinthians 9:14</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The Lord commanded that those who proclaim the gospel should get their living by the gospel.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/1+Corinthians+9:14" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="46-011-23">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">1 Corinthians 11:23</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I received from the Lord what I also delivered to you. Paul passing on the tradition.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/1+Corinthians+11:23" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">2 Corinthians</div>
+    
+      <div class="si-entry" id="47-003-18">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">2 Corinthians 3:18</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">We are being transformed into the same image from one degree of glory to another. Sanctification as gradual transformation.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/2+Corinthians+3:18" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="47-004-07">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">2 Corinthians 4:7</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">We have this treasure in jars of clay, to show that the surpassing power belongs to God.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/2+Corinthians+4:7" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="47-005-16">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">2 Corinthians 5:16</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">From now on, therefore, we regard no one according to the flesh.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/2+Corinthians+5:16" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="47-005-21">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">2 Corinthians 5:21</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">He made him to be sin who knew no sin, so that in him we might become the righteousness of God.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/2+Corinthians+5:21" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="47-010-05">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">2 Corinthians 10:5</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Take every thought captive to obey Christ. Layer 8 — the mind under Lordship.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/2+Corinthians+10:5" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="47-012-09">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">2 Corinthians 12:9</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">My grace is sufficient for you, for my power is made perfect in weakness.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/2+Corinthians+12:9" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Galatians</div>
+    
+      <div class="si-entry" id="48-001-10">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Galatians 1:10</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Am I now seeking the approval of man, or of God? The Layer 1 diagnostic.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Galatians+1:10" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="48-005-14">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Galatians 5:14</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The whole law is fulfilled in one word: You shall love your neighbor as yourself.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Galatians+5:14" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="48-005-22">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Galatians 5:22</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The fruit of the Spirit is love, joy, peace... Restoration on the FASTER Scale.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Galatians+5:22" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="48-006-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Galatians 6:1–4</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Brothers, if anyone is caught in any transgression... bear one another's burdens.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Galatians+6:1-4" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="48-006-09">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Galatians 6:9</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Let us not grow weary of doing good, for in due season we will reap, if we do not give up.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Galatians+6:9" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Ephesians</div>
+    
+      <div class="si-entry" id="49-001-19">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Ephesians 1:19</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The immeasurable greatness of his power toward us who believe.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Ephesians+1:19" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="49-002-10">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Ephesians 2:10</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">We are his workmanship, created in Christ Jesus for good works. Identity before activity.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Ephesians+2:10" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="49-004-11">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Ephesians 4:11–13</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">He gave the apostles, the prophets, the evangelists, the shepherds and teachers — for the equipping of the saints.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Ephesians+4:11-13" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="49-004-26">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Ephesians 4:26–27</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Be angry and do not sin; do not let the sun go down on your anger. Give no opportunity to the devil.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Ephesians+4:26-27" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Philippians</div>
+    
+      <div class="si-entry" id="50-002-04">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Philippians 2:4</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Let each of you look not only to his own interests, but also to the interests of others.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Philippians+2:4" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="50-003-14">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Philippians 3:14</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I press on toward the goal for the prize of the upward call of God in Christ Jesus.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Philippians+3:14" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="50-004-06">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Philippians 4:6–7</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Do not be anxious about anything, but in everything by prayer... let your requests be made known to God.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Philippians+4:6-7" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="50-004-13">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Philippians 4:13</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">I can do all things through him who strengthens me.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Philippians+4:13" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Colossians</div>
+    
+      <div class="si-entry" id="51-001-27">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Colossians 1:27</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Christ in you, the hope of glory. The indwelling — the recovery model's deepest anchor.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Colossians+1:27" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="51-002-06">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Colossians 2:6</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">As you received Christ Jesus the Lord, so walk in him. The same posture that received Him is the posture that continues.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="roots-exposed-who-is-your-man.html" target="_blank">Roots Exposed — Who Is Your Man?</a> &middot; <a href="the-gardener-does-not-uproot.html" target="_blank">The Gardener Does Not Uproot</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Colossians+2:6" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">1 Thessalonians</div>
+    
+      <div class="si-entry" id="52-004-15">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">1 Thessalonians 4:15</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">This we declare to you by a word from the Lord... Paul appealing directly to the teaching of Jesus.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="paul-essay.html" target="_blank">Paul and the Old Testament</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/1+Thessalonians+4:15" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">1 Timothy</div>
+    
+      <div class="si-entry" id="54-004-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">1 Timothy 4:1</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">In later times some will depart from the faith by devoting themselves to deceitful spirits. The Tier 2–7 warning made explicit.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/1+Timothy+4:1" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">2 Timothy</div>
+    
+      <div class="si-entry" id="55-001-07">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">2 Timothy 1:7</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">God gave us a spirit not of fear but of power and love and self-control.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/2+Timothy+1:7" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="55-003-16">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">2 Timothy 3:16–17</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">All Scripture is breathed out by God and profitable for teaching, reproof, correction, and training in righteousness.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/2+Timothy+3:16-17" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Hebrews</div>
+    
+      <div class="si-entry" id="58-004-12">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Hebrews 4:12</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">The word of God is living and active, sharper than any two-edged sword — discerning the thoughts and intentions of the heart.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Hebrews+4:12" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="58-012-02">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Hebrews 12:2</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Looking to Jesus, the founder and perfecter of our faith.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Hebrews+12:2" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="58-013-08">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Hebrews 13:8</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Jesus Christ is the same yesterday and today and forever. The unchanging anchor beneath all the layers.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Hebrews+13:8" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">James</div>
+    
+      <div class="si-entry" id="59-001-19">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">James 1:19–20</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Let every person be quick to hear, slow to speak, slow to anger.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/James+1:19-20" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="59-001-22">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">James 1:22</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Be doers of the word, and not hearers only. Action as the test of rootedness.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/James+1:22" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="59-002-15">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">James 2:15–16</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">If a brother or sister is poorly clothed and lacking daily food, and one of you says 'Go in peace' without giving them what is needed — what good is that?</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/James+2:15-16" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="59-004-06">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">James 4:6</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">God opposes the proud but gives grace to the humble.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/James+4:6" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">1 Peter</div>
+    
+      <div class="si-entry" id="60-005-07">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">1 Peter 5:7</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Casting all your anxieties on him, because he cares for you.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a> &middot; <a href="eight-layer-reference.html" target="_blank">The Eight Layers — Full Reference</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/1+Peter+5:7" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">2 Peter</div>
+    
+      <div class="si-entry" id="61-001-03">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">2 Peter 1:3</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">His divine power has granted to us all things that pertain to life and godliness. Everything needed is already given.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/2+Peter+1:3" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">1 John</div>
+    
+      <div class="si-entry" id="62-003-01">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">1 John 3:1</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">See what kind of love the Father has given to us, that we should be called children of God.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/1+John+3:1" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+      <div class="si-entry" id="62-004-19">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">1 John 4:19</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">We love because he first loved us. Love is response, not initiation — the foundation of every helping relationship.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/1+John+4:19" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Jude</div>
+    
+      <div class="si-entry" id="65-001-04">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Jude 1:4</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">Certain people have crept in unnoticed — ungodly people who pervert the grace of our God.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="7-tier-framework.html" target="_blank">The 7-Tier Framework</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Jude+1:4" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="si-book-section">
+    <div class="si-book-title">Revelation</div>
+    
+      <div class="si-entry" id="66-002-04">
+        <button class="si-ref" onclick="togglePopout(this)">
+          <span class="si-ref-text">Revelation 2:4</span>
+          <span class="si-arrow">&#9662;</span>
+        </button>
+        <div class="si-popout">
+          <p class="si-summary">You have abandoned the love you had at first. The diagnostic of drift — Tier 1 as the first love.</p>
+          <div class="si-links">
+            <span class="si-pages-label">In the garden:</span> <a href="biblical-roots-doc.html" target="_blank">Biblical Roots</a>
+            &nbsp;&nbsp;
+            <a href="https://netbible.org/bible/Revelation+2:4" target="_blank" class="si-net-link">NET Bible &#8599;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="site-footer">
+  <p>Planted by Gary Springer — grounded in Scripture, informed by neuroscience, offered freely.</p>
+</div>
+
+<script>
+function togglePopout(btn) {
+  var entry = btn.parentElement;
+  var isOpen = entry.classList.contains('open');
+  // Close all open entries
+  document.querySelectorAll('.si-entry.open').forEach(function(e) { e.classList.remove('open'); });
+  if (!isOpen) entry.classList.add('open');
+}
+document.addEventListener('click', function(e) {
+  document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+    if (!d.contains(e.target)) d.classList.remove('open');
+  });
+});
+var stb = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 400) stb.classList.add('visible');
+  else stb.classList.remove('visible');
+});
+</script>
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8593;</button>
+</body>
+</html>
